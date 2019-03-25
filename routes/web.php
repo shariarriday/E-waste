@@ -16,3 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/test','testController@test');
+
+Route::get('/Provider/create', 'testController@create');
+Route::post('/Provider', 'testController@store');
+Route::get('/Provider', 'testController@index');
