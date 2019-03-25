@@ -6,7 +6,7 @@
   </head>
   <body>
  <p>
-
+         hi! 
         column name =   {{ session()->get('col') }}
         value ={{ session()->get('val') }}
 
