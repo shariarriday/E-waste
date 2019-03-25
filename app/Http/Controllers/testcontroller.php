@@ -30,9 +30,8 @@ class testcontroller extends Controller
 
 
               //getiing all of data from form
-     //return redirect('/Provider');
+     return redirect('Provider')->with(['col'=>$col, 'val'=>$val]);
 
-      return redirect()->route('Provider', ['col' => $col, 'val' => $val]);
 
 
     }

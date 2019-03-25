@@ -5,8 +5,10 @@
     <title></title>
   </head>
   <body>
-hi
-     <?= $col ;?>
+ <p>
+
+        column name =   {{ session()->get('col') }}
+        value ={{ session()->get('val') }}
 
 
 
