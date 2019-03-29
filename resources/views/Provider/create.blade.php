@@ -33,7 +33,7 @@
 </nav>
 <br>
 
-<div class="container" " >
+<div class="container" >
 
  <form>
     <div class="input-group mb-3 input-group-sm">
@@ -62,7 +62,8 @@
   </form>
   <div style="position: absolute; right: 90px;">
   
-  <button type="button" class="btn btn-outline-success">Submit</button>
+  <a href="https://www.google.com/" class="btn btn-info" role="button">Submit</a>
+ 
  
 
  
