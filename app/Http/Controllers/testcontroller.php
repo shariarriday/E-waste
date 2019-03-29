@@ -16,33 +16,48 @@ class testcontroller extends Controller
         $users = DB::connection('oracle')->insert("INSERT INTO Provider VALUES('$id1','$name')");//this is for inserting data
     } */
 
-    public function create()
+    //you have to copy this function, rename tablename with the name of your table.
+    public function tablename()
     {
-         return view('Provider.create');
-
-
+         return view('Tables.tablename');//copy this line of code for your page
     }
 
-    public function store()
+    //you have to copy this function and rename the store part with the name of your table.
+    public function tablestore()
     {
-      $input1= request("input1");
-      $input2= request("input2");
-
-
-              //getiing all of data from form
-     return redirect('Provider')->with(['input1'=>$input1, 'input2'=>$input2]);
-
-
-
+     $input1= request("input1");
+     $input2= request("input2");
+     $input3= request("input3");
+     $users = DB::connection('oracle')->insert("INSERT INTO Provider VALUES('$input1','$input2','$input3')");//this is for inserting data
+     //Redirecting code
+     return redirect('data')->with(['input1'=>$input1, 'input2'=>$input2 , 'input3'=>$input3]);
     }
 
-public function index()
-{
+    public function tablenameindex()
+    {
+        return view('Tables.data');
+    }
 
+    //you have to copy this function, rename tablename with the name of your table.
+    public function employee()
+    {
+         return view('Tables.tablename');//copy this line of code for your page
+    }
 
-  return view('Provider.index');
+    //you have to copy this function and rename the store part with the name of your table.
+    public function tablestore()
+    {
+     $input1= request("input1");
+     $input2= request("input2");
+     $input3= request("input3");
+     $users = DB::connection('oracle')->insert("INSERT INTO Provider VALUES('$input1','$input2','$input3')");//this is for inserting data
+     //Redirecting code
+     return redirect('data')->with(['input1'=>$input1, 'input2'=>$input2 , 'input3'=>$input3]);
+    }
 
-}
-
+    public function tablenameindex()
+    {
+        return view('Tables.data');
+    }
 
 }

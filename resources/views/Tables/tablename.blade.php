@@ -35,7 +35,7 @@
 
 <div class="container" >
 
- <form method='POST' action='/Provider' >
+ <form method='POST' action='/tablestore' > <!change tablestore with your table name>
     {{ csrf_field() }}
     <div class="input-group mb-3 input-group-sm">
       <div class="input-group-prepend">
