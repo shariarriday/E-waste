@@ -1,6 +1,7 @@
 --------------------------------------------------------
---  File created - Sunday-March-24-2019   
+--  File created - Monday-March-25-2019   
 --------------------------------------------------------
+DROP TABLE "C##RIDAY"."PROVIDER" cascade constraints;
 --------------------------------------------------------
 --  DDL for Table PROVIDER
 --------------------------------------------------------
@@ -17,5 +18,7 @@
   TABLESPACE "USERS" ;
 REM INSERTING into C##RIDAY.PROVIDER
 SET DEFINE OFF;
+Insert into C##RIDAY.PROVIDER (ID,NAME) values ('123','name');
+Insert into C##RIDAY.PROVIDER (ID,NAME) values ('123','name');
 Insert into C##RIDAY.PROVIDER (ID,NAME) values ('sdf','dsfadf');
 Insert into C##RIDAY.PROVIDER (ID,NAME) values ('sdf','dsfaddf');
