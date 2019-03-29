@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>E-Waste Management System</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -33,7 +33,7 @@
 </nav>
 <br>
 
-<div class="container" >
+<div class="container" " >
 
  <form>
     <div class="input-group mb-3 input-group-sm">
@@ -51,6 +51,7 @@
       <input type="text" class="form-control" name="input2">
     </div>
   </form>
+                          <! copy this form to from for further expansion :P >
   <form>
     <div class="input-group mb-3 input-group-sm">
       <div class="input-group-prepend">
@@ -59,6 +60,13 @@
       <input type="text" class="form-control" name="input3">
     </div>
   </form>
+  <div style="position: absolute; right: 90px;">
+  
+  <button type="button" class="btn btn-outline-success">Submit</button>
+ 
+
+ 
+</div>
 </div>
 
 </body>
