@@ -16,48 +16,54 @@ class testcontroller extends Controller
         $users = DB::connection('oracle')->insert("INSERT INTO Provider VALUES('$id1','$name')");//this is for inserting data
     } */
 
+    //start copy here
     //you have to copy this function, rename tablename with the name of your table.
     public function tablename()
     {
-         return view('Tables.tablename');//copy this line of code for your page
+         return view('Tables.tablename');//change tablename to your entity name
     }
 
     //you have to copy this function and rename the store part with the name of your table.
-    public function tablestore()
+    public function tablenamestore()
     {
      $input1= request("input1");
      $input2= request("input2");
      $input3= request("input3");
      $users = DB::connection('oracle')->insert("INSERT INTO Provider VALUES('$input1','$input2','$input3')");//this is for inserting data
      //Redirecting code
-     return redirect('data')->with(['input1'=>$input1, 'input2'=>$input2 , 'input3'=>$input3]);
+     return redirect('tablenamedata');//change the tablename to your entity name;
     }
 
+    //copy this function and change data to the file you have created.
     public function tablenameindex()
     {
-        return view('Tables.data');
+        return view('Tables.tablenamedata'); //change tablename to your entity name.
     }
+
+    //end copy here
 
     //you have to copy this function, rename tablename with the name of your table.
     public function employee()
     {
-         return view('Tables.tablename');//copy this line of code for your page
+         return view('Tables.employee');
     }
 
     //you have to copy this function and rename the store part with the name of your table.
-    public function tablestore()
+    public function employeestore()
     {
      $input1= request("input1");
      $input2= request("input2");
      $input3= request("input3");
-     $users = DB::connection('oracle')->insert("INSERT INTO Provider VALUES('$input1','$input2','$input3')");//this is for inserting data
+     $input4= request("input4");
+
+     $users = DB::connection('oracle')->insert("INSERT INTO Employee VALUES('$input1','$input2','$input3',$input4)");//this is for inserting data
      //Redirecting code
-     return redirect('data')->with(['input1'=>$input1, 'input2'=>$input2 , 'input3'=>$input3]);
+     return redirect('employeedata');
     }
 
-    public function tablenameindex()
+    public function employeeindex()
     {
-        return view('Tables.data');
+        return view('Tables.employeedata');
     }
 
 }

@@ -7,12 +7,6 @@
   </head>
   <body>
  <p>
-        hi!
-        Input 1 ={{ session()->get('input1') }}
-        Input 2 ={{ session()->get('input2') }}
-        Input 3 ={{ session()->get('input3') }}
-
-        All are inserted
         <?php
 
             use Illuminate\Http\Request;
