@@ -25,12 +25,12 @@ class testcontroller extends Controller
 
     public function store()
     {
-      $col= request("title");
-      $val= request("description");
+      $input1= request("input1");
+      $input2= request("input2");
 
 
               //getiing all of data from form
-     return redirect('Provider')->with(['col'=>$col, 'val'=>$val]);
+     return redirect('Provider')->with(['input1'=>$input1, 'input2'=>$input2]);
 
 
 

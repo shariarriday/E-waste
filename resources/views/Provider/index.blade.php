@@ -6,9 +6,13 @@
   </head>
   <body>
  <p>
-         hi! 
-        column name =   {{ session()->get('col') }}
-        value ={{ session()->get('val') }}
+        hi!
+        Input 1 ={{ session()->get('input1') }}
+        Input 2 ={{ session()->get('input2') }}
+        Input 3 ={{ session()->get('input3') }}
+
+        All are inserted
+
 
 
 

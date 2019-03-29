@@ -35,38 +35,36 @@
 
 <div class="container" >
 
- <form>
+ <form method='POST' action='/Provider' >
+    {{ csrf_field() }}
     <div class="input-group mb-3 input-group-sm">
       <div class="input-group-prepend">
         <span class="input-group-text">Input 1</span>
       </div>
       <input type="text" class="form-control" name="input1">
     </div>
-  </form>
-  <form>
+
     <div class="input-group mb-3 input-group-sm">
       <div class="input-group-prepend">
         <span class="input-group-text">Input 2</span>
       </div>
       <input type="text" class="form-control" name="input2">
     </div>
-  </form>
-                          <! copy this form to from for further expansion :P >
-  <form>
+
     <div class="input-group mb-3 input-group-sm">
       <div class="input-group-prepend">
         <span class="input-group-text">Input 3</span>
       </div>
       <input type="text" class="form-control" name="input3">
     </div>
+    <button type="submit">Submit </button>
   </form>
   <div style="position: absolute; right: 90px;">
-  
-  <a href="https://www.google.com/" class="btn btn-info" role="button">Submit</a>
- 
- 
 
- 
+
+
+
+
 </div>
 </div>
 
