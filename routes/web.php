@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/test','testController@test');
 
 Route::get('/Insert/tablename', 'testController@tablename');//copy this line with the name of the table.
 Route::post('/tablestore', 'testController@tablenamestore');//copy this line for storing value in database.
