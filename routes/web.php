@@ -40,3 +40,7 @@ Route::get('/inventorydata','tableController@inventoryindex');//change table nam
 Route::get('/manufacturer', 'tableController@manufacturer');//copy this line with the name of the table.
 Route::post('manufacturerstore', 'tableController@manufacturerstore');//copy this line for storing value in database.
 Route::get('/manufacturerdata','tableController@manufacturerindex');//change table name with the name of your table.
+
+Route::get('/nonformal', 'tableController@nonformal');//copy this line with the name of the table.
+Route::post('nonformalstore', 'tableController@nonformalstore');//copy this line for storing value in database.
+Route::get('/nonformaldata','tableController@nonformalindex');//change table name with the name of your table.

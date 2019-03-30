@@ -90,6 +90,7 @@
                     <a href="/individual">Individual</a>
                     <a href="/inventory">Inventory</a>
                     <a href="/manufacturer">Manufacturer</a>
+                    <a href="/nonformal">Non-Formal</a>
                 </div>
             </div>
         </div>

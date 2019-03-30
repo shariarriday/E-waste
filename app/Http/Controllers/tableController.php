@@ -130,4 +130,26 @@ class tableController extends Controller
     {
         return view('Tables.manufacturerdata');
     }
+
+    // FOR nonFormal TABLE
+    public function nonformal()
+    {
+         return view('Tables.nonformal');
+    }
+    //you have to copy this function and rename the store part with the name of your table.
+    public function nonformalstore()
+    {
+     $id= request("input1");
+     $location= request("input2");
+     $condition= request("input3");
+
+     $users = DB::connection('oracle')->insert("INSERT INTO non_formal VALUES('$id','$location','$condition')");
+     //Redirecting code
+     return redirect('nonformaldata');
+    }
+
+    public function nonformalindex()
+    {
+        return view('Tables.nonformaldata');
+    }
 }
