@@ -17,13 +17,13 @@ Route::get('/', function () {
 
 Route::get('/test','testController@test');
 
-Route::get('/Insert/tablename', 'testController@tablename');//copy this line with the name of the table.
-Route::post('/tablestore', 'testController@tablenamestore');//copy this line for storing value in database.
-Route::get('/tablenamedata','testController@tablenameindex');//change table name with the name of your table.
+Route::get('/Insert/tablename', 'testController@tablename');
+Route::post('/tablestore', 'testController@tablenamestore');
+Route::get('/tablenamedata','testController@tablenameindex');
 
-Route::get('/employee', 'tableController@employee');//copy this line with the name of the table.
-Route::post('/employeestore', 'tableController@employeestore');//copy this line for storing value in database.
-Route::get('/employeedata','tableController@employeeindex');//change table name with the name of your table.
+Route::get('/employee', 'tableController@employee');
+Route::post('/employeestore', 'tableController@employeestore');
+Route::get('/employeedata','tableController@employeeindex');
 
 Route::get('/business', 'tableController@business');//copy this line with the name of the table.
 Route::post('/businessstore', 'tableController@businessstore');//copy this line for storing value in database.
@@ -37,10 +37,22 @@ Route::get('/inventory', 'tableController@inventory');//copy this line with the 
 Route::post('inventorystore', 'tableController@inventorystore');//copy this line for storing value in database.
 Route::get('/inventorydata','tableController@inventoryindex');//change table name with the name of your table.
 
-Route::get('/manufacturer', 'tableController@manufacturer');//copy this line with the name of the table.
-Route::post('manufacturerstore', 'tableController@manufacturerstore');//copy this line for storing value in database.
-Route::get('/manufacturerdata','tableController@manufacturerindex');//change table name with the name of your table.
+Route::get('/manufacturer', 'tableController@manufacturer');
+Route::post('manufacturerstore', 'tableController@manufacturerstore');
+Route::get('/manufacturerdata','tableController@manufacturerindex');
 
-Route::get('/nonformal', 'tableController@nonformal');//copy this line with the name of the table.
-Route::post('nonformalstore', 'tableController@nonformalstore');//copy this line for storing value in database.
-Route::get('/nonformaldata','tableController@nonformalindex');//change table name with the name of your table.
+Route::get('/nonformal', 'tableController@nonformal');
+Route::post('nonformalstore', 'tableController@nonformalstore');
+Route::get('/nonformaldata','tableController@nonformalindex');
+
+Route::get('/orderinfo', 'tableController@orderinfo');
+Route::post('orderinfostore', 'tableController@orderinfostore');
+Route::get('/orderinfodata','tableController@orderinfoindex');
+
+Route::get('/processor', 'tableController@processor');
+Route::post('processorstore', 'tableController@processorstore');
+Route::get('/processordata','tableController@processorindex');
+
+Route::get('/provider', 'tableController@provider');
+Route::post('providerstore', 'tableController@providerstore');
+Route::get('/providerdata','tableController@providerindex');

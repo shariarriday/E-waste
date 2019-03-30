@@ -92,6 +92,14 @@
                     <a href="/manufacturer">Manufacturer</a>
                     <a href="/nonformal">Non-Formal</a>
                 </div>
+
+                <br>
+
+                <div class="links">
+                    <a href="/orderinfo">Order Info</a>
+                    <a href="/processor">Processor</a>
+                    <a href="/provider">Provider</a>
+                </div>
             </div>
         </div>
     </body>

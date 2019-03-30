@@ -152,4 +152,72 @@ class tableController extends Controller
     {
         return view('Tables.nonformaldata');
     }
+
+    // FOR orderInfo TABLE
+    public function orderinfo()
+    {
+         return view('Tables.orderinfo');
+    }
+    //you have to copy this function and rename the store part with the name of your table.
+    public function orderinfostore()
+    {
+     $id= request("input1");
+     $location= request("input2");
+     $condition= request("input3");
+     $date1= request("input4");
+
+     $users = DB::connection('oracle')->insert("INSERT INTO order_info VALUES('$id','$location','$condition',to_date('$date1','dd-mm-yyyy'))");
+     //Redirecting code
+     return redirect('orderinfodata');
+    }
+
+    public function orderinfoindex()
+    {
+        return view('Tables.orderinfodata');
+    }
+
+    // FOR processor TABLE
+    public function processor()
+    {
+         return view('Tables.processor');
+    }
+    //you have to copy this function and rename the store part with the name of your table.
+    public function processorstore()
+    {
+     $id= request("input1");
+     $location= request("input2");
+     $condition= request("input3");
+     $date1= request("input4");
+
+     $users = DB::connection('oracle')->insert("INSERT INTO processor VALUES('$id','$location',$condition,'$date1')");
+     //Redirecting code
+     return redirect('processordata');
+    }
+
+    public function processorindex()
+    {
+        return view('Tables.processordata');
+    }
+
+    // FOR processor TABLE
+    public function provider()
+    {
+         return view('Tables.provider');
+    }
+    //you have to copy this function and rename the store part with the name of your table.
+    public function providerstore()
+    {
+     $id= request("input1");
+     $location= request("input2");
+     $condition= request("input3");
+
+     $users = DB::connection('oracle')->insert("INSERT INTO provider VALUES('$id','$location','$condition')");
+     //Redirecting code
+     return redirect('providerdata');
+    }
+
+    public function providerindex()
+    {
+        return view('Tables.providerdata');
+    }
 }
