@@ -35,7 +35,7 @@
 
 <div class="container" >
 
- <form method='POST' action='/employeestore' > <!change tablestore with your table name>
+ <form method='POST' action='/inventorystore' > <!change tablestore with your table name>
     {{ csrf_field() }}
     <div class="input-group mb-3 input-group-sm">
       <div class="input-group-prepend">
@@ -60,14 +60,14 @@
 
     <div class="input-group mb-3 input-group-sm">
       <div class="input-group-prepend">
-        <span class="input-group-text">Input 4</span>
+        <span class="input-group-text">Date 1</span>
       </div>
       <input type="text" class="form-control" name="input4">
     </div>
 
     <div class="input-group mb-3 input-group-sm">
       <div class="input-group-prepend">
-        <span class="input-group-text">Input 5</span>
+        <span class="input-group-text">Date 2</span>
       </div>
       <input type="text" class="form-control" name="input5">
     </div>
@@ -84,6 +84,13 @@
         <span class="input-group-text">Input 7</span>
       </div>
       <input type="text" class="form-control" name="input7">
+    </div>
+
+    <div class="input-group mb-3 input-group-sm">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Input 8</span>
+      </div>
+      <input type="text" class="form-control" name="input8">
     </div>
 
     <button type="submit">Submit </button>

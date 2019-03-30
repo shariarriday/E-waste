@@ -81,11 +81,15 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    LaLALALALALALA
+                    E-waste Management
                 </div>
 
                 <div class="links">
-                    <a href="/Insert/employee">Insert</a>
+                    <a href="/employee">Employee</a>
+                    <a href="/business">Business</a>
+                    <a href="/individual">Individual</a>
+                    <a href="/inventory">Inventory</a>
+                    <a href="/manufacturer">Manufacturer</a>
                 </div>
             </div>
         </div>

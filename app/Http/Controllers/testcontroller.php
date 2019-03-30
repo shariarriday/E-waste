@@ -42,28 +42,4 @@ class testcontroller extends Controller
 
     //end copy here
 
-    //you have to copy this function, rename tablename with the name of your table.
-    public function employee()
-    {
-         return view('Tables.employee');
-    }
-
-    //you have to copy this function and rename the store part with the name of your table.
-    public function employeestore()
-    {
-     $input1= request("input1");
-     $input2= request("input2");
-     $input3= request("input3");
-     $input4= request("input4");
-
-     $users = DB::connection('oracle')->insert("INSERT INTO Employee VALUES('$input1','$input2','$input3',$input4)");//this is for inserting data
-     //Redirecting code
-     return redirect('employeedata');
-    }
-
-    public function employeeindex()
-    {
-        return view('Tables.employeedata');
-    }
-
 }
