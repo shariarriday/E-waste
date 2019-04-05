@@ -220,4 +220,27 @@ class tableController extends Controller
     {
         return view('Tables.providerdata');
     }
+
+    // FOR processor TABLE
+    public function recycler()
+    {
+         return view('Tables.recycler');
+    }
+    //you have to copy this function and rename the store part with the name of your table.
+    public function recyclerstore()
+    {
+     $id= request("input1");
+     $location= request("input2");
+     $condition= request("input3");
+     $er = request("input4");
+
+     $users = DB::connection('oracle')->insert("INSERT INTO recycler VALUES('$id','$location','$condition','$er')");
+     //Redirecting code
+     return redirect('recyclerdata');
+    }
+
+    public function recyclerindex()
+    {
+        return view('Tables.recyclerdata');
+    }
 }
