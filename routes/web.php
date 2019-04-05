@@ -69,3 +69,7 @@ Route::get('/dissemblerdata','tableController@dissemblerindex');
 Route::get('/research', 'tableController@research');
 Route::post('researchstore', 'tableController@researchstore');
 Route::get('/researchdata','tableController@researchindex');
+
+Route::get('/dump', 'tableController@dump');
+Route::post('dumpstore', 'tableController@dumpstore');
+Route::get('/dumpdata','tableController@dumpindex');

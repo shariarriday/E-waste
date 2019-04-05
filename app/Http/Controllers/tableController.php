@@ -296,4 +296,27 @@ class tableController extends Controller
     {
         return view('Tables.researchdata');
     }
+
+
+    public function dump()
+    {
+         return view('Tables.dump');
+    }
+    //you have to copy this function and rename the store part with the name of your table.
+    public function dumpstore()
+    {
+     $id= request("input1");
+     $location= request("input2");
+     $area_quantity= request("input3");
+     $safety_level = request("input4");
+
+     $users = DB::connection('oracle')->insert("INSERT INTO dump VALUES('$id','$location','$area_quantity','$safety_level')");
+     //Redirecting code
+     return redirect('dumpdata');
+    }
+
+    public function dumpindex()
+    {
+        return view('Tables.dumpdata');
+    }
 }

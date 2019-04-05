@@ -102,6 +102,7 @@
                     <a href="/recycler">Recycler</a>
                     <a href="/dissembler">Dissembler</a>
                     <a href="/research">Research</a>
+                    <a href="/dump">Dump</a>
                 </div>
             </div>
         </div>
