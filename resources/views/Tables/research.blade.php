@@ -35,7 +35,7 @@
 
 <div class="container" >
 
- <form method='POST' action='/dissemblerstore' > <!change tablestore with your table name>
+ <form method='POST' action='/researchstore' > <!change tablestore with your table name>
     {{ csrf_field() }}
     <div class="input-group mb-3 input-group-sm">
       <div class="input-group-prepend">
@@ -85,7 +85,6 @@
       </div>
       <input type="text" class="form-control" name="input7">
     </div>
-
 
     <button type="submit">Submit </button>
   </form>

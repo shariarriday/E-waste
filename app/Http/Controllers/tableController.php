@@ -270,4 +270,30 @@ class tableController extends Controller
     {
         return view('Tables.dissemblerdata');
     }
+
+
+    public function research()
+    {
+         return view('Tables.research');
+    }
+    //you have to copy this function and rename the store part with the name of your table.
+    public function researchstore()
+    {
+     $id= request("input1");
+     $topic= request("input2");
+     $degree= request("input3");
+     $paper = request("input4");
+     $funding = request("input5");
+     $start_date = request("input6");
+     $end_date = request("input7");
+
+     $users = DB::connection('oracle')->insert("INSERT INTO research VALUES('$id','$topic','$degree','$paper', '$funding', '$start_date', '$end_date')");
+     //Redirecting code
+     return redirect('researchdata');
+    }
+
+    public function researchindex()
+    {
+        return view('Tables.researchdata');
+    }
 }
