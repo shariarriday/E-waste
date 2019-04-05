@@ -99,6 +99,7 @@
                     <a href="/orderinfo">Order Info</a>
                     <a href="/processor">Processor</a>
                     <a href="/provider">Provider</a>
+                    <a href="/recycler">Recycler</a>
                 </div>
             </div>
         </div>

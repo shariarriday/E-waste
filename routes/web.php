@@ -56,3 +56,8 @@ Route::get('/processordata','tableController@processorindex');
 Route::get('/provider', 'tableController@provider');
 Route::post('providerstore', 'tableController@providerstore');
 Route::get('/providerdata','tableController@providerindex');
+
+
+Route::get('/recycler', 'tableController@recycler');
+Route::post('recyclerstore', 'tableController@recyclerstore');
+Route::get('/recyclerdata','tableController@recyclerindex');
