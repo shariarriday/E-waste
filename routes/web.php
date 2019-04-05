@@ -73,3 +73,7 @@ Route::get('/researchdata','tableController@researchindex');
 Route::get('/dump', 'tableController@dump');
 Route::post('dumpstore', 'tableController@dumpstore');
 Route::get('/dumpdata','tableController@dumpindex');
+
+Route::get('/refurbisher', 'tableController@refurbisher');
+Route::post('refurbisherstore', 'tableController@refurbisherstore');
+Route::get('/refurbisherdata','tableController@refurbisherindex');
