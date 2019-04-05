@@ -61,3 +61,7 @@ Route::get('/providerdata','tableController@providerindex');
 Route::get('/recycler', 'tableController@recycler');
 Route::post('recyclerstore', 'tableController@recyclerstore');
 Route::get('/recyclerdata','tableController@recyclerindex');
+
+Route::get('/dissembler', 'tableController@dissembler');
+Route::post('dissemblerstore', 'tableController@dissemblerstore');
+Route::get('/dissemblerdata','tableController@dissemblerindex');

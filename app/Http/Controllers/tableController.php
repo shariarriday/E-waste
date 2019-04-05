@@ -243,4 +243,31 @@ class tableController extends Controller
     {
         return view('Tables.recyclerdata');
     }
+
+
+    // FOR processor TABLE
+    public function dissembler()
+    {
+         return view('Tables.dissembler');
+    }
+    //you have to copy this function and rename the store part with the name of your table.
+    public function dissemblerstore()
+    {
+     $id= request("input1");
+     $product= request("input2");
+     $glass= request("input3");
+     $plastic = request("input4");
+     $wire = request("input5");
+     $rubber = request("input6");
+     $components = request("input7");
+
+     $users = DB::connection('oracle')->insert("INSERT INTO dissembler VALUES('$id','$product','$glass','$plastic', '$wire', '$rubber', '$components')");
+     //Redirecting code
+     return redirect('dissemblerdata');
+    }
+
+    public function dissemblerindex()
+    {
+        return view('Tables.dissemblerdata');
+    }
 }
