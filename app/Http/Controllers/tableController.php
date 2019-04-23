@@ -342,4 +342,27 @@ class tableController extends Controller
     {
         return view('Tables.refurbisherdata');
     }
+
+
+    public function collaboration()
+    {
+         return view('Tables.collaboration');
+    }
+    //you have to copy this function and rename the store part with the name of your table.
+    public function collaborationstore()
+    {
+     $id= request("input1");
+     $uni_name= request("input2");
+     $pub_name= request("input3");
+     $pub_phone = request("input4");
+
+     $users = DB::connection('oracle')->insert("INSERT INTO collaboration VALUES('$id','$uni_name','$pub_name','$pub_phone')");
+     //Redirecting code
+     return redirect('collaborationdata');
+    }
+
+    public function collaborationindex()
+    {
+        return view('Tables.collaborationdata');
+    }
 }
