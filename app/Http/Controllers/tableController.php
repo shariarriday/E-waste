@@ -22,7 +22,7 @@ class tableController extends Controller
      $phone_nmber= request("input6");
      $salary= request("input7");
 
-     $users = DB::connection('oracle')->insert("INSERT INTO Employee VALUES($id,$name,$location,$age,$email,$phone_nmber,$salary)");//this is for inserting data
+     $users = DB::connection('oracle')->insert("INSERT INTO Employee VALUES('$id','$name','$location',$age,'$email','$phone_nmber','$salary')");//this is for inserting data
      //Redirecting code
      return redirect('employeedata');
     }
@@ -47,7 +47,7 @@ class tableController extends Controller
      $balance= request("input5");
      $inventory= request("input6");
 
-     $users = DB::connection('oracle')->insert("INSERT INTO business VALUES($id,$name,$email,$phone_number,$balance,$inventory)");//this is for inserting data
+     $users = DB::connection('oracle')->insert("INSERT INTO business VALUES('$id','$name','$email','$phone_number',$balance,'$inventory')");//this is for inserting data
      //Redirecting code
      return redirect('businessdata');
     }
@@ -71,7 +71,7 @@ class tableController extends Controller
      $phone_number= request("input4");
      $balance= request("input5");
 
-     $users = DB::connection('oracle')->insert("INSERT INTO individual VALUES($id,$name,$email,$phone_number,$balance)");//this is for inserting data
+     $users = DB::connection('oracle')->insert("INSERT INTO individual VALUES('$id','$name','$email','$phone_number',$balance)");//this is for inserting data
      //Redirecting code
      return redirect('individualdata');
     }
@@ -98,7 +98,7 @@ class tableController extends Controller
      $id2= request("input7");
      $model= request("input8");
 
-     $users = DB::connection('oracle')->insert("INSERT INTO inventory VALUES($id,$location,$condition,to_date('$date1','dd-mm-yyyy'),to_date('$date2','dd-mm-yyyy'),$id1,$id2,$model)");
+     $users = DB::connection('oracle')->insert("INSERT INTO inventory VALUES('$id','$location','$condition',to_date('$date1','dd-mm-yyyy'),to_date('$date2','dd-mm-yyyy'),'$id1','$id2','$model')");
      //Redirecting code
      return redirect('inventorydata');
     }
@@ -333,7 +333,7 @@ class tableController extends Controller
      $selling_cost= request("input3");
      $price = request("input4");
 
-     $users = DB::connection('oracle')->insert("INSERT INTO refurbisher VALUES('$id','$re_product','$selling_cost','$price')");
+     $users = DB::connection('oracle')->insert("INSERT INTO refurbisher VALUES('$id','$re_product',$selling_cost,$price)");
      //Redirecting code
      return redirect('refurbisherdata');
     }

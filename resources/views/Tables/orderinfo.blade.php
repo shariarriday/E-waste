@@ -39,28 +39,28 @@
     {{ csrf_field() }}
     <div class="input-group mb-3 input-group-sm">
       <div class="input-group-prepend">
-        <span class="input-group-text">Input 1</span>
+        <span class="input-group-text">Order ID</span>
       </div>
       <input type="text" class="form-control" name="input1">
     </div>
 
     <div class="input-group mb-3 input-group-sm">
       <div class="input-group-prepend">
-        <span class="input-group-text">Input 2</span>
+        <span class="input-group-text">Transport ID</span>
       </div>
       <input type="text" class="form-control" name="input2">
     </div>
 
     <div class="input-group mb-3 input-group-sm">
       <div class="input-group-prepend">
-        <span class="input-group-text">Input 3</span>
+        <span class="input-group-text">Order Source</span>
       </div>
       <input type="text" class="form-control" name="input3">
     </div>
 
     <div class="input-group mb-3 input-group-sm">
       <div class="input-group-prepend">
-        <span class="input-group-text">Date 4</span>
+        <span class="input-group-text">Order Date</span>
       </div>
       <input type="text" class="form-control" name="input4">
     </div>

@@ -39,56 +39,56 @@
     {{ csrf_field() }}
     <div class="input-group mb-3 input-group-sm">
       <div class="input-group-prepend">
-        <span class="input-group-text">Input 1</span>
+        <span class="input-group-text">Inventory ID</span>
       </div>
       <input type="text" class="form-control" name="input1">
     </div>
 
     <div class="input-group mb-3 input-group-sm">
       <div class="input-group-prepend">
-        <span class="input-group-text">Input 2</span>
+        <span class="input-group-text">Inventory Location</span>
       </div>
       <input type="text" class="form-control" name="input2">
     </div>
 
     <div class="input-group mb-3 input-group-sm">
       <div class="input-group-prepend">
-        <span class="input-group-text">Input 3</span>
+        <span class="input-group-text">Product Condition</span>
       </div>
       <input type="text" class="form-control" name="input3">
     </div>
 
     <div class="input-group mb-3 input-group-sm">
       <div class="input-group-prepend">
-        <span class="input-group-text">Date 1</span>
+        <span class="input-group-text">Check In Date</span>
       </div>
       <input type="text" class="form-control" name="input4">
     </div>
 
     <div class="input-group mb-3 input-group-sm">
       <div class="input-group-prepend">
-        <span class="input-group-text">Date 2</span>
+        <span class="input-group-text">Check out Date</span>
       </div>
       <input type="text" class="form-control" name="input5">
     </div>
 
     <div class="input-group mb-3 input-group-sm">
       <div class="input-group-prepend">
-        <span class="input-group-text">Input 6</span>
+        <span class="input-group-text">Check In ID</span>
       </div>
       <input type="text" class="form-control" name="input6">
     </div>
 
     <div class="input-group mb-3 input-group-sm">
       <div class="input-group-prepend">
-        <span class="input-group-text">Input 7</span>
+        <span class="input-group-text">Check Out ID</span>
       </div>
       <input type="text" class="form-control" name="input7">
     </div>
 
     <div class="input-group mb-3 input-group-sm">
       <div class="input-group-prepend">
-        <span class="input-group-text">Input 8</span>
+        <span class="input-group-text">Model Number</span>
       </div>
       <input type="text" class="form-control" name="input8">
     </div>

@@ -39,7 +39,7 @@
     {{ csrf_field() }}
     <div class="input-group mb-3 input-group-sm">
       <div class="input-group-prepend">
-        <span class="input-group-text">Input 1</span>
+        <span class="input-group-text"></span>
       </div>
       <input type="text" class="form-control" name="input1">
     </div>
