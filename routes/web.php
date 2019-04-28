@@ -77,3 +77,7 @@ Route::get('/dumpdata','tableController@dumpindex');
 Route::get('/refurbisher', 'tableController@refurbisher');
 Route::post('refurbisherstore', 'tableController@refurbisherstore');
 Route::get('/refurbisherdata','tableController@refurbisherindex');
+
+Route::get('/collaboration', 'tableController@collaboration');
+Route::post('collaborationstore', 'tableController@collaborationstore');
+Route::get('/collaborationdata','tableController@collaborationindex');
