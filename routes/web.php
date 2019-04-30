@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/user','userController@homeUser');
+Route::get('/user','providerController@providerlogin');
 Route::get('/processor/login','processorController@processorLogin');
 Route::post('/processor/loginAction','processorController@processorLoginAction');
+
+Route::get('/admin','employeeController@totalLogin');
+Route::get('/admin/createEmployee','employeeController@createEmployee');
+Route::get('/admin/show','employeeController@showInfo');

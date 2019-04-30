@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Login Form</title><! login after processor selection >
+  <title>Register Form</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -61,15 +61,15 @@
     font-weight: 600;
     text-decoration: none;
 }
- 
+
 </style>
 </head>
 
-<body>
+<body style=" ">
 
 
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-  <a class="navbar-brand" href="#">Logo</a>
+  <a class="navbar-brand" href="#">E-waste Management</a>
   <ul class="navbar-nav">
     <li class="nav-item">
       <a class="nav-link" href="#">Link</a>
@@ -84,59 +84,30 @@
 
 <div class="container login-container">
             <div class="row">
-                <div class="col-md-4 login-form-1">
-                    <h3>Login for Manufacturer </h3>
+                <div class="col-md-6 login-form-1">
+                    <h3>Register</h3>
                     <form>
                         <div class="form-group">
+                            <input type="text" class="form-control" placeholder="First Name " value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Last Name " value="" />
+                        </div>
+                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Your Email *" value="" />
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Your Password *" value="" />
+                            <input type="password" class="form-control" placeholder="Set Password *" value="" />
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="btnSubmit" value="Login" />
+                            <input type="submit" class="btnSubmit" value="Sign Up" />
                         </div>
                         <div class="form-group">
                             <a href="#" class="ForgetPwd">Forget Password?</a>
                         </div>
                     </form>
                 </div>
-                <div class="col-md-4 login-form-2">
-                    <h3>Login for Individual</h3>
-                    <form>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Email *" value="" />
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Your Password *" value="" />
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" class="btnSubmit" value="Login" />
-                        </div>
-                        <div class="form-group">
 
-                            <a href="#" class="ForgetPwd" value="Login">Forget Password?</a>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-md-4 login-form-1">
-                    <h3>Login for Business </h3>
-                    <form>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Email *" value="" />
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Your Password *" value="" />
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" class="btnSubmit" value="Login" />
-                        </div>
-                        <div class="form-group">
-
-                            <a href="#" class="ForgetPwd" value="Login">Forget Password?</a>
-                        </div>
-                    </form>
-                </div>
             </div>
         </div>
 </body>

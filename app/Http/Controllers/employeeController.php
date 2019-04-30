@@ -6,11 +6,11 @@ use Illuminate\Http\Request;
 use DB;
 class employeeController extends Controller
 {
-  
+
     //this part will be done by riday.
     //here are some template code for different cases
     //There must be a login page and an info page.
-    //then for insertions and showing data in any view make as many page as needed 
+    //then for insertions and showing data in any view make as many page as needed
     //using Route::get('/employee/*****',.....);
 
   /*  public function test()
@@ -49,12 +49,16 @@ class employeeController extends Controller
 
     //end copy here
 
-    public function processorLogin()
+    public function totalLogin()
     {
-        return view('ProcessorEnd.Login');
+        return view('EmployeeEnd.LoginForm');
     }
-    public function processorLoginAction()
+    public function createEmployee()
     {
-    	return view('UserEnd.Individual');
+    	return view('EmployeeEnd.Signup');
+    }
+    public function showInfo()
+    {
+    	return view('EmployeeEnd.Individual');
     }
 }

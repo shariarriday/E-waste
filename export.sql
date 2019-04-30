@@ -1,0 +1,1745 @@
+--------------------------------------------------------
+--  File created - Wednesday-May-01-2019   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table AC
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."AC" 
+   (	"MODEL_NO" VARCHAR2(20 BYTE), 
+	"COIL" VARCHAR2(100 BYTE), 
+	"FAN" VARCHAR2(100 BYTE), 
+	"PCB" VARCHAR2(100 BYTE), 
+	"REFRIGERENT" VARCHAR2(100 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table ADDS
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."ADDS" 
+   (	"PROVIDER_ID" VARCHAR2(20 BYTE), 
+	"INVENTORY_ID" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table BARCODE_TABLE
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."BARCODE_TABLE" 
+   (	"MODEL_NO" VARCHAR2(20 BYTE), 
+	"BARCODE" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table BUSINESS
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."BUSINESS" 
+   (	"PROVIDER_ID" VARCHAR2(20 BYTE), 
+	"BALANCE" VARCHAR2(20 BYTE), 
+	"CONTACT_EMAIL" VARCHAR2(100 BYTE), 
+	"INVENTORY_LOCATION" VARCHAR2(100 BYTE), 
+	"CONTACT_NAME" VARCHAR2(100 BYTE), 
+	"NAME" VARCHAR2(100 BYTE), 
+	"LOCATION" VARCHAR2(1000 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table BUSINESS_PHONE
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."BUSINESS_PHONE" 
+   (	"PROVIDER_ID" VARCHAR2(20 BYTE), 
+	"PHONE" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table BUSSINESS_PROVIDES
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."BUSSINESS_PROVIDES" 
+   (	"PROVIDER_ID" VARCHAR2(20 BYTE), 
+	"ORDER_ID" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table BUYER
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."BUYER" 
+   (	"BUYER_ID" VARCHAR2(100 BYTE), 
+	"NAME" VARCHAR2(100 BYTE), 
+	"LOCATION" VARCHAR2(100 BYTE), 
+	"TRANSACTION_ID" VARCHAR2(100 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table CALCULATOR
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."CALCULATOR" 
+   (	"MODEL_NO" VARCHAR2(20 BYTE), 
+	"PROCESSOR_MANUFACTURER" VARCHAR2(100 BYTE), 
+	"DISPLAY_SIZE" VARCHAR2(100 BYTE), 
+	"KEYPAD_MATERIAL" VARCHAR2(100 BYTE), 
+	"BATTERY_VERSION" VARCHAR2(100 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table CAMERA
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."CAMERA" 
+   (	"MODEL_NO" VARCHAR2(20 BYTE), 
+	"LENS_POWER" NUMBER(10,10), 
+	"MEMORY_LENS_CAPACITY" NUMBER(10,10)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table COLLABORATES
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."COLLABORATES" 
+   (	"PUBLISHER_ID" VARCHAR2(20 BYTE), 
+	"EMPLOYEE_ID" VARCHAR2(100 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table COLLABORATION
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."COLLABORATION" 
+   (	"PUBLISHER_ID" VARCHAR2(20 BYTE), 
+	"PUBLISHER_NAME" VARCHAR2(20 BYTE), 
+	"UNIVERSITY_LOCATION" VARCHAR2(100 BYTE), 
+	"UNIVERSITY_NAME" VARCHAR2(100 BYTE), 
+	"PUBLISHER_EMAIL" VARCHAR2(20 BYTE), 
+	"PUBLISHER_PHONE" VARCHAR2(15 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table DELIVERY
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."DELIVERY" 
+   (	"INVENTORY_ID" VARCHAR2(20 BYTE), 
+	"VEHICLE_LICENSE_NO" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table DEPOSITION
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."DEPOSITION" 
+   (	"INVENTORY_ID" VARCHAR2(20 BYTE), 
+	"EMPLOYEE_ID" VARCHAR2(100 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table DISSEMBLER
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."DISSEMBLER" 
+   (	"EMPLOYEE_ID" VARCHAR2(100 BYTE), 
+	"UNRECYCLABLE_AMOUNT" VARCHAR2(100 BYTE), 
+	"RECYCLABLE_PRODUCT" VARCHAR2(100 BYTE), 
+	"UNRECYCLABLE_PRODUCT" VARCHAR2(100 BYTE), 
+	"RECYCLABLE_AMOUNT" VARCHAR2(100 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table DUMP
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."DUMP" 
+   (	"STATION_ID" VARCHAR2(20 BYTE), 
+	"DUMPER_ID" VARCHAR2(20 BYTE), 
+	"LOCATION" VARCHAR2(100 BYTE), 
+	"SAFETY_LEVEL" NUMBER, 
+	"AREA_QUANTITY" NUMBER, 
+	"DUMPED_MATERIALS" VARCHAR2(100 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table DUMPING
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."DUMPING" 
+   (	"EMPLOYEE_ID" VARCHAR2(20 BYTE), 
+	"STATION_ID" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table EMPLOYEE
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."EMPLOYEE" 
+   (	"EMPLOYEE_ID" VARCHAR2(100 BYTE), 
+	"PHONE_NUMBER" VARCHAR2(20 BYTE), 
+	"NAME" VARCHAR2(100 BYTE), 
+	"SALARY" VARCHAR2(100 BYTE), 
+	"AGE" NUMBER, 
+	"EMAIL" VARCHAR2(100 BYTE), 
+	"PASSWORD" VARCHAR2(50 BYTE), 
+	"ACCESSLEVEL" NUMBER
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table EXPERIMENTATION
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."EXPERIMENTATION" 
+   (	"INVENTORY_ID" VARCHAR2(20 BYTE), 
+	"EMPLOYEE_ID" VARCHAR2(100 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table EXTRACTION
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."EXTRACTION" 
+   (	"PROCESSOR_ID" VARCHAR2(100 BYTE), 
+	"LOT_ID" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table GETS_PRODUCT
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."GETS_PRODUCT" 
+   (	"INVENTORY_ID" VARCHAR2(20 BYTE), 
+	"EMPLOYEE_ID" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table INDIVIDUAL
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."INDIVIDUAL" 
+   (	"PROVIDER_ID" VARCHAR2(20 BYTE), 
+	"PHONE" VARCHAR2(15 BYTE), 
+	"EMAIL" VARCHAR2(150 BYTE), 
+	"BALANCE" NUMBER(20,5), 
+	"NAME" VARCHAR2(100 BYTE), 
+	"LOCATION" VARCHAR2(100 BYTE), 
+	"PASSWORD" VARCHAR2(50 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table INDIVIDUAL_PROVIDES
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."INDIVIDUAL_PROVIDES" 
+   (	"PROVIDER_ID" VARCHAR2(20 BYTE), 
+	"ORDER_ID" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table INDUSTRIAL
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."INDUSTRIAL" 
+   (	"BUYER_ID" VARCHAR2(100 BYTE), 
+	"BANK_ACCOUNT" VARCHAR2(200 BYTE), 
+	"CONTACT_NUMBER" VARCHAR2(100 BYTE), 
+	"CONTACT_EMAIL" VARCHAR2(100 BYTE), 
+	"INVENTORY" VARCHAR2(200 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table INDUSTRIAL_PHONE
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."INDUSTRIAL_PHONE" 
+   (	"BUYER_ID" VARCHAR2(100 BYTE), 
+	"CONTACT_PHONE" VARCHAR2(100 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table INVENTORY
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."INVENTORY" 
+   (	"INVENTORY_ID" VARCHAR2(20 BYTE), 
+	"CHECK_IN_TO" VARCHAR2(100 BYTE), 
+	"CHECK_OUT_TO" VARCHAR2(100 BYTE), 
+	"CHECK_IN_DATE" DATE, 
+	"BARCODE" VARCHAR2(100 BYTE), 
+	"CHECK_OUT_DATE" DATE, 
+	"LOCATION" VARCHAR2(100 BYTE), 
+	"PRODUCT_CONDITION" VARCHAR2(100 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table LAPTOP
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."LAPTOP" 
+   (	"MODEL_NO" VARCHAR2(20 BYTE), 
+	"HARD_DRIVE_MEMORY" VARCHAR2(20 BYTE), 
+	"OPTICAL_DRIVE_TYPE" VARCHAR2(20 BYTE), 
+	"GRAPHICS_CARD_MODEL" VARCHAR2(20 BYTE), 
+	"EXTERNAL_PORTS_MODEL" VARCHAR2(20 BYTE), 
+	"PROCESSOR_MANUFACTURER" VARCHAR2(20 BYTE), 
+	"SYSTEM_MEMORY_STORAGE" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table MAKES
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."MAKES" 
+   (	"PRODUCT_ID" VARCHAR2(20 BYTE), 
+	"PROCESSOR_ID" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table MANUFACTURER
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."MANUFACTURER" 
+   (	"PROVIDER_ID" VARCHAR2(20 BYTE), 
+	"CONTACT_NAME" VARCHAR2(100 BYTE), 
+	"MANUFACTURE_TO" VARCHAR2(100 BYTE), 
+	"INVENTORY_LOCATION" VARCHAR2(100 BYTE), 
+	"NAME" VARCHAR2(100 BYTE), 
+	"LOCATION" VARCHAR2(1000 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table MANUFACTURER_PHONE
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."MANUFACTURER_PHONE" 
+   (	"PROVIDER_ID" VARCHAR2(20 BYTE), 
+	"PHONE" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table MICROWAVE
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."MICROWAVE" 
+   (	"MODEL_NO" VARCHAR2(20 BYTE), 
+	"CAVITY_MAGNETRON_SIZE" NUMBER(10,10), 
+	"TRANSFORMER_POWER_RATE" NUMBER(10,10), 
+	"CAPACITOR_VOLTAGE" NUMBER(10,10), 
+	"FAN_MODEL" VARCHAR2(100 BYTE), 
+	"CONTROL_PANEL_SIZE" VARCHAR2(100 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table NON_FORMAL
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."NON_FORMAL" 
+   (	"EMPLOYEE_ID" VARCHAR2(100 BYTE), 
+	"SOURCE_OF_COLLECTION" VARCHAR2(200 BYTE), 
+	"PRODUCT" VARCHAR2(100 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table ORDER_PROVIDER
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."ORDER_PROVIDER" 
+   (	"ORDER_ID" VARCHAR2(20 BYTE), 
+	"SOURCES" VARCHAR2(100 BYTE), 
+	"BARCODE" VARCHAR2(100 BYTE), 
+	"ORDER_DATE" DATE
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table PERSONAL
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."PERSONAL" 
+   (	"BUYER_ID" VARCHAR2(100 BYTE), 
+	"DISCOUNT" VARCHAR2(100 BYTE), 
+	"PAYMENT_TYPE" VARCHAR2(100 BYTE), 
+	"EMAIL" VARCHAR2(100 BYTE), 
+	"PHONE" VARCHAR2(100 BYTE), 
+	"BALANCE" VARCHAR2(100 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table PROCESSOR
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."PROCESSOR" 
+   (	"PROCESSOR_ID" VARCHAR2(100 BYTE), 
+	"NAME" VARCHAR2(20 BYTE), 
+	"LOCATION" VARCHAR2(100 BYTE), 
+	"BALANCE" VARCHAR2(100 BYTE), 
+	"PASSWORD" VARCHAR2(50 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table PRODUCT
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."PRODUCT" 
+   (	"PRODUCT_ID" VARCHAR2(100 BYTE), 
+	"PRODUCT_FROM" VARCHAR2(100 BYTE), 
+	"PRODUCT_QUALITY" VARCHAR2(100 BYTE), 
+	"PRODUCT_WEIGHT" VARCHAR2(100 BYTE), 
+	"PRODUCT_WARRENTY" VARCHAR2(100 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table PRODUCT_INFO
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."PRODUCT_INFO" 
+   (	"MODEL_NO" VARCHAR2(20 BYTE), 
+	"PRODUCTION_DATE" DATE, 
+	"PRODUCT_NAME" VARCHAR2(100 BYTE), 
+	"PRODUCT_PRICE" NUMBER
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table RADIO
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."RADIO" 
+   (	"MODEL_NO" VARCHAR2(20 BYTE), 
+	"SPEAKER" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table RAW_MATERIAL
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."RAW_MATERIAL" 
+   (	"LOT_ID" VARCHAR2(20 BYTE), 
+	"GLASS" NUMBER, 
+	"GOLD" NUMBER, 
+	"SILICON" NUMBER, 
+	"RUBBER" NUMBER, 
+	"PLASTIC" NUMBER, 
+	"COPPER" NUMBER, 
+	"STEEL" NUMBER, 
+	"IRON" NUMBER, 
+	"AMOUNT" NUMBER
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table RAW_MATERIAL_SELLING
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."RAW_MATERIAL_SELLING" 
+   (	"LOT_ID" VARCHAR2(20 BYTE), 
+	"SELLER_ID" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table RECYCLER
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."RECYCLER" 
+   (	"PROCESSOR_ID" VARCHAR2(100 BYTE), 
+	"SPECIALIZATION" VARCHAR2(100 BYTE), 
+	"CAPABILITY" VARCHAR2(100 BYTE), 
+	"CURRENT_" VARCHAR2(100 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table RECYCLING
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."RECYCLING" 
+   (	"EMPLOYEE_ID" VARCHAR2(100 BYTE), 
+	"PROCESSOR_ID" VARCHAR2(100 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table REFRIGERATOR
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."REFRIGERATOR" 
+   (	"MODEL_NO" VARCHAR2(20 BYTE), 
+	"COPPER_CONDENSER_COIL" VARCHAR2(100 BYTE), 
+	"CONDENSER" VARCHAR2(100 BYTE), 
+	"SENSING_BULB" VARCHAR2(100 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table REFURBISHER
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."REFURBISHER" 
+   (	"PROCESSOR_ID" VARCHAR2(100 BYTE), 
+	"REPAIR" VARCHAR2(100 BYTE), 
+	"PRICE" VARCHAR2(100 BYTE), 
+	"COST" VARCHAR2(100 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table REFURBISHING
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."REFURBISHING" 
+   (	"INVENTORY_ID" VARCHAR2(20 BYTE), 
+	"PROCESSOR_ID" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table RESEARCH
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."RESEARCH" 
+   (	"EMPLOYEE_ID" VARCHAR2(100 BYTE), 
+	"TOPIC" VARCHAR2(200 BYTE), 
+	"FUNDING" VARCHAR2(100 BYTE), 
+	"DEGREE" VARCHAR2(100 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table ROUTER
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."ROUTER" 
+   (	"MODEL_NO" VARCHAR2(20 BYTE), 
+	"SWITCH_" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table SCREENS_AND_MONITORS
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."SCREENS_AND_MONITORS" 
+   (	"WIEGHT" NUMBER, 
+	"SPEAKERS_MODEL" VARCHAR2(200 BYTE), 
+	"SCREEN_SIZE" NUMBER, 
+	"BATTERY_POWER" VARCHAR2(200 BYTE), 
+	"MODEL_NO" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table SECOND_HAND_PRODUCT
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."SECOND_HAND_PRODUCT" 
+   (	"PRODUCT_ID" VARCHAR2(20 BYTE), 
+	"SELLER_ID" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table SELLS
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."SELLS" 
+   (	"BUYER_ID" VARCHAR2(20 BYTE), 
+	"SELLER_ID" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table SELL_ORDER
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."SELL_ORDER" 
+   (	"SELLER_ID" VARCHAR2(100 BYTE), 
+	"QUANTITY" VARCHAR2(100 BYTE), 
+	"SELLER_LOCATION" VARCHAR2(100 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table SMALL_EQUIPMENTS
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."SMALL_EQUIPMENTS" 
+   (	"MODEL_NO" VARCHAR2(20 BYTE), 
+	"BODY_MATERIAL" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table TABLETS
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."TABLETS" 
+   (	"MODEL_NO" VARCHAR2(20 BYTE), 
+	"MEMORY_CARD_TYPE" VARCHAR2(100 BYTE), 
+	"CAMERA_CAPABILITY" NUMBER, 
+	"GRAPHICS_SENSOR_TYPE" VARCHAR2(20 BYTE), 
+	"TOUCH_SCREEN_VERSION" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table TAKE
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."TAKE" 
+   (	"INVENTORY_ID" VARCHAR2(20 BYTE), 
+	"MODEL_NO" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table TELECOMMUNICAITON_DEVICES
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."TELECOMMUNICAITON_DEVICES" 
+   (	"MODEL_NO" VARCHAR2(20 BYTE), 
+	"MICROCONTROLLER" VARCHAR2(20 BYTE), 
+	"BATTERY_POWER" VARCHAR2(20 BYTE), 
+	"PCB" VARCHAR2(20 BYTE), 
+	"CAPACITOR" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table TELEPHONE
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."TELEPHONE" 
+   (	"MODEL_NO" VARCHAR2(20 BYTE), 
+	"COPPER_WIRES" NUMBER, 
+	"TRANSMITTER" VARCHAR2(20 BYTE), 
+	"RECIEVER" VARCHAR2(20 BYTE), 
+	"SPEAKER" VARCHAR2(20 BYTE), 
+	"MAGNET" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table TEMPERATURE_EXCHANGE
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."TEMPERATURE_EXCHANGE" 
+   (	"MODEL_NO" VARCHAR2(20 BYTE), 
+	"COMPRESSOR" VARCHAR2(100 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table TRANSPORT
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."TRANSPORT" 
+   (	"EMPLOYEE_ID" VARCHAR2(100 BYTE), 
+	"VEHICLE_LICENSE_NO" VARCHAR2(100 BYTE), 
+	"VEHICLE_CAPACITY" VARCHAR2(100 BYTE), 
+	"VEHICLE_TYPE" VARCHAR2(100 BYTE), 
+	"DESTINATION" VARCHAR2(100 BYTE), 
+	"SOURCE" VARCHAR2(100 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table TRANSPORTATION
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."TRANSPORTATION" 
+   (	"ORDER_ID" VARCHAR2(20 BYTE), 
+	"VEHICLE_LICENSE_NO" VARCHAR2(100 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table TV
+--------------------------------------------------------
+
+  CREATE TABLE "C##RIDAY"."TV" 
+   (	"MODEL_NO" VARCHAR2(20 BYTE), 
+	"LIGHT_VALVE_VERSION" VARCHAR2(100 BYTE), 
+	"CATHODE_RAY_TUBE_POWER" VARCHAR2(100 BYTE), 
+	"LOGIC_BOARD_SIZE" NUMBER, 
+	"WIFI_VERSION" VARCHAR2(100 BYTE), 
+	"CAPACITY_VOLTAGE" VARCHAR2(100 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+REM INSERTING into C##RIDAY.AC
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.ADDS
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.BARCODE_TABLE
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.BUSINESS
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.BUSINESS_PHONE
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.BUSSINESS_PROVIDES
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.BUYER
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.CALCULATOR
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.CAMERA
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.COLLABORATES
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.COLLABORATION
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.DELIVERY
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.DEPOSITION
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.DISSEMBLER
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.DUMP
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.DUMPING
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.EMPLOYEE
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.EXPERIMENTATION
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.EXTRACTION
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.GETS_PRODUCT
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.INDIVIDUAL
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.INDIVIDUAL_PROVIDES
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.INDUSTRIAL
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.INDUSTRIAL_PHONE
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.INVENTORY
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.LAPTOP
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.MAKES
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.MANUFACTURER
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.MANUFACTURER_PHONE
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.MICROWAVE
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.NON_FORMAL
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.ORDER_PROVIDER
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.PERSONAL
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.PROCESSOR
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.PRODUCT
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.PRODUCT_INFO
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.RADIO
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.RAW_MATERIAL
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.RAW_MATERIAL_SELLING
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.RECYCLER
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.RECYCLING
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.REFRIGERATOR
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.REFURBISHER
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.REFURBISHING
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.RESEARCH
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.ROUTER
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.SCREENS_AND_MONITORS
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.SECOND_HAND_PRODUCT
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.SELLS
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.SELL_ORDER
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.SMALL_EQUIPMENTS
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.TABLETS
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.TAKE
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.TELECOMMUNICAITON_DEVICES
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.TELEPHONE
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.TEMPERATURE_EXCHANGE
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.TRANSPORT
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.TRANSPORTATION
+SET DEFINE OFF;
+REM INSERTING into C##RIDAY.TV
+SET DEFINE OFF;
+--------------------------------------------------------
+--  DDL for Index ADDS_PROVIDES_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."ADDS_PROVIDES_PK" ON "C##RIDAY"."ADDS" ("PROVIDER_ID", "INVENTORY_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index BUSINESS_PHONE_FK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."BUSINESS_PHONE_FK" ON "C##RIDAY"."BUSINESS_PHONE" ("PROVIDER_ID", "PHONE") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index BUSINESS_PROVIDER_ID_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."BUSINESS_PROVIDER_ID_PK" ON "C##RIDAY"."BUSINESS" ("PROVIDER_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index BUSINESS_PROVIDES_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."BUSINESS_PROVIDES_PK" ON "C##RIDAY"."BUSSINESS_PROVIDES" ("PROVIDER_ID", "ORDER_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index BUYER_BUYER_ID_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."BUYER_BUYER_ID_PK" ON "C##RIDAY"."BUYER" ("BUYER_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index COLLABORATES_COLLABORATION_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."COLLABORATES_COLLABORATION_PK" ON "C##RIDAY"."COLLABORATES" ("PUBLISHER_ID", "EMPLOYEE_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index COLLABORATION_PUBLISHER_ID_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."COLLABORATION_PUBLISHER_ID_PK" ON "C##RIDAY"."COLLABORATION" ("PUBLISHER_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index DELIVERY_INVENTORY_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."DELIVERY_INVENTORY_PK" ON "C##RIDAY"."DELIVERY" ("INVENTORY_ID", "VEHICLE_LICENSE_NO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index DEPOSITION_INVENTORY_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."DEPOSITION_INVENTORY_PK" ON "C##RIDAY"."DEPOSITION" ("INVENTORY_ID", "EMPLOYEE_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index DUMPING_EMPLOYEE_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."DUMPING_EMPLOYEE_PK" ON "C##RIDAY"."DUMPING" ("STATION_ID", "EMPLOYEE_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index DUMP_STATION_ID_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."DUMP_STATION_ID_PK" ON "C##RIDAY"."DUMP" ("STATION_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index EMPLOYEE_EMPLOYEE_ID_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."EMPLOYEE_EMPLOYEE_ID_PK" ON "C##RIDAY"."EMPLOYEE" ("EMPLOYEE_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index EXPERIMENTATION_INVENTORY_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."EXPERIMENTATION_INVENTORY_PK" ON "C##RIDAY"."EXPERIMENTATION" ("INVENTORY_ID", "EMPLOYEE_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index EXTRACTION_RECYCLER_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."EXTRACTION_RECYCLER_PK" ON "C##RIDAY"."EXTRACTION" ("PROCESSOR_ID", "LOT_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index GETS_PRODUCT_INVENTORY_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."GETS_PRODUCT_INVENTORY_PK" ON "C##RIDAY"."GETS_PRODUCT" ("INVENTORY_ID", "EMPLOYEE_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index INDIVIDUAL_PROVIDER_ID_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."INDIVIDUAL_PROVIDER_ID_PK" ON "C##RIDAY"."INDIVIDUAL" ("PROVIDER_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index INDIVIDUAL_PROVIDES_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."INDIVIDUAL_PROVIDES_PK" ON "C##RIDAY"."INDIVIDUAL_PROVIDES" ("PROVIDER_ID", "ORDER_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index INDUSTRIAL_PHONE_BUYER_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."INDUSTRIAL_PHONE_BUYER_PK" ON "C##RIDAY"."INDUSTRIAL_PHONE" ("BUYER_ID", "CONTACT_PHONE") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index INVENTORY_INVENTORY_ID_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."INVENTORY_INVENTORY_ID_PK" ON "C##RIDAY"."INVENTORY" ("INVENTORY_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index MAKES_REFURBISHER_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."MAKES_REFURBISHER_PK" ON "C##RIDAY"."MAKES" ("PROCESSOR_ID", "PRODUCT_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index MANUFACTURER_PHONE_FK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."MANUFACTURER_PHONE_FK" ON "C##RIDAY"."MANUFACTURER_PHONE" ("PROVIDER_ID", "PHONE") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index MANUFACTURER_PROVIDER_ID_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."MANUFACTURER_PROVIDER_ID_PK" ON "C##RIDAY"."MANUFACTURER" ("PROVIDER_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index ORDER_PROVIDER_ORDER_ID_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."ORDER_PROVIDER_ORDER_ID_PK" ON "C##RIDAY"."ORDER_PROVIDER" ("ORDER_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index PROCESSOR_PROCESSOR_ID_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."PROCESSOR_PROCESSOR_ID_PK" ON "C##RIDAY"."PROCESSOR" ("PROCESSOR_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index PRODUCT_INFO_MODEL_NO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."PRODUCT_INFO_MODEL_NO_PK" ON "C##RIDAY"."PRODUCT_INFO" ("MODEL_NO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index PRODUCT_PRODUCT_ID_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."PRODUCT_PRODUCT_ID_PK" ON "C##RIDAY"."PRODUCT" ("PRODUCT_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index RAW_MATERIAL_LOT_ID_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."RAW_MATERIAL_LOT_ID_PK" ON "C##RIDAY"."RAW_MATERIAL" ("LOT_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index RAW_MATERIAL_SELLING_RAW_MATERIAL_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."RAW_MATERIAL_SELLING_RAW_MATERIAL_PK" ON "C##RIDAY"."RAW_MATERIAL_SELLING" ("LOT_ID", "SELLER_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index RECYCLING_RECYCLER_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."RECYCLING_RECYCLER_PK" ON "C##RIDAY"."RECYCLING" ("EMPLOYEE_ID", "PROCESSOR_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index REFURBISHING_INVENTORY_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."REFURBISHING_INVENTORY_PK" ON "C##RIDAY"."REFURBISHING" ("INVENTORY_ID", "PROCESSOR_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SECOND_HAND_PRODUCT_PRODUCT_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."SECOND_HAND_PRODUCT_PRODUCT_PK" ON "C##RIDAY"."SECOND_HAND_PRODUCT" ("PRODUCT_ID", "SELLER_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SELLS_BUYER_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."SELLS_BUYER_PK" ON "C##RIDAY"."SELLS" ("BUYER_ID", "SELLER_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SELL_ORDER_SELLER_ID_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."SELL_ORDER_SELLER_ID_PK" ON "C##RIDAY"."SELL_ORDER" ("SELLER_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index TAKE_INVENTORY_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."TAKE_INVENTORY_PK" ON "C##RIDAY"."TAKE" ("INVENTORY_ID", "MODEL_NO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index TRANSPORTATION_ORDER_PROVIDER_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."TRANSPORTATION_ORDER_PROVIDER_PK" ON "C##RIDAY"."TRANSPORTATION" ("ORDER_ID", "VEHICLE_LICENSE_NO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index TRANSPORT_VEHICLE_LICENSE_NO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##RIDAY"."TRANSPORT_VEHICLE_LICENSE_NO_PK" ON "C##RIDAY"."TRANSPORT" ("VEHICLE_LICENSE_NO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  Constraints for Table EMPLOYEE
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."EMPLOYEE" MODIFY ("EMPLOYEE_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##RIDAY"."EMPLOYEE" ADD CONSTRAINT "EMPLOYEE_EMPLOYEE_ID_PK" PRIMARY KEY ("EMPLOYEE_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table INDIVIDUAL
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."INDIVIDUAL" MODIFY ("PHONE" NOT NULL ENABLE);
+  ALTER TABLE "C##RIDAY"."INDIVIDUAL" MODIFY ("EMAIL" NOT NULL ENABLE);
+  ALTER TABLE "C##RIDAY"."INDIVIDUAL" ADD CHECK (BALANCE> 0) ENABLE;
+  ALTER TABLE "C##RIDAY"."INDIVIDUAL" MODIFY ("PASSWORD" NOT NULL ENABLE);
+  ALTER TABLE "C##RIDAY"."INDIVIDUAL" MODIFY ("PROVIDER_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##RIDAY"."INDIVIDUAL" ADD CONSTRAINT "INDIVIDUAL_PROVIDER_ID_PK" PRIMARY KEY ("PROVIDER_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table INVENTORY
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."INVENTORY" MODIFY ("INVENTORY_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##RIDAY"."INVENTORY" ADD CONSTRAINT "INVENTORY_INVENTORY_ID_PK" PRIMARY KEY ("INVENTORY_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table PRODUCT_INFO
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."PRODUCT_INFO" ADD CHECK (PRODUCT_PRICE > 0) ENABLE;
+  ALTER TABLE "C##RIDAY"."PRODUCT_INFO" ADD CONSTRAINT "PRODUCT_INFO_MODEL_NO_PK" PRIMARY KEY ("MODEL_NO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table ADDS
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."ADDS" ADD CONSTRAINT "ADDS_PROVIDES_PK" PRIMARY KEY ("PROVIDER_ID", "INVENTORY_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table BUYER
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."BUYER" MODIFY ("BUYER_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##RIDAY"."BUYER" ADD CONSTRAINT "BUYER_BUYER_ID_PK" PRIMARY KEY ("BUYER_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table TAKE
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."TAKE" ADD CONSTRAINT "TAKE_INVENTORY_PK" PRIMARY KEY ("INVENTORY_ID", "MODEL_NO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table NON_FORMAL
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."NON_FORMAL" MODIFY ("EMPLOYEE_ID" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table DUMPING
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."DUMPING" ADD CONSTRAINT "DUMPING_EMPLOYEE_PK" PRIMARY KEY ("STATION_ID", "EMPLOYEE_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table MANUFACTURER
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."MANUFACTURER" MODIFY ("CONTACT_NAME" NOT NULL ENABLE);
+  ALTER TABLE "C##RIDAY"."MANUFACTURER" ADD CONSTRAINT "MANUFACTURER_PROVIDER_ID_PK" PRIMARY KEY ("PROVIDER_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table PERSONAL
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."PERSONAL" MODIFY ("BUYER_ID" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table RECYCLING
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."RECYCLING" ADD CONSTRAINT "RECYCLING_RECYCLER_PK" PRIMARY KEY ("EMPLOYEE_ID", "PROCESSOR_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table EXPERIMENTATION
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."EXPERIMENTATION" ADD CONSTRAINT "EXPERIMENTATION_INVENTORY_PK" PRIMARY KEY ("INVENTORY_ID", "EMPLOYEE_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table MANUFACTURER_PHONE
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."MANUFACTURER_PHONE" ADD CONSTRAINT "MANUFACTURER_PHONE_FK" PRIMARY KEY ("PROVIDER_ID", "PHONE")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table BUSSINESS_PROVIDES
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."BUSSINESS_PROVIDES" ADD CONSTRAINT "BUSINESS_PROVIDES_PK" PRIMARY KEY ("PROVIDER_ID", "ORDER_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table RAW_MATERIAL
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."RAW_MATERIAL" MODIFY ("LOT_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##RIDAY"."RAW_MATERIAL" ADD CONSTRAINT "RAW_MATERIAL_LOT_ID_PK" PRIMARY KEY ("LOT_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table MAKES
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."MAKES" ADD CONSTRAINT "MAKES_REFURBISHER_PK" PRIMARY KEY ("PROCESSOR_ID", "PRODUCT_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table SELL_ORDER
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."SELL_ORDER" MODIFY ("SELLER_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##RIDAY"."SELL_ORDER" ADD CONSTRAINT "SELL_ORDER_SELLER_ID_PK" PRIMARY KEY ("SELLER_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table TRANSPORT
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."TRANSPORT" MODIFY ("EMPLOYEE_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##RIDAY"."TRANSPORT" MODIFY ("VEHICLE_LICENSE_NO" NOT NULL ENABLE);
+  ALTER TABLE "C##RIDAY"."TRANSPORT" ADD CONSTRAINT "TRANSPORT_VEHICLE_LICENSE_NO_PK" PRIMARY KEY ("VEHICLE_LICENSE_NO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table DEPOSITION
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."DEPOSITION" ADD CONSTRAINT "DEPOSITION_INVENTORY_PK" PRIMARY KEY ("INVENTORY_ID", "EMPLOYEE_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table EXTRACTION
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."EXTRACTION" ADD CONSTRAINT "EXTRACTION_RECYCLER_PK" PRIMARY KEY ("PROCESSOR_ID", "LOT_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table PROCESSOR
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."PROCESSOR" MODIFY ("PROCESSOR_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##RIDAY"."PROCESSOR" ADD CONSTRAINT "PROCESSOR_PROCESSOR_ID_PK" PRIMARY KEY ("PROCESSOR_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table RAW_MATERIAL_SELLING
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."RAW_MATERIAL_SELLING" ADD CONSTRAINT "RAW_MATERIAL_SELLING_RAW_MATERIAL_PK" PRIMARY KEY ("LOT_ID", "SELLER_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table REFURBISHING
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."REFURBISHING" ADD CONSTRAINT "REFURBISHING_INVENTORY_PK" PRIMARY KEY ("INVENTORY_ID", "PROCESSOR_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table COLLABORATES
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."COLLABORATES" ADD CONSTRAINT "COLLABORATES_COLLABORATION_PK" PRIMARY KEY ("PUBLISHER_ID", "EMPLOYEE_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table DISSEMBLER
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."DISSEMBLER" MODIFY ("EMPLOYEE_ID" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table DUMP
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."DUMP" ADD CONSTRAINT "DUMP_STATION_ID_PK" PRIMARY KEY ("STATION_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table COLLABORATION
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."COLLABORATION" MODIFY ("PUBLISHER_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##RIDAY"."COLLABORATION" ADD CONSTRAINT "COLLABORATION_PUBLISHER_ID_PK" PRIMARY KEY ("PUBLISHER_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table INDUSTRIAL_PHONE
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."INDUSTRIAL_PHONE" MODIFY ("BUYER_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##RIDAY"."INDUSTRIAL_PHONE" ADD CONSTRAINT "INDUSTRIAL_PHONE_BUYER_PK" PRIMARY KEY ("BUYER_ID", "CONTACT_PHONE")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table BUSINESS_PHONE
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."BUSINESS_PHONE" ADD CONSTRAINT "BUSINESS_PHONE_FK" PRIMARY KEY ("PROVIDER_ID", "PHONE")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table DELIVERY
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."DELIVERY" ADD CONSTRAINT "DELIVERY_INVENTORY_PK" PRIMARY KEY ("INVENTORY_ID", "VEHICLE_LICENSE_NO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table INDIVIDUAL_PROVIDES
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."INDIVIDUAL_PROVIDES" ADD CONSTRAINT "INDIVIDUAL_PROVIDES_PK" PRIMARY KEY ("PROVIDER_ID", "ORDER_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table ORDER_PROVIDER
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."ORDER_PROVIDER" MODIFY ("ORDER_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##RIDAY"."ORDER_PROVIDER" ADD CONSTRAINT "ORDER_PROVIDER_ORDER_ID_PK" PRIMARY KEY ("ORDER_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table RECYCLER
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."RECYCLER" MODIFY ("PROCESSOR_ID" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table SECOND_HAND_PRODUCT
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."SECOND_HAND_PRODUCT" ADD CONSTRAINT "SECOND_HAND_PRODUCT_PRODUCT_PK" PRIMARY KEY ("PRODUCT_ID", "SELLER_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table SELLS
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."SELLS" ADD CONSTRAINT "SELLS_BUYER_PK" PRIMARY KEY ("BUYER_ID", "SELLER_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table GETS_PRODUCT
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."GETS_PRODUCT" ADD CONSTRAINT "GETS_PRODUCT_INVENTORY_PK" PRIMARY KEY ("INVENTORY_ID", "EMPLOYEE_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table PRODUCT
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."PRODUCT" MODIFY ("PRODUCT_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##RIDAY"."PRODUCT" ADD CONSTRAINT "PRODUCT_PRODUCT_ID_PK" PRIMARY KEY ("PRODUCT_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table BUSINESS
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."BUSINESS" ADD CONSTRAINT "BUSINESS_PROVIDER_ID_PK" PRIMARY KEY ("PROVIDER_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table RESEARCH
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."RESEARCH" MODIFY ("EMPLOYEE_ID" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table INDUSTRIAL
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."INDUSTRIAL" MODIFY ("BUYER_ID" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table REFURBISHER
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."REFURBISHER" MODIFY ("PROCESSOR_ID" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table TRANSPORTATION
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."TRANSPORTATION" ADD CONSTRAINT "TRANSPORTATION_ORDER_PROVIDER_PK" PRIMARY KEY ("ORDER_ID", "VEHICLE_LICENSE_NO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table AC
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."AC" ADD CONSTRAINT "AC_EXCHANGE_MODEL_NO_FK" FOREIGN KEY ("MODEL_NO")
+	  REFERENCES "C##RIDAY"."PRODUCT_INFO" ("MODEL_NO") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table ADDS
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."ADDS" ADD CONSTRAINT "ADDS_PROVIDES_PROVIDER_FK" FOREIGN KEY ("PROVIDER_ID")
+	  REFERENCES "C##RIDAY"."MANUFACTURER" ("PROVIDER_ID") ENABLE;
+  ALTER TABLE "C##RIDAY"."ADDS" ADD CONSTRAINT "ADDS_PROVIDES_INVENTORY_FK" FOREIGN KEY ("INVENTORY_ID")
+	  REFERENCES "C##RIDAY"."INVENTORY" ("INVENTORY_ID") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table BARCODE_TABLE
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."BARCODE_TABLE" ADD CONSTRAINT "BARCODE_TABLE_EXCHANGE_MODEL_NO_FK" FOREIGN KEY ("MODEL_NO")
+	  REFERENCES "C##RIDAY"."PRODUCT_INFO" ("MODEL_NO") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table BUSINESS_PHONE
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."BUSINESS_PHONE" ADD CONSTRAINT "BUSINESS_PHONE_PROVIDER_FK" FOREIGN KEY ("PROVIDER_ID")
+	  REFERENCES "C##RIDAY"."BUSINESS" ("PROVIDER_ID") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table BUSSINESS_PROVIDES
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."BUSSINESS_PROVIDES" ADD CONSTRAINT "BUSINESS_PROVIDES_PROVIDER_FK" FOREIGN KEY ("PROVIDER_ID")
+	  REFERENCES "C##RIDAY"."BUSINESS" ("PROVIDER_ID") ENABLE;
+  ALTER TABLE "C##RIDAY"."BUSSINESS_PROVIDES" ADD CONSTRAINT "BUSINESS_PROVIDES_ORDER_FK" FOREIGN KEY ("ORDER_ID")
+	  REFERENCES "C##RIDAY"."ORDER_PROVIDER" ("ORDER_ID") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table CALCULATOR
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."CALCULATOR" ADD CONSTRAINT "CALCULATOR_EXCHANGE_MODEL_NO_FK" FOREIGN KEY ("MODEL_NO")
+	  REFERENCES "C##RIDAY"."PRODUCT_INFO" ("MODEL_NO") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table CAMERA
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."CAMERA" ADD CONSTRAINT "CAMERA_EXCHANGE_MODEL_NO_FK" FOREIGN KEY ("MODEL_NO")
+	  REFERENCES "C##RIDAY"."PRODUCT_INFO" ("MODEL_NO") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table COLLABORATES
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."COLLABORATES" ADD CONSTRAINT "COLLABORATES_PUBLISHER_ID_FK" FOREIGN KEY ("PUBLISHER_ID")
+	  REFERENCES "C##RIDAY"."COLLABORATION" ("PUBLISHER_ID") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "C##RIDAY"."COLLABORATES" ADD CONSTRAINT "COLLABORATES_EMPLOYEE_ID_FK" FOREIGN KEY ("EMPLOYEE_ID")
+	  REFERENCES "C##RIDAY"."EMPLOYEE" ("EMPLOYEE_ID") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table DELIVERY
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."DELIVERY" ADD CONSTRAINT "DELIVERY_INVENTORY_ID_FK" FOREIGN KEY ("INVENTORY_ID")
+	  REFERENCES "C##RIDAY"."INVENTORY" ("INVENTORY_ID") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "C##RIDAY"."DELIVERY" ADD CONSTRAINT "DELIVERY_VEHICLE_LICENSE_NO_FK" FOREIGN KEY ("VEHICLE_LICENSE_NO")
+	  REFERENCES "C##RIDAY"."TRANSPORT" ("VEHICLE_LICENSE_NO") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table DEPOSITION
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."DEPOSITION" ADD CONSTRAINT "DEPOSITION_INVENTORY_ID_FK" FOREIGN KEY ("INVENTORY_ID")
+	  REFERENCES "C##RIDAY"."INVENTORY" ("INVENTORY_ID") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "C##RIDAY"."DEPOSITION" ADD CONSTRAINT "DEPOSITION_EMPLOYEE_ID_FK" FOREIGN KEY ("EMPLOYEE_ID")
+	  REFERENCES "C##RIDAY"."EMPLOYEE" ("EMPLOYEE_ID") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table DISSEMBLER
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."DISSEMBLER" ADD CONSTRAINT "DISSEMBLER_EMPLOYEE_ID_FK" FOREIGN KEY ("EMPLOYEE_ID")
+	  REFERENCES "C##RIDAY"."EMPLOYEE" ("EMPLOYEE_ID") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table DUMPING
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."DUMPING" ADD CONSTRAINT "DUMPING_EMPLOYEE_ID_FK" FOREIGN KEY ("EMPLOYEE_ID")
+	  REFERENCES "C##RIDAY"."EMPLOYEE" ("EMPLOYEE_ID") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "C##RIDAY"."DUMPING" ADD CONSTRAINT "DUMPING_STATION_ID_FK" FOREIGN KEY ("STATION_ID")
+	  REFERENCES "C##RIDAY"."DUMP" ("STATION_ID") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table EXPERIMENTATION
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."EXPERIMENTATION" ADD CONSTRAINT "EXPERIMENTATION_INVENTORY_ID_FK" FOREIGN KEY ("INVENTORY_ID")
+	  REFERENCES "C##RIDAY"."INVENTORY" ("INVENTORY_ID") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "C##RIDAY"."EXPERIMENTATION" ADD CONSTRAINT "EXPERIMENTATION_EMPLOYEE_ID_FK" FOREIGN KEY ("EMPLOYEE_ID")
+	  REFERENCES "C##RIDAY"."EMPLOYEE" ("EMPLOYEE_ID") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table EXTRACTION
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."EXTRACTION" ADD CONSTRAINT "EXTRACTION_PROCESSOR_ID_FK" FOREIGN KEY ("PROCESSOR_ID")
+	  REFERENCES "C##RIDAY"."PROCESSOR" ("PROCESSOR_ID") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "C##RIDAY"."EXTRACTION" ADD CONSTRAINT "EXTRACTION_LOT_ID_FK" FOREIGN KEY ("LOT_ID")
+	  REFERENCES "C##RIDAY"."RAW_MATERIAL" ("LOT_ID") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table GETS_PRODUCT
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."GETS_PRODUCT" ADD CONSTRAINT "GETS_PRODUCT_INVENTORY_ID_FK" FOREIGN KEY ("INVENTORY_ID")
+	  REFERENCES "C##RIDAY"."INVENTORY" ("INVENTORY_ID") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "C##RIDAY"."GETS_PRODUCT" ADD CONSTRAINT "GETS_PRODUCT_EMPLOYEE_ID_FK" FOREIGN KEY ("EMPLOYEE_ID")
+	  REFERENCES "C##RIDAY"."EMPLOYEE" ("EMPLOYEE_ID") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table INDIVIDUAL_PROVIDES
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."INDIVIDUAL_PROVIDES" ADD CONSTRAINT "INDIVIDUAL_PROVIDES_PROVIDER_FK" FOREIGN KEY ("PROVIDER_ID")
+	  REFERENCES "C##RIDAY"."INDIVIDUAL" ("PROVIDER_ID") ENABLE;
+  ALTER TABLE "C##RIDAY"."INDIVIDUAL_PROVIDES" ADD CONSTRAINT "INDIVIDUAL_PROVIDES_ORDER_FK" FOREIGN KEY ("ORDER_ID")
+	  REFERENCES "C##RIDAY"."ORDER_PROVIDER" ("ORDER_ID") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table INDUSTRIAL
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."INDUSTRIAL" ADD CONSTRAINT "INDUSTRIAL_BUYER_ID_FK" FOREIGN KEY ("BUYER_ID")
+	  REFERENCES "C##RIDAY"."BUYER" ("BUYER_ID") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table INDUSTRIAL_PHONE
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."INDUSTRIAL_PHONE" ADD CONSTRAINT "INDUSTRIAL_PHONE_BUYER_ID_FK" FOREIGN KEY ("BUYER_ID")
+	  REFERENCES "C##RIDAY"."BUYER" ("BUYER_ID") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table LAPTOP
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."LAPTOP" ADD CONSTRAINT "LAPTOP_MODEL_NO_FK" FOREIGN KEY ("MODEL_NO")
+	  REFERENCES "C##RIDAY"."PRODUCT_INFO" ("MODEL_NO") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table MAKES
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."MAKES" ADD CONSTRAINT "MAKES_PRODUCT_ID_FK" FOREIGN KEY ("PRODUCT_ID")
+	  REFERENCES "C##RIDAY"."PRODUCT" ("PRODUCT_ID") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "C##RIDAY"."MAKES" ADD CONSTRAINT "MAKES_PROCESSOR_ID_FK" FOREIGN KEY ("PROCESSOR_ID")
+	  REFERENCES "C##RIDAY"."PROCESSOR" ("PROCESSOR_ID") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table MANUFACTURER_PHONE
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."MANUFACTURER_PHONE" ADD CONSTRAINT "MANUFACTURER_PHONE_PROVIDER_FK" FOREIGN KEY ("PROVIDER_ID")
+	  REFERENCES "C##RIDAY"."MANUFACTURER" ("PROVIDER_ID") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table MICROWAVE
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."MICROWAVE" ADD CONSTRAINT "MICROWAVE_EXCHANGE_MODEL_NO_FK" FOREIGN KEY ("MODEL_NO")
+	  REFERENCES "C##RIDAY"."PRODUCT_INFO" ("MODEL_NO") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table NON_FORMAL
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."NON_FORMAL" ADD CONSTRAINT "NON_FORMAL_EMPLOYEE_ID_FK" FOREIGN KEY ("EMPLOYEE_ID")
+	  REFERENCES "C##RIDAY"."EMPLOYEE" ("EMPLOYEE_ID") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table PERSONAL
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."PERSONAL" ADD CONSTRAINT "PERSONAL_BUYER_ID_FK" FOREIGN KEY ("BUYER_ID")
+	  REFERENCES "C##RIDAY"."BUYER" ("BUYER_ID") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table RADIO
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."RADIO" ADD CONSTRAINT "RADIO_TABLE_EXCHANGE_MODEL_NO_FK" FOREIGN KEY ("MODEL_NO")
+	  REFERENCES "C##RIDAY"."PRODUCT_INFO" ("MODEL_NO") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table RAW_MATERIAL_SELLING
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."RAW_MATERIAL_SELLING" ADD CONSTRAINT "RAW_MATERIAL_SELLING_LOT_ID_FK" FOREIGN KEY ("LOT_ID")
+	  REFERENCES "C##RIDAY"."RAW_MATERIAL" ("LOT_ID") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "C##RIDAY"."RAW_MATERIAL_SELLING" ADD CONSTRAINT "RAW_MATERIAL_SELLING_SELLER_ID_FK" FOREIGN KEY ("SELLER_ID")
+	  REFERENCES "C##RIDAY"."SELL_ORDER" ("SELLER_ID") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table RECYCLER
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."RECYCLER" ADD CONSTRAINT "RECYCLER_PROCESSOR_ID_FK" FOREIGN KEY ("PROCESSOR_ID")
+	  REFERENCES "C##RIDAY"."PROCESSOR" ("PROCESSOR_ID") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table RECYCLING
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."RECYCLING" ADD CONSTRAINT "RECYCLING_EMPLOYEE_ID_FK" FOREIGN KEY ("EMPLOYEE_ID")
+	  REFERENCES "C##RIDAY"."EMPLOYEE" ("EMPLOYEE_ID") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "C##RIDAY"."RECYCLING" ADD CONSTRAINT "RECYCLING_PROCESSOR_ID_FK" FOREIGN KEY ("PROCESSOR_ID")
+	  REFERENCES "C##RIDAY"."PROCESSOR" ("PROCESSOR_ID") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table REFRIGERATOR
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."REFRIGERATOR" ADD CONSTRAINT "REFRIGERATOR_EXCHANGE_MODEL_NO_FK" FOREIGN KEY ("MODEL_NO")
+	  REFERENCES "C##RIDAY"."PRODUCT_INFO" ("MODEL_NO") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table REFURBISHER
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."REFURBISHER" ADD CONSTRAINT "REFURBISHER_PROCESSOR_ID_FK" FOREIGN KEY ("PROCESSOR_ID")
+	  REFERENCES "C##RIDAY"."PROCESSOR" ("PROCESSOR_ID") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table REFURBISHING
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."REFURBISHING" ADD CONSTRAINT "REFURBISHING_INVENTORY_ID_FK" FOREIGN KEY ("INVENTORY_ID")
+	  REFERENCES "C##RIDAY"."INVENTORY" ("INVENTORY_ID") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "C##RIDAY"."REFURBISHING" ADD CONSTRAINT "REFURBISHING_PROCESSOR_ID_FK" FOREIGN KEY ("PROCESSOR_ID")
+	  REFERENCES "C##RIDAY"."PROCESSOR" ("PROCESSOR_ID") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table RESEARCH
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."RESEARCH" ADD CONSTRAINT "RESEARCH_EMPLOYEE_ID_FK" FOREIGN KEY ("EMPLOYEE_ID")
+	  REFERENCES "C##RIDAY"."EMPLOYEE" ("EMPLOYEE_ID") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table ROUTER
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."ROUTER" ADD CONSTRAINT "ROUTER_MODEL_NO_FK" FOREIGN KEY ("MODEL_NO")
+	  REFERENCES "C##RIDAY"."PRODUCT_INFO" ("MODEL_NO") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table SCREENS_AND_MONITORS
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."SCREENS_AND_MONITORS" ADD CONSTRAINT "SCREENS_AND_MONITORS_MODEL_NO_FK" FOREIGN KEY ("MODEL_NO")
+	  REFERENCES "C##RIDAY"."PRODUCT_INFO" ("MODEL_NO") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table SECOND_HAND_PRODUCT
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."SECOND_HAND_PRODUCT" ADD CONSTRAINT "SECOND_HAND_PRODUCT_PRODUCT_ID_FK" FOREIGN KEY ("PRODUCT_ID")
+	  REFERENCES "C##RIDAY"."PRODUCT" ("PRODUCT_ID") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "C##RIDAY"."SECOND_HAND_PRODUCT" ADD CONSTRAINT "SECOND_HAND_PRODUCT_SELLER_ID_FK" FOREIGN KEY ("SELLER_ID")
+	  REFERENCES "C##RIDAY"."SELL_ORDER" ("SELLER_ID") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table SELLS
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."SELLS" ADD CONSTRAINT "SELLS_BUYER_ID_FK" FOREIGN KEY ("BUYER_ID")
+	  REFERENCES "C##RIDAY"."BUYER" ("BUYER_ID") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "C##RIDAY"."SELLS" ADD CONSTRAINT "SELLS_SELLER_ID_FK" FOREIGN KEY ("SELLER_ID")
+	  REFERENCES "C##RIDAY"."SELL_ORDER" ("SELLER_ID") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table SMALL_EQUIPMENTS
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."SMALL_EQUIPMENTS" ADD CONSTRAINT "SMALL_EQUIPMENTS_TABLE_EXCHANGE_MODEL_NO_FK" FOREIGN KEY ("MODEL_NO")
+	  REFERENCES "C##RIDAY"."PRODUCT_INFO" ("MODEL_NO") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table TABLETS
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."TABLETS" ADD CONSTRAINT "TABLETS_MODEL_NO_FK" FOREIGN KEY ("MODEL_NO")
+	  REFERENCES "C##RIDAY"."PRODUCT_INFO" ("MODEL_NO") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table TAKE
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."TAKE" ADD CONSTRAINT "TAKE_INVENTORY_ID_FK" FOREIGN KEY ("INVENTORY_ID")
+	  REFERENCES "C##RIDAY"."INVENTORY" ("INVENTORY_ID") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "C##RIDAY"."TAKE" ADD CONSTRAINT "TAKE_MODEL_NO_FK" FOREIGN KEY ("MODEL_NO")
+	  REFERENCES "C##RIDAY"."PRODUCT_INFO" ("MODEL_NO") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table TELECOMMUNICAITON_DEVICES
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."TELECOMMUNICAITON_DEVICES" ADD CONSTRAINT "TELECOMMUNICATION_DEVICES_MODEL_NO_FK" FOREIGN KEY ("MODEL_NO")
+	  REFERENCES "C##RIDAY"."PRODUCT_INFO" ("MODEL_NO") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table TELEPHONE
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."TELEPHONE" ADD CONSTRAINT "TELEPHONE_MODEL_NO_FK" FOREIGN KEY ("MODEL_NO")
+	  REFERENCES "C##RIDAY"."PRODUCT_INFO" ("MODEL_NO") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table TEMPERATURE_EXCHANGE
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."TEMPERATURE_EXCHANGE" ADD CONSTRAINT "TEMPERATURE_EXCHANGE_MODEL_NO_FK" FOREIGN KEY ("MODEL_NO")
+	  REFERENCES "C##RIDAY"."PRODUCT_INFO" ("MODEL_NO") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table TRANSPORT
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."TRANSPORT" ADD CONSTRAINT "TRANSPORT_EMPLOYEE_ID_FK" FOREIGN KEY ("EMPLOYEE_ID")
+	  REFERENCES "C##RIDAY"."EMPLOYEE" ("EMPLOYEE_ID") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table TRANSPORTATION
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."TRANSPORTATION" ADD CONSTRAINT "TRANSPORTATION_ORDER_ID_FK" FOREIGN KEY ("ORDER_ID")
+	  REFERENCES "C##RIDAY"."ORDER_PROVIDER" ("ORDER_ID") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "C##RIDAY"."TRANSPORTATION" ADD CONSTRAINT "TRANSPORTATION_VEHICLE_LICENSE_NO_FK" FOREIGN KEY ("VEHICLE_LICENSE_NO")
+	  REFERENCES "C##RIDAY"."TRANSPORT" ("VEHICLE_LICENSE_NO") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table TV
+--------------------------------------------------------
+
+  ALTER TABLE "C##RIDAY"."TV" ADD CONSTRAINT "TV_MODEL_NO_FK" FOREIGN KEY ("MODEL_NO")
+	  REFERENCES "C##RIDAY"."PRODUCT_INFO" ("MODEL_NO") ON DELETE CASCADE ENABLE;

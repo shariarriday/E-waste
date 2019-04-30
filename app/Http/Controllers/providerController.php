@@ -6,11 +6,11 @@ use Illuminate\Http\Request;
 use DB;
 class providerController extends Controller
 {
-  
+
     //this part will be done by Rafa.
     //here are some template code for different cases
     //There must be a login page and an info page.
-    //then for insertions and showing data in any view make as many page as needed 
+    //then for insertions and showing data in any view make as many page as needed
     //using Route::get('/provider/*****',.....);
 
   /*  public function test()
@@ -49,12 +49,8 @@ class providerController extends Controller
 
     //end copy here
 
-    public function proLogin()
+    public function providerlogin()
     {
-        return view('ProcessorEnd.Login');
-    }
-    public function processorLoginAction()
-    {
-    	return view('UserEnd.Individual');
+        return view('ProviderEnd.LoginForm');
     }
 }
