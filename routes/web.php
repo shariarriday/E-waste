@@ -17,3 +17,4 @@ Route::get('/', function () {
 
 Route::get('/user','userController@homeUser');
 Route::get('/processor/login','processorController@processorLogin');
+Route::post('/processor/loginAction','processorController@processorLoginAction');

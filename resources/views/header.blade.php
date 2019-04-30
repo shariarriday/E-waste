@@ -16,7 +16,7 @@ use URL;
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{  URL::asset('vendor/animate/animate.css') }}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{  URL::asset('vendor/select2/select2.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{  URL::asset('vendor/select2/select2.min.css') }}">	
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{  URL::asset('vendor/perfect-scrollbar/perfect-scrollbar.css') }}">
 <!--===============================================================================================-->
@@ -26,19 +26,10 @@ use URL;
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-<!--===============================================================================================-->
-	<!--===============================================================================================-->	
-	<script src="{{  URL::asset('vendor/jquery/jquery-3.2.1.min.js') }}"></script>
-<!--===============================================================================================-->
-	<script src="{{  URL::asset('vendor/bootstrap/js/popper.js') }}"></script>
-	<script src="{{  URL::asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
-<!--===============================================================================================-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 	<script src="{{  URL::asset('vendor/select2/select2.min.js') }}"></script>
 <!--===============================================================================================-->
 	<script src="{{  URL::asset('/js/main.js') }}"></script>
-	<script src="{{  URL::asset('/js/scrolling-nav.js') }}"></script>
 
 
 </head>

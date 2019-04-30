@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 use DB;
 class processorController extends Controller
 {
+    //this part will be done by Udoy.
+    //here are some template code for different cases
+    //There must be a login page and an info page.
+    //then for insertions and showing data in any view make as many page as needed 
+    //using Route::get('/processor/*****',.....);
   /*  public function test()
     {
         $users = DB::connection('oracle')->select('select * from Provider'); //this is the prototype for select query.
@@ -46,5 +51,8 @@ class processorController extends Controller
     {
         return view('ProcessorEnd.Login');
     }
-
+    public function processorLoginAction()
+    {
+    	return view('template.Individual');
+    }
 }

@@ -1,8 +1,5 @@
 @include('header')
-<body>
-
-	<div class="limiter">
-	
+<body style="background-image: linear-gradient(-25deg, #FFFFFF 0%, #C0C0C0 100%);">
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -16,6 +13,9 @@
     </ul>
   </div>
 </nav>
+
+	<div class="limiter">
+	
 
 		<div class="container-table100">
 			<div class="wrap-table100">
@@ -36,7 +36,7 @@
 						<tbody>
 							<tr class="row100">
 								<td class="column100 column1" data-column="column1">Lawrence Scott</td>
-								<td class="column100 column2" data-column="column2">8:00 AM</td>
+								<td class="column100 column2" data-column="column2">{{"HELLO"}}</td>
 								<td class="column100 column3" data-column="column3">--</td>
 								<td class="column100 column4" data-column="column4">--</td>
 								<td class="column100 column5" data-column="column5">8:00 AM</td>
