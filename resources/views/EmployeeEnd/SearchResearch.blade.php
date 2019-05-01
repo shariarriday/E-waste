@@ -269,7 +269,7 @@
             {{CSRF_FIELD()}}
             <div class="page__demo">
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="Researcher Name" required>
+                    <input class="field__input a-field__input" placeholder="Researcher Name" name = "name" required>
                     <span class="a-field__label-wrap">
                         <span class="a-field__label">Name</span>
                     </span>

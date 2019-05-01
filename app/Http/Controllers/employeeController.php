@@ -98,6 +98,7 @@ class employeeController extends Controller
 
     public function postresearcher(Request $request)
     {
-        return view('EmployeeEnd.Research',['id' => $request->session()->get('id')]);
+        $name = request("name");
+        return view('EmployeeEnd.Research',['name' => $name]);
     }
 }

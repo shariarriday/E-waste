@@ -8,7 +8,7 @@
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Home</a></li>
       <li><a href="otherEmployee">Other Employee</a></li>
-      <li><a href="#">Researcher</a></li>
+      <li><a href="searchResearcher">Researcher</a></li>
       <li><a href="#">Transport</a></li>
       <li><a href="#">Dumping Stations</a></li>
       <li><a href="#">Recycle Status</a></li>
