@@ -83,11 +83,21 @@ class employeeController extends Controller
 
     public function otherEmployee(Request $request)
     {
-        return view('EmployeeEnd.Individual',['id' => $request->session()->get('id')]);
+        return view('EmployeeEnd.EmployeeCheck',['id' => $request->session()->get('id')]);
     }
 
     public function info(Request $request)
     {
         return view('EmployeeEnd.Info',['id' => $request->session()->get('id')]);
+    }
+
+    public function getresearcher(Request $request)
+    {
+        return view('EmployeeEnd.SearchResearch',['id' => $request->session()->get('id')]);
+    }
+
+    public function postresearcher(Request $request)
+    {
+        return view('EmployeeEnd.Research',['id' => $request->session()->get('id')]);
     }
 }
