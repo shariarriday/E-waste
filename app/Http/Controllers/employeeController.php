@@ -63,16 +63,19 @@ class employeeController extends Controller
     }
     public function loginAction(Request $request)
     {
-        $email = request("email");
-        $pass = request("password");
+        $email = request("email");//get value from page
+        $pass = request("password");//get value from page
 
-        $check = DB::connection('oracle')->select("Select EMPLOYEE_ID FROM EMPLOYEE WHERE email = '$email' AND password = '$pass'");
+        $check = DB::connection('oracle')->select("Select EMPLOYEE_ID FROM EMPLOYEE WHERE email = '$email' AND password = '$pass'");//check if correct password
 
         if(count($check) == 1)
         {
             $ID = $check[0]->employee_id;
             $request->session()->put('id', $ID);
             return view('EmployeeEnd.Info',['id' => $ID]);
+        }
+        else {
+            return view('EmployeeEnd.LoginForm');
         }
     }
 
@@ -100,5 +103,36 @@ class employeeController extends Controller
     {
         $name = request("name");
         return view('EmployeeEnd.Research',['name' => $name]);
+    }
+
+    public function dumpingemployee(Request $request)
+    {
+        return view('EmployeeEnd.Dumping');
+    }
+
+    public function getaddEmployee(Request $request)
+    {
+        return view('EmployeeEnd.EmployeeAdd');
+    }
+
+    public function postaddEmployee(Request $request)
+    {
+        $id = $request->session()->get('id', $ID);
+        $check = DB::connection('oracle')->select("Select ACCESSLEVEL FROM EMPLOYEE WHERE EMPLOYEE_ID = '$id'");
+        if($check[0] > 8)
+        {
+            $name = $request("name");$phone = $request("phone");
+            $salary = $request("salary");$age = $request("age");
+            $email = $request("email");$password = $request("password");
+            $access = $request("access");$product = $request("product");
+            $vehicle_license = $request("vehicle_license");$vehicle_capacity = $request("vehicle_capacity");
+            $vehicle_type = $request("vehicle_type");$destination = $request("destination");
+            $source = $request("source");$topic = $request("topic");
+            $funding = $request("funding");$degree = $request("degree");
+            return view('EmployeeEnd.Info',['id' => $request->session()->get('id')]);
+        }
+        else {
+            return view('EmployeeEnd.Info',['id' => $request->session()->get('id')]);
+        }
     }
 }

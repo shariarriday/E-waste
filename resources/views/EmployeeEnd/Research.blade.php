@@ -6,12 +6,13 @@
       <a class="navbar-brand" href="#">E-waste</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Home</a></li>
       <li><a href="otherEmployee">Other Employee</a></li>
-      <li><a href="searchResearcher">Researcher</a></li>
-      <li><a href="#">Transport</a></li>
-      <li><a href="#">Dumping Stations</a></li>
+      <li class="active"><a href="researcher">Researcher</a></li>
+      <li><a href="transport">Transport</a></li>
+      <li><a href="dumpingemployee">Dumping Stations</a></li>
       <li><a href="#">Recycle Status</a></li>
+      <li><a href="addEmployee">Add New Employee</a></li>
     </ul>
   </div>
 </nav>
@@ -28,9 +29,9 @@
 						<thead>
 							<tr class="row100 head">
 								<th class="column100 column1" data-column="column1"></th>
-								<th class="column100 column2" data-column="column2">University</th>
-								<th class="column100 column3" data-column="column3">Collaborator</th>
-								<th class="column100 column4" data-column="column4">Paper</th>
+								<th class="column100 column2" data-column="column2">Paper</th>
+								<th class="column100 column3" data-column="column3">University</th>
+								<th class="column100 column4" data-column="column4">Collaborator</th>
                                 <th class="column100 column4" data-column="column5">Funding</th>
 							</tr>
 						</thead>

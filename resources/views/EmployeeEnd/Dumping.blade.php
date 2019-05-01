@@ -7,10 +7,10 @@
     </div>
     <ul class="nav navbar-nav">
       <li><a href="info">Home</a></li>
-      <li class="active"><a href="#">Other Employee</a></li>
+      <li><a href="#">Other Employee</a></li>
       <li><a href="researcher">Researcher</a></li>
       <li><a href="transport">Transport</a></li>
-      <li><a href="dumpingemployee">Dumping Stations</a></li>
+      <li  class="active"><a href="dumpingemployee">Dumping Stations</a></li>
       <li><a href="#">Recycle Status</a></li>
       <li><a href="addEmployee">Add New Employee</a></li>
     </ul>
@@ -20,7 +20,7 @@
 	<div class="limiter">
 
     <?php
-        $vals = DB::connection('oracle')->select("Select DISTINCT * FROM EMPLOYEE_CHECK");
+        $vals = DB::connection('oracle')->select("Select DISTINCT * FROM EMPLOYEE_DUMP");
     ?>
 		<div class="container-table100">
 			<div class="wrap-table100">
@@ -29,9 +29,9 @@
 						<thead>
 							<tr class="row100 head">
 								<th class="column100 column1" data-column="column1"></th>
-								<th class="column100 column2" data-column="column2">Age</th>
-								<th class="column100 column3" data-column="column3">Salary</th>
-								<th class="column100 column4" data-column="column4">Phone</th>
+								<th class="column100 column2" data-column="column2">Phone</th>
+								<th class="column100 column3" data-column="column3">Location</th>
+								<th class="column100 column4" data-column="column4">Product Type</th>
 							</tr>
 						</thead>
 
@@ -40,9 +40,9 @@
                             @foreach($vals as $val)
 							<tr class="row100">
 								<td class="column100 column1" data-column="column1">{{$val->name}}</td>
-								<td class="column100 column2" data-column="column2">{{$val->age}}</td>
-								<td class="column100 column3" data-column="column3">{{$val->salary}}</td>
-								<td class="column100 column4" data-column="column4">{{$val->phone}}</td>
+								<td class="column100 column2" data-column="column2">{{$val->phone}}</td>
+								<td class="column100 column3" data-column="column3">{{$val->location}}</td>
+								<td class="column100 column4" data-column="column4">{{$val->product_type}}</td>
 							</tr>
                             @endforeach
 						</tbody>

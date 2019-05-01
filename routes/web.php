@@ -28,3 +28,6 @@ Route::get('/admin/otherEmployee','employeeController@otherEmployee');
 Route::get('/admin/info','employeeController@info');
 Route::get('/admin/researcher','employeeController@getresearcher');
 Route::post('/admin/researcher','employeeController@postresearcher');
+Route::get('/admin/dumpingemployee','employeeController@dumpingemployee');
+Route::get('/admin/addEmployee','employeeController@getaddEmployee');
+Route::post('/admin/addEmployee','employeeController@postaddEmployee');

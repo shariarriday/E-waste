@@ -102,6 +102,7 @@
             <div class="col-md-4 login-form-2">
                 <h3>Login for Processors</h3>
                 <form>
+                    {{CSRF_FIELD()}}
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Your Email *" value="" />
                     </div>
@@ -116,6 +117,7 @@
             <div class="col-md-4 login-form-1">
                 <h3>Login for Product-Info </h3>
                 <form>
+                    {{CSRF_FIELD()}}
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Your Email *" value="" />
                     </div>
