@@ -6,8 +6,8 @@
       <a class="navbar-brand" href="#">E-waste</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="info">Home</a></li>
-      <li class="active"><a href="#">Other Employee</a></li>
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="otherEmployee">Other Employee</a></li>
       <li><a href="#">Researcher</a></li>
       <li><a href="#">Transport</a></li>
       <li><a href="#">Dumping Stations</a></li>
@@ -19,7 +19,7 @@
 	<div class="limiter">
 
     <?php
-        $vals = DB::connection('oracle')->select("Select DISTINCT * FROM EMPLOYEE_CHECK");
+        $vals = DB::connection('oracle')->select("Select * FROM EMPLOYEE WHERE EMPLOYEE_ID = '$id' "); //write any query you need, I am writing to show the                                                                     //employees information
     ?>
 		<div class="container-table100">
 			<div class="wrap-table100">
@@ -31,6 +31,9 @@
 								<th class="column100 column2" data-column="column2">Age</th>
 								<th class="column100 column3" data-column="column3">Salary</th>
 								<th class="column100 column4" data-column="column4">Phone</th>
+                                <th class="column100 column4" data-column="column5">Email</th>
+                                <th class="column100 column4" data-column="column6">Password</th>
+                                <th class="column100 column4" data-column="column7">Access Level</th>
 							</tr>
 						</thead>
 
@@ -41,7 +44,10 @@
 								<td class="column100 column1" data-column="column1">{{$val->name}}</td>
 								<td class="column100 column2" data-column="column2">{{$val->age}}</td>
 								<td class="column100 column3" data-column="column3">{{$val->salary}}</td>
-								<td class="column100 column4" data-column="column4">{{$val->phone}}</td>
+								<td class="column100 column4" data-column="column4">{{$val->phone_number}}</td>
+                                <td class="column100 column4" data-column="column5">{{$val->email}}</td>
+                                <td class="column100 column4" data-column="column6">{{$val->password}}</td>
+                                <td class="column100 column4" data-column="column7">{{$val->accesslevel}}</td>
 							</tr>
                             @endforeach
 						</tbody>

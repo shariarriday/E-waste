@@ -85,7 +85,7 @@
 <div class="container login-container">
             <div class="row">
                 <div class="col-md-6 login-form-1">
-                    <h3>Register</h3>
+                    <h3>Register New Employee</h3>
                     <form>
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="First Name " value="" />

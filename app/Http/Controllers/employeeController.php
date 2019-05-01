@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+
 use DB;
 class employeeController extends Controller
 {
@@ -60,5 +60,34 @@ class employeeController extends Controller
     public function showInfo()
     {
     	return view('EmployeeEnd.Individual');
+    }
+    public function loginAction(Request $request)
+    {
+        $email = request("email");
+        $pass = request("password");
+
+        $check = DB::connection('oracle')->select("Select EMPLOYEE_ID FROM EMPLOYEE WHERE email = '$email' AND password = '$pass'");
+
+        if(count($check) == 1)
+        {
+            $ID = $check[0]->employee_id;
+            $request->session()->put('id', $ID);
+            return view('EmployeeEnd.Info',['id' => $ID]);
+        }
+    }
+
+    public function login()
+    {
+        return view('EmployeeEnd.LoginForm');
+    }
+
+    public function otherEmployee(Request $request)
+    {
+        return view('EmployeeEnd.Individual',['id' => $request->session()->get('id')]);
+    }
+
+    public function info(Request $request)
+    {
+        return view('EmployeeEnd.Info',['id' => $request->session()->get('id')]);
     }
 }

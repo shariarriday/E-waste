@@ -1,13 +1,15 @@
-<?php namespace App\Http\Controllers; 
+<?php namespace App\Http\Controllers;
+use Illuminate\Http\Request;
 use URL;
+use DB;
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Table V03</title>
+	<title>E-waste Management</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
+<!--===============================================================================================-->
 	<link rel="icon" type="image/png" href="{{  URL::asset('/images/icons/favicon.ico') }}"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{  URL::asset('vendor/bootstrap/css/bootstrap.min.css') }}">
@@ -16,7 +18,7 @@ use URL;
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{  URL::asset('vendor/animate/animate.css') }}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{  URL::asset('vendor/select2/select2.min.css') }}">	
+	<link rel="stylesheet" type="text/css" href="{{  URL::asset('vendor/select2/select2.min.css') }}">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{  URL::asset('vendor/perfect-scrollbar/perfect-scrollbar.css') }}">
 <!--===============================================================================================-->
