@@ -245,21 +245,26 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">E-waste</a>
-        </div>
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="otherEmployee">Other Employee</a></li>
-          <li><a href="searchResearcher">Researcher</a></li>
-          <li><a href="#">Transport</a></li>
-          <li><a href="#">Dumping Stations</a></li>
-          <li><a href="#">Recycle Status</a></li>
-        </ul>
-      </div>
-    </nav>
+   <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <a class="navbar-brand" href="#">E-Waste</a>
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="otherEmployee">Other Employee</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Researcher</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Transport</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Dumping Stations</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Recycle Status</a>
+    </li>
+  </ul>
+</nav>
 
     <div class="container" style="text-align: center;">
         <h3>Research Works</h3>
