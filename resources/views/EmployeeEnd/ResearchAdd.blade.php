@@ -267,112 +267,29 @@
     </nav>
 
     <div class="container" style="text-align: center;">
-        <h3>Research Works</h3>
+        <h3>Add Transport</h3>
     </div>
     <div class="page">
-        <form action = "addEmployee" method="post">
+        <form action = "/admin/addResearch" method="POST">
             {{CSRF_FIELD()}}
             <div class="page__demo">
+                <input type="hidden" value = "{{$id2}}" name = "pk">
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="Researcher Name" name = "name" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Name</span>
-                    </span>
-                </label>
-
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="012XXXXXXX" name = "phone" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Phone Number</span>
-                    </span>
-                </label>
-
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="15000" name = "salary" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Salary</span>
-                    </span>
-                </label>
-                <br>
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="50" name = "age" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Age</span>
-                    </span>
-                </label>
-
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="xyz@abcd.com" name = "email" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Email</span>
-                    </span>
-                </label>
-
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="password" type="password" name = "password" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Password</span>
-                    </span>
-                </label>
-                <br>
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="1-10" name = "access" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Access Level</span>
-                    </span>
-                </label>
-
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="AB-1234" name = "vehicle_license" >
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Vehicle License</span>
-                    </span>
-                </label>
-
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="1000" name = "vehicle_capacity" >
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Vehicle Capacity</span>
-                    </span>
-                </label>
-                <br>
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="Truck" name = "vehicle_type" >
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Vehicle Type</span>
-                    </span>
-                </label>
-
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="Dhaka" name = "destination" >
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Destination</span>
-                    </span>
-                </label>
-
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="Dhaka" name = "source" >
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Source</span>
-                    </span>
-                </label>
-                <br>
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="Destroying" name = "topic" >
+                    <input class="field__input a-field__input" placeholder="Dumping" name = "topic" >
                     <span class="a-field__label-wrap">
                         <span class="a-field__label">Topic</span>
                     </span>
                 </label>
-
+                <br>
                 <label class="field a-field a-field_a1 page__field">
                     <input class="field__input a-field__input" placeholder="10000" name = "funding" >
                     <span class="a-field__label-wrap">
                         <span class="a-field__label">Funding</span>
                     </span>
                 </label>
-
+                <br>
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="Phd" name = "degree" >
+                    <input class="field__input a-field__input" placeholder="PhD" name = "degree" >
                     <span class="a-field__label-wrap">
                         <span class="a-field__label">Degree</span>
                     </span>

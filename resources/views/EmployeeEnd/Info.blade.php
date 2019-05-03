@@ -1,21 +1,39 @@
 @include('header')
 <body style="background-image: linear-gradient(-25deg, #FFFFFF 0%, #C0C0C0 100%);">
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">E-waste</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="otherEmployee">Other Employee</a></li>
-      <li><a href="searchResearcher">Researcher</a></li>
-      <li><a href="transport">Transport</a></li>
-      <li><a href="dumpingemployee">Dumping Stations</a></li>
-      <li><a href="#">Recycle Status</a></li>
-      <li><a href="addEmployee">Add New Employee</a></li>
-    </ul>
-  </div>
-</nav>
+    @if($value > 6)
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">E-waste</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="info">Home</a></li>
+          <li><a href="#">Other Employee</a></li>
+          <li><a href="researcher">Researcher</a></li>
+          <li><a href="transport">Transport</a></li>
+          <li><a href="dumpingemployee">Dumping Stations</a></li>
+          <li><a href="#">Recycle Status</a></li>
+          <li><a href="addEmployee">Add New Employee</a></li>
+        </ul>
+      </div>
+    </nav>
+    @endif
+
+    @if($value < 7)
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">E-waste</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="info">Home</a></li>
+          <li><a href="researcher">Researcher</a></li>
+          <li><a href="transport">Transport</a></li>
+          <li><a href="dumpingemployee">Dumping Stations</a></li>
+        </ul>
+      </div>
+    </nav>
+    @endif
 
 	<div class="limiter">
 
