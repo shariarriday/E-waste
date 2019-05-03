@@ -66,9 +66,9 @@ class employeeController extends Controller
         $email = request("email");//get value from page
         $pass = request("password");//get value from page
 
-        $check = DB::connection('oracle')->select("Select EMPLOYEE_ID,ACCESSLEVEL FROM EMPLOYEE WHERE email = '$email' AND password = '$pass'");//check if correct password
+        $check = DB::connection('oracle')->select("Select DISTINCT EMPLOYEE_ID,ACCESSLEVEL FROM EMPLOYEE WHERE email = '$email' AND password = '$pass'");//check if correct password
 
-        if(count($check) == 1)
+        if(count($check) != 0)
         {
             $ID = $check[0]->employee_id;
             $level = $check[0]->accesslevel;

@@ -1,4 +1,8 @@
 @include('header')
+<?php
+    $val1 = DB::connection('oracle')->select("Select * FROM EMPLOYEE WHERE EMPLOYEE_ID = '$id' ");
+    $value = $val1[0]->accesslevel;
+?>
 <body style="background-image: linear-gradient(-25deg, #FFFFFF 0%, #C0C0C0 100%);">
     @if($value > 6)
     <nav class="navbar navbar-inverse">
