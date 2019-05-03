@@ -279,14 +279,14 @@
                         <span class="a-field__label">Name</span>
                     </span>
                 </label>
-                <br>
+                
                 <label class="field a-field a-field_a1 page__field">
                     <input class="field__input a-field__input" placeholder="012XXXXXXX" name = "phone" required>
                     <span class="a-field__label-wrap">
                         <span class="a-field__label">Phone Number</span>
                     </span>
                 </label>
-                <br>
+                
                 <label class="field a-field a-field_a1 page__field">
                     <input class="field__input a-field__input" placeholder="15000" name = "salary" required>
                     <span class="a-field__label-wrap">
@@ -300,16 +300,16 @@
                         <span class="a-field__label">Age</span>
                     </span>
                 </label>
-                <br>
+                
                 <label class="field a-field a-field_a1 page__field">
                     <input class="field__input a-field__input" placeholder="xyz@abcd.com" name = "email" required>
                     <span class="a-field__label-wrap">
                         <span class="a-field__label">Email</span>
                     </span>
                 </label>
-                <br>
+                
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="password" name = "password" required>
+                    <input class="field__input a-field__input" placeholder="password" type="password" name = "password" required>
                     <span class="a-field__label-wrap">
                         <span class="a-field__label">Password</span>
                     </span>
@@ -321,65 +321,65 @@
                         <span class="a-field__label">Access Level</span>
                     </span>
                 </label>
-                <br>
+                
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="PC" name = "product" required>
+                    <input class="field__input a-field__input" placeholder="PC" name = "product" >
                     <span class="a-field__label-wrap">
                         <span class="a-field__label">Product Type</span>
                     </span>
                 </label>
-                <br>
+                
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="AB-1234" name = "vehicle_license" required>
+                    <input class="field__input a-field__input" placeholder="AB-1234" name = "vehicle_license" >
                     <span class="a-field__label-wrap">
                         <span class="a-field__label">Vehicle License</span>
                     </span>
                 </label>
                 <br>
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="1000" name = "vehicle_capacity" required>
+                    <input class="field__input a-field__input" placeholder="1000" name = "vehicle_capacity" >
                     <span class="a-field__label-wrap">
                         <span class="a-field__label">Vehicle Capacity</span>
                     </span>
                 </label>
-                <br>
+                
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="Truck" name = "vehicle_type" required>
+                    <input class="field__input a-field__input" placeholder="Truck" name = "vehicle_type" >
                     <span class="a-field__label-wrap">
                         <span class="a-field__label">Vehicle Type</span>
                     </span>
                 </label>
-                <br>
+                
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="Dhaka" name = "destination" required>
+                    <input class="field__input a-field__input" placeholder="Dhaka" name = "destination" >
                     <span class="a-field__label-wrap">
                         <span class="a-field__label">Destination</span>
                     </span>
                 </label>
                 <br>
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="Dhaka" name = "source" required>
+                    <input class="field__input a-field__input" placeholder="Dhaka" name = "source" >
                     <span class="a-field__label-wrap">
                         <span class="a-field__label">Source</span>
                     </span>
                 </label>
-                <br>
+                
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="Destroying" name = "topic" required>
+                    <input class="field__input a-field__input" placeholder="Destroying" name = "topic" >
                     <span class="a-field__label-wrap">
                         <span class="a-field__label">Topic</span>
                     </span>
                 </label>
-                <br>
+                
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="10000" name = "funding" required>
+                    <input class="field__input a-field__input" placeholder="10000" name = "funding" >
                     <span class="a-field__label-wrap">
                         <span class="a-field__label">Funding</span>
                     </span>
                 </label>
                 <br>
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="Phd" name = "degree" required>
+                    <input class="field__input a-field__input" placeholder="Phd" name = "degree" >
                     <span class="a-field__label-wrap">
                         <span class="a-field__label">Degree</span>
                     </span>
