@@ -143,3 +143,88 @@ BEGIN
   INTO :new.processor_ID
   FROM dual;
 END;
+
+
+
+
+
+CREATE SEQUENCE STATION_ID_SEQ
+INCREMENT BY 10
+START WITH 1
+MAXVALUE 1000000
+CACHE 100
+NOCYCLE;
+
+CREATE OR REPLACE TRIGGER DUMP_ON_INSERT
+  BEFORE INSERT ON DUMP
+  FOR EACH ROW
+BEGIN
+  SELECT STATION_ID_SEQ.nextval
+  INTO :new.STATION_ID
+  FROM dual;
+END;
+
+
+CREATE SEQUENCE RAW_MATERIAL_SEQ
+INCREMENT BY 10
+START WITH 30
+MAXVALUE 1000000
+CACHE 100
+NOCYCLE;
+
+CREATE OR REPLACE TRIGGER RAW_MATERIAL_INSERT
+  BEFORE INSERT ON RAW_MATERIAL
+  FOR EACH ROW
+BEGIN
+  SELECT RAW_MATERIAL_SEQ.nextval
+  INTO :new.LOT_ID
+  FROM dual;
+END;
+
+INSERT INTO RAW_MATERIAL VALUES('','15','12','11','12','13','13','13','13');
+INSERT INTO RAW_MATERIAL VALUES('','12','12','11','12','13','13','13','13');
+INSERT INTO RAW_MATERIAL VALUES('','13','12','11','29','13','13','13','13');
+INSERT INTO RAW_MATERIAL VALUES('','14','12','81','12','13','13','13','13');
+INSERT INTO RAW_MATERIAL VALUES('','15','12','21','12','53','12','13','13');
+INSERT INTO RAW_MATERIAL VALUES('','16','12','11','12','13','73','13','13');
+INSERT INTO RAW_MATERIAL VALUES('','17','12','14','12','13','13','50','13');
+INSERT INTO RAW_MATERIAL VALUES('','18','12','11','12','53','13','13','13');
+INSERT INTO RAW_MATERIAL VALUES('','19','12','39','12','19','13','13','13');
+INSERT INTO RAW_MATERIAL VALUES('','20','12','22','12','13','13','13','13');
+
+1.
+CREATE OR REPLACE VIEW RAW_MAT_BY_RECYCLER
+AS 
+SELECT * FROM RAW_MATERIAL;
+
+2.
+CREATE OR REPLACE VIEW FIXED_PRODUCTS
+AS
+SELECT * FROM PRODUCT 
+WHERE
+REFURBISHER JOIN MAKES USING (INVENTORY_ID)
+JOIN PRODUCT USING (PRODUCT_ID)
+WHERE REPAIR=UPPRER('REPAIRABLE');// REPAIR IS REPAIR STATUS
+
+3.
+--> Show total money earned by recycler. (view)
+
+CREATE OR REPLACE VIEW EARNED_RECYLER
+AS
+SELECT 
+
+
+
+4.Show total money earned by recycler. (view)
+5.Show total money earned by refurbisher. (view)
+6.Show sale orders and buyer info for the recycler. (view)
+7.Add an insert for repair_cost of all the items taken from inventory.
+8.Add an insert for adding products with sequence for primary key.
+9.Add an insert for adding raw materials with sequence for primary key.
+10.Add sequence to processor ID generation.For reference check Riday_project_sql.
+11.Add trigger for updating profit for recycler when item is sold.
+12.Add trigger for updating profit for refurbisher when item is sold.
+
+
+
+
