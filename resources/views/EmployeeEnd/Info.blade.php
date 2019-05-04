@@ -12,12 +12,13 @@
         </div>
         <ul class="nav navbar-nav">
           <li class="active"><a href="info">Home</a></li>
-          <li><a href="#">Other Employee</a></li>
-          <li><a href="researcher">Researcher</a></li>
-          <li><a href="transport">Transport</a></li>
-          <li><a href="dumpingemployee">Dumping Stations</a></li>
+          <li><a href="/admin/otherEmployee">Other Employee</a></li>
+          <li><a href="/admin/researcher">Researcher</a></li>
+          <li><a href="/admin/transport">Transport</a></li>
+          <li><a href="/admin/transportwork">Transport Works</a></li>
+          <li><a href="/admin/dumpingemployee">Dumping Stations</a></li>
           <li><a href="#">Recycle Status</a></li>
-          <li><a href="addEmployee">Add New Employee</a></li>
+          <li><a href="/admin/addEmployee">Add New Employee</a></li>
         </ul>
       </div>
     </nav>
@@ -30,10 +31,10 @@
           <a class="navbar-brand" href="#">E-waste</a>
         </div>
         <ul class="nav navbar-nav">
-          <li class="active"><a href="info">Home</a></li>
-          <li><a href="researcher">Researcher</a></li>
-          <li><a href="transport">Transport</a></li>
-          <li><a href="dumpingemployee">Dumping Stations</a></li>
+          <li class="active"><a href="/admin/info">Home</a></li>
+          <li><a href="/admin/researcher">Researcher</a></li>
+          <li><a href="/admin/transport">Transport</a></li>
+          <li><a href="/admin/dumpingemployee">Dumping Stations</a></li>
         </ul>
       </div>
     </nav>

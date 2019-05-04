@@ -249,16 +249,19 @@
         <a class="navbar-brand" href="#">E-Waste</a>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="otherEmployee">Other Employee</a>
+                <a class="nav-link" href="/admin/otherEmployee">Other Employee</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="researcher">Researcher</a>
+                <a class="nav-link" href="/admin/researcher">Researcher</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="transport">Transport</a>
+                <a class="nav-link" href="/admin/transport">Transport</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="dumpingemployee">Dumping Employee</a>
+                <a class="nav-link" href="/admin/transportwork">Transport</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/dumpingemployee">Dumping Employee</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Recycle Status</a>

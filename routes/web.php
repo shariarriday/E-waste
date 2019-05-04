@@ -39,3 +39,7 @@ Route::get('/admin/addDisassembler/{id}','employeeController@getaddDisassembler'
 Route::post('/admin/addDisassembler','employeeController@postaddDisassembler');
 Route::get('/admin/transport','employeeController@getTransport');
 Route::post('/admin/transport','employeeController@postTransport');
+Route::get('/admin/removeDisassembler/{id}','employeeController@removeDisassembler');
+Route::get('/admin/removeTransport/{id}','employeeController@removeTransport');
+Route::get('/admin/removeResearch/{id}','employeeController@removeResearch');
+Route::get('/admin/transportwork','employeeController@worktransport');

@@ -192,4 +192,30 @@ class employeeController extends Controller
         $name = request("name");
         return view('EmployeeEnd.Transport',['name' => $name, 'id' => $request->session()->get('id'), 'level' => $request->session()->get('level')]);
     }
+
+    public function removeResearch(Request $request,$id)
+    {
+        $name = request("name");
+        $del = DB::connection('oracle')->delete("DELETE FROM RESEARCH WHERE EMPLOYEE_ID = $id");
+        return view('EmployeeEnd.EmployeeCheck',['name' => $name, 'id' => $request->session()->get('id'), 'level' => $request->session()->get('level')]);
+    }
+
+    public function removeTransport(Request $request,$id)
+    {
+        $name = request("name");
+        $del = DB::connection('oracle')->delete("DELETE FROM TRANSPORT WHERE EMPLOYEE_ID = $id");
+        return view('EmployeeEnd.EmployeeCheck',['name' => $name, 'id' => $request->session()->get('id'), 'level' => $request->session()->get('level')]);
+    }
+
+    public function removeDisassembler(Request $request,$id)
+    {
+        $name = request("name");
+        $del = DB::connection('oracle')->delete("DELETE FROM DISSEMBLER WHERE EMPLOYEE_ID = $id");
+        return view('EmployeeEnd.EmployeeCheck',['name' => $name, 'id' => $request->session()->get('id'), 'level' => $request->session()->get('level')]);
+    }
+
+    public function worktransport(Request $request)
+    {
+        return view('EmployeeEnd.TransportWorking',['id' => $request->session()->get('id'), 'level' => $request->session()->get('level')]);
+    }
 }
