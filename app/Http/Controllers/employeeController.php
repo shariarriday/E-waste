@@ -59,20 +59,22 @@ class employeeController extends Controller
     }
     public function showInfo()
     {
-    	return view('EmployeeEnd.Individual');
+    	return view('EmployeeEnd.Individual',['id' => $request->session()->get('id'), 'level' => $request->session()->get('level')]);
     }
     public function loginAction(Request $request)
     {
         $email = request("email");//get value from page
         $pass = request("password");//get value from page
 
-        $check = DB::connection('oracle')->select("Select EMPLOYEE_ID FROM EMPLOYEE WHERE email = '$email' AND password = '$pass'");//check if correct password
+        $check = DB::connection('oracle')->select("Select DISTINCT EMPLOYEE_ID,ACCESSLEVEL FROM EMPLOYEE WHERE email = '$email' AND password = '$pass'");//check if correct password
 
-        if(count($check) == 1)
+        if(count($check) != 0)
         {
             $ID = $check[0]->employee_id;
+            $level = $check[0]->accesslevel;
             $request->session()->put('id', $ID);
-            return view('EmployeeEnd.Info',['id' => $ID]);
+            $request->session()->put('level', $level);
+            return view('EmployeeEnd.Info',['id' => $ID , 'level' => $level]);
         }
         else {
             return view('EmployeeEnd.LoginForm');
@@ -88,53 +90,130 @@ class employeeController extends Controller
 
     public function otherEmployee(Request $request)
     {
-        return view('EmployeeEnd.EmployeeCheck',['id' => $request->session()->get('id')]);
+        return view('EmployeeEnd.EmployeeCheck',['id' => $request->session()->get('id'), 'level' => $request->session()->get('level')]);
     }
 
     public function info(Request $request)
     {
-        return view('EmployeeEnd.Info',['id' => $request->session()->get('id')]);
+        return view('EmployeeEnd.Info',['id' => $request->session()->get('id'), 'level' => $request->session()->get('level')]);
     }
 
     public function getresearcher(Request $request)
     {
-        return view('EmployeeEnd.SearchResearch',['id' => $request->session()->get('id')]);
+        return view('EmployeeEnd.SearchResearch',['id' => $request->session()->get('id'), 'level' => $request->session()->get('level')]);
     }
 
     public function postresearcher(Request $request)
     {
         $name = request("name");
-        return view('EmployeeEnd.Research',['name' => $name]);
+        return view('EmployeeEnd.Research',['name' => $name, 'id' => $request->session()->get('id'), 'level' => $request->session()->get('level')]);
     }
 
     public function dumpingemployee(Request $request)
     {
-        return view('EmployeeEnd.Dumping');
+        return view('EmployeeEnd.Dumping',['id' => $request->session()->get('id'), 'level' => $request->session()->get('level')]);
     }
 
     public function getaddEmployee(Request $request)
     {
-        return view('EmployeeEnd.EmployeeAdd');
+        return view('EmployeeEnd.EmployeeAdd',['id' => $request->session()->get('id'), 'level' => $request->session()->get('level')]);
     }
 
     public function postaddEmployee(Request $request)
     {
-        $id = $request->session()->get('id', $ID);
+        $id = $request->session()->get('id');
         $check = DB::connection('oracle')->select("Select ACCESSLEVEL FROM EMPLOYEE WHERE EMPLOYEE_ID = '$id'");
-        if($check[0] > 8)
+        if(count($check) == 1 & $check[0]->accesslevel > 8)
         {
-            $name = $request("name");$phone = $request("phone");
-            $salary = $request("salary");$age = $request("age");
-            $email = $request("email");$password = $request("password");
-            $access = $request("access");$product = $request("product");
-            $vehicle_license = $request("vehicle_license");$vehicle_capacity = $request("vehicle_capacity");
-            $vehicle_type = $request("vehicle_type");$destination = $request("destination");
-            $source = $request("source");$topic = $request("topic");
-            $funding = $request("funding");$degree = $request("degree");
+            $name = request("name");$phone = request("phone");
+            $salary = request("salary");$age = request("age");
+            $email = request("email");$password = request("password");
+            $access = request("access");
+            
+            $users = DB::connection('oracle')->insert("INSERT INTO Employee VALUES('','$name','$phone',$salary,$age,'$email','$password',$access,'free')");
+
             return view('EmployeeEnd.Info',['id' => $request->session()->get('id')]);
         }
         else {
-            return view('EmployeeEnd.Info',['id' => $request->session()->get('id')]);
+            return view('EmployeeEnd.EmployeeAdd',['id' => $request->session()->get('id')]);
         }
+    }
+    public function getaddTransport(Request $request, $val)
+    {
+        return view('EmployeeEnd.TransportAdd',['id' => $request->session()->get('id'), 'level' => $request->session()->get('level') , 'id2' => $val]);
+    }
+
+    public function postaddTransport(Request $request)
+    {
+        $vehicle_license = request("vehicle_license");$vehicle_capacity = request("vehicle_capacity");
+        $vehicle_type = request("vehicle_type");
+        $id = request("pk");
+        $users = DB::connection('oracle')->insert("INSERT INTO TRANSPORT VALUES('$id','$vehicle_license','$vehicle_capacity','$vehicle_type','','')");
+        return view('EmployeeEnd.Info',['id' => $request->session()->get('id'), 'level' => $request->session()->get('level')]);
+    }
+
+    public function getaddResearch(Request $request, $val)
+    {
+        return view('EmployeeEnd.ResearchAdd',['id' => $request->session()->get('id'), 'level' => $request->session()->get('level') , 'id2' => $val]);
+    }
+
+    public function postaddResearch(Request $request)
+    {
+        $topic = request("topic");
+        $funding = request("funding");
+        $degree = request("degree");
+        $id = request("pk");
+        $users = DB::connection('oracle')->insert("INSERT INTO Research VALUES('$id','$topic','$degree',$funding)");
+        return view('EmployeeEnd.Info',['id' => $request->session()->get('id'), 'level' => $request->session()->get('level')]);
+    }
+
+    public function getaddDisassembler(Request $request, $val)
+    {
+        return view('EmployeeEnd.DisassemblerAdd',['id' => $request->session()->get('id'), 'level' => $request->session()->get('level') , 'id2' => $val]);
+    }
+
+    public function postaddDisassembler(Request $request)
+    {
+        $type = request("type");
+        $id = request("pk");
+        $users = DB::connection('oracle')->insert("INSERT INTO DISSEMBLER VALUES('$id','$type')");
+        return view('EmployeeEnd.Info',['id' => $request->session()->get('id'), 'level' => $request->session()->get('level')]);
+    }
+
+    public function getTransport(Request $request)
+    {
+        return view('EmployeeEnd.SearchTransport',['id' => $request->session()->get('id'), 'level' => $request->session()->get('level')]);
+    }
+
+    public function postTransport(Request $request)
+    {
+        $name = request("name");
+        return view('EmployeeEnd.Transport',['name' => $name, 'id' => $request->session()->get('id'), 'level' => $request->session()->get('level')]);
+    }
+
+    public function removeResearch(Request $request,$id)
+    {
+        $name = request("name");
+        $del = DB::connection('oracle')->delete("DELETE FROM RESEARCH WHERE EMPLOYEE_ID = $id");
+        return view('EmployeeEnd.EmployeeCheck',['name' => $name, 'id' => $request->session()->get('id'), 'level' => $request->session()->get('level')]);
+    }
+
+    public function removeTransport(Request $request,$id)
+    {
+        $name = request("name");
+        $del = DB::connection('oracle')->delete("DELETE FROM TRANSPORT WHERE EMPLOYEE_ID = $id");
+        return view('EmployeeEnd.EmployeeCheck',['name' => $name, 'id' => $request->session()->get('id'), 'level' => $request->session()->get('level')]);
+    }
+
+    public function removeDisassembler(Request $request,$id)
+    {
+        $name = request("name");
+        $del = DB::connection('oracle')->delete("DELETE FROM DISSEMBLER WHERE EMPLOYEE_ID = $id");
+        return view('EmployeeEnd.EmployeeCheck',['name' => $name, 'id' => $request->session()->get('id'), 'level' => $request->session()->get('level')]);
+    }
+
+    public function worktransport(Request $request)
+    {
+        return view('EmployeeEnd.TransportWorking',['id' => $request->session()->get('id'), 'level' => $request->session()->get('level')]);
     }
 }

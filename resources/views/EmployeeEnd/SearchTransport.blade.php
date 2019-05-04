@@ -248,51 +248,50 @@
 </style>
 </head>
 <body>
-
-    @if($value > 6)
-       <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-      <a class="navbar-brand" href="#">E-Waste</a>
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="otherEmployee">Other Employee</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="researcher">Researcher</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="transport">Transport</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/admin/transportwork">Transport Works</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="dumpingemployee">Dumping Stations</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Recycle Status</a>
-        </li>
-      </ul>
+@if($value > 6)
+   <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <a class="navbar-brand" href="#">E-Waste</a>
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="otherEmployee">Other Employee</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="researcher">Researcher</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="transport">Transport</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/admin/transportwork">Transport Works</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="dumpingemployee">Dumping Stations</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Recycle Status</a>
+    </li>
+  </ul>
+</nav>
+@endif
+@if($value < 7)
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+    <a class="navbar-brand" href="#">E-Waste</a>
+    <ul class="navbar-nav">
+     <li class="nav-item">
+       <a class="nav-link" href="researcher">Researcher</a>
+     </li>
+     <li class="nav-item">
+       <a class="nav-link" href="transport">Transport</a>
+     </li>
+     <li class="nav-item">
+       <a class="nav-link" href="dumpingemployee">Dumping Employee</a>
+     </li>
+    </ul>
     </nav>
-    @endif
-    @if($value < 7)
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-        <a class="navbar-brand" href="#">E-Waste</a>
-        <ul class="navbar-nav">
-         <li class="nav-item">
-           <a class="nav-link" href="researcher">Researcher</a>
-         </li>
-         <li class="nav-item">
-           <a class="nav-link" href="transport">Transport</a>
-         </li>
-         <li class="nav-item">
-           <a class="nav-link" href="dumpingemployee">Dumping Employee</a>
-         </li>
-        </ul>
-        </nav>
-    @endif
+@endif
 
     <div class="container" style="text-align: center;">
-        <h3>Research Works</h3>
+        <h3>Transport Works</h3>
     </div>
     <div class="page">
         <form action = "researcher" method="post">

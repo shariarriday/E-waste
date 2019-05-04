@@ -1,21 +1,44 @@
 @include('header')
+<?php
+    $val1 = DB::connection('oracle')->select("Select * FROM EMPLOYEE WHERE EMPLOYEE_ID = '$id' ");
+    $value = $val1[0]->accesslevel;
+?>
 <body style="background-image: linear-gradient(-25deg, #FFFFFF 0%, #C0C0C0 100%);">
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">E-waste</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li><a href="#">Home</a></li>
-      <li><a href="otherEmployee">Other Employee</a></li>
-      <li class="active"><a href="researcher">Researcher</a></li>
-      <li><a href="transport">Transport</a></li>
-      <li><a href="dumpingemployee">Dumping Stations</a></li>
-      <li><a href="#">Recycle Status</a></li>
-      <li><a href="addEmployee">Add New Employee</a></li>
-    </ul>
-  </div>
-</nav>
+    @if($value > 6)
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">E-waste</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="info">Home</a></li>
+          <li><a href="#">Other Employee</a></li>
+          <li class="active"><a href="researcher">Researcher</a></li>
+          <li><a href="transport">Transport</a></li>
+          <li><a href="/admin/transportwork">Transport Works</a></li>
+          <li><a href="dumpingemployee">Dumping Stations</a></li>
+          <li><a href="#">Recycle Status</a></li>
+          <li><a href="addEmployee">Add New Employee</a></li>
+        </ul>
+      </div>
+    </nav>
+    @endif
+
+    @if($value < 7)
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">E-waste</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="info">Home</a></li>
+          <li class="active"><a href="researcher">Researcher</a></li>
+          <li><a href="transport">Transport</a></li>
+          <li><a href="dumpingemployee">Dumping Stations</a></li>
+        </ul>
+      </div>
+    </nav>
+    @endif
 
 	<div class="limiter">
 

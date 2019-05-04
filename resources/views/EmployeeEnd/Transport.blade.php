@@ -14,9 +14,9 @@
           <li><a href="info">Home</a></li>
           <li><a href="#">Other Employee</a></li>
           <li><a href="researcher">Researcher</a></li>
-          <li><a href="transport">Transport</a></li>
+          <li class="active"><a href="transport">Transport</a></li>
           <li><a href="/admin/transportwork">Transport Works</a></li>
-          <li class="active"><a href="dumpingemployee">Dumping Stations</a></li>
+          <li><a href="dumpingemployee">Dumping Stations</a></li>
           <li><a href="#">Recycle Status</a></li>
           <li><a href="addEmployee">Add New Employee</a></li>
         </ul>
@@ -32,9 +32,9 @@
         </div>
         <ul class="nav navbar-nav">
           <li><a href="info">Home</a></li>
-          <li><a href="researcher">Researcher</a></li>
+          <li class="active"><a href="researcher">Researcher</a></li>
           <li><a href="transport">Transport</a></li>
-          <li class="active"><a href="dumpingemployee">Dumping Stations</a></li>
+          <li><a href="dumpingemployee">Dumping Stations</a></li>
         </ul>
       </div>
     </nav>
@@ -43,7 +43,7 @@
 	<div class="limiter">
 
     <?php
-        $vals = DB::connection('oracle')->select("Select DISTINCT * FROM EMPLOYEE_DUMP");
+        $vals = DB::connection('oracle')->select("Select * FROM VEHICLE_FREE WHERE NAME = '$name' "); //write any query you need, I am writing to show the                                                                     //employees information
     ?>
 		<div class="container-table100">
 			<div class="wrap-table100">
@@ -52,9 +52,9 @@
 						<thead>
 							<tr class="row100 head">
 								<th class="column100 column1" data-column="column1"></th>
-								<th class="column100 column2" data-column="column2">Phone</th>
-								<th class="column100 column3" data-column="column3">Location</th>
-								<th class="column100 column4" data-column="column4">Product Type</th>
+								<th class="column100 column3" data-column="column2">Vehicle License</th>
+								<th class="column100 column4" data-column="column3">Vehicle Type</th>
+                                <th class="column100 column4" data-column="column4">Vehicle Capacity</th>
 							</tr>
 						</thead>
 
@@ -63,9 +63,9 @@
                             @foreach($vals as $val)
 							<tr class="row100">
 								<td class="column100 column1" data-column="column1">{{$val->name}}</td>
-								<td class="column100 column2" data-column="column2">{{$val->phone}}</td>
-								<td class="column100 column3" data-column="column3">{{$val->location}}</td>
-								<td class="column100 column4" data-column="column4">{{$val->product_type}}</td>
+								<td class="column100 column2" data-column="column2">{{$val->vehicle_license}}</td>
+								<td class="column100 column3" data-column="column3">{{$val->vehicle_type}}</td>
+								<td class="column100 column4" data-column="column4">{{$val->vehicle_capacity}}</td>
 							</tr>
                             @endforeach
 						</tbody>
