@@ -31,3 +31,7 @@ Route::post('/admin/researcher','employeeController@postresearcher');
 Route::get('/admin/dumpingemployee','employeeController@dumpingemployee');
 Route::get('/admin/addEmployee','employeeController@getaddEmployee');
 Route::post('/admin/addEmployee','employeeController@postaddEmployee');
+Route::get('/user/ManufacturerReg','providerController@ManufacturerRegister');
+route::post('admin/Dump', 'employeeController@dumpingemployee');
+Route::post('/user/home','providerController@LoginAction');
+Route::post('/user/store','providerController@manufacturerStore');

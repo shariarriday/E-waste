@@ -79,6 +79,8 @@ class employeeController extends Controller
         }
     }
 
+
+
     public function login()
     {
         return view('EmployeeEnd.LoginForm');
