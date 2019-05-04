@@ -96,7 +96,8 @@
             </div>
             <div class="col-md-4 login-form-2">
                 <h3>Login for Individual</h3>
-                <form>
+                  <form action = "/user/Individualhome" method = "post">
+                    {{CSRF_FIELD()}}
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Your Email *" value="" name = "email"/>
                     </div>
@@ -108,18 +109,19 @@
                     </div>
                     <div class="form-group">
 
-                        <a href="#" class="ForgetPwd" value="Login">Create Account</a>
+                        <a href="/user/IndividualReg" class="ForgetPwd" value="Login">Create Account</a>
                     </div>
                 </form>
             </div>
             <div class="col-md-4 login-form-1">
                 <h3>Login for Business </h3>
               <form action = "/user/Businesshome" method = "post">
+                    {{CSRF_FIELD()}}
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Email *" value="" />
+                        <input type="text" class="form-control" placeholder="Your Email *" value="" name="email" />
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Your Password *" value="" />
+                        <input type="password" class="form-control" placeholder="Your Password *" value="" name="pass" />
                     </div>
                     <div class="form-group">
                         <input type="submit" class="btnSubmit" value="Login" />

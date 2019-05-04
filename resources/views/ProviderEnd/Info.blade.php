@@ -7,10 +7,8 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Home</a></li>
-      <li><a href="otherEmployee">Other Manufacturers</a></li>
-      <li><a href="searchResearcher">Researcher</a></li>
-      <li><a href="dumpingemployee">Dumping Stations</a></li>
-      <li><a href="#">Product Condition</a></li>
+      <li><a href="/user/manufacturerinventoryhistory">Inventory History</a></li>
+    
     </ul>
   </div>
 </nav>
@@ -35,7 +33,7 @@
 
                                 <th class="column100 column6" data-column="column6">Email</th>
                                 <th class="column100 column7" data-column="column7">Password</th>
-                          
+
 							</tr>
 						</thead>
 

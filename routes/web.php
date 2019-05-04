@@ -51,6 +51,13 @@ Route::post('/user/ManufacturerReg','providerController@manufacturerStore');
 Route::post('/processor/home','processorController@loginAction');
 
 Route::get('/user/BusinessReg','providerController@BusinessRegister');
-Route::post('/user/Businesshome','providerController@BusinessLoginAction');
+Route::post('/user/Businesshome','providerController@BusinessloginAction');
 Route::post('/user/BusinessReg','providerController@BusinessStore');
-Route::post('/user/Businesshome','providerController@BusinessLoginAction');
+
+Route::get('/user/IndividualReg','providerController@IndividualRegister');
+Route::post('/user/Individualhome','providerController@IndividualloginAction');
+Route::post('/user/IndividualReg','providerController@IndividualStore');
+Route::get('/user/individualsellhistory','providerController@IndividualSellHistory');
+Route::get('/user/Individualhome','providerController@IndividualloginAction');
+Route::get('/user/businesssellhistory','providerController@BusinessSellHistory');
+Route::get('/user/manufacturerinventoryhistory','providerController@ManufacturerInventoryHistory');
