@@ -58,19 +58,19 @@ class processorController extends Controller
 
     public function loginAction(Request $request)
     {
-        $email = request("email"); //get value from page
-        $pass = request("password"); //get value from page
+        $email = request("emailprc"); //get value from page
+        $pass = request("passwordprc"); //get value from page
 
-$check = DB::connection('oracle')->select("Select EMPLOYEE_ID FROM EMPLOYEE WHERE email = '$email' AND password = '$pass'");//check if correct password
+$check = DB::connection('oracle')->select("Select PROCESSOR_ID FROM PROCESSOR WHERE email = '$email' AND password = '$pass'");//check if correct password
 
         if(count($check) == 1)
         {
             $ID = $check[0]->employee_id;
             $request->session()->put('id', $ID);
-return view('EmployeeEnd.Info',['id' => $ID]); //return view with a variable ID which you may need
+return view('ProcessorEnd.Info',['id' => $ID]); //return view with a variable ID which you may need
         }
 else {
-            return view('EmployeeEnd.LoginForm');
+            return view('ProcessorEnd.LoginForm');
         }
     }
 

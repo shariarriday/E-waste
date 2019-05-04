@@ -127,11 +127,7 @@ class employeeController extends Controller
             $salary = request("salary");$age = request("age");
             $email = request("email");$password = request("password");
             $access = request("access");
-            $vehicle_license = request("vehicle_license");$vehicle_capacity = request("vehicle_capacity");
-            $vehicle_type = request("vehicle_type");$destination = request("destination");
-            $source = request("source");$topic = request("topic");
-            $funding = request("funding");$degree = request("degree");
-
+            
             $users = DB::connection('oracle')->insert("INSERT INTO Employee VALUES('','$name','$phone',$salary,$age,'$email','$password',$access,'free')");
 
             return view('EmployeeEnd.Info',['id' => $request->session()->get('id')]);
