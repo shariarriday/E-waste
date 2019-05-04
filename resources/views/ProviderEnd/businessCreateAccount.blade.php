@@ -274,20 +274,34 @@
         <h3>Research Works</h3>
     </div>
     <div class="page">
-        <form action = "/user/ManufacturerReg" method="post">
+        <form action = "/user/BusinessReg" method="post">
             {{CSRF_FIELD()}}
             <div class="page__demo">
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="Manufacturer Name" name = "contact_name" required>
+                    <input class="field__input a-field__input" placeholder="15000" name = "balance" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Contact Name</span>
+                        <span class="a-field__label">Balance</span>
                     </span>
                 </label>
 
                 <label class="field a-field a-field_a1 page__field">
+                    <input class="field__input a-field__input" placeholder="xyz@gmail.com" name = "contact_email" required>
+                    <span class="a-field__label-wrap">
+                        <span class="a-field__label">Contact E-mail</span>
+                    </span>
+                </label>
+                <br>
+                <label class="field a-field a-field_a1 page__field">
                     <input class="field__input a-field__input" placeholder="Dhaka" name = "inventory_location" required>
                     <span class="a-field__label-wrap">
                         <span class="a-field__label">Inventory Location</span>
+                    </span>
+                </label>
+
+                <label class="field a-field a-field_a1 page__field">
+                    <input class="field__input a-field__input" placeholder="contact name" name = "contact_name" required>
+                    <span class="a-field__label-wrap">
+                        <span class="a-field__label">Contact Name</span>
                     </span>
                 </label>
                 <br>
@@ -297,7 +311,6 @@
                         <span class="a-field__label">Name</span>
                     </span>
                 </label>
-
                 <label class="field a-field a-field_a1 page__field">
                     <input class="field__input a-field__input" placeholder="Dhaka" name = "location" required>
                     <span class="a-field__label-wrap">
@@ -305,19 +318,13 @@
                     </span>
                 </label>
                 <br>
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="xyz@abcd.com" name = "email" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Email</span>
-                    </span>
-                </label>
+
                 <label class="field a-field a-field_a1 page__field">
                     <input class="field__input a-field__input" placeholder="password" type="password" name = "password" required>
                     <span class="a-field__label-wrap">
                         <span class="a-field__label">Password</span>
                     </span>
                 </label>
-                <br>
                 <br>
                 <div class="container" style="display: flex; justify-content: center; padding-top: 30px">
                     <button type="submit" class="btn btn-outline-secondary">   Submit   </button>

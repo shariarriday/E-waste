@@ -61,10 +61,9 @@ class providerController extends Controller
     public function loginAction(Request $request)
     {
         $email = request("email");//get value from page
-        $pass = request("pass");//get value from page
-        $check = DB::connection('oracle')->select("Select PROVIDER_ID FROM MANUFACTURER WHERE email = '$email' AND password = '$pass'");//check if correct password
-
-        if(count($check) == 1)
+        $pass = request("password");//get value from page
+$check = DB::connection('oracle')->select("Select PROVIDER_ID FROM MANUFACTURER WHERE email = '$email' AND password = '$pass'");//check if correct password
+        if(count($check)!=0 )
         {
             $ID = $check[0]->provider_id;
             $request->session()->put('id', $ID);
@@ -85,5 +84,46 @@ class providerController extends Controller
           $users = DB::connection('oracle')->insert("INSERT INTO MANUFACTURER VALUES('','$contact_name','$inventory_location','$name','$location','$email','$password')");
           return view('ProviderEnd.LoginForm');
     }
+
+
+    public function BusinessRegister()
+    {
+      return view('ProviderEnd.businessCreateAccount');
+    }
+    public function BusinessloginAction(Request $request)
+    {
+        $email = request("contact_email");//get value from page
+        $pass = request("password");//get value from page
+$check = DB::connection('oracle')->select("Select PROVIDER_ID FROM BUSINESS WHERE contact_email = '$email' AND password = '$pass'");//check if correct password
+        if(count($check) == 1)
+        {
+            $ID = $check[0]->provider_id;
+            $request->session()->put('id', $ID);
+            return view('ProviderEnd.businessinfo',['id' => $ID]);
+        }
+        else {
+            return view('ProviderEnd.LoginForm');
+        }
+    }
+
+    public function BusinessStore()
+     {
+           $balance = request("balance");
+           $contact_email = request("contact_email");
+           $inventory_location = request("inventory_location");
+           $contact_name = request("contact_name");
+           $name = request("name");
+           $location = request("location");
+              $password = request("password");
+           $users = DB::connection('oracle')->insert("INSERT INTO BUSINESS VALUES('','$balance','$contact_email','$inventory_location','$contact_name','$name','$location','$password')");
+           return view('ProviderEnd.LoginForm');
+     }
+
+
+
+
+
+
+
 
   }

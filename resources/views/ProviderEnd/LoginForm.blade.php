@@ -78,7 +78,7 @@
         <div class="row">
             <div class="col-md-4 login-form-1">
                 <h3>Login for Manufacturer </h3>
-                <form action = "user/manufacturer/home" method = "post">
+                <form action = "/user/home" method = "post">
                     {{CSRF_FIELD()}}
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Your Email *" value="" name = "email" />
@@ -114,7 +114,7 @@
             </div>
             <div class="col-md-4 login-form-1">
                 <h3>Login for Business </h3>
-                <form>
+              <form action = "/user/Businesshome" method = "post">
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Your Email *" value="" />
                     </div>
@@ -126,7 +126,7 @@
                     </div>
                     <div class="form-group">
 
-                        <a href="#" class="ForgetPwd" value="Login">Create Account</a>
+                        <a href="/user/BusinessReg" class="ForgetPwd" value="Login">Create Account</a>
                     </div>
                 </form>
             </div>
