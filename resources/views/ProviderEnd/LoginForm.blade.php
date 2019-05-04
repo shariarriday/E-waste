@@ -78,18 +78,19 @@
         <div class="row">
             <div class="col-md-4 login-form-1">
                 <h3>Login for Manufacturer </h3>
-                <form>
+                <form action = "user/home" method = "post">
+                    {{CSRF_FIELD()}}
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Email *" value="" />
+                        <input type="text" class="form-control" placeholder="Your Email *" value="" name = "email" />
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Your Password *" value="" />
+                        <input type="password" class="form-control" placeholder="Your Password *" value="" name="pass" />
                     </div>
                     <div class="form-group">
                         <input type="submit" class="btnSubmit" value="Login" />
                     </div>
                     <div class="form-group">
-                        <a href="#" class="ForgetPwd">Create Account</a>
+                        <a href="/user/ManufacturerReg" class="ForgetPwd">Create Account</a>
                     </div>
                 </form>
             </div>
