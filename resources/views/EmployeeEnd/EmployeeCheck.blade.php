@@ -60,7 +60,7 @@
 	<div class="limiter">
 
     <?php
-        $vals = DB::connection('oracle')->select("Select DISTINCT * FROM EMPLOYEE_CHECK WHERE ACCESSLEVEL < $value ");
+        $vals = DB::connection('oracle')->select("Select * FROM EMPLOYEE_CHECK WHERE ACCESSLEVEL < $value ");
     ?>
 		<div class="container-table100">
 			<div class="wrap-table100">
