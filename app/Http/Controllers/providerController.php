@@ -61,8 +61,8 @@ class providerController extends Controller
     public function loginAction(Request $request)
     {
         $email = request("email");//get value from page
-        $pass = request("password");//get value from page
-$check = DB::connection('oracle')->select("Select PROVIDER_ID FROM MANUFACTURER WHERE email = '$email' AND password = '$pass'");//check if correct password
+        $pass = request("pass");//get value from page
+        $check = DB::connection('oracle')->select("Select PROVIDER_ID FROM MANUFACTURER WHERE email = '$email' AND password = '$pass'");//check if correct password
 
         if(count($check) == 1)
         {
