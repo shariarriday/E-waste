@@ -83,7 +83,7 @@ class providerController extends Controller
           $email = request("email");
           $password = request("password");
           $users = DB::connection('oracle')->insert("INSERT INTO MANUFACTURER VALUES('','$contact_name','$inventory_location','$name','$location','$email','$password')");
-          return view('loginAction');
+          return view('ProviderEnd.LoginForm');
     }
 
   }

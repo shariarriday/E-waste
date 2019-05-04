@@ -274,34 +274,34 @@
         <h3>Research Works</h3>
     </div>
     <div class="page">
-        <form action = "/user/ManufacturerReg" method="post">
+        <form action = "/user/store" method="post">
             {{CSRF_FIELD()}}
             <div class="page__demo">
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="Manufacturer Name" name = "name" required>
+                    <input class="field__input a-field__input" placeholder="Manufacturer Name" name = "contact_name" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Name</span>
+                        <span class="a-field__label">Contact Name</span>
                     </span>
                 </label>
 
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="012XXXXXXX" name = "phone" required>
+                    <input class="field__input a-field__input" placeholder="012XXXXXXX" name = "inventory_location" required>
                     <span class="a-field__label-wrap">
                         <span class="a-field__label">Phone Number</span>
                     </span>
                 </label>
                 <br>
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="15000" name = "salary" required>
+                    <input class="field__input a-field__input" placeholder="15000" name = "name" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Salary</span>
+                        <span class="a-field__label">Name</span>
                     </span>
                 </label>
 
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="50" name = "age" required>
+                    <input class="field__input a-field__input" placeholder="Dhaka" name = "location" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Age</span>
+                        <span class="a-field__label">Location</span>
                     </span>
                 </label>
                 <br>
@@ -318,13 +318,7 @@
                     </span>
                 </label>
                 <br>
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="1-10" name = "access" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Access Level</span>
-                    </span>
-                </label>
-                <br>
+
                 <div class="container" style="display: flex; justify-content: center; padding-top: 30px">
                     <button type="submit" class="btn btn-outline-secondary">   Submit   </button>
                 </div>
