@@ -1,4 +1,4 @@
-<?php
++<?php
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
@@ -64,7 +64,7 @@ class employeeController extends Controller
     public function loginAction(Request $request)
     {
         $email = request("email");//get value from page
-        $pass = request("password");//get value from page
+        $pass = request("pass");//get value from page
 
         $check = DB::connection('oracle')->select("Select DISTINCT EMPLOYEE_ID,ACCESSLEVEL FROM EMPLOYEE WHERE email = '$email' AND password = '$pass'");//check if correct password
 
@@ -129,7 +129,7 @@ class employeeController extends Controller
             $salary = request("salary");$age = request("age");
             $email = request("email");$password = request("password");
             $access = request("access");
-            
+
             $users = DB::connection('oracle')->insert("INSERT INTO Employee VALUES('','$name','$phone',$salary,$age,'$email','$password',$access,'free')");
 
             return view('EmployeeEnd.Info',['id' => $request->session()->get('id')]);

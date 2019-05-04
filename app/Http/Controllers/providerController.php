@@ -61,8 +61,8 @@ class providerController extends Controller
     public function loginAction(Request $request)
     {
         $email = request("email");//get value from page
-        $pass = request("password");//get value from page
-$check = DB::connection('oracle')->select("Select PROVIDER_ID FROM MANUFACTURER WHERE email = '$email' AND password = '$pass'");//check if correct password
+        $pass = request("pass");//get value from page
+        $check = DB::connection('oracle')->select("Select * FROM MANUFACTURER WHERE email = '$email' AND password = '$pass'");//check if correct password
         if(count($check)!=0 )
         {
             $ID = $check[0]->provider_id;
@@ -70,7 +70,7 @@ $check = DB::connection('oracle')->select("Select PROVIDER_ID FROM MANUFACTURER 
             return view('ProviderEnd.Info',['id' => $ID]);
         }
         else {
-            return view('ProviderEnd.LoginForm');
+            return $check;
         }
     }
    public function manufacturerStore()
