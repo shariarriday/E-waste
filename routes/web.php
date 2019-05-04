@@ -43,3 +43,4 @@ Route::get('/admin/removeDisassembler/{id}','employeeController@removeDisassembl
 Route::get('/admin/removeTransport/{id}','employeeController@removeTransport');
 Route::get('/admin/removeResearch/{id}','employeeController@removeResearch');
 Route::get('/admin/transportwork','employeeController@worktransport');
+Route::post('/processor/home','processorController@loginAction');

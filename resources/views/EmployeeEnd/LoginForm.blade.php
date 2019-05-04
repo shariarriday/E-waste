@@ -101,7 +101,7 @@
             </div>
             <div class="col-md-4 login-form-2">
                 <h3>Login for Processors</h3>
-                <form>
+                <form action = "/processor/home" method = "post">
                     {{CSRF_FIELD()}}
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Your Email *" value="" name="emailprc" />

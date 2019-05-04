@@ -9,7 +9,7 @@ class processorController extends Controller
     //this part will be done by Udoy.
     //here are some template code for different cases
     //There must be a login page and an info page.
-    //then for insertions and showing data in any view make as many page as needed 
+    //then for insertions and showing data in any view make as many page as needed
     //using Route::get('/processor/*****',.....);
   /*  public function test()
     {
@@ -55,4 +55,23 @@ class processorController extends Controller
     {
     	return view('template.Individual');
     }
+
+    public function loginAction(Request $request)
+    {
+        $email = request("email"); //get value from page
+        $pass = request("password"); //get value from page
+
+$check = DB::connection('oracle')->select("Select EMPLOYEE_ID FROM EMPLOYEE WHERE email = '$email' AND password = '$pass'");//check if correct password
+
+        if(count($check) == 1)
+        {
+            $ID = $check[0]->employee_id;
+            $request->session()->put('id', $ID);
+return view('EmployeeEnd.Info',['id' => $ID]); //return view with a variable ID which you may need
+        }
+else {
+            return view('EmployeeEnd.LoginForm');
+        }
+    }
+
 }
