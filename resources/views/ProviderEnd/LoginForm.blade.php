@@ -78,7 +78,7 @@
         <div class="row">
             <div class="col-md-4 login-form-1">
                 <h3>Login for Manufacturer </h3>
-                <form action = "user/home" method = "post">
+                <form action = "user/manufacturer/home" method = "post">
                     {{CSRF_FIELD()}}
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Your Email *" value="" name = "email" />

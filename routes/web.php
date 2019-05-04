@@ -46,6 +46,6 @@ Route::get('/admin/transportwork','employeeController@worktransport');
 Route::post('/processor/home','processorController@loginAction');
 
 Route::get('/user/ManufacturerReg','providerController@ManufacturerRegister');
-Route::post('/user/home','providerController@LoginAction');
+Route::post('/user/manufacturer/home','providerController@LoginAction');
 Route::post('/user/store','providerController@manufacturerStore');
 Route::post('/processor/home','processorController@loginAction');

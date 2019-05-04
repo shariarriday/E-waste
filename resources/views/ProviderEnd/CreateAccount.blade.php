@@ -280,28 +280,28 @@
                 <label class="field a-field a-field_a1 page__field">
                     <input class="field__input a-field__input" placeholder="Manufacturer Name" name = "name" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Name</span>
+                        <span class="a-field__label">Contact Name</span>
                     </span>
                 </label>
 
                 <label class="field a-field a-field_a1 page__field">
                     <input class="field__input a-field__input" placeholder="012XXXXXXX" name = "phone" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Phone Number</span>
+                        <span class="a-field__label">Inventory Location</span>
                     </span>
                 </label>
                 <br>
                 <label class="field a-field a-field_a1 page__field">
                     <input class="field__input a-field__input" placeholder="15000" name = "salary" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Salary</span>
+                        <span class="a-field__label">Name</span>
                     </span>
                 </label>
 
                 <label class="field a-field a-field_a1 page__field">
                     <input class="field__input a-field__input" placeholder="50" name = "age" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Age</span>
+                        <span class="a-field__label">Location</span>
                     </span>
                 </label>
                 <br>

@@ -26,16 +26,16 @@
 					<table data-vertable="ver1">
 						<thead>
 							<tr class="row100 head">
-								<th class="column100 column1" data-column="column1"></th>
-								<th class="column100 column2" data-column="column2">Provider ID</th>
-								<th class="column100 column3" data-column="column3">Contact Name</th>
-								<th class="column100 column4" data-column="column4">Inventory Location</th>
-                <th class="column100 column4" data-column="column4">Name</th>
-                <th class="column100 column4" data-column="column4">Location</th>
+								<th class="column100 column1" data-column="column1">Provider ID</th>
+								<th class="column100 column2" data-column="column2">Contact Name</th>
+								<th class="column100 column3" data-column="column3">Inventory Location</th>
+								<th class="column100 column4" data-column="column4">Name</th>
+                <th class="column100 column5" data-column="column5">Location</th>
 
-                                <th class="column100 column4" data-column="column5">Email</th>
-                                <th class="column100 column4" data-column="column6">Password</th>
-                                <th class="column100 column4" data-column="column7"></th>
+
+                                <th class="column100 column6" data-column="column6">Email</th>
+                                <th class="column100 column7" data-column="column7">Password</th>
+                          
 							</tr>
 						</thead>
 
@@ -43,7 +43,7 @@
 						<tbody>
                             @foreach($vals as $val)
 							<tr class="row100">
-								<td class="column100 column1" data-column="column1">{{$val->provider_id}</td>
+								<td class="column100 column1" data-column="column1">{{$val->provider_id}}</td>
 								<td class="column100 column2" data-column="column2">{{$val->contact_name}}</td>
 								<td class="column100 column3" data-column="column3">{{$val->inventory_location}}</td>
 								<td class="column100 column4" data-column="column4">{{$val->name}}</td>
