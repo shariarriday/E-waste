@@ -19,6 +19,11 @@ Route::get('/user','providerController@providerlogin');
 Route::get('/processor/login','processorController@processorLogin');
 Route::post('/processor/loginAction','processorController@processorLoginAction');
 
+Route::get('/shahir', 'product_infoController@manufacturerLogin');
+Route::get('/shahir/createManufacturer','product_infoController@createManufacturer');
+Route::post('/shahir/home','product_infoController@loginAction');
+
+
 Route::get('/admin','employeeController@totalLogin');
 Route::get('/admin/createEmployee','employeeController@createEmployee');
 Route::get('/admin/show','employeeController@showInfo');
