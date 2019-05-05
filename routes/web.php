@@ -59,6 +59,14 @@ Route::get('/user/BusinessReg','providerController@BusinessRegister');
 Route::post('/user/Businesshome','providerController@BusinessloginAction');
 Route::post('/user/BusinessReg','providerController@BusinessStore');
 
+Route::post('/user/Businesshome','providerController@BusinessLoginAction');
+Route::get('/processor/showall','processorController@showall');
+Route::post('/processor/ProcessorAdd','processorController@postaddProcessor');
+Route::get('/processor/ProcessorAdd','processorController@getaddProcessor');
+Route::post('/processor/Raw_MaterialAdd','processorController@postaddRaw_Material');
+Route::get('/processor/Raw_MaterialAdd','processorController@getaddRaw_Material');
+
+
 Route::get('/user/IndividualReg','providerController@IndividualRegister');
 Route::post('/user/Individualhome','providerController@IndividualloginAction');
 Route::post('/user/IndividualReg','providerController@IndividualStore');
@@ -69,4 +77,6 @@ Route::get('/user/manufacturerinventoryhistory','providerController@Manufacturer
 Route::get('/user/sellItems','providerController@solditems');
 Route::post('/user/sellItems','providerController@soldItemstore');
 //Route::get('/user','providerController@soldItemstore');
+Route::get('/user/showinsert','providerController@soldItemstore');
+
 //Route::get('/user/showinsert','providerController@soldItemstore');
