@@ -61,3 +61,7 @@ Route::get('/user/individualsellhistory','providerController@IndividualSellHisto
 Route::get('/user/Individualhome','providerController@IndividualloginAction');
 Route::get('/user/businesssellhistory','providerController@BusinessSellHistory');
 Route::get('/user/manufacturerinventoryhistory','providerController@ManufacturerInventoryHistory');
+Route::get('/user/sellItems','providerController@solditems');
+Route::post('/user/sellItems','providerController@soldItemstore');
+//Route::get('/user','providerController@soldItemstore');
+Route::get('/user/showinsert','providerController@soldItemstore');

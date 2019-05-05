@@ -7,6 +7,7 @@
     </div>
     <ul class="nav navbar-nav">
       <li><a href="/user/Individualhome">Home</a></li>
+      
     </ul>
   </div>
 </nav>

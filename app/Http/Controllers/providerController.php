@@ -164,6 +164,21 @@ $check = DB::connection('oracle')->select("Select PROVIDER_ID FROM BUSINESS WHER
       {
           return view('ProviderEnd.manufacturerinventoryhistory',['id' => $request->session()->get('id')]);
       }
+      public function solditems()
+      {
+        return view('ProviderEnd.sellitems');
+      }
+      public function soldItemstore(Request $request)
+      {
+             $barcode = request("barcode");
+             $product_condition = request("product_condition");
+             $id = $request->session()->get('id');
+
+             $loc = DB::connection('oracle')->select("SELECT LOCATION FROM MANUFACTURER where PROVIDER_ID = '$id'");
+             $users = DB::connection('oracle')->insert("INSERT INTO ORDER_PROVIDER VALUES
+              ('',NULL,'$barcode',NULL,'$product_condition')");
+      return view('ProviderEnd.LoginForm');
+      }
 
 
 
