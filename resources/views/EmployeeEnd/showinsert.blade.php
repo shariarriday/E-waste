@@ -40,17 +40,13 @@
 
 
 						<tbody>
-                            @foreach($vals as $val)
+
 							<tr class="row100">
-								<td class="column100 column1" data-column="column1">{{$val->provider_id}}</td>
-								<td class="column100 column2" data-column="column2">{{$val->contact_name}}</td>
-								<td class="column100 column3" data-column="column3">{{$val->inventory_location}}</td>
-								<td class="column100 column4" data-column="column4">{{$val->name}}</td>
-                                <td class="column100 column4" data-column="column5">{{$val->location}}</td>
-                                <td class="column100 column4" data-column="column6">{{$val->email}}</td>
-                                <td class="column100 column4" data-column="column7">{{$val->password}}</td>
+								<td class="column100 column1" data-column="column1">{{$id}}</td>
+								<td class="column100 column2" data-column="column2">{{$loc}}</td>
+
 							</tr>
-                            @endforeach
+                          
 						</tbody>
 					</table>
 				</div>
