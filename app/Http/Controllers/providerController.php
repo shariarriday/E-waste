@@ -149,6 +149,7 @@ $check = DB::connection('oracle')->select("Select PROVIDER_ID FROM BUSINESS WHER
             $location = request("location");
                $password = request("password");
             $users = DB::connection('oracle')->insert("INSERT INTO INDIVIDUAL VALUES('','$phone','$email','$balance','$name','$location','$password')");
+
             return view('ProviderEnd.LoginForm');
       }
 
@@ -174,9 +175,16 @@ $check = DB::connection('oracle')->select("Select PROVIDER_ID FROM BUSINESS WHER
              $product_condition = request("product_condition");
              $id = $request->session()->get('id');
 
-             $loc = DB::connection('oracle')->select("SELECT LOCATION FROM MANUFACTURER where PROVIDER_ID = '$id'");
-             $users = DB::connection('oracle')->insert("INSERT INTO ORDER_PROVIDER VALUES
-              ('',NULL,'$barcode',NULL,'$product_condition')");
+             $loc = DB::connection('oracle')->select("SELECT LOCATION FROM INDIVIDUAL where PROVIDER_ID = '$id'");
+
+             $location = $loc[0]->location;
+            $users = DB::connection('oracle')->insert("INSERT INTO ORDER_PROVIDER VALUES
+              ('','$location','$barcode', sysdate ,'$product_condition')");
+              $oid = DB::connection('oracle')->select("SELECT ORDER_ID FROM ORDER_PROVIDER WHERE BARCODE = '$barcode'");
+              $orderid = $oid[0]->orderid;
+              $users = DB::connection('oracle')->insert("INSERT INTO INDIVIDUAL_PROVIDES VALUES
+                ('$id','$orderid')");
+
       return view('ProviderEnd.LoginForm');
       }
 

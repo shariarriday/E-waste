@@ -64,4 +64,4 @@ Route::get('/user/manufacturerinventoryhistory','providerController@Manufacturer
 Route::get('/user/sellItems','providerController@solditems');
 Route::post('/user/sellItems','providerController@soldItemstore');
 //Route::get('/user','providerController@soldItemstore');
-Route::get('/user/showinsert','providerController@soldItemstore');
+//Route::get('/user/showinsert','providerController@soldItemstore');
