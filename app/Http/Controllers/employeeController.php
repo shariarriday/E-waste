@@ -138,6 +138,7 @@ class employeeController extends Controller
             return view('EmployeeEnd.EmployeeAdd',['id' => $request->session()->get('id')]);
         }
     }
+    
     public function getaddTransport(Request $request, $val)
     {
         return view('EmployeeEnd.TransportAdd',['id' => $request->session()->get('id'), 'level' => $request->session()->get('level') , 'id2' => $val]);

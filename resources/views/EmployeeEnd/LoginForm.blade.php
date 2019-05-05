@@ -104,10 +104,10 @@
                 <form action = "/processor/home" method = "post">
                     {{CSRF_FIELD()}}
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Email *" value="" name="emailprc" />
+                        <input type="text" class="form-control" placeholder="Your Name *" value="" name="name" />
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Your Password *" value="" name="passwordprc"/>
+                        <input type="password" class="form-control" placeholder="Your Password *" value="" name="pass"/>
                     </div>
                     <div class="form-group">
                         <input type="submit" class="btnSubmit" value="Login" />

@@ -54,3 +54,8 @@ Route::get('/user/BusinessReg','providerController@BusinessRegister');
 Route::post('/user/Businesshome','providerController@BusinessLoginAction');
 Route::post('/user/BusinessReg','providerController@BusinessStore');
 Route::post('/user/Businesshome','providerController@BusinessLoginAction');
+Route::get('/processor/showall','processorController@showall');
+Route::post('/processor/ProcessorAdd','processorController@postaddProcessor');
+Route::get('/processor/ProcessorAdd','processorController@getaddProcessor');
+Route::post('/processor/Raw_MaterialAdd','processorController@postaddRaw_Material');
+Route::get('/processor/Raw_MaterialAdd','processorController@getaddRaw_Material');
