@@ -274,7 +274,7 @@
         <h3>Research Works</h3>
     </div>
     <div class="page">
-        <form action = "addEmployee" method="post">
+        <form action = "/admin/addEmployee" method="post">
             {{CSRF_FIELD()}}
             <div class="page__demo">
                 <label class="field a-field a-field_a1 page__field">
