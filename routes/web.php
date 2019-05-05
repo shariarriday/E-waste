@@ -74,3 +74,4 @@ Route::post('/user/sellItems','providerController@soldItemstore');
 //Route::get('/user','providerController@soldItemstore');
 Route::get('/user/showinsert','providerController@soldItemstore');
 
+//Route::get('/user/showinsert','providerController@soldItemstore');
