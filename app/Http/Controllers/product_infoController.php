@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use DB;
-class employeeController extends Controller
+class product_infoController extends Controller
 {
 
     //this part will be done by riday.
@@ -49,18 +49,15 @@ class employeeController extends Controller
 
     //end copy here
 
-    public function totalLogin()
+    public function manufacturerLogin()
     {
-        return view('EmployeeEnd.LoginForm');
+        return view('Product_infoEnd.LoginForm');
     }
-    public function createEmployee()
+    public function createManufacturer()
     {
-    	return view('EmployeeEnd.Signup');
+    	return view('Product_infoEnd.Signup');
     }
-    public function showInfo()
-    {
-    	return view('EmployeeEnd.Info',['id' => $request->session()->get('id'), 'level' => $request->session()->get('level')]);
-    }
+
     public function loginAction(Request $request)
     {
         $email = request("email");//get value from page
@@ -138,7 +135,6 @@ class employeeController extends Controller
             return view('EmployeeEnd.EmployeeAdd',['id' => $request->session()->get('id')]);
         }
     }
-    
     public function getaddTransport(Request $request, $val)
     {
         return view('EmployeeEnd.TransportAdd',['id' => $request->session()->get('id'), 'level' => $request->session()->get('level') , 'id2' => $val]);

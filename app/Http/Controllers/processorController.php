@@ -47,31 +47,87 @@ class processorController extends Controller
 
     //end copy here
 
-    public function processorLogin()
-    {
-        return view('ProcessorEnd.Login');
-    }
-    public function processorLoginAction()
-    {
-    	return view('template.Individual');
-    }
-
     public function loginAction(Request $request)
     {
-        $email = request("emailprc"); //get value from page
-        $pass = request("passwordprc"); //get value from page
+        $email = request("name"); //get value from page
+        $pass = request("pass"); //get value from page
 
-$check = DB::connection('oracle')->select("Select PROCESSOR_ID FROM PROCESSOR WHERE email = '$email' AND password = '$pass'");//check if correct password
+    $check = DB::connection('oracle')->select("Select * FROM PROCESSOR WHERE name = '$email' AND password = '$pass'");//check if correct password
 
-        if(count($check) == 1)
+        if(count($check) != 0 )
         {
-            $ID = $check[0]->employee_id;
+            $ID = $check[0]->processor_id;
             $request->session()->put('id', $ID);
-return view('ProcessorEnd.Info',['id' => $ID]); //return view with a variable ID which you may need
+            return view('ProcessorEnd.Info',['id' => $ID]); //return view with a variable ID which you may need
         }
 else {
-            return view('ProcessorEnd.LoginForm');
+            return array($email,$pass);
         }
     }
+
+    public function showall(Request $request)
+    {
+        return view('ProcessorEnd.2',['id'=>$request->session()->get('id')]);
+    }
+
+
+    public function postaddProcessor(Request $request) 
+    {
+        $id = $request->session()->get('id');
+        
+      
+           
+            $from = request("from");
+            $quality = request("quality");
+            $weight = request("weight");
+            $warranty = request("warranty");
+            $price = request("price");
+            $users = DB::connection('oracle')->insert("INSERT INTO Product VALUES('','$from','$quality','$weight','$warranty',$price)");
+
+       
+            return view('ProcessorEnd.ProcessorAdd',['id' => $request->session()->get('id')]);
+        
+    }
+    
+    public function getaddProcessor(Request $request) 
+    {
+        
+       
+        return view('ProcessorEnd.ProcessorAdd',['id' => $request->session()->get('id')]);
+        
+    }
+    
+    public function getaddRaw_Material(Request $request) 
+    {
+        
+       
+        return view('ProcessorEnd.Raw_MaterialAdd',['id' => $request->session()->get('id')]);
+        
+    }
+
+     public function postaddRaw_Material(Request $request) 
+    {
+        $id = $request->session()->get('id');
+        
+      
+           
+            
+
+            $glass = request("glass");
+            $gold = request("gold");
+            $silicon = request("silicon");
+            $rubber = request("rubber");
+            $plastic = request("plastic");
+            $copper = request("copper");
+            $steel = request("steel");
+            $iron = request("iron");
+            $users = DB::connection('oracle')->insert("INSERT INTO Product VALUES('',$glass,$gold,$silicon,$rubber,$plastic,$copper,$steel,$iron)");
+
+
+       
+            return view('ProcessorEnd.Raw_MaterialAdd',['id' => $request->session()->get('id')]);
+        
+    }
+   
 
 }

@@ -85,7 +85,7 @@
     <div class="container login-container">
         <div class="row">
             <div class="col-md-4 login-form-1">
-                <h3>Login for Employee </h3>
+                <h3>Login for Manufacturer </h3>
                 <form action = "/admin/home" method = "post">
                     {{CSRF_FIELD()}}
                     <div class="form-group">
@@ -93,36 +93,6 @@
                     </div>
                     <div class="form-group">
                         <input type="password" class="form-control" placeholder="Your Password *" value=""  name = "password"/>
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" class="btnSubmit" value="Login" />
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-4 login-form-2">
-                <h3>Login for Processors</h3>
-                <form action = "/processor/home" method = "post">
-                    {{CSRF_FIELD()}}
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Name *" value="" name="name" />
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Your Password *" value="" name="pass"/>
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" class="btnSubmit" value="Login" />
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-4 login-form-1">
-                <h3>Login for Product-Info </h3>
-                <form>
-                    {{CSRF_FIELD()}}
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Email *" value="" />
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Your Password *" value="" />
                     </div>
                     <div class="form-group">
                         <input type="submit" class="btnSubmit" value="Login" />

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+Raw_MaterialAdd.blade.php<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>E-Waste Management System</title>
@@ -249,79 +249,81 @@
         <a class="navbar-brand" href="#">E-Waste</a>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="otherEmployee">Other Employee</a>
+                <a class="nav-link" href="ProcessorAdd">x</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="researcher">Researcher</a>
+                <a class="nav-link" href="researcher">y</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="transport">Transport</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/admin/transportwork">Transport</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="dumpingemployee">Dumping Employee</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Recycle Status</a>
-            </li>
-            <li><a href="/admin/transportwork">Transport Works</a></li>
-        </ul>
+            
+            </ul>
     </nav>
 
     <div class="container" style="text-align: center;">
-        <h3>Research Works</h3>
+        <h3>Raw Material Add: </h3>
     </div>
     <div class="page">
-        <form action = "/admin/addEmployee" method="post">
+        <form action = "Raw_MaterialAdd" method="post">
             {{CSRF_FIELD()}}
             <div class="page__demo">
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="012XXXXXXX" name = "name" required>
+               
+                  <label class="field a-field a-field_a1 page__field">
+                    <input class="field__input a-field__input" placeholder="num" name = "glass" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Phone Number</span>
+                        <span class="a-field__label">Glass</span>
+                    </span>
+                  </label>
+                   <br>
+                <label class="field a-field a-field_a1 page__field">
+                    <input class="field__input a-field__input" placeholder="num" name = "gold" required>
+                    <span class="a-field__label-wrap">
+                        <span class="a-field__label">Gold</span>
+                    </span>
+                </label>
+                 
+                <br>
+                <label class="field a-field a-field_a1 page__field">
+                    <input class="field__input a-field__input" placeholder="num" name = "silicon" required>
+                    <span class="a-field__label-wrap">
+                        <span class="a-field__label">Silicon</span>
                     </span>
                 </label>
 
+                <br>
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="Name" name = "phone" required>
+                    <input class="field__input a-field__input" placeholder="num" name = "rubber" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Name</span>
+                        <span class="a-field__label">Rubber</span>
                     </span>
                 </label>
                 <br>
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="15000" name = "salary" required>
+                 <label class="field a-field a-field_a1 page__field">
+                    <input class="field__input a-field__input" placeholder="num" name = "plastic" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Salary</span>
+                        <span class="a-field__label">Plastic</span>
                     </span>
                 </label>
+                <br>
 
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="50" name = "age" required>
+                 <label class="field a-field a-field_a1 page__field">
+                    <input class="field__input a-field__input" placeholder="num" name = "copper" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Age</span>
+                        <span class="a-field__label">Copper</span>
                     </span>
                 </label>
                 <br>
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="xyz@abcd.com" name = "email" required>
+
+                 <label class="field a-field a-field_a1 page__field">
+                    <input class="field__input a-field__input" placeholder="num" name = "steel" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Email</span>
-                    </span>
-                </label>
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="password" type="password" name = "password" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Password</span>
+                        <span class="a-field__label">Steel</span>
                     </span>
                 </label>
                 <br>
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="1-10" name = "access" required>
+
+                 <label class="field a-field a-field_a1 page__field">
+                    <input class="field__input a-field__input" placeholder="num" name = "iron" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Access Level</span>
+                        <span class="a-field__label">Iron</span>
                     </span>
                 </label>
                 <br>
