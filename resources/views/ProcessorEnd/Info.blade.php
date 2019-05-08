@@ -68,3 +68,6 @@
 	</div>
 </body>
 </html>
+
+TO INVENTORY VALUES('',
+END;

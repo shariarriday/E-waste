@@ -271,7 +271,7 @@
     </nav>
 
     <div class="container" style="text-align: center;">
-        <h3>Research Works</h3>
+        <h3>Businesss Create Account</h3>
     </div>
     <div class="page">
         <form action = "/user/BusinessReg" method="post">

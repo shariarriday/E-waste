@@ -43,14 +43,24 @@ Route::get('/admin/removeDisassembler/{id}','employeeController@removeDisassembl
 Route::get('/admin/removeTransport/{id}','employeeController@removeTransport');
 Route::get('/admin/removeResearch/{id}','employeeController@removeResearch');
 Route::get('/admin/transportwork','employeeController@worktransport');
-Route::post('/processor/home','processorController@loginAction');
 
 Route::get('/user/ManufacturerReg','providerController@ManufacturerRegister');
 Route::post('/user/home','providerController@loginAction');
 Route::post('/user/ManufacturerReg','providerController@manufacturerStore');
 Route::post('/processor/home','processorController@loginAction');
-
 Route::get('/user/BusinessReg','providerController@BusinessRegister');
 Route::post('/user/Businesshome','providerController@BusinessLoginAction');
 Route::post('/user/BusinessReg','providerController@BusinessStore');
 Route::post('/user/Businesshome','providerController@BusinessLoginAction');
+Route::get('/user/IndividualReg','providerController@IndividualRegister');
+Route::post('/user/Individualhome','providerController@IndividualloginAction');
+Route::post('/user/IndividualReg','providerController@IndividualStore');
+Route::get('/user/individualsellhistory','providerController@IndividualSellHistory');
+Route::get('/user/Individualhome','providerController@IndividualloginAction');
+Route::get('/user/businesssellhistory','providerController@BusinessSellHistory');
+Route::get('/user/manufacturerinventoryhistory','providerController@ManufacturerInventoryHistory');
+Route::get('/user/sellItems','providerController@solditems');
+Route::get('/user/businesssellItems','providerController@businessSellPage');
+Route::post('/user/sellItems','providerController@soldItemstore');
+Route::post('/user/businesssellItems','providerController@businessSell');
+Route::post('/processor/home','processorController@loginAction');

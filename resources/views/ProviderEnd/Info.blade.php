@@ -7,10 +7,9 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Home</a></li>
-      <li><a href="otherEmployee">Other Manufacturers</a></li>
-      <li><a href="searchResearcher">Researcher</a></li>
-      <li><a href="dumpingemployee">Dumping Stations</a></li>
-      <li><a href="#">Product Condition</a></li>
+      <li><a href="/user/manufacturerinventoryhistory">Inventory History</a></li>
+        <li><a href="/user/sellItems">Sell Items</a></li>
+
     </ul>
   </div>
 </nav>
@@ -30,12 +29,8 @@
 								<th class="column100 column2" data-column="column2">Contact Name</th>
 								<th class="column100 column3" data-column="column3">Inventory Location</th>
 								<th class="column100 column4" data-column="column4">Name</th>
-                <th class="column100 column5" data-column="column5">Location</th>
-
-
-                                <th class="column100 column6" data-column="column6">Email</th>
+                                <th class="column100 column5" data-column="column5">Location</th>
                                 <th class="column100 column7" data-column="column7">Password</th>
-                          
 							</tr>
 						</thead>
 
@@ -48,8 +43,7 @@
 								<td class="column100 column3" data-column="column3">{{$val->inventory_location}}</td>
 								<td class="column100 column4" data-column="column4">{{$val->name}}</td>
                                 <td class="column100 column4" data-column="column5">{{$val->location}}</td>
-                                <td class="column100 column4" data-column="column6">{{$val->email}}</td>
-                                <td class="column100 column4" data-column="column7">{{$val->password}}</td>
+                                <td class="column100 column4" data-column="column6">{{$val->password}}</td>
 							</tr>
                             @endforeach
 						</tbody>
