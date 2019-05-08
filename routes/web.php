@@ -70,3 +70,12 @@ Route::get('/user/businesssellItems','providerController@businessSellPage');
 Route::post('/user/sellItems','providerController@soldItemstore');
 Route::post('/user/businesssellItems','providerController@businessSell');
 Route::post('/processor/home','processorController@loginAction');
+
+Route::get('/prcoessor/ProcessorReg','processorController@registration');
+Route::post('/processor/ProcessorAdd','processorController@postaddProcessor');
+Route::get('/processor/getProd/{id}','processorController@getProducts');
+Route::get('/processor/RawMaterials','processorController@RawMaterials');
+Route::get('/processor/Products','processorController@Products');
+Route::get('/processor/dumping','processorController@dumping');
+Route::get('/processor/getInfoRecycle','processorController@recycle');
+Route::get('/processor/getInfoInventory','processorController@refurbish');

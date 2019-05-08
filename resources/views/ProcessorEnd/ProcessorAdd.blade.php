@@ -248,63 +248,49 @@
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
         <a class="navbar-brand" href="#">E-Waste</a>
         <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="otherEmployee">x</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="researcher">y</a>
-            </li>
-            
-            </ul>
+        </ul>
     </nav>
 
     <div class="container" style="text-align: center;">
-        <h3>Product Add: </h3>
+        <h3>Processor Add</h3>
     </div>
     <div class="page">
-        <form action = "ProcessorAdd" method="post">
+        <form action = "/processor/ProcessorAdd" method="post">
             {{CSRF_FIELD()}}
             <div class="page__demo">
-               
+
                   <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="Product From" name = "from" required>
+                    <input class="field__input a-field__input" placeholder="Name" name = "name" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">From</span>
+                        <span class="a-field__label">Name</span>
                     </span>
                   </label>
                    <br>
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="Good/Bad" name = "quality" required>
+                    <input class="field__input a-field__input" placeholder="Location" name = "location" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Quality</span>
-                    </span>
-                </label>
-                 
-                <br>
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="Weight" name = "weight" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Weight</span>
+                        <span class="a-field__label">Location</span>
                     </span>
                 </label>
 
                 <br>
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="Product Name" name = "warranty" required>
+                    <input class="field__input a-field__input" placeholder="****" name = "password" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">warranty</span>
+                        <span class="a-field__label">Password</span>
                     </span>
                 </label>
+
                 <br>
-                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="012X" name = "price" required>
+                <label class="field a-field a-field_a1 page__field">
+                    <input class="field__input a-field__input" placeholder="1000" name = "balance" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Price</span>
+                        <span class="a-field__label">Balance</span>
                     </span>
                 </label>
                 <br>
                 <div class="container" style="display: flex; justify-content: center; padding-top: 30px">
-                    <button type="submit" class="btn btn-outline-secondary">   Submit   </button>
+                    <button type="submit" class="btn btn-outline-secondary">Submit</button>
                 </div>
             </div>
         </form>
