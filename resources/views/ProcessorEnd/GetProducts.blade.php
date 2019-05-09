@@ -1,42 +1,27 @@
 @include('header')
 
 <body style="background-image: linear-gradient(-25deg, #FFFFFF 0%, #C0C0C0 100%);">
-@if($value > 6)
+
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">E-waste</a>
     </div>
     <ul class="nav navbar-nav">
-        <li class="active"><a href="/processor/info">Home</a></li>
-        <li><a href="/processor/getInfoInventory">Get Products</a></li>
+        <li><a href="/processor/info">Home</a></li>
+        <li  class="active"><a href="/processor/getInfoInventory">Get Products</a></li>
         <li><a href="/processor/dumping">Dumping</a></li>
         <li><a href="/processor/Products">Products</a></li>
         <li><a href="/processor/RawMaterials">Raw Materials</a></li>
     </ul>
   </div>
 </nav>
-@endif
 
-@if($value < 7)
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">E-waste</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li><a href="/admin/info">Home</a></li>
-      <li><a href="/admin/researcher">Researcher</a></li>
-      <li><a href="/admin/transport">Transport</a></li>
-      <li><a href="/admin/dumpingemployee">Dumping Stations</a></li>
-    </ul>
-  </div>
-</nav>
-@endif
+
 	<div class="limiter">
 
     <?php
-        $vals = DB::connection('oracle')->select("Select * FROM EMPLOYEE_CHECK WHERE ACCESSLEVEL < $value ");
+        $vals = DB::connection('oracle')->select("Select * FROM RECYCLABLE ");
     ?>
 		<div class="container-table100">
 			<div class="wrap-table100">
@@ -45,40 +30,24 @@
 						<thead>
 							<tr class="row100 head">
 								<th class="column100 column1" data-column="column1"></th>
-								<th class="column100 column2" data-column="column2">Age</th>
-								<th class="column100 column3" data-column="column3">Salary</th>
-								<th class="column100 column4" data-column="column4">Phone</th>
-                                <th class="column100 column4" data-column="column5">Transport</th>
-                                <th class="column100 column4" data-column="column6">Research</th>
-                                <th class="column100 column4" data-column="column7">Disassembly</th>
+								<th class="column100 column2" data-column="column2">Price</th>
+								<th class="column100 column3" data-column="column3">Product Condition</th>
+								<th class="column100 column4" data-column="column4">Product Type</th>
+                <th class="column100 column4" data-column="column5">Get Product</th>
 							</tr>
 						</thead>
 
 
 						<tbody>
-                            @foreach($vals as $val)
-							<tr class="row100">
-								<td class="column100 column1" data-column="column1">{{$val->name}}</td>
-								<td class="column100 column2" data-column="column2">{{$val->age}}</td>
-								<td class="column100 column3" data-column="column3">{{$val->salary}}</td>
-								<td class="column100 column4" data-column="column4">{{$val->phone}}</td>
-                                @if(count($array_transport) > 0 && !in_array($val->id ,$array_transport))
-                                <td class="column100 column4" data-column="column5"><a href="/admin/addTransport/{{$val->id}}">Add to Transport</a></td>
-                                @else
-                                <td class="column100 column4" data-column="column5"><a href="/admin/removeTransport/{{$val->id}}">Remove Transport</a></td>
-                                @endif
-                                @if(count($array_researcher) > 0 && !in_array($val->id ,$array_researcher))
-                                <td class="column100 column4" data-column="column6"><a href="/admin/addResearch/{{$val->id}}">Add to Research</a></td>
-                                @else
-                                <td class="column100 column4" data-column="column5"><a href="/admin/removeResearch/{{$val->id}}">Remove from Research</a></td>
-                                @endif
-                                @if(count($array_disassembler) > 0 && !in_array($val->id ,$array_disassembler))
-                                <td class="column100 column4" data-column="column7"><a href="/admin/addDisassembler/{{$val->id}}">Add to Disassembly</a></td>
-                                @else
-                                <td class="column100 column4" data-column="column5"><a href="/admin/removeDisassembler/{{$val->id}}">Remove from Disassembly</a></td>
-                                @endif
-							</tr>
-                            @endforeach
+                @foreach($vals as $val)
+						    <tr class="row100">
+								<td class="column100 column1" data-column="column1">{{$val->product_name}}</td>
+								<td class="column100 column2" data-column="column2">{{$val->product_price}}</td>
+								<td class="column100 column3" data-column="column3">{{$val->product_condition}}</td>
+								<td class="column100 column4" data-column="column4">{{$val->product_type}}</td>
+                <td class="column100 column5" data-column="column5"><a href="/processor/Products/{{$val->inventory_id}}">Get Products</a></td>
+  							</tr>
+                @endforeach
 						</tbody>
 					</table>
 				</div>

@@ -112,4 +112,15 @@ class processorController extends Controller
             return view('ProcessorEnd.Raw_MaterialAdd',['id' => $request->session()->get('id')]);
     }
 
+    public function Products(Request $request)
+    {
+        return view('ProcessorEnd.GetProducts',['id' => $request->session()->get('id')]);
+    }
+
+    public function getproducts(Request $request, $val)
+    {
+        $id = $request->session()->get('id');
+        $users = DB::connection('oracle')->update("UPDATE INVENTORY SET CHECK_OUT_TO = '$id', CHECK_OUT_DATE = SYSDATE WHERE INVENTORY_ID = '$val' ");
+        return view('ProcessorEnd.GetProducts',['id' => $request->session()->get('id')]);
+    }
 }
