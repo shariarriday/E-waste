@@ -77,4 +77,4 @@ Route::get('/processor/getProd/{id}','processorController@getProducts');
 Route::get('/processor/RawMaterials','processorController@RawMaterials');
 Route::get('/processor/dumping','processorController@dumping');
 Route::get('/processor/Products/{val}','processorController@getproducts');
-Route::get('/processor/getInfoInventory','processorController@Products');
+Route::get('/processor/Products','processorController@showProducts');
