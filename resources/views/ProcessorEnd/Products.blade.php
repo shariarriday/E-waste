@@ -22,7 +22,7 @@
 	<div class="limiter">
 
     <?php
-        $vals = DB::connection('oracle')->select("Select * FROM RECYCLABLE ");
+        $vals = DB::connection('oracle')->select("Select * FROM Products WHERE CHECK_OUT_TO = '$id' ");
     ?>
 		<div class="container-table100">
 			<div class="wrap-table100">
@@ -34,7 +34,8 @@
 								<th class="column100 column2" data-column="column2">Price</th>
 								<th class="column100 column3" data-column="column3">Product Condition</th>
 								<th class="column100 column4" data-column="column4">Product Type</th>
-                <th class="column100 column4" data-column="column5">Get Product</th>
+                				<th class="column100 column5" data-column="column5">Recycle</th>
+                				<th class="column100 column6" data-column="column6">Refurbish</th>
 							</tr>
 						</thead>
 
@@ -46,7 +47,7 @@
 								<td class="column100 column2" data-column="column2">{{$val->product_price}}</td>
 								<td class="column100 column3" data-column="column3">{{$val->product_condition}}</td>
 								<td class="column100 column4" data-column="column4">{{$val->product_type}}</td>
-                <td class="column100 column5" data-column="column5"><a href="/processor/Products/{{$val->inventory_id}}">Get Products</a></td>
+                <td class="column100 column5" data-column="column5"><a href="/processor/Refurbish/{{$val->inventory_id}}">Refurbish</a></td>
   							</tr>
                 @endforeach
 						</tbody>

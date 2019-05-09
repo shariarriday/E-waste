@@ -78,3 +78,6 @@ Route::get('/processor/RawMaterials','processorController@RawMaterials');
 Route::get('/processor/dumping','processorController@dumping');
 Route::get('/processor/Products/{val}','processorController@getproducts');
 Route::get('/processor/Products','processorController@showProducts');
+Route::get('/processor/getInfoInventory','processorController@Products');
+Route::get('/processor/Refurbish/{val}','processorController@showProducts');
+Route::post('/processor/Refurbish','processorController@makeProducts');
