@@ -7,8 +7,6 @@
     </div>
     <ul class="nav navbar-nav">
       <li><a href="/user/Individualhome">Home</a></li>
-      <li><a href="/user/individualsellhistory">Sell History</a></li>
-      <li><a href="/user/sellItems">Sell Items</a></li>
     </ul>
   </div>
 </nav>
@@ -16,7 +14,7 @@
 	<div class="limiter">
 
     <?php
-        $vals = DB::connection('oracle')->select("Select * FROM INDIVIDUAL_SELL_HISTORY where PROVIDER_ID ='$id' "); //write any query you need, I am writing to show the                                                                     //employees information
+        $vals = DB::connection('oracle')->select("Select * FROM INDIVIDUAL_SELL_HISTORY where PROVIDER_ID ='$id' ");
     ?>
 		<div class="container-table100">
 			<div class="wrap-table100">
@@ -28,6 +26,11 @@
 								<th class="column100 column2" data-column="column2">Barcode</th>
 								<th class="column100 column3" data-column="column3">Order Date</th>
 								<th class="column100 column4" data-column="column4">Product Condition</th>
+
+
+
+
+
 							</tr>
 						</thead>
 
@@ -39,6 +42,8 @@
 								<td class="column100 column2" data-column="column2">{{$val->barcode}}</td>
 								<td class="column100 column3" data-column="column3">{{$val->order_date}}</td>
 								<td class="column100 column4" data-column="column4">{{$val->product_condition}}</td>
+
+
 							</tr>
                             @endforeach
 						</tbody>
