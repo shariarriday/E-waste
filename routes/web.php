@@ -69,3 +69,7 @@ Route::get('/seller','providerController@providerlogin');
 Route::get('/seller/IndividualSellerReg','providerController@IndividualRegister');
 Route::post('/seller/home','providerController@IndividualloginAction');
 Route::post('/seller/IndividualSellerReg','providerController@IndividualStore');
+
+Route::get('/seller/BuyerReg','providerController@IndividualRegister');
+Route::post('/seller/Buyerhome','providerController@IndividualloginAction');
+Route::post('/seller/BuyerReg','providerController@IndividualStore');

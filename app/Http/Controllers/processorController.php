@@ -121,6 +121,12 @@ class processorController extends Controller
     {
         $id = $request->session()->get('id');
         $users = DB::connection('oracle')->update("UPDATE INVENTORY SET CHECK_OUT_TO = '$id', CHECK_OUT_DATE = SYSDATE WHERE INVENTORY_ID = '$val' ");
+        $users = DB::connection('oracle')->insert("INSERT INTO  SET CHECK_OUT_TO = '$id', CHECK_OUT_DATE = SYSDATE WHERE INVENTORY_ID = '$val' ");
         return view('ProcessorEnd.GetProducts',['id' => $request->session()->get('id')]);
+    }
+
+    public function showProducts(Request $request)
+    {
+        return view('ProcessorEnd.Products',['id' => $request->session()->get('id')]);
     }
 }
