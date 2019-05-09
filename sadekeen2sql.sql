@@ -88,7 +88,7 @@ CREATE OR REPLACE TRIGGER PERSONAL_INSERT
   BEFORE INSERT ON PERSONAL
   FOR EACH ROW
 BEGIN
-  SELECT 
+  SELECT
   PERSONAL_SEQ.nextval
   INTO :new.BUYER_ID
   FROM dual;
@@ -107,7 +107,7 @@ CREATE OR REPLACE TRIGGER Processor_INSERT
   BEFORE INSERT ON processor
   FOR EACH ROW
 BEGIN
-  SELECT 
+  SELECT
   Processor_SEQ.nextval
   INTO :new.processor_ID
   FROM dual;
@@ -253,39 +253,14 @@ INSERT INTO RAW_MATERIAL_SELLING VALUES('100','47');
 INSERT INTO RAW_MATERIAL_SELLING VALUES('110','48');
 INSERT INTO RAW_MATERIAL_SELLING VALUES('120','49');
 
-1.
 CREATE OR REPLACE VIEW RAW_MAT_BY_RECYCLER
-AS 
+AS
 SELECT * FROM RAW_MATERIAL;
 
-2.
 CREATE OR REPLACE VIEW FIXED_PRODUCTS
 AS
-SELECT * FROM PRODUCT 
+SELECT * FROM PRODUCT
 WHERE
 REFURBISHER JOIN MAKES USING (INVENTORY_ID)
 JOIN PRODUCT USING (PRODUCT_ID)
 WHERE REPAIR=UPPRER('REPAIRABLE');// REPAIR IS REPAIR STATUS
-
-3.
---> Show total money earned by recycler. (view)
-
-CREATE OR REPLACE VIEW EARNED_RECYLER
-AS
-SELECT 
-
-
-
-4.Show total money earned by recycler. (view)
-5.Show total money earned by refurbisher. (view)
-6.Show sale orders and buyer info for the recycler. (view)
-7.Add an insert for repair_cost of all the items taken from inventory.
-8.Add an insert for adding products with sequence for primary key.
-9.Add an insert for adding raw materials with sequence for primary key.
-10.Add sequence to processor ID generation.For reference check Riday_project_sql.
-11.Add trigger for updating profit for recycler when item is sold.
-12.Add trigger for updating profit for refurbisher when item is sold.
-
-
-
-
