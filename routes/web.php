@@ -18,7 +18,7 @@ Route::get('/', function () {
 Route::get('/user','providerController@providerlogin');
 Route::get('/processor/login','processorController@processorLogin');
 Route::post('/processor/loginAction','processorController@processorLoginAction');
-
+//Admin/Employee Part
 Route::get('/admin','employeeController@totalLogin');
 Route::get('/admin/createEmployee','employeeController@createEmployee');
 Route::get('/admin/show','employeeController@showInfo');
@@ -45,15 +45,14 @@ Route::get('/admin/removeResearch/{id}','employeeController@removeResearch');
 Route::get('/admin/transportwork','employeeController@worktransport');
 Route::post('/processor/home','processorController@loginAction');
 
+//Provider Part
 Route::get('/user/ManufacturerReg','providerController@ManufacturerRegister');
 Route::post('/user/home','providerController@loginAction');
 Route::post('/user/ManufacturerReg','providerController@manufacturerStore');
 Route::post('/processor/home','processorController@loginAction');
-
 Route::get('/user/BusinessReg','providerController@BusinessRegister');
 Route::post('/user/Businesshome','providerController@BusinessloginAction');
 Route::post('/user/BusinessReg','providerController@BusinessStore');
-
 Route::get('/user/IndividualReg','providerController@IndividualRegister');
 Route::post('/user/Individualhome','providerController@IndividualloginAction');
 Route::post('/user/IndividualReg','providerController@IndividualStore');
@@ -69,8 +68,11 @@ Route::get('/seller','providerController@providerlogin');
 Route::get('/seller/IndividualSellerReg','providerController@IndividualRegister');
 Route::post('/seller/home','providerController@IndividualloginAction');
 Route::post('/seller/IndividualSellerReg','providerController@IndividualStore');
+Route::get('/seller/BuyerReg','providerController@IndividualRegister');
+Route::post('/seller/Buyerhome','providerController@IndividualloginAction');
+Route::post('/seller/BuyerReg','providerController@IndividualStore');
 
-
+//processor Part
 Route::get('/prcoessor/ProcessorReg','processorController@registration');
 Route::post('/processor/ProcessorAdd','processorController@postaddProcessor');
 Route::get('/processor/getProd/{id}','processorController@getProducts');
@@ -79,9 +81,14 @@ Route::get('/processor/dumping','processorController@dumping');
 Route::get('/processor/Products/{val}','processorController@getproducts');
 Route::get('/processor/Products','processorController@showProducts');
 Route::get('/processor/getInfoInventory','processorController@Products');
-Route::get('/processor/Refurbish/{val}','processorController@showProducts');
-Route::post('/processor/Refurbish','processorController@makeProducts');
+Route::get('/processor/Refurbish/{val}','processorController@makeProductsInfo');
+Route::post('/processor/Refurbish','processorController@createProducts');
 
-Route::get('/seller/BuyerReg','providerController@IndividualRegister');
-Route::post('/seller/Buyerhome','providerController@IndividualloginAction');
-Route::post('/seller/BuyerReg','providerController@IndividualStore');
+//Buyer part
+Route::get('/buyer','buyerController@loginForm');
+Route::post('/buyer','buyerController@loginAction');
+Route::get('/buyer/create','buyerController@createAccountForm');
+Route::post('/buyer/create','buyerController@createAccountAction');
+Route::get('/buyer/home','buyerController@home');
+Route::get('/buyer/buyProducts','buyerController@buyProducts');
+Route::get('/buyer/buyProducts/{val}','buyerController@AddtoCart');

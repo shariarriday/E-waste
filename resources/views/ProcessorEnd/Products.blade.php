@@ -34,8 +34,7 @@
 								<th class="column100 column2" data-column="column2">Price</th>
 								<th class="column100 column3" data-column="column3">Product Condition</th>
 								<th class="column100 column4" data-column="column4">Product Type</th>
-                				<th class="column100 column5" data-column="column5">Recycle</th>
-                				<th class="column100 column6" data-column="column6">Refurbish</th>
+                				<th class="column100 column5" data-column="column6">Refurbish</th>
 							</tr>
 						</thead>
 

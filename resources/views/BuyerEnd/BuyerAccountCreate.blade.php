@@ -247,59 +247,60 @@
 
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
         <a class="navbar-brand" href="#">E-Waste</a>
-        <ul class="navbar-nav">
-        <li><a href="/processor/info">Home</a></li>
-        <li  class="active"><a href="/processor/getInfoInventory">Get Products</a></li>
-        <li><a href="/processor/dumping">Dumping</a></li>
-        <li ><a href="/processor/Products">Products</a></li>
-        <li><a href="/processor/RawMaterials">Raw Materials</a></li>
-        <li><a href="/processor/Refurbished">Refurbished Products</a></li>
-        </ul>
     </nav>
 
     <div class="container" style="text-align: center;">
-        <h3>Sell Items</h3>
+        <h3>Create Account</h3>
     </div>
     <div class="page">
-        <form action = "/processor/Refurbish" method="post">
+        <form action = "/buyer/create" method="post">
             {{CSRF_FIELD()}}
             <div class="page__demo">
-                <input type='hidden' value='{{$id}}' name='processor'>
-                <input type='hidden' value='{{$inventory}}' name='inventory'>
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="barcode" name = "barcode" required>
+                    <input class="field__input a-field__input" placeholder="Your Name" name = "name" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Barcode</span>
+                        <span class="a-field__label">Name</span>
                     </span>
                 </label>
 
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="GOOD" name = "product_quality" required>
+                    <input class="field__input a-field__input" placeholder="Your Location" name = "location" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Product Quality</span>
-                    </span>
-                </label>
-                <br>
-
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="10" name = "product_weight" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Product Weight</span>
-                    </span>
-                </label>
-
-
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="3" name = "product_warranty" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Product Warranty</span>
+                        <span class="a-field__label">Location</span>
                     </span>
                 </label>
                 <br>
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="10" name = "product_price" required>
+                    <input class="field__input a-field__input" placeholder="1451322257" name = "transaction" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Product Price</span>
+                        <span class="a-field__label">Transaction ID</span>
+                    </span>
+                </label>
+
+                <label class="field a-field a-field_a1 page__field">
+                    <input class="field__input a-field__input" placeholder="Your Password" name = "password" required>
+                    <span class="a-field__label-wrap">
+                        <span class="a-field__label">Password</span>
+                    </span>
+                </label>
+                <br>
+                <label class="field a-field a-field_a1 page__field">
+                    <input class="field__input a-field__input" placeholder="BKash/Card" name = "payment" required>
+                    <span class="a-field__label-wrap">
+                        <span class="a-field__label">Payment Type</span>
+                    </span>
+                </label>
+                <label class="field a-field a-field_a1 page__field">
+                    <input class="field__input a-field__input" placeholder="abc@xyz.com" name = "email" required>
+                    <span class="a-field__label-wrap">
+                        <span class="a-field__label">Email</span>
+                    </span>
+                </label>
+                <br>
+                <label class="field a-field a-field_a1 page__field">
+                    <input class="field__input a-field__input" placeholder="01XXXXXXXXX" name = "phone" required>
+                    <span class="a-field__label-wrap">
+                        <span class="a-field__label">Phone</span>
                     </span>
                 </label>
                 <br>

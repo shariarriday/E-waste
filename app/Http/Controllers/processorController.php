@@ -125,18 +125,30 @@ class processorController extends Controller
         return view('ProcessorEnd.GetProducts',['id' => $request->session()->get('id')]);
     }
 
-    public function showProducts(Request $request,$val)
+    public function showProducts(Request $request)
     {
-        return view('ProcessorEnd.Products',['id' => $request->session()->get('id') , 'inventory' => $val]);
+        return view('ProcessorEnd.Products',['id' => $request->session()->get('id')]);
     }
 
-    public function makeproduct(Request $request)
+    public function makeProductsInfo(Request $request , $val)
     {
-        return view('ProcessorEnd.MakeProduct',['id' => $request->session()->get('id')]);
+        return view('ProcessorEnd.MakeProduct',['id' => $request->session()->get('id'), 'inventory' => $val]);
     }
 
-    public function makeproduct(Request $request)
+    public function createProducts(Request $request)
     {
+        $barcode = request("barcode");
+        $quality = request("product_quality");
+        $weight = request("product_weight");
+        $warranty = request("product_warranty");
+        $price = request("product_price");
+        $id = request("processor");
+        $inventory = request("inventory");
+        $ins = DB::connection('oracle')->insert("INSERT INTO PRODUCT VALUES('','$quality','$weight','$warranty',$price,'$barcode')");
+        $get = DB::connection('oracle')->select("SELECT PRODUCT_ID FROM PRODUCT WHERE product_quality = '$quality' AND product_weight = '$weight' AND price = $price ");
+        $product = $get[0]->product_id;
+        $users = DB::connection('oracle')->insert("INSERT INTO MAKES VALUES('$product','$id','$inventory')");
 
+        return view('ProcessorEnd.Products',['id' => $request->session()->get('id')]);
     }
 }
