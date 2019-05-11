@@ -45,6 +45,7 @@
     <?php
         $vals = DB::connection('oracle')->select("Select * FROM EMPLOYEE WHERE EMPLOYEE_ID = '$id' "); //write any query you need, I am writing to show the                                                                     //employees information
     ?>
+
 		<div class="container-table100">
 			<div class="wrap-table100">
 				<div class="table100 ver1 m-b-110">
@@ -58,6 +59,7 @@
                                 <th class="column100 column4" data-column="column5">Email</th>
                                 <th class="column100 column4" data-column="column6">Password</th>
                                 <th class="column100 column4" data-column="column7">Access Level</th>
+                                <th class="column100 column4" data-column="column7">Status</th>
 							</tr>
 						</thead>
 
@@ -72,6 +74,9 @@
                                 <td class="column100 column4" data-column="column5">{{$val->email}}</td>
                                 <td class="column100 column4" data-column="column6">{{$val->password}}</td>
                                 <td class="column100 column4" data-column="column7">{{$val->accesslevel}}</td>
+                                <td class="column100 column4" data-column="column7">@if($vals[0]->status == "busy")
+                                <button type="button" class="btn btn-dark" href='/admin/workdone'>Work Completed</button>
+                                @endif</td>
 							</tr>
                             @endforeach
 						</tbody>
@@ -80,5 +85,6 @@
 			</div>
 		</div>
 	</div>
+
 </body>
 </html>

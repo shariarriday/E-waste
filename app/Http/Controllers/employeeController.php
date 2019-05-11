@@ -138,7 +138,7 @@ class employeeController extends Controller
             return view('EmployeeEnd.EmployeeAdd',['id' => $request->session()->get('id')]);
         }
     }
-    
+
     public function getaddTransport(Request $request, $val)
     {
         return view('EmployeeEnd.TransportAdd',['id' => $request->session()->get('id'), 'level' => $request->session()->get('level') , 'id2' => $val]);
@@ -216,5 +216,19 @@ class employeeController extends Controller
     public function worktransport(Request $request)
     {
         return view('EmployeeEnd.TransportWorking',['id' => $request->session()->get('id'), 'level' => $request->session()->get('level')]);
+    }
+
+    public function workdone(Request $request)
+    {
+        $id = $request->session()->get('id');
+        $trans = DB::connection('oracle')->select("SELECT * FROM TRANSPORT WHERE EMPLOYEE_ID = '$id'");
+        if(count($trans) == 0)
+        {
+
+        }
+        else {
+
+        }
+        return view('EmployeeEnd.Info',['id' => $request->session()->get('id'), 'level' => $request->session()->get('level')]);
     }
 }
