@@ -75,7 +75,7 @@
                                 <td class="column100 column4" data-column="column6">{{$val->password}}</td>
                                 <td class="column100 column4" data-column="column7">{{$val->accesslevel}}</td>
                                 <td class="column100 column4" data-column="column7">@if($vals[0]->status == "busy")
-                                <button type="button" class="btn btn-dark" href='/admin/workdone'>Work Completed</button>
+                                <a href='/admin/workdone'><button type="button" class="btn btn-dark">Work Completed</button></a>
                                 @endif</td>
 							</tr>
                             @endforeach

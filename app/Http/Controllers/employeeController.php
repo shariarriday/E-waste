@@ -222,13 +222,29 @@ class employeeController extends Controller
     {
         $id = $request->session()->get('id');
         $trans = DB::connection('oracle')->select("SELECT * FROM TRANSPORT WHERE EMPLOYEE_ID = '$id'");
-        if(count($trans) == 0)
+        if(count($trans) == 1)
         {
-
+            $barcodes = DB::connection('oracle')->select("SELECT BARCODE,CONDITION,LOCATION FROM NEW_ADD WHERE EMPLOYEE = '$id'");
+            foreach($barcodes as $barcode)
+            {
+                $check = DB::connection('oracle')->select("SELECT * FROM INVENTORY WHERE BARCODE = '$id'");
+                if(count($check) == 0)
+                {
+                    $bar = $barcode->barcode;
+                    $cond = $barcode->condition;
+                    $loc = $barcode->location;
+                    $ins = DB::connection('oracle')->insert("INSERT INTO INVENTORY VALUES(INVENTORY_ID_SEQ.nextval,'$id','',SYSDATE,'','$loc','$cond','$bar')");
+                }
+            }
         }
         else {
-
+            $trans = DB::connection('oracle')->select("SELECT * FROM DISSEMBLER WHERE EMPLOYEE_ID = '$id'");
+            $prod = $trans[0]->product_type;
+            $get = DB::connection('oracle')->select("SELECT * FROM RECYCLER WHERE SPECIALIZATION = '$prod'");
+            $proc = $get[0]->processor_id;
+            $ins = DB::connection('oracle')->insert("INSERT INTO RECYCLING VALUES('$id','$proc')");
         }
+        $trans = DB::connection('oracle')->update("UPDATE EMPLOYEE SET STATUS = 'free' WHERE EMPLOYEE_ID = '$id'");
         return view('EmployeeEnd.Info',['id' => $request->session()->get('id'), 'level' => $request->session()->get('level')]);
     }
 }

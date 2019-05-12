@@ -92,12 +92,12 @@ class providerController extends Controller
     {
         $email = request("email");//get value from page
         $pass = request("pass");//get value from page
-$check = DB::connection('oracle')->select("Select PROVIDER_ID FROM BUSINESS WHERE contact_email = '$email' AND password = '$pass'");//check if correct password
+        $check = DB::connection('oracle')->select("Select PROVIDER_ID FROM BUSINESS WHERE contact_email = '$email' AND password = '$pass'");//check if correct password
         if(count($check) != 0)
         {
             $ID = $check[0]->provider_id;
             $request->session()->put('id', $ID);
-            return view('ProviderEnd.businessInfo',['id' => $ID]);
+            return view('ProviderEnd.businessInfo',['id' => $request->session()->get('id')]);
         }
         else {
             return view('ProviderEnd.LoginForm');
@@ -126,12 +126,12 @@ $check = DB::connection('oracle')->select("Select PROVIDER_ID FROM BUSINESS WHER
      {
          $email = request("email");//get value from page
          $pass = request("pass");//get value from page
-     $check = DB::connection('oracle')->select("Select PROVIDER_ID FROM INDIVIDUAL WHERE email = '$email' AND password = '$pass'");//check if correct password
+         $check = DB::connection('oracle')->select("Select PROVIDER_ID FROM INDIVIDUAL WHERE email = '$email' AND password = '$pass'");//check if correct password
          if(count($check) != 0)
          {
              $ID = $check[0]->provider_id;
              $request->session()->put('id', $ID);
-             return view('ProviderEnd.individualInfo',['id' => $ID]);
+             return view('ProviderEnd.individualInfo',['id' => $request->session()->get('id')]);
          }
          else {
              return view('ProviderEnd.LoginForm');
@@ -182,7 +182,7 @@ $check = DB::connection('oracle')->select("Select PROVIDER_ID FROM BUSINESS WHER
               $ins = DB::connection('oracle')->insert("INSERT INTO ORDER_INFO VALUES('$oid','$barcode','$product_condition')");
               $users = DB::connection('oracle')->insert("INSERT INTO INDIVIDUAL_PROVIDES VALUES('$id','$oid')");
 
-              return view('ProviderEnd.individualInfo',['id' => $ID]);
+              return view('ProviderEnd.individualInfo',['id' => $request->session()->get('id')]);
       }
 
       public function businessSell(Request $request)
