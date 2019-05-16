@@ -227,10 +227,10 @@ class employeeController extends Controller
             $barcodes = DB::connection('oracle')->select("SELECT BARCODE,CONDITION,LOCATION FROM NEW_ADD WHERE EMPLOYEE = '$id'");
             foreach($barcodes as $barcode)
             {
-                $check = DB::connection('oracle')->select("SELECT * FROM INVENTORY WHERE BARCODE = '$id'");
+                $bar = $barcode->barcode;
+                $check = DB::connection('oracle')->select("SELECT * FROM INVENTORY WHERE BARCODE = '$bar'");
                 if(count($check) == 0)
                 {
-                    $bar = $barcode->barcode;
                     $cond = $barcode->condition;
                     $loc = $barcode->location;
                     $ins = DB::connection('oracle')->insert("INSERT INTO INVENTORY VALUES(INVENTORY_ID_SEQ.nextval,'$id','',SYSDATE,'','$loc','$cond','$bar')");
