@@ -25,7 +25,7 @@
     @endif
 
     @if($value < 7)
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="#">E-waste</a>
