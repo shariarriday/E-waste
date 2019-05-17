@@ -49,18 +49,6 @@ class employeeController extends Controller
 
     //end copy here
 
-    public function totalLogin()
-    {
-        return view('EmployeeEnd.LoginForm');
-    }
-    public function createEmployee()
-    {
-    	return view('EmployeeEnd.Signup');
-    }
-    public function showInfo()
-    {
-    	return view('EmployeeEnd.Info',['id' => $request->session()->get('id'), 'level' => $request->session()->get('level')]);
-    }
     public function loginAction(Request $request)
     {
         $email = request("email");//get value from page
@@ -80,15 +68,12 @@ class employeeController extends Controller
             return view('EmployeeEnd.LoginForm');
         }
     }
-
-
-
     public function login()
     {
         return view('EmployeeEnd.LoginForm');
     }
 
-    public function otherEmployee(Request $request)
+    public function checkEmployee(Request $request)
     {
         return view('EmployeeEnd.EmployeeCheck',['id' => $request->session()->get('id'), 'level' => $request->session()->get('level')]);
     }
@@ -98,9 +83,9 @@ class employeeController extends Controller
         return view('EmployeeEnd.Info',['id' => $request->session()->get('id'), 'level' => $request->session()->get('level')]);
     }
 
-    public function getresearcher(Request $request)
+    public function currentTask(Request $request)
     {
-        return view('EmployeeEnd.SearchResearch',['id' => $request->session()->get('id'), 'level' => $request->session()->get('level')]);
+        return view('EmployeeEnd.currentTaks',['id' => $request->session()->get('id'), 'level' => $request->session()->get('level')]);
     }
 
     public function postresearcher(Request $request)

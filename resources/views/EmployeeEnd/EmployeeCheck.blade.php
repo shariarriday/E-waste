@@ -22,17 +22,16 @@
     }
 ?>
 <body style="background-image: linear-gradient(-25deg, #FFFFFF 0%, #C0C0C0 100%);">
-@if($value > 6)
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2c9368;font-family: sans-serif;">
+@if($value == 2)
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2c9368;font-family: 'Montserrat', sans-serif;">
   <a class="navbar-brand" href="#">E-waste Management</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/show">Home<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Link</a>
@@ -53,7 +52,7 @@
 </nav>
 @endif
 
-@if($value < 7)
+@if($value == 1)
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -76,46 +75,51 @@
 
 		<div class="container-table100">
 			<div class="wrap-table100">
-                <div style="text-align: center;">
-                    <h3>Employee Control Panel</h3>
+                <div style="text-align: center; margin-bottom: 15px;">
+                    <h3><b>Employee Control Panel</b></h3>
                 </div>
-				<div class="table100 ver1 m-b-110">
-					<table data-vertable="ver1">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon3">Type to Filter Employees</span>
+                </div>
+                <input type="text" class="form-control" id="input" aria-describedby="basic-addon3">
+              </div>
+				<div class="table100 ver2 m-b-110">
+					<table id="table" data-vertable="ver2">
 						<thead>
 							<tr class="row100 head">
 								<th class="column100 column1" data-column="column1"></th>
 								<th class="column100 column2" data-column="column2">Age</th>
 								<th class="column100 column3" data-column="column3">Salary</th>
 								<th class="column100 column4" data-column="column4">Phone</th>
-                                <th class="column100 column4" data-column="column5">Transport</th>
-                                <th class="column100 column4" data-column="column6">Research</th>
-                                <th class="column100 column4" data-column="column7">Disassembly</th>
+                <th class="column100 column4" data-column="column5">Transport</th>
+                <th class="column100 column4" data-column="column6">Research</th>
+                <th class="column100 column4" data-column="column7">Disassembly</th>
 							</tr>
 						</thead>
 
-
 						<tbody>
-                            @foreach($vals as $val)
+              @foreach($vals as $val)
 							<tr class="row100">
 								<td class="column100 column1" data-column="column1">{{$val->name}}</td>
 								<td class="column100 column2" data-column="column2">{{$val->age}}</td>
 								<td class="column100 column3" data-column="column3">{{$val->salary}}</td>
 								<td class="column100 column4" data-column="column4">{{$val->phone}}</td>
-                                @if(count($array_transport) > 0 && !in_array($val->id ,$array_transport))
-                                <td class="column100 column4" data-column="column5"><a href="/admin/addTransport/{{$val->id}}">Add to Transport</a></td>
-                                @else
-                                <td class="column100 column4" data-column="column5"><a href="/admin/removeTransport/{{$val->id}}">Remove Transport</a></td>
-                                @endif
-                                @if(count($array_researcher) > 0 && !in_array($val->id ,$array_researcher))
-                                <td class="column100 column4" data-column="column6"><a href="/admin/addResearch/{{$val->id}}">Add to Research</a></td>
-                                @else
-                                <td class="column100 column4" data-column="column5"><a href="/admin/removeResearch/{{$val->id}}">Remove from Research</a></td>
-                                @endif
-                                @if(count($array_disassembler) > 0 && !in_array($val->id ,$array_disassembler))
-                                <td class="column100 column4" data-column="column7"><a href="/admin/addDisassembler/{{$val->id}}">Add to Disassembly</a></td>
-                                @else
-                                <td class="column100 column4" data-column="column5"><a href="/admin/removeDisassembler/{{$val->id}}">Remove from Disassembly</a></td>
-                                @endif
+                @if(count($array_transport) > 0 && !in_array($val->id ,$array_transport))
+                <td class="column100 column4" data-column="column5"><a href="/admin/addTransport/{{$val->id}}">Add to Transport</a></td>
+                @else
+                <td class="column100 column4" data-column="column5"><a href="/admin/removeTransport/{{$val->id}}">Remove Transport</a></td>
+                @endif
+                @if(count($array_researcher) > 0 && !in_array($val->id ,$array_researcher))
+                <td class="column100 column4" data-column="column6"><a href="/admin/addResearch/{{$val->id}}">Add to Research</a></td>
+                @else
+                <td class="column100 column4" data-column="column5"><a href="/admin/removeResearch/{{$val->id}}">Remove from Research</a></td>
+                @endif
+                @if(count($array_disassembler) > 0 && !in_array($val->id ,$array_disassembler))
+                <td class="column100 column4" data-column="column7"><a href="/admin/addDisassembler/{{$val->id}}">Add to Disassembly</a></td>
+                @else
+                <td class="column100 column4" data-column="column5"><a href="/admin/removeDisassembler/{{$val->id}}">Remove from Disassembly</a></td>
+                @endif
 							</tr>
                             @endforeach
 						</tbody>
@@ -123,6 +127,11 @@
 				</div>
 			</div>
 		</div>
+    <script>
+    $('#input').keyup(function () {
+      table_search($('#input').val(),$('#table tbody tr'),'0123');
+    });
+    </script>
 	</div>
 </body>
 </html>

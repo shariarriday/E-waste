@@ -22,6 +22,8 @@
 body
 {
   background-image: -webkit-linear-gradient(top,#ffffff,#c0c0c0);
+  font-family: Montserrat-Regular;
+  src: url('../fonts/montserrat/Montserrat-Regular.ttf');
 }
 
 
@@ -458,7 +460,7 @@ input,
 select,
 textarea,
 body * {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
 }
 body::after, body::before,
