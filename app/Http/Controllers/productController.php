@@ -6,11 +6,11 @@ use Illuminate\Http\Request;
 use DB;
 class productController extends Controller
 {
-  
+
     //this part will be done by Shahir.
     //here are some template code for different cases
     //There must be a login page and an info page.
-    //then for insertions and showing data in any view make as many page as needed 
+    //then for insertions and showing data in any view make as many page as needed
     //using Route::get('/product/*****',.....);
 
   /*  public function test()
@@ -49,12 +49,110 @@ class productController extends Controller
 
     //end copy here
 
-    public function processorLogin()
+    public function washing_machine()
     {
-        return view('ProcessorEnd.Login');
+        return view('Product_infoEnd.washing_machineData');
     }
-    public function processorLoginAction()
+    public function washing_machineadd(Request $request)
     {
-    	return view('UserEnd.Individual');
+
+        $PRODUCT_NAME = request("product_name");
+        $PRODUCTION_DATE = request("production_date");
+        $model_no = request("model_no");
+        $product_price = request("product_price");
+        $motor = request("motor");
+        $tub = request("tub");
+        $agitator = request("agitator");
+        $pump_manufacturer = request("pump_manufacturer");
+
+        $type = request("product_type");
+        $washing_machine = DB::connection('oracle')->insert("INSERT INTO washing_machine_provide (product_name, production_date, model_no, product_price, motor_type, tub, agitator_model, water_pump_manufacturer, product_type) VALUES('$PRODUCT_NAME', to_date('$PRODUCTION_DATE', 'dd/mm/yyyy'), '$model_no', $product_price, '$motor', '$tub', '$agitator', '$pump_manufacturer', '$type')");
+        return view('Product_infoEnd.Washing_machineData');
     }
+
+
+
+
+
+    public function refrigerator()
+    {
+        return view('Product_infoEnd.RefrigeratorData');
+    }
+    public function refrigeratoradd(Request $request)
+    {
+
+        $PRODUCT_NAME = request("product_name");
+        $PRODUCTION_DATE = request("production_date");
+        $model_no = request("model_no");
+        $product_price = request("product_price");
+        $compressor = request("compressor");
+        $copper_condenser = request("copper_condenser");
+        $condenser = request("condenser");
+        $sensing_bulb = request("sensing_bulb");
+
+        $type = request("product_type");
+        $refrigerator = DB::connection('oracle')->insert("INSERT INTO refrigerator_provide (product_name, production_date, model_no, product_price, compressor, copper_condenser_coil, condenser, sensing_bulb, product_type) VALUES('$PRODUCT_NAME', to_date('$PRODUCTION_DATE', 'dd/mm/yyyy'), '$model_no', $product_price, '$compressor', '$copper_condenser', '$condenser', '$sensing_bulb', '$type')");
+        return view('Product_infoEnd.RefrigeratorData');
+    }
+
+
+
+
+    public function ac()
+    {
+        return view('Product_infoEnd.ACData');
+    }
+    public function acadd(Request $request)
+    {
+
+        $PRODUCT_NAME = request("product_name");
+        $PRODUCTION_DATE = request("production_date");
+        $model_no = request("model_no");
+        $product_price = request("product_price");
+        $compressor = request("compressor");
+        $coil = request("coil");
+        $fan = request("fan");
+        $pcb = request("pcb");
+        $refrigerant = request("Refrigerant");
+        $type = request("product_type");
+        $ac = DB::connection('oracle')->insert("INSERT INTO ac_provide (product_name, production_date, model_no, product_price, compressor, coil, fan, pcb, refrigerent, product_type) VALUES('$PRODUCT_NAME', to_date('$PRODUCTION_DATE', 'dd/mm/yyyy'), '$model_no', $product_price, '$compressor', '$coil', '$fan', '$pcb', '$refrigerant', '$type')");
+        return view('Product_infoEnd.ACData');
+    }
+
+
+
+
+    public function tv()
+    {
+        return view('Product_infoEnd.TVData');
+    }
+    public function tvadd(Request $request)
+    {
+
+        $PRODUCT_NAME = request("product_name");
+        $PRODUCTION_DATE = request("production_date");
+        $model_no = request("model_no");
+        $product_price = request("product_price");
+        $weight = request("weight");
+        $speakers_model = request("speaker_model");
+        $screen_size = request("screen_size");
+        $battery = request("battery_power");
+        $cathode = request("cathod_ray_tube_power");
+        $light_valve = request("light_valve_version");
+        $logic_board = request("logic_board_size");
+        $wifi = request("wifi_version");
+        $capacity_voltage = request("capacity_voltage");
+        $type = request("product_type");
+        $tv = DB::connection('oracle')->insert("INSERT INTO tv_provide (product_name, production_date, model_no, product_price, weight, speakers_model, screen_size, battery_power, cathode_ray_tube_power, light_valve_version, logic_board_size, wifi_version, capacity_voltage, product_type) VALUES('$PRODUCT_NAME', to_date('$PRODUCTION_DATE', 'dd/mm/yyyy'), '$model_no', $product_price, $weight, '$speakers_model', $screen_size, '$battery', '$cathode', '$light_valve', $logic_board, '$wifi
+            ', '$capacity_voltage', '$type')");
+        return view('Product_infoEnd.TVData');
+    }
+
+
+
+
+
+
+
+
 }

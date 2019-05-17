@@ -26,8 +26,8 @@
     ?>
 		<div class="container-table100">
 			<div class="wrap-table100">
-				<div class="table100 ver1 m-b-110">
-					<table data-vertable="ver1">
+				<div class="table100 ver2 m-b-110">
+					<table data-vertable="ver2">
 						<thead>
 							<tr class="row100 head">
 								<th class="column100 column1" data-column="column1"></th>

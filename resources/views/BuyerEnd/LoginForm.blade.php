@@ -9,6 +9,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <style>
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        width: 100%;
+        background-image: linear-gradient(-25deg, #FFFFFF 0%, #C0C0C0 100%);
+    }
     .login-container{
         margin-top: 5%;
         margin-bottom: 5%;
@@ -16,14 +26,15 @@
     .login-form-1{
         padding: 5%;
         box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+        background: #fff;
     }
     .login-form-1 h3{
         text-align: center;
-        color: #333;
+        color: #10b47d;
     }
     .login-form-2{
         padding: 5%;
-        background: #0062cc;
+        background: #10b47d;
         box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
     }
     .login-form-2 h3{
@@ -44,11 +55,11 @@
     .login-form-1 .btnSubmit{
         font-weight: 600;
         color: #fff;
-        background-color: #0062cc;
+        background-color: #10b47d;
     }
     .login-form-2 .btnSubmit{
         font-weight: 600;
-        color: #0062cc;
+        color: #10b47d;
         background-color: #fff;
     }
     .login-form-2 .ForgetPwd{
@@ -57,20 +68,14 @@
         text-decoration: none;
     }
     .login-form-1 .ForgetPwd{
-        color: #0062cc;
+        color: #10b47d;
         font-weight: 600;
         text-decoration: none;
     }
 
 </style>
 </head>
-
 <body>
-
-
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-        <a class="navbar-brand" href="#">E-waste Management</a>
-    </nav>
 
 
 

@@ -215,8 +215,8 @@
     */
 
     .field{
-        --fieldBorderColor: #D1C4E9;
-        --fieldBorderColorActive: #673AB7;
+        --fieldBorderColor: #2c9368;
+        --fieldBorderColorActive: #90ee90;
     }
 
 
@@ -255,20 +255,55 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
+
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown
+              Home Electronics
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
+              <a class="dropdown-item" href="/productinfo/TV">TV</a>
+              <a class="dropdown-item" href="/productinfo/AC">Air Conditioner</a>
+              <a class="dropdown-item" href="/productinfo/refrigerator">Refrigerator</a>
+              <a class="dropdown-item" href="/productinfo/washing_machine">Washing Machine</a>
+              <a class="dropdown-item" href="/productinfo/microwave">Microwave</a>
+
             </div>
           </li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Personal Electronics
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/productinfo/tablet">Tablet</a>
+                <a class="dropdown-item" href="/productinfo/mobile">Mobile</a>
+                <a class="dropdown-item" href="/productinfo/laptop">Laptop</a>
+                <a class="dropdown-item" href="/productinfo/camera">Camera</a>
+                <a class="dropdown-item" href="/productinfo/radio">Radio</a>
+              </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               Office Electronics
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/productinfo/pc">Computer</a>
+            <a class="dropdown-item" href="/productinfo/printer">Printing Machine</a>
+            <a class="dropdown-item" href="/productinfo/copy_machine">Copy Machine</a>
+            <a class="dropdown-item" href="/productinfo/microwave">Microwave</a>
+
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               Other Electronics
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/productinfo/router">Router</a>
+            <a class="dropdown-item" href="/productinfo/calculator">Calculator</a>
+
+
+          </div>
+        </li>
         </ul>
       </div>
     </nav>
@@ -281,61 +316,76 @@
     height: 89vh;
     width: 100%;">
     <div class="container" style="text-align: center;">
-        <h3>Add New Employee</h3>
+        <h3>Insert New Washing Machine</h3>
     </div>
-        <form action = "/admin/addEmployee" method="post">
+        <form action = "/productinfo/washing_machine" method="post">
             {{CSRF_FIELD()}}
             <div class="page__demo">
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="012XXXXXXX" name = "name" required>
+                    <input class="field__input a-field__input" placeholder="Product Name" name = "product_name" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Phone Number</span>
+                        <span class="a-field__label">Washing Machine Name</span>
                     </span>
                 </label>
 
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="Name" name = "phone" required>
+                    <input class="field__input a-field__input" placeholder="Type" name = "product_type" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Name</span>
+                        <span class="a-field__label">Type</span>
                     </span>
                 </label>
                 <br>
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="15000" name = "salary" required>
+                    <input class="field__input a-field__input" placeholder="DD/MM/YYYY" name = "production_date" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Salary</span>
+                        <span class="a-field__label">Production Date</span>
                     </span>
                 </label>
 
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="50" name = "age" required>
+                    <input class="field__input a-field__input" placeholder="Model No" name = "model_no" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Age</span>
+                        <span class="a-field__label">Model</span>
                     </span>
                 </label>
                 <br>
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="xyz@abcd.com" name = "email" required>
+                    <input class="field__input a-field__input" placeholder="XXXXXXXXX" name = "product_price" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Email</span>
+                        <span class="a-field__label">Price</span>
                     </span>
                 </label>
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="password" type="password" name = "password" required>
+                    <input class="field__input a-field__input" placeholder="servo/stepper/ac/others" name = "motor" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Password</span>
+                        <span class="a-field__label">Motor Type</span>
                     </span>
                 </label>
                 <br>
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="1-10" name = "access" required>
+                    <input class="field__input a-field__input" placeholder="Basket/Bucket/Others" name = "tub" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Access Level</span>
+                        <span class="a-field__label">Tub Type</span>
+                    </span>
+                </label>
+
+                <label class="field a-field a-field_a1 page__field">
+                    <input class="field__input a-field__input" placeholder= "XXXXXXXX" name = "agitator" required>
+                    <span class="a-field__label-wrap">
+                        <span class="a-field__label">Agitator Model</span>
                     </span>
                 </label>
                 <br>
-                <div class="container" style="display: flex; justify-content: center; padding-top: 30px">
-                    <button type="submit" class="btn btn-outline-secondary">   Submit   </button>
+                <label class="field a-field a-field_a1 page__field">
+                    <input class="field__input a-field__input" placeholder= "XXXXX" name = "pump_manufacturer" required>
+                    <span class="a-field__label-wrap">
+                        <span class="a-field__label">Pump Manufacturer</span>
+                    </span>
+                </label>
+                <br>
+
+                <div class="container" style="display: flex; justify-content: center; padding-top: 30px; ">
+                    <button type="submit" class="btn btn-outline-success">   Submit   </button>
                 </div>
             </div>
         </form>

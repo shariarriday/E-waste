@@ -93,3 +93,17 @@ Route::post('/buyer/create','buyerController@createAccountAction');
 Route::get('/buyer/home','buyerController@home');
 Route::get('/buyer/buyProducts','buyerController@buyProducts');
 Route::get('/buyer/buyProducts/{val}','buyerController@AddtoCart');
+
+//Product_info part
+Route::get('/productinfo/TV','productController@tv');
+Route::post('/productinfo/TV','productController@tvadd');
+Route::get('/productinfo/AC','productController@ac');
+Route::post('/productinfo/AC','productController@acadd');
+Route::get('/productinfo/refrigerator','productController@refrigerator');
+Route::post('/productinfo/refrigerator','productController@refrigeratoradd');
+Route::get('/productinfo/washing_machine','productController@washing_machine');
+Route::post('/productinfo/washing_machine','productController@washing_machineadd');
+
+
+
+Route::get('/productinfo/home', 'productController@info');
