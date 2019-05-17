@@ -103,7 +103,8 @@ Route::get('/productinfo/refrigerator','productController@refrigerator');
 Route::post('/productinfo/refrigerator','productController@refrigeratoradd');
 Route::get('/productinfo/washing_machine','productController@washing_machine');
 Route::post('/productinfo/washing_machine','productController@washing_machineadd');
-
+Route::get('/productinfo/microwave','productController@microwave');
+Route::post('/productinfo/microwave','productController@microwaveadd');
 
 
 Route::get('/productinfo/home', 'productController@info');
