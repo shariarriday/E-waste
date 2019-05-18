@@ -297,6 +297,12 @@
                         <span class="a-field__label">Vehicle Type</span>
                     </span>
                 </label>
+                <label class="field a-field a-field_a1 page__field">
+                    <input class="field__input a-field__input" placeholder="Truck" name = "destination" >
+                    <span class="a-field__label-wrap">
+                        <span class="a-field__label">Destination</span>
+                    </span>
+                </label>
                 <br>
                 <div class="container" style="display: flex; justify-content: center; padding-top: 30px">
                     <button type="submit" class="btn btn-outline-secondary">   Submit   </button>

@@ -269,6 +269,7 @@
 </head>
 <body style="font-family: 'Montserrat', sans-serif; background-image: linear-gradient(-25deg, #FFFFFF 0%, #C0C0C0 100%);">
 
+  @if($value == 2)
   <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2c9368;font-family: 'Montserrat', sans-serif;">
     <a class="navbar-brand" href="#">E-waste Management</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -279,10 +280,10 @@
         <li class="nav-item">
           <a class="nav-link" href="/admin/Info">Home<span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="/admin/log">Log</a>
         </li>
-        <li class="nav-item dropdown active">
+        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Admin Options
           </a>
@@ -311,7 +312,7 @@
           <a class="nav-link" href="/admin/dump">Dump Materials</a>
         </li>
         @endif
-        @if(count($res2) == 1)
+        @if(count($res) == 1)
         <li class="nav-item">
           <a class="nav-link" href="/admin/research">Research</a>
         </li>
@@ -322,6 +323,37 @@
       </ul>
     </div>
   </nav>
+  @endif
+
+
+  @if($value == 1)
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2c9368;font-family: 'Montserrat', sans-serif;">
+    <a class="navbar-brand" href="#">E-waste Management</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/admin/info">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admin/log">Log</a>
+        </li>
+        @if(count($dis) == 1)
+        <li class="nav-item">
+          <a class="nav-link" href="/admin/dump">Dump Materials</a>
+        </li>
+        @endif
+        @if(count($res) == 1)
+        <li class="nav-item">
+          <a class="nav-link" href="/admin/research">Research</a>
+        </li>
+        @endif
+      </ul>
+    </div>
+  </nav>
+  @endif
 
     <div class="page" style="display: flex;
     justify-content: center;
@@ -330,36 +362,35 @@
     height: 89vh;
     width: 100%;">
     <div class="container" style="text-align: center;">
-        <h3>Add New Employee</h3>
+        <h3>Add New Collaboration</h3>
     </div>
-        <form action = "/admin/addEmployee" method="post">
+        <form action = "/admin/research" method="post">
             {{CSRF_FIELD()}}
             <div class="page__demo">
+              <label class="field a-field a-field_a1 page__field">
+                  <input class="field__input a-field__input" placeholder="John" name = "name" required>
+                  <span class="a-field__label-wrap">
+                      <span class="a-field__label">Publisher Name</span>
+                  </span>
+              </label>
                 <label class="field a-field a-field_a1 page__field">
                     <input class="field__input a-field__input" placeholder="012XXXXXXX" name = "phone" required>
                     <span class="a-field__label-wrap">
                         <span class="a-field__label">Phone Number</span>
                     </span>
                 </label>
-
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="Name" name = "name" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Name</span>
-                    </span>
-                </label>
                 <br>
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="15000" name = "salary" required>
+                    <input class="field__input a-field__input" placeholder="Dhaka" name = "location" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Salary</span>
+                        <span class="a-field__label">Location</span>
                     </span>
                 </label>
 
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="50" name = "age" required>
+                    <input class="field__input a-field__input" placeholder="Harvard" name = "uni_name" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Age</span>
+                        <span class="a-field__label">University Location</span>
                     </span>
                 </label>
                 <br>
@@ -369,19 +400,25 @@
                         <span class="a-field__label">Email</span>
                     </span>
                 </label>
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="password" type="password" name = "password" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Password</span>
-                    </span>
-                </label>
                 <br>
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="1-10" name = "access" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Access Level</span>
-                    </span>
-                </label>
+                <div class="container" style="display: flex; justify-content: center; padding-top: 30px">
+                    <button type="submit" class="btn btn-outline-secondary">   Submit   </button>
+                </div>
+            </div>
+        </form>
+
+        <div class="container" style="text-align: center; margin-top: 15px;">
+            <h3>Add New Paper</h3>
+        </div>
+        <form action = "/admin/paper" method="post">
+            {{CSRF_FIELD()}}
+            <div class="page__demo">
+              <label class="field a-field a-field_a1 page__field">
+                  <input class="field__input a-field__input" placeholder="John" name = "name" required>
+                  <span class="a-field__label-wrap">
+                      <span class="a-field__label">Paper Name</span>
+                  </span>
+              </label>
                 <br>
                 <div class="container" style="display: flex; justify-content: center; padding-top: 30px">
                     <button type="submit" class="btn btn-outline-secondary">   Submit   </button>

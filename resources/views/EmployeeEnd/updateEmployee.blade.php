@@ -83,7 +83,7 @@
 
 	<div class="limiter">
     <?php
-        $vals = DB::connection('oracle')->select("Select * FROM EMPLOYEE_CHECK WHERE ACCESSLEVEL < $value ");
+        $vals = DB::connection('oracle')->select("Select * FROM EMPLOYEE WHERE STATUS = 'free' AND EMPLOYEE_ID <> '$id'");
     ?>
 
 		<div class="container-table100">
@@ -105,9 +105,9 @@
 								<th class="column100 column2" data-column="column2">Age</th>
 								<th class="column100 column3" data-column="column3">Salary</th>
 								<th class="column100 column4" data-column="column4">Phone</th>
-                <th class="column100 column4" data-column="column5">Transport</th>
-                <th class="column100 column4" data-column="column6">Research</th>
-                <th class="column100 column4" data-column="column7">Disassembly</th>
+                <th class="column100 column4" data-column="column5">Role</th>
+                <th class="column100 column4" data-column="column6"></th>
+                <th class="column100 column4" data-column="column6"></th>
 							</tr>
 						</thead>
 
@@ -117,24 +117,22 @@
 								<td class="column100 column1" data-column="column1">{{$val->name}}</td>
 								<td class="column100 column2" data-column="column2">{{$val->age}}</td>
 								<td class="column100 column3" data-column="column3">{{$val->salary}}</td>
-								<td class="column100 column4" data-column="column4">{{$val->phone}}</td>
-                @if(count($array_transport) > 0 && !in_array($val->id ,$array_transport))
-                <td class="column100 column4" data-column="column5"><a href="/admin/addTransport/{{$val->id}}">Add to Transport</a></td>
-                @else
-                <td class="column100 column4" data-column="column5"><a href="/admin/removeTransport/{{$val->id}}">Remove Transport</a></td>
+								<td class="column100 column4" data-column="column4">{{$val->phone_number}}</td>
+                <td class="column100 column5" data-column="column5">
+                @if(count($array_transport) > 0 && in_array($val->employee_id ,$array_transport))
+                Transport<br>
                 @endif
-                @if(count($array_researcher) > 0 && !in_array($val->id ,$array_researcher))
-                <td class="column100 column4" data-column="column6"><a href="/admin/addResearch/{{$val->id}}">Add to Research</a></td>
-                @else
-                <td class="column100 column4" data-column="column5"><a href="/admin/removeResearch/{{$val->id}}">Remove from Research</a></td>
+                @if(count($array_researcher) > 0 && in_array($val->employee_id ,$array_researcher))
+                Research<br>
                 @endif
-                @if(count($array_disassembler) > 0 && !in_array($val->id ,$array_disassembler))
-                <td class="column100 column4" data-column="column7"><a href="/admin/addDisassembler/{{$val->id}}">Add to Disassembly</a></td>
-                @else
-                <td class="column100 column4" data-column="column5"><a href="/admin/removeDisassembler/{{$val->id}}">Remove from Disassembly</a></td>
+                @if(count($array_disassembler) > 0 && in_array($val->employee_id ,$array_disassembler))
+                Disassembly<br>
                 @endif
+                </td>
+                <td class="column100 column6" data-column="column6"><a href="/admin/updateEmployee/{{$val->employee_id}}"><button type="button" class="btn btn-info">Update</button></a></td>
+                <td class="column100 column6" data-column="column6"><a href="/admin/removeEmployee/{{$val->employee_id}}"><button type="button" class="btn btn-danger">Remove</button></a></td>
 							</tr>
-                            @endforeach
+              @endforeach
 						</tbody>
 					</table>
 				</div>

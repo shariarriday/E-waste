@@ -18,33 +18,6 @@ Route::get('/', function () {
 Route::get('/user','providerController@providerlogin');
 Route::get('/processor/login','processorController@processorLogin');
 Route::post('/processor/loginAction','processorController@processorLoginAction');
-//Admin/Employee Part
-Route::get('/admin','employeeController@totalLogin');
-Route::get('/admin/createEmployee','employeeController@createEmployee');
-Route::get('/admin/show','employeeController@showInfo');
-Route::post('/admin/home','employeeController@loginAction');
-Route::get('/admin/login','employeeController@login');
-Route::get('/admin/otherEmployee','employeeController@otherEmployee');
-Route::get('/admin/info','employeeController@info');
-Route::get('/admin/researcher','employeeController@getresearcher');
-Route::post('/admin/researcher','employeeController@postresearcher');
-Route::get('/admin/dumpingemployee','employeeController@dumpingemployee');
-Route::get('/admin/addEmployee','employeeController@getaddEmployee');
-Route::post('/admin/addEmployee','employeeController@postaddEmployee');
-Route::get('/admin/addTransport/{id}','employeeController@getaddTransport');
-Route::post('/admin/addTransport','employeeController@postaddTransport');
-Route::get('/admin/addResearch/{id}','employeeController@getaddResearch');
-Route::post('/admin/addResearch','employeeController@postaddResearch');
-Route::get('/admin/addDisassembler/{id}','employeeController@getaddDisassembler');
-Route::post('/admin/addDisassembler','employeeController@postaddDisassembler');
-Route::get('/admin/transport','employeeController@getTransport');
-Route::post('/admin/transport','employeeController@postTransport');
-Route::get('/admin/removeDisassembler/{id}','employeeController@removeDisassembler');
-Route::get('/admin/removeTransport/{id}','employeeController@removeTransport');
-Route::get('/admin/removeResearch/{id}','employeeController@removeResearch');
-Route::get('/admin/transportwork','employeeController@worktransport');
-Route::get('/admin/workdone','employeeController@workdone');
-Route::post('/processor/home','processorController@loginAction');
 
 //Provider Part
 Route::get('/user/ManufacturerReg','providerController@ManufacturerRegister');
@@ -84,7 +57,7 @@ Route::get('/processor/Products','processorController@showProducts');
 Route::get('/processor/getInfoInventory','processorController@Products');
 Route::get('/processor/Refurbish/{val}','processorController@makeProductsInfo');
 Route::post('/processor/Refurbish','processorController@createProducts');
-
+Route::post('/processor/home','processorController@loginAction');
 //Buyer part
 Route::get('/buyer','buyerController@loginForm');
 Route::post('/buyer','buyerController@loginAction');
@@ -107,3 +80,39 @@ Route::post('/productinfo/washing_machine','productController@washing_machineadd
 
 
 Route::get('/productinfo/home', 'productController@info');
+
+
+
+//Admin/Employee Part
+Route::get('/admin','employeeController@login');//show login page
+Route::post('/admin/home','employeeController@loginAction'); //login action
+Route::get('/admin/info','employeeController@info'); //Show info page
+Route::get('/admin/checkEmployee','employeeController@checkEmployee');//show check employee page
+Route::get('/admin/addTransport/{id}','employeeController@getaddTransport');//add to transport
+Route::post('/admin/addTransport','employeeController@postaddTransport');//add to transport action
+Route::get('/admin/addResearch/{id}','employeeController@getaddResearch');//add to Researcher
+Route::post('/admin/addResearch','employeeController@postaddResearch');//add to researcher action
+Route::get('/admin/addDisassembler/{id}','employeeController@getaddDisassembler');//add to disseassembler
+Route::post('/admin/addDisassembler','employeeController@postaddDisassembler');//add to disassembler action
+Route::get('/admin/tasks','employeeController@currentTask');//show current tasks
+Route::get('/admin/updateEmployee','employeeController@updateEmployee');//show check employee page
+Route::post('/admin/updateEmployee','employeeController@updateEmployeeAction');//show check employee page
+Route::get('/admin/updateSelf','employeeController@updateSelf');//show self update employee page
+Route::post('/admin/updateSelf','employeeController@updateSelfAction');//show self update employee page
+Route::get('/admin/updateEmployee/{id}','employeeController@updateEmployeeForm');//form to update employee info
+Route::get('/admin/removeEmployee/{id}','employeeController@removeEmployee');//remove employee
+Route::get('/admin/addEmployee','employeeController@getaddEmployee');//add new empllyee Form
+Route::post('/admin/addEmployee','employeeController@postaddEmployee');//add new employee form action
+Route::get('/admin/dump','employeeController@dump');//dumping form for disseassembler
+Route::post('/admin/dump','employeeController@postdump');//dumping form action
+Route::get('/admin/log','employeeController@showLog');//show Log for employee
+Route::get('/admin/status','employeeController@status');// status of recycling(only admin)
+Route::get('/admin/transportwork','employeeController@worktransport');
+Route::get('/admin/workdone','employeeController@workdone');//employee work done action button
+Route::get('/admin/research','employeeController@researchadd');//add new Research info
+Route::post('/admin/research','employeeController@researchaddAction');//add new Research info
+Route::post('/admin/paper','employeeController@paperaddAction');//add new Research info
+Route::get('/admin/researchStatus','employeeController@researchStatus');//show research status
+Route::get('/admin/createStation','employeeController@createStation');//add new dumping station
+Route::post('/admin/createStation','employeeController@createStationAction');//add new dumping station action
+Route::get('/admin/viewDump','employeeController@viewDump');//view dumping status
