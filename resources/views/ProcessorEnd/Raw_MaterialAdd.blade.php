@@ -327,6 +327,13 @@ Raw_MaterialAdd.blade.php<!DOCTYPE html>
                     </span>
                 </label>
                 <br>
+                 <label class="field a-field a-field_a1 page__field">
+                    <input class="field__input a-field__input" placeholder="num" name = "iron" required>
+                    <span class="a-field__label-wrap">
+                        <span class="a-field__label">Iron</span>
+                    </span>
+                </label>
+                <br>
                 <div class="container" style="display: flex; justify-content: center; padding-top: 30px">
                     <button type="submit" class="btn btn-outline-secondary">   Submit   </button>
                 </div>
