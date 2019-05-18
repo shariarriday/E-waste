@@ -307,4 +307,60 @@ public function updateEmployeeAction(Request $request)
   {
     return view('EmployeeEnd.Status',['id' => $request->session()->get('id')]);
   }
+
+  public function createStation(Request $request)
+  {
+    return view('EmployeeEnd.CreateDumpingStation',['id' => $request->session()->get('id')]);
+  }
+
+  public function createStationAction(Request $request)
+  {
+    $loc = request("location");
+    $safety = request("safety");
+    $quan = request("area");
+    $final = DB::connection('oracle')->insert("INSERT INTO DUMP VALUES(DUMP_SEQ.NEXTVAL,'$loc',$safety,$quan)");
+    return view('EmployeeEnd.Info',['id' => $request->session()->get('id')]);
+  }
+
+  public function dump(Request $request)
+  {
+    return view('EmployeeEnd.Dump',['id' => $request->session()->get('id')]);
+  }
+
+  public function postdump(Request $request)
+  {
+    $id = $request->session()->get('id');
+    $i = 0;
+    $weight = "dsf";
+    $safety = "dsf";
+    $material = "abc";
+    $sid;
+    while(1)
+    {
+        $w = "weight"."$i";
+        $s = "safety"."$i";
+        $m = "material"."$i";
+        $weight = request($w);
+        $safety = request($s);
+        $material = request($m);
+        if($material == "") break;
+
+        $dump = DB::connection('oracle')->select("SELECT * FROM DUMP WHERE SAFETY_LEVEL <= $safety AND CURRENT_QUANTITY+$weight <= AREA_QUANTITY");
+        $dump = $dump[0];
+        $ins = DB::connection('oracle')->insert("INSERT INTO DUMPED_MATERIALS VALUES('$dump->station_id' , '$material') ");
+        $up = DB::connection('oracle')->update("UPDATE DUMP SET CURRENT_QUANTITY = $dump->current_quantity+$weight WHERE STATION_ID = '$dump->station_id'");
+        $sid = $dump->station_id;
+        $ins = DB::connection('oracle')->insert("INSERT INTO DUMPING VALUES('$id' , '$sid') ");
+        $i++;
+    }
+
+    return view('EmployeeEnd.Info',['id' => $request->session()->get('id')]);
+  }
+
+  public function viewDump(Request $request)
+  {
+    return view('EmployeeEnd.ViewDump',['id' => $request->session()->get('id')]);
+  }
+
+
 }

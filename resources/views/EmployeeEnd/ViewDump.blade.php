@@ -83,17 +83,17 @@
 
 	<div class="limiter">
     <?php
-        $vals = DB::connection('oracle')->select("Select * FROM EMPLOYEE_CHECK WHERE ACCESSLEVEL < $value ");
+        $vals = DB::connection('oracle')->select("Select * FROM DUMPINGVIEW");
     ?>
 
 		<div class="container-table100">
 			<div class="wrap-table100">
                 <div style="text-align: center; margin-bottom: 15px;">
-                    <h3><b>Employee Control Panel</b></h3>
+                    <h3><b>Dumping log</b></h3>
                 </div>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon3">Type to Filter Employees</span>
+                  <span class="input-group-text" id="basic-addon3">Type to Filter Dumping History</span>
                 </div>
                 <input type="text" class="form-control" id="input" aria-describedby="basic-addon3">
               </div>
@@ -101,60 +101,24 @@
 					<table id="table" data-vertable="ver2">
 						<thead>
 							<tr class="row100 head">
-								<th class="column100 column1" data-column="column1"></th>
-								<th class="column100 column2" data-column="column2">Age</th>
-								<th class="column100 column3" data-column="column3">Salary</th>
-								<th class="column100 column4" data-column="column4">Phone</th>
-                <th class="column100 column5" data-column="column5">Role</th>
-                <th class="column100 column6" data-column="column6">Actions</th>
+								<th class="column100 column1" data-column="column1">Location</th>
+								<th class="column100 column2" data-column="column2">Maximum Quantity</th>
+								<th class="column100 column3" data-column="column3">Current Quantity</th>
+								<th class="column100 column4" data-column="column4">Material</th>
+                <th class="column100 column5" data-column="column5">Safety Level</th>
 							</tr>
 						</thead>
 
 						<tbody>
               @foreach($vals as $val)
 							<tr class="row100">
-								<td class="column100 column1" data-column="column1">{{$val->name}}</td>
-								<td class="column100 column2" data-column="column2">{{$val->age}}</td>
-								<td class="column100 column3" data-column="column3">{{$val->salary}}</td>
-								<td class="column100 column4" data-column="column4">{{$val->phone}}</td>
-                <td class="column100 column5" data-column="column5">
-                @if(count($array_transport) > 0 && in_array($val->id ,$array_transport))
-                Transport<br>
-                @endif
-                @if(count($array_researcher) > 0 && in_array($val->id ,$array_researcher))
-                Research<br>
-                @endif
-                @if(count($array_disassembler) > 0 && in_array($val->id ,$array_disassembler))
-                Disassembly<br>
-                @endif
-                </td>
-                <td class="column100 column6" data-column="column6">
-                <div class="dropdown show">
-                  <a class="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Action
-                  </a>
-
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    @if(count($array_transport) > 0 && !in_array($val->id ,$array_transport))
-                    <a class="dropdown-item" href="/admin/addTransport/{{$val->id}}">Add to Transport</a>
-                    @else
-                    <a class="dropdown-item" href="/admin/removeTransport/{{$val->id}}">Remove Transport</a>
-                    @endif
-                    @if(count($array_researcher) > 0 && !in_array($val->id ,$array_researcher))
-                    <a class="dropdown-item" href="/admin/addResearch/{{$val->id}}">Add to Research</a>
-                    @else
-                    <a class="dropdown-item" href="/admin/removeResearch/{{$val->id}}">Remove from Research</a>
-                    @endif
-                    @if(count($array_disassembler) > 0 && !in_array($val->id ,$array_disassembler))
-                    <a class="dropdown-item" href="/admin/addDisassembler/{{$val->id}}">Add to Disassembly</a>
-                    @else
-                    <a class="dropdown-item" href="/admin/removeDisassembler/{{$val->id}}">Remove from Disassembly</a>
-                    @endif
-                  </div>
-                </div>
-              </td>
+								<td class="column100 column1" data-column="column1">{{$val->loc}}</td>
+								<td class="column100 column2" data-column="column2">{{$val->quantity}}</td>
+								<td class="column100 column3" data-column="column3">{{$val->curr}}</td>
+								<td class="column100 column4" data-column="column4">{{$val->materials}}</td>
+                <td class="column100 column4" data-column="column5">{{$val->safety}}</td>
 							</tr>
-                            @endforeach
+              @endforeach
 						</tbody>
 					</table>
 				</div>
@@ -162,7 +126,7 @@
 		</div>
     <script>
     $('#input').keyup(function () {
-      table_search($('#input').val(),$('#table tbody tr'),'0123');
+      table_search($('#input').val(),$('#table tbody tr'),'01234');
     });
     </script>
 	</div>
