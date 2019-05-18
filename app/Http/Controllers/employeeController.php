@@ -302,4 +302,9 @@ public function updateEmployeeAction(Request $request)
     $final = DB::connection('oracle')->insert("INSERT INTO PAPER_TABLE VALUES('$id','$pub_name')");
     return view('EmployeeEnd.NewResearch',['id' => $request->session()->get('id')]);
   }
+
+  public function status(Request $request)
+  {
+    return view('EmployeeEnd.Status',['id' => $request->session()->get('id')]);
+  }
 }
