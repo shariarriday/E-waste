@@ -4,14 +4,14 @@
 ?>
 <body style="background-image: linear-gradient(-25deg, #FFFFFF 0%, #C0C0C0 100%);">
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2c9368; font-family: 'Montserrat', sans-serif;">
-      <a class="navbar-brand" href="#">E-waste Management</a>
+      <a class="navbar-brand" href="/admin">E-waste Management</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
 
@@ -79,7 +79,7 @@
 						<thead>
 							<tr class="row100 head">
 								<th class="column100 column1" data-column="column1">Company Representative</th>
-								<th class="column100 column2" data-column="column2">Inventory_location</th>
+								<th class="column100 column2" data-column="column2">Inventory location</th>
 								<th class="column100 column3" data-column="column3">Company Name</th>
 								<th class="column100 column4" data-column="column4">Password</th>
 							</tr>
@@ -100,6 +100,7 @@
 				</div>
 			</div>
 		</div>
+
 	</div>
 </body>
 </html>
