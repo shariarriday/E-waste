@@ -14,7 +14,7 @@ $ref = DB::connection('oracle')->select("Select * FROM REFURBISHER WHERE PROCESS
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item ">
+                <li class="nav-item">
                     <a class="nav-link" href="/processor/home">Home <span class="sr-only">(current)</span></a>
                 </li>
 
@@ -22,29 +22,29 @@ $ref = DB::connection('oracle')->select("Select * FROM REFURBISHER WHERE PROCESS
                     <a class="nav-link" href="/processor/Dump">Dumping <span class="sr-only">(current)</span></a>
                 </li>
 
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown active">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Recycling
                     </a>
                     @if(count($rec))
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu active" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item disabled" href="#">Register</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="/processor/rawMaterial">Make Raw Material</a>
                     </div>
                     @else
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu active" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/processor/registerRecycler">Register</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item disabled" href="#">Make Raw Material</a>
                     </div>
                     @endif
                 </li>
-                <li class="nav-item dropdown active">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Refurbishing
                     </a>
-                    <div class="dropdown-menu active" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @if(count($ref))
                         <a class="dropdown-item disabled" href="#">Register</a>
                         <div class="dropdown-divider"></div>
@@ -63,14 +63,13 @@ $ref = DB::connection('oracle')->select("Select * FROM REFURBISHER WHERE PROCESS
         </div>
     </nav>
 
+    <div class="limiter">
 
-	<div class="limiter">
-
-    <?php
-        $vals = DB::connection('oracle')->select("Select * FROM RECYCLABLE ");
-    ?>
-		<div class="container-table100">
-			<div class="wrap-table100">
+        <?php
+        $vals = DB::connection('oracle')->select("Select * FROM MAKERAWMATERIAL WHERE RECYCLER = '$id' AND ID NOT IN(SELECT INVENTORY_ID FROM EXTRACTION)");
+        ?>
+        <div class="container-table100">
+            <div class="wrap-table100">
                 <div style="text-align: center; margin-bottom: 15px;">
                     <h3><b>Products</b></h3>
                 </div>
@@ -80,35 +79,34 @@ $ref = DB::connection('oracle')->select("Select * FROM REFURBISHER WHERE PROCESS
                 </div>
                 <input type="text" class="form-control" id="input" aria-describedby="basic-addon3">
               </div>
-				<div class="table100 ver2 m-b-110">
-					<table id="table" data-vertable="ver2">
-						<thead>
-							<tr class="row100 head">
-								<th class="column100 column1" data-column="column1"></th>
-								<th class="column100 column2" data-column="column2">Price</th>
-								<th class="column100 column3" data-column="column3">Product Condition</th>
-								<th class="column100 column4" data-column="column4">Product Type</th>
-                <th class="column100 column4" data-column="column5">Get Product</th>
-							</tr>
-						</thead>
+                <div class="table100 ver2 m-b-110">
+                    <table id = "table" data-vertable="ver2">
+                        <thead>
+                            <tr class="row100 head">
+                                <th class="column100 column1" data-column="column1"></th>
+                                <th class="column100 column3" data-column="column3">Product Condition</th>
+                                <th class="column100 column4" data-column="column4">Product Type</th>
+                                <th class="column100 column4" data-column="column5">Recycle Product</th>
+                            </tr>
+                        </thead>
 
 
-						<tbody>
-                @foreach($vals as $val)
-						    <tr class="row100">
-								<td class="column100 column1" data-column="column1">{{$val->product_name}}</td>
-								<td class="column100 column2" data-column="column2">{{$val->product_price}}</td>
-								<td class="column100 column3" data-column="column3">{{$val->product_condition}}</td>
-								<td class="column100 column4" data-column="column4">{{$val->product_type}}</td>
-                <td class="column100 column5" data-column="column5"><a href="/processor/Products/{{$val->inventory_id}}"><button type="button" class="btn btn-success">Update</button>Get Product</button></a></td>
-  							</tr>
-                @endforeach
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
-	</div>
+                        <tbody>
+                            @foreach($vals as $val)
+                            <tr class="row100">
+                                <?php  $check = DB::connection('oracle')->select("Select * FROM PRODUCTNAME WHERE BARCODE = '$val->barcode'");$check = $check[0]; ?>
+                                <td class="column100 column1" data-column="column1">{{$check->name}}</td>
+                                <td class="column100 column3" data-column="column3">{{$val->product_condition}}</td>
+                                <td class="column100 column4" data-column="column4">{{$check->type}}</td>
+                                <td class="column100 column5" data-column="column5"><a href="/processor/Products/{{$val->id}}"><button type="button" class="btn btn-success">Update</button>Recycle Product</button></a></td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
     $('#input').keyup(function () {
       table_search($('#input').val(),$('#table tbody tr'),'0123');

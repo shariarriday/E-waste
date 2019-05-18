@@ -1,3 +1,8 @@
+<?php
+$val1 = DB::connection('oracle')->select("Select * FROM PROCESSOR WHERE PROCESSOR_ID = '$id' ");
+$rec = DB::connection('oracle')->select("Select * FROM RECYCLER WHERE PROCESSOR_ID = '$id' ");
+$ref = DB::connection('oracle')->select("Select * FROM REFURBISHER WHERE PROCESSOR_ID = '$id' ");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -221,18 +226,18 @@
 
 
     /* body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        height: 100vh;
-        width: 100%;
-        background-image: linear-gradient(-25deg, #FFFFFF 0%, #C0C0C0 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(-25deg, #FFFFFF 0%, #C0C0C0 100%);
     } */
 
     /* html {
-        font-family: Montserrat-Regular;
-        src: url('../fonts/montserrat/Montserrat-Regular.ttf');
+    font-family: Montserrat-Regular;
+    src: url('../fonts/montserrat/Montserrat-Regular.ttf');
     } */
 
     div {margin-bottom: 3rem;}
@@ -244,45 +249,62 @@
 </head>
 <body style="font-family: 'Montserrat', sans-serif; background-image: linear-gradient(-25deg, #FFFFFF 0%, #C0C0C0 100%);">
 
-    
-     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2c9368; font-family: 'Montserrat', sans-serif;">
-      <a class="navbar-brand" href="#">E-waste Management</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2c9368; font-family: 'Montserrat', sans-serif;">
+            <a class="navbar-brand" href="/admin">E-waste Management</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link active" href="/processor/home">Home <span class="sr-only">(current)</span></a>
+                    </li>
 
-         
-          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Recycling
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/processor/register_">Register</a>
-                <a class="dropdown-item" href="/processor/Raw_Material">Make Raw Material</a>
-             </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Refurbishing
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/processor/register_ref">Register</a>
-            <a class="dropdown-item" href="/productinfo/printer">Get Product</a>
-            <a class="dropdown-item" href="/productinfo/copy_machine">Make Product</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/processor/Dump">Dumping <span class="sr-only">(current)</span></a>
+                    </li>
 
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Recycling
+                        </a>
+                        @if(count($rec))
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item disabled" href="#">Register</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/processor/rawMaterial">Make Raw Material</a>
+                        </div>
+                        @else
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/processor/registerRecycler">Register</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item disabled" href="#">Make Raw Material</a>
+                        </div>
+                        @endif
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Refurbishing
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            @if(count($ref))
+                            <a class="dropdown-item disabled" href="#">Register</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item " href="/processor/getInfoInventory">Get Product</a>
+                            <a class="dropdown-item" href="/processor/Products">Make Product</a>
+                            @else
+                            <a class="dropdown-item" href="/processor/registerRefurbisher">Register</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item disabled" href="#">Get Product</a>
+                            <a class="dropdown-item disabled" href="#">Make Product</a>
+                            @endif
+                        </div>
+                    </li>
 
-          </div>
-        </li>
-       
-        </ul>
-      </div>
-    </nav>
+                </ul>
+            </div>
+        </nav>
 
 
     <div class="page" style="display: flex;
@@ -292,40 +314,49 @@
     height: 89vh;
     width: 100%;">
     <div class="container" style="text-align: center;">
-        <h3>Register As Refurbisher </h3>
+        <h3>Register As Recycler </h3>
     </div>
-        <form action = "/processor/register_ref" method="post">
-            {{CSRF_FIELD()}}
-            <div class="page__demo">
-                 
-                
-                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="$$" name = "price" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Repair Cost</span>
-                    </span>
-                </label>
-                <br>
+    <form action = "/processor/registerRecycler" method="post">
+        {{CSRF_FIELD()}}
+        <div class="page__demo">
 
-                <div class="container" style="display: flex; justify-content: center; padding-top: 30px; ">
-                    <button type="submit" class="btn btn-outline-success">   Submit   </button>
-                </div>
+
+            <label class="field a-field a-field_a1 page__field">
+                <input class="field__input a-field__input" placeholder="TV/ Mobile" name = "specialization" required>
+                <span class="a-field__label-wrap">
+                    <span class="a-field__label">Specialization</span>
+                </span>
+            </label>
+            <br>
+
+
+            <label class="field a-field a-field_a1 page__field">
+                <input class="field__input a-field__input" placeholder="Max Amount" name = "capability" required>
+                <span class="a-field__label-wrap">
+                    <span class="a-field__label">Capability</span>
+                </span>
+            </label>
+            <br>
+
+            <div class="container" style="display: flex; justify-content: center; padding-top: 30px; ">
+                <button type="submit" class="btn btn-outline-success">   Submit   </button>
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
+</div>
 
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/jquery-migrate-3.0.1.min.js"></script>
-    <script src="js/jquery-ui.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.stellar.min.js"></script>
-    <script src="js/jquery.countdown.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/bootstrap-datepicker.min.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/main.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery-migrate-3.0.1.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.stellar.min.js"></script>
+<script src="js/jquery.countdown.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/bootstrap-datepicker.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/main.js"></script>
 
 </body>
 </html>

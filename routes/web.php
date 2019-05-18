@@ -16,9 +16,6 @@ Route::get('/', function () {
 });
 
 Route::get('/user','providerController@providerlogin');
-Route::get('/processor/login','processorController@processorLogin');
-Route::post('/processor/loginAction','processorController@LoginAction');
-
 //Provider Part
 Route::get('/user/ManufacturerReg','providerController@ManufacturerRegister');
 Route::post('/user/home','providerController@loginAction');
@@ -136,20 +133,18 @@ Route::get('/processor/dumping','processorController@dumping');//Dumping form
 Route::get('/processor/Refurbish/{val}','processorController@makeProductsInfo');//Create new product form
 Route::post('/processor/Refurbish','processorController@createProducts');//Create a new product
 Route::get('/processor/registerRefurbisher', 'processorController@refurbisherRegister');//Register Refurbisher
-Route::post('/processor/registerRefurbisher', 'processorController@refurbisherRegisteradd');//Register Refurbisher Action
+Route::get('/processor/getInfoInventory','processorController@Products');//find products to refurbish
+Route::get('/processor/processorReg','processorController@registration');//Add new processor
+Route::post('/processor/processorAdd','processorController@postaddProcessor');//New processor action
+Route::get('/processor/registerRecycler', 'processorController@recyclerRegister');//Register new recycler
+Route::post('/processor/registerRecycler', 'processorController@recyclerRegisterAdd');//Register Refurbisher Action
 
-
-Route::get('/processor/ProcessorReg','processorController@registration');
-Route::post('/processor/ProcessorAdd','processorController@postaddProcessor');
-
-Route::get('/processor/Raw_Material','processorController@getRaw_Material');
-Route::post('/processor/Raw_MaterialAdd','processorController@postaddRaw_Material');
+Route::get('/processor/rawMaterial','processorController@getallProducts');
+Route::get('/processor/rawMaterial/{val}','processorController@getAddRawMaterial');
+Route::post('/processor/rawMaterial','processorController@postAddRawMaterial');
+Route::get('/processor/Dump','processorController@dump');
+Route::post('/processor/Dump','processorController@postdump');
 
 
 
 Route::get('/processor/RawMaterials','processorController@RawMaterials');
-
-Route::get('/processor/getInfoInventory','processorController@Products');
-
-Route::get('/processor/Recycler', 'processorController@recyclerReg');
-Route::post('/processor/Recycler', 'processorController@recyclerRegadd');
