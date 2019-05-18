@@ -176,11 +176,9 @@ class providerController extends Controller
               $loc = DB::connection('oracle')->select("SELECT LOCATION FROM INDIVIDUAL where PROVIDER_ID = '$id'");
 
               $location = $loc[0]->location;
-              $users = DB::connection('oracle')->insert("INSERT INTO ORDER_PROVIDER VALUES('','$location', sysdate)");
-              $users = DB::connection('oracle')->select("SELECT * FROM ORDER_PROVIDER WHERE sources = '$location' order by ORDER_DATE DESC");
-              $oid = $users[0]->order_id;
-              $ins = DB::connection('oracle')->insert("INSERT INTO ORDER_INFO VALUES('$oid','$barcode','$product_condition')");
-              $users = DB::connection('oracle')->insert("INSERT INTO INDIVIDUAL_PROVIDES VALUES('$id','$oid')");
+              $users = DB::connection('oracle')->insert("INSERT INTO ORDER_PROVIDER VALUES(ORDER_SEQ.NEXTVAL,'$location', sysdate)");
+              $ins = DB::connection('oracle')->insert("INSERT INTO ORDER_INFO VALUES(ORDER_SEQ.CURRVAL,'$barcode','$product_condition')");
+              $users = DB::connection('oracle')->insert("INSERT INTO INDIVIDUAL_PROVIDES VALUES('$id',ORDER_SEQ.CURRVAL)");
 
               return view('ProviderEnd.individualInfo',['id' => $request->session()->get('id')]);
       }
