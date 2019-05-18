@@ -62,7 +62,7 @@ class processorController extends Controller
         }
         else
         {
-            return array($email,$pass);
+            return view('EmployeeEnd.LoginForm');
         }
     }
 
@@ -88,7 +88,7 @@ class processorController extends Controller
         return view('ProcessorEnd.ProcessorAdd',['id' => $request->session()->get('id')]);
     }
 
-    public function getaddRaw_Material(Request $request)
+    public function getRaw_Material(Request $request)
     {
 
 
@@ -107,7 +107,8 @@ class processorController extends Controller
             $copper = request("copper");
             $steel = request("steel");
             $iron = request("iron");
-            $users = DB::connection('oracle')->insert("INSERT INTO Product VALUES('',$glass,$gold,$silicon,$rubber,$plastic,$copper,$steel,$iron)");
+            $price=request("price");
+            $users = DB::connection('oracle')->insert("INSERT INTO Product VALUES('',$glass,$gold,$silicon,$rubber,$plastic,$copper,$steel,$iron,$price)");
 
             return view('ProcessorEnd.Raw_MaterialAdd',['id' => $request->session()->get('id')]);
     }
@@ -150,5 +151,24 @@ class processorController extends Controller
         $users = DB::connection('oracle')->insert("INSERT INTO MAKES VALUES('$product','$id','$inventory')");
 
         return view('ProcessorEnd.Products',['id' => $request->session()->get('id')]);
+    }
+
+
+
+
+
+     public function refurbisherReg(Request $request , $val)
+    {
+        return view('ProcessorEnd.RegisterRefurbisher',['id' => $request->session()->get('id')]);
+    }
+
+    public function refurbisherRegadd(Request $request)
+    {
+        
+        $price = request("rc");
+        
+        $users = DB::connection('oracle')->insert("INSERT INTO Refurbisher VALUES('',$price)");
+
+            return view('ProcessorEnd.RegisterRefurbisher',['id' => $request->session()->get('id')]);
     }
 }

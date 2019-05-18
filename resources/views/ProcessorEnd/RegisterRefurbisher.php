@@ -263,8 +263,8 @@
                 Recycling
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/processor/register">Register</a>
-                <a class="dropdown-item" href="/processor/Raw_MaterialAdd">Make Raw Material</a>
+                <a class="dropdown-item" href="/processor/register_">Register</a>
+                <a class="dropdown-item" href="/processor/Raw_Material">Make Raw Material</a>
              </div>
         </li>
         <li class="nav-item dropdown">
@@ -292,76 +292,17 @@
     height: 89vh;
     width: 100%;">
     <div class="container" style="text-align: center;">
-        <h3>Insert Raw Material</h3>
+        <h3>Register As Refurbisher </h3>
     </div>
-        <form action = "/processor/Raw_MaterialAdd" method="post">
+        <form action = "/processor/register_ref" method="post">
             {{CSRF_FIELD()}}
             <div class="page__demo">
-                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="Amount" name = "glass" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Glass</span>
-                    </span>
-                  </label>
-                   
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="Amount" name = "gold" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Gold</span>
-                    </span>
-                </label>
                  
-                
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="Amount" name = "silicon" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Silicon</span>
-                    </span>
-                </label>
-
-                <br>
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="Amount" name = "rubber" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Rubber</span>
-                    </span>
-                </label>
-                
-                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="Amount" name = "plastic" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Plastic</span>
-                    </span>
-                </label>
-                
-
-                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="Amount" name = "copper" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Copper</span>
-                    </span>
-                </label>
-                <br>
-
-                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="Amount" name = "steel" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Steel</span>
-                    </span>
-                </label>
-                
-
-                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="Amount" name = "iron" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Iron</span>
-                    </span>
-                </label>
                 
                  <label class="field a-field a-field_a1 page__field">
                     <input class="field__input a-field__input" placeholder="$$" name = "price" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Price</span>
+                        <span class="a-field__label">Repair Cost</span>
                     </span>
                 </label>
                 <br>
