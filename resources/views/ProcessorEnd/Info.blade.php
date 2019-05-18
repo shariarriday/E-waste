@@ -15,6 +15,17 @@
           <li><a href="/processor/dumping">Dumping</a></li>
           <li><a href="/processor/Products">Products</a></li>
           <li><a href="/processor/RawMaterials">Raw Materials</a></li>
+
+          <li><a href="/processor/Refurbisher">Refurbisher</a></li>
+          <li><a href="/processor/RefurbisherRegister">Register as Refurbisher</a></li>
+          <li><a href="/processor/Getproducts">Get Products</a></li>
+          <li><a href="/processor/Makeproducts">Make Products</a></li>
+
+          <li><a href="/processor/Recycler">Recycler</a></li>
+          <li><a href="/processor/RecyclerRegister">Register as Recycler</a></li>
+          <li><a href="/processor/Getrawmaterial">Get Raw Materials</a></li>
+
+
         </ul>
       </div>
     </nav>

@@ -49,6 +49,34 @@ class productController extends Controller
 
     //end copy here
 
+    public function loginAction(Request $request)
+    {
+      $name = request("name");//get value from page
+      $pass = request("password");//get value from page
+
+      $check = DB::connection('oracle')->select("Select DISTINCT PROVIDER_ID FROM manufacturer WHERE Contact_name = '$name' AND password = '$pass'");//check if correct password
+
+      if(count($check) != 0)
+      {
+        $id = $check[0]->provider_id;
+
+        $request->session()->put('id', $id);
+
+        return view('Product_infoEnd.Info',['id' => $id]);
+      }
+      else {
+        return view('EmployeeEnd.LoginForm');
+      }
+    }
+    public function login()
+    {
+      return view('EmployeeEnd.LoginForm');
+    }
+
+
+
+
+
     public function calculator()
     {
         return view('Product_infoEnd.CalculatorData');

@@ -1,6 +1,6 @@
 @include('header')
 <?php
-    $val1 = DB::connection('oracle')->select("Select * FROM MANUFACTERER WHERE PROVIDER_ID = '$id' ");
+    $val1 = DB::connection('oracle')->select("Select * FROM MANUFACTuRER WHERE PROVIDER_ID = '$id' ");
 ?>
 <body style="background-image: linear-gradient(-25deg, #FFFFFF 0%, #C0C0C0 100%);">
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2c9368; font-family: 'Montserrat', sans-serif;">
@@ -48,7 +48,7 @@
             <a class="dropdown-item" href="/productinfo/pc">Computer</a>
             <a class="dropdown-item" href="/productinfo/printer">Printing Machine</a>
             <a class="dropdown-item" href="/productinfo/copy_machine">Copy Machine</a>
-            <a class="dropdown-item" href="/productinfo/microwave">Microwave</a>
+
 
           </div>
         </li>
@@ -78,9 +78,9 @@
 					<table data-vertable="ver2">
 						<thead>
 							<tr class="row100 head">
-								<th class="column100 column1" data-column="column1">Contact_name</th>
+								<th class="column100 column1" data-column="column1">Company Representative</th>
 								<th class="column100 column2" data-column="column2">Inventory_location</th>
-								<th class="column100 column3" data-column="column3">Location</th>
+								<th class="column100 column3" data-column="column3">Company Name</th>
 								<th class="column100 column4" data-column="column4">Password</th>
 							</tr>
 						</thead>
@@ -89,10 +89,10 @@
 						<tbody>
                             @foreach($vals as $val)
 							<tr class="row100">
-								<td class="column100 column1" data-column="column1">{{$val->Contact_name}}</td>
-								<td class="column100 column2" data-column="column2">{{$val->Inventory_location}}</td>
-								<td class="column100 column3" data-column="column3">{{$val->Location}}</td>
-								<td class="column100 column4" data-column="column4">{{$val->Password}}</td>
+								<td class="column100 column1" data-column="column1">{{$val->contact_name}}</td>
+								<td class="column100 column2" data-column="column2">{{$val->inventory_location}}</td>
+								<td class="column100 column3" data-column="column3">{{$val->name}}</td>
+								<td class="column100 column4" data-column="column4">{{$val->password}}</td>
 							</tr>
                             @endforeach
 						</tbody>

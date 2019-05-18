@@ -58,6 +58,12 @@ Route::get('/processor/getInfoInventory','processorController@Products');
 Route::get('/processor/Refurbish/{val}','processorController@makeProductsInfo');
 Route::post('/processor/Refurbish','processorController@createProducts');
 Route::post('/processor/home','processorController@loginAction');
+
+Route::get('/processor/Refurbisher', 'processorController@refurbisherReg');
+Route::post('/processor/Refurbisher', 'processorController@refurbisherRegadd');
+
+Route::get('/processor/Recycler', 'processorController@recyclerReg');
+Route::post('/processor/Recycler', 'processorController@recyclerRegadd');
 //Buyer part
 Route::get('/buyer','buyerController@loginForm');
 Route::post('/buyer','buyerController@loginAction');
@@ -68,6 +74,8 @@ Route::get('/buyer/buyProducts','buyerController@buyProducts');
 Route::get('/buyer/buyProducts/{val}','buyerController@AddtoCart');
 
 //Product_info part
+Route::get('/product_info','productController@login');//show login page
+Route::post('/product_info/home','productController@loginAction'); //login action
 Route::get('/productinfo/TV','productController@tv');
 Route::post('/productinfo/TV','productController@tvadd');
 Route::get('/productinfo/AC','productController@ac');
@@ -100,12 +108,7 @@ Route::get('/productinfo/calculator','productController@calculator');
 Route::post('/productinfo/calculator','productController@calculatoradd');
 
 
-
-
-
-
-
-
+//unfinishied job
 Route::get('/productinfo/home', 'productController@info');
 
 

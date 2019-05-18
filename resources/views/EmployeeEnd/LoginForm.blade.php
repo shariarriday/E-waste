@@ -95,7 +95,7 @@
             </div>
             <div class="col-md-4 login-form-2">
                 <h3>Login for Processors</h3>
-                <form action = "/processor/home" method = "post">
+                <form action = "/processor/loginAction" method = "post">
                     {{CSRF_FIELD()}}
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Your Name *" value="" name="name" />
@@ -113,13 +113,13 @@
             </div>
             <div class="col-md-4 login-form-1">
                 <h3>Login for Product-Info </h3>
-                <form>
+                <form action = "/product_info/home" method = "post">
                     {{CSRF_FIELD()}}
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Email *" value="" />
+                        <input type="text" class="form-control" placeholder="Your Contact Name " value="" name = "name"/>
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Your Password *" value="" />
+                        <input type="password" class="form-control" placeholder="Your Password *" value="" name = "password"/>
                     </div>
                     <div class="form-group">
                         <input type="submit" class="btnSubmit" value="Login" />
