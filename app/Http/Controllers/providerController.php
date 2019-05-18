@@ -188,10 +188,7 @@ class providerController extends Controller
           $id = $request->session()->get('id');
           $loc = DB::connection('oracle')->select("SELECT inventory_location FROM BUSINESS where PROVIDER_ID = '$id'");
           $location = $loc[0]->inventory_location;
-          $users = DB::connection('oracle')->insert("INSERT INTO ORDER_PROVIDER VALUES('','$location', sysdate)");
-          $users = DB::connection('oracle')->select("SELECT * FROM ORDER_PROVIDER WHERE sources = '$location' order by ORDER_DATE DESC");
-          $oid = $users[0]->order_id;
-
+          $users = DB::connection('oracle')->insert("INSERT INTO ORDER_PROVIDER VALUES(ORDER_SEQ.NEXTVAL,'$location', sysdate)");
           $i = 0;
           $barcode = "dsf";
           $product_condition = "dsf";
@@ -203,11 +200,11 @@ class providerController extends Controller
               $barcode = request($b);
               $product_condition = request($p);
               if($barcode == "") break;
-              $ins = DB::connection('oracle')->insert("INSERT INTO ORDER_INFO VALUES('$oid','$barcode','$product_condition')");
+              $ins = DB::connection('oracle')->insert("INSERT INTO ORDER_INFO VALUES(ORDER_SEQ.CURRVAL,'$barcode','$product_condition')");
               $i++;
           }
 
-          $users = DB::connection('oracle')->insert("INSERT INTO BUSSINESS_PROVIDES VALUES('$id','$oid')");
+          $users = DB::connection('oracle')->insert("INSERT INTO BUSSINESS_PROVIDES VALUES('$id',ORDER_SEQ.CURRVAL)");
 
           return view('ProviderEnd.businessInfo',['id' => $id]);
       }
