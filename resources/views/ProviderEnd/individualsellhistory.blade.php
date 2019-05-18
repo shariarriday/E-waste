@@ -15,6 +15,10 @@
 
     <?php
         $vals = DB::connection('oracle')->select("Select * FROM INDIVIDUAL_SELL_HISTORY where PROVIDER_ID ='$id' ");
+
+
+
+
     ?>
 		<div class="container-table100">
 			<div class="wrap-table100">
@@ -22,10 +26,11 @@
 					<table data-vertable="ver1">
 						<thead>
 							<tr class="row100 head">
-								<th class="column100 column1" data-column="column1">Sources</th>
-								<th class="column100 column2" data-column="column2">Barcode</th>
-								<th class="column100 column3" data-column="column3">Order Date</th>
-								<th class="column100 column4" data-column="column4">Product Condition</th>
+                <th class="column100 column1" data-column="column1">Product Name</th>
+								<th class="column100 column2" data-column="column2">Sources</th>
+								<th class="column100 column3" data-column="column3">Barcode</th>
+								<th class="column100 column4" data-column="column4">Order Date</th>
+								<th class="column100 column5" data-column="column5">Product Condition</th>
 
 
 
@@ -37,15 +42,20 @@
 
 						<tbody>
                             @foreach($vals as $val)
+          <?php
+                $prod = DB::connection('oracle')->select("SELECT name FROM PRODUCTNAME WHERE BARCODE = '$val->barcode'");
+   ?>
 							<tr class="row100">
-								<td class="column100 column1" data-column="column1">{{$val->sources}}</td>
-								<td class="column100 column2" data-column="column2">{{$val->barcode}}</td>
-								<td class="column100 column3" data-column="column3">{{$val->order_date}}</td>
-								<td class="column100 column4" data-column="column4">{{$val->product_condition}}</td>
+                <td class="column100 column1" data-column="column1">{{$prod[0]->name}}</td>
+								<td class="column100 column2" data-column="column2">{{$val->sources}}</td>
+								<td class="column100 column3" data-column="column3">{{$val->barcode}}</td>
+								<td class="column100 column4" data-column="column4">{{$val->order_date}}</td>
+								<td class="column100 column5" data-column="column5">{{$val->product_condition}}</td>
 
 
 							</tr>
                             @endforeach
+
 						</tbody>
 					</table>
 				</div>
