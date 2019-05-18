@@ -253,7 +253,7 @@
         <li><a href="/processor/dumping">Dumping</a></li>
         <li ><a href="/processor/Products">Products</a></li>
         <li><a href="/processor/RawMaterials">Raw Materials</a></li>
-        <li><a href="/processor/Refurbished">Refurbished Products</a></li>
+        <li><a href="/proc
         </ul>
     </nav>
 
@@ -261,11 +261,11 @@
         <h3>Sell Items</h3>
     </div>
     <div class="page">
-        <form action = "/processor/Refurbish" method="post">
+        <form action = "/processor/makeproduct" method="post">
             {{CSRF_FIELD()}}
             <div class="page__demo">
-                <input type='hidden' value='{{$id}}' name='processor'>
-                <input type='hidden' value='{{$inventory}}' name='inventory'>
+                <input type='hidden' value='$id' name='processor'>
+                <input type='hidden' value='$inventory' name='inventory'>
                 <label class="field a-field a-field_a1 page__field">
                     <input class="field__input a-field__input" placeholder="barcode" name = "barcode" required>
                     <span class="a-field__label-wrap">
@@ -295,7 +295,7 @@
                         <span class="a-field__label">Product Warranty</span>
                     </span>
                 </label>
-                <br>
+                <br>           
                 <label class="field a-field a-field_a1 page__field">
                     <input class="field__input a-field__input" placeholder="10" name = "product_price" required>
                     <span class="a-field__label-wrap">

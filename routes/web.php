@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::get('/user','providerController@providerlogin');
 Route::get('/processor/login','processorController@processorLogin');
-Route::post('/processor/loginAction','processorController@processorLoginAction');
+Route::post('/processor/loginAction','processorController@LoginAction');
 
 //Provider Part
 Route::get('/user/ManufacturerReg','providerController@ManufacturerRegister');
@@ -45,26 +45,6 @@ Route::post('/seller/IndividualSellerReg','providerController@IndividualStore');
 Route::get('/seller/BuyerReg','providerController@IndividualRegister');
 Route::post('/seller/Buyerhome','providerController@IndividualloginAction');
 Route::post('/seller/BuyerReg','providerController@IndividualStore');
-
-//processor Part
-Route::get('/prcoessor/ProcessorReg','processorController@registration');
-Route::post('/processor/ProcessorAdd','processorController@postaddProcessor');
-Route::get('/processor/getProd/{id}','processorController@getProducts');
-Route::get('/processor/RawMaterials','processorController@RawMaterials');
-Route::get('/processor/dumping','processorController@dumping');
-Route::get('/processor/Products/{val}','processorController@getproducts');
-Route::get('/processor/Products','processorController@showProducts');
-Route::get('/processor/getInfoInventory','processorController@Products');
-Route::get('/processor/Refurbish/{val}','processorController@makeProductsInfo');
-Route::post('/processor/Refurbish','processorController@createProducts');
-Route::post('/processor/home','processorController@loginAction');
-
-Route::get('/processor/Refurbisher', 'processorController@refurbisherReg');
-Route::post('/processor/Refurbisher', 'processorController@refurbisherRegadd');
-
-Route::get('/processor/Recycler', 'processorController@recyclerReg');
-Route::post('/processor/Recycler', 'processorController@recyclerRegadd');
-//Buyer part
 Route::get('/buyer','buyerController@loginForm');
 Route::post('/buyer','buyerController@loginAction');
 Route::get('/buyer/create','buyerController@createAccountForm');
@@ -146,3 +126,30 @@ Route::get('/admin/researchStatus','employeeController@researchStatus');//show r
 Route::get('/admin/createStation','employeeController@createStation');//add new dumping station
 Route::post('/admin/createStation','employeeController@createStationAction');//add new dumping station action
 Route::get('/admin/viewDump','employeeController@viewDump');//view dumping status
+
+
+//Processor Part
+Route::post('/processor/home','processorController@loginAction'); //Processor Home
+Route::get('/processor/Products/{val}','processorController@getproducts');// Refurbisher make Product Table
+Route::get('/processor/Products','processorController@showProducts');//Refurbisher working product table
+Route::get('/processor/dumping','processorController@dumping');//Dumping form
+Route::get('/processor/Refurbish/{val}','processorController@makeProductsInfo');//Create new product form
+Route::post('/processor/Refurbish','processorController@createProducts');//Create a new product
+Route::get('/processor/registerRefurbisher', 'processorController@refurbisherRegister');//Register Refurbisher
+Route::post('/processor/registerRefurbisher', 'processorController@refurbisherRegisteradd');//Register Refurbisher Action
+
+
+Route::get('/processor/ProcessorReg','processorController@registration');
+Route::post('/processor/ProcessorAdd','processorController@postaddProcessor');
+
+Route::get('/processor/Raw_Material','processorController@getRaw_Material');
+Route::post('/processor/Raw_MaterialAdd','processorController@postaddRaw_Material');
+
+
+
+Route::get('/processor/RawMaterials','processorController@RawMaterials');
+
+Route::get('/processor/getInfoInventory','processorController@Products');
+
+Route::get('/processor/Recycler', 'processorController@recyclerReg');
+Route::post('/processor/Recycler', 'processorController@recyclerRegadd');

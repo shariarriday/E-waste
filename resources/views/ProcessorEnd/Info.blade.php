@@ -4,28 +4,41 @@
 ?>
 <body style="background-image: linear-gradient(-25deg, #FFFFFF 0%, #C0C0C0 100%);">
 
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">E-waste</a>
-        </div>
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="/processor/info">Home</a></li>
-          <li><a href="/processor/getInfoInventory">Get Products</a></li>
-          <li><a href="/processor/dumping">Dumping</a></li>
-          <li><a href="/processor/Products">Products</a></li>
-          <li><a href="/processor/RawMaterials">Raw Materials</a></li>
+     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2c9368; font-family: 'Montserrat', sans-serif;">
+      <a class="navbar-brand" href="#">E-waste Management</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-          <li><a href="/processor/Refurbisher">Refurbisher</a></li>
-          <li><a href="/processor/RefurbisherRegister">Register as Refurbisher</a></li>
-          <li><a href="/processor/Getproducts">Get Products</a></li>
-          <li><a href="/processor/Makeproducts">Make Products</a></li>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
 
-          <li><a href="/processor/Recycler">Recycler</a></li>
-          <li><a href="/processor/RecyclerRegister">Register as Recycler</a></li>
-          <li><a href="/processor/Getrawmaterial">Get Raw Materials</a></li>
+         
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Recycling
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/processor/register">Register</a>
+                <a class="dropdown-item" href="/processor/Raw_Material">Make Raw Material</a>
+             </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Refurbishing
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/processor/register_ref">Register</a>
+            <a class="dropdown-item" href="/processor/Products">Get Product</a>
+            <a class="dropdown-item" href="/productinfo/copy_machine">Make Product</a>
 
 
+          </div>
+        </li>
+       
         </ul>
       </div>
     </nav>
