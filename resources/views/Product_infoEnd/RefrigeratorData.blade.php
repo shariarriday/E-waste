@@ -289,7 +289,7 @@
             <a class="dropdown-item" href="/productinfo/pc">Computer</a>
             <a class="dropdown-item" href="/productinfo/printer">Printing Machine</a>
             <a class="dropdown-item" href="/productinfo/copy_machine">Copy Machine</a>
-            <a class="dropdown-item" href="/productinfo/microwave">Microwave</a>
+            
 
           </div>
         </li>

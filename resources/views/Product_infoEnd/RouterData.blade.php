@@ -289,7 +289,7 @@
             <a class="dropdown-item" href="/productinfo/pc">Computer</a>
             <a class="dropdown-item" href="/productinfo/printer">Printing Machine</a>
             <a class="dropdown-item" href="/productinfo/copy_machine">Copy Machine</a>
-            
+
 
           </div>
         </li>
@@ -316,15 +316,15 @@
     height: 89vh;
     width: 100%;">
     <div class="container" style="text-align: center;">
-        <h3>Insert New Air Conditioner</h3>
+        <h3>Insert New Router</h3>
     </div>
-        <form action = "/productinfo/AC" method="post">
+        <form action = "/productinfo/router" method="post">
             {{CSRF_FIELD()}}
             <div class="page__demo">
                 <label class="field a-field a-field_a1 page__field">
                     <input class="field__input a-field__input" placeholder="Product Name" name = "product_name" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Air Conditioner Name</span>
+                        <span class="a-field__label">Router Name</span>
                     </span>
                 </label>
 
@@ -356,16 +356,16 @@
                     </span>
                 </label>
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="XXX" name = "compressor" required>
+                    <input class="field__input a-field__input" placeholder="XXX" name = "micro" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Compressor Model</span>
+                        <span class="a-field__label">Microcontroller model</span>
                     </span>
                 </label>
                 <br>
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="XXXXXXXX" name = "fan" required>
+                    <input class="field__input a-field__input" placeholder="XXXXXXXX" name = "battery" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Fan Model</span>
+                        <span class="a-field__label">Battery Power</span>
                     </span>
                 </label>
 
@@ -377,19 +377,18 @@
                 </label>
                 <br>
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder= "Good/Average/Bad/" name = "refrigerant" required>
+                    <input class="field__input a-field__input" placeholder= "xxxxx" name = "capacitor" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Refrigerant Condition</span>
+                        <span class="a-field__label">Capacitor voltage</span>
                     </span>
                 </label>
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder= "Stainless/Strip/Resistance/Magnet" name = "coil" required>
+                    <input class="field__input a-field__input" placeholder= "xxxxx" name = "switch_" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Coil Material</span>
+                        <span class="a-field__label">Switch Model</span>
                     </span>
                 </label>
                 <br>
-
                 <div class="container" style="display: flex; justify-content: center; padding-top: 30px; ">
                     <button type="submit" class="btn btn-outline-success">   Submit   </button>
                 </div>

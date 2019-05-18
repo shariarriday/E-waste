@@ -316,15 +316,15 @@
     height: 89vh;
     width: 100%;">
     <div class="container" style="text-align: center;">
-        <h3>Insert New Air Conditioner</h3>
+        <h3>Insert New Camera</h3>
     </div>
-        <form action = "/productinfo/AC" method="post">
+        <form action = "/productinfo/camera" method="post">
             {{CSRF_FIELD()}}
             <div class="page__demo">
                 <label class="field a-field a-field_a1 page__field">
                     <input class="field__input a-field__input" placeholder="Product Name" name = "product_name" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Air Conditioner Name</span>
+                        <span class="a-field__label">Camera Name</span>
                     </span>
                 </label>
 
@@ -356,36 +356,23 @@
                     </span>
                 </label>
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="XXX" name = "compressor" required>
+                    <input class="field__input a-field__input" placeholder="polymer/carbon/others" name = "body" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Compressor Model</span>
+                        <span class="a-field__label">Body Material</span>
                     </span>
                 </label>
                 <br>
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="XXXXXXXX" name = "fan" required>
+                    <input class="field__input a-field__input" placeholder="XXXXXX" name = "lens_power" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Fan Model</span>
+                        <span class="a-field__label">Lens Power</span>
                     </span>
                 </label>
 
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder= "XXXX" name = "pcb" required>
+                    <input class="field__input a-field__input" placeholder= "XXXXXXXX" name = "lens_capacity" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">PCB version</span>
-                    </span>
-                </label>
-                <br>
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder= "Good/Average/Bad/" name = "refrigerant" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Refrigerant Condition</span>
-                    </span>
-                </label>
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder= "Stainless/Strip/Resistance/Magnet" name = "coil" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Coil Material</span>
+                        <span class="a-field__label">Memory Lens Capacity</span>
                     </span>
                 </label>
                 <br>

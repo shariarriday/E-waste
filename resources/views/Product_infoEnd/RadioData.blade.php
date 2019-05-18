@@ -316,15 +316,15 @@
     height: 89vh;
     width: 100%;">
     <div class="container" style="text-align: center;">
-        <h3>Insert New Air Conditioner</h3>
+        <h3>Insert New Radio</h3>
     </div>
-        <form action = "/productinfo/AC" method="post">
+        <form action = "/productinfo/radio" method="post">
             {{CSRF_FIELD()}}
             <div class="page__demo">
                 <label class="field a-field a-field_a1 page__field">
                     <input class="field__input a-field__input" placeholder="Product Name" name = "product_name" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Air Conditioner Name</span>
+                        <span class="a-field__label">Radio Name</span>
                     </span>
                 </label>
 
@@ -356,36 +356,16 @@
                     </span>
                 </label>
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="XXX" name = "compressor" required>
+                    <input class="field__input a-field__input" placeholder="polymer/carbon/others" name = "body" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Compressor Model</span>
+                        <span class="a-field__label">Body Material</span>
                     </span>
                 </label>
                 <br>
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="XXXXXXXX" name = "fan" required>
+                    <input class="field__input a-field__input" placeholder="XXXXXX" name = "speaker" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Fan Model</span>
-                    </span>
-                </label>
-
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder= "XXXX" name = "pcb" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">PCB version</span>
-                    </span>
-                </label>
-                <br>
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder= "Good/Average/Bad/" name = "refrigerant" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Refrigerant Condition</span>
-                    </span>
-                </label>
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder= "Stainless/Strip/Resistance/Magnet" name = "coil" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Coil Material</span>
+                        <span class="a-field__label">Speaker</span>
                     </span>
                 </label>
                 <br>
