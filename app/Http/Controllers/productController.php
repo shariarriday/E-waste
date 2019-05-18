@@ -123,6 +123,7 @@ class productController extends Controller
                 '$type'
             )"
         );
+        
         return view('Product_infoEnd.CalculatorData');
     }
 
