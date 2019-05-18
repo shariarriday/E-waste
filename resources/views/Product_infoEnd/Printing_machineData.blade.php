@@ -316,15 +316,15 @@
     height: 89vh;
     width: 100%;">
     <div class="container" style="text-align: center;">
-        <h3>Insert New Air Conditioner</h3>
+        <h3>Insert New Printing Machine</h3>
     </div>
-        <form action = "/productinfo/AC" method="post">
+        <form action = "/productinfo/printer" method="post">
             {{CSRF_FIELD()}}
             <div class="page__demo">
                 <label class="field a-field a-field_a1 page__field">
                     <input class="field__input a-field__input" placeholder="Product Name" name = "product_name" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Air Conditioner Name</span>
+                        <span class="a-field__label">Printing Machine Name</span>
                     </span>
                 </label>
 
@@ -356,36 +356,36 @@
                     </span>
                 </label>
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="XXX" name = "compressor" required>
+                    <input class="field__input a-field__input" placeholder="servo/stepper/ac/others" name = "motor" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Compressor Model</span>
+                        <span class="a-field__label">Motor Type</span>
                     </span>
                 </label>
                 <br>
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="XXXXXXXX" name = "fan" required>
+                    <input class="field__input a-field__input" placeholder="xxxx" name = "gear" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Fan Model</span>
+                        <span class="a-field__label">Gear Model</span>
                     </span>
                 </label>
 
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder= "XXXX" name = "pcb" required>
+                    <input class="field__input a-field__input" placeholder= "XXXXXXXX" name = "worm" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">PCB version</span>
+                        <span class="a-field__label">Worm Shaft Model</span>
                     </span>
                 </label>
                 <br>
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder= "Good/Average/Bad/" name = "refrigerant" required>
+                    <input class="field__input a-field__input" placeholder= "XXXXX" name = "phosphor" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Refrigerant Condition</span>
+                        <span class="a-field__label">Phosphor Bronze Material</span>
                     </span>
                 </label>
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder= "Stainless/Strip/Resistance/Magnet" name = "coil" required>
+                    <input class="field__input a-field__input" placeholder= "XXXXX" name = "housing" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Coil Material</span>
+                        <span class="a-field__label">Housing Plate</span>
                     </span>
                 </label>
                 <br>

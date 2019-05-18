@@ -316,15 +316,15 @@
     height: 89vh;
     width: 100%;">
     <div class="container" style="text-align: center;">
-        <h3>Insert New Air Conditioner</h3>
+        <h3>Insert New Laptop</h3>
     </div>
-        <form action = "/productinfo/AC" method="post">
+        <form action = "/productinfo/laptop" method="post">
             {{CSRF_FIELD()}}
             <div class="page__demo">
                 <label class="field a-field a-field_a1 page__field">
                     <input class="field__input a-field__input" placeholder="Product Name" name = "product_name" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Air Conditioner Name</span>
+                        <span class="a-field__label">Laptop Name</span>
                     </span>
                 </label>
 
@@ -356,36 +356,70 @@
                     </span>
                 </label>
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="XXX" name = "compressor" required>
+                    <input class="field__input a-field__input" placeholder="XXX" name = "weight" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Compressor Model</span>
+                        <span class="a-field__label">Weight</span>
                     </span>
                 </label>
                 <br>
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="XXXXXXXX" name = "fan" required>
+                    <input class="field__input a-field__input" placeholder="XXXXXXXX" name = "speaker" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Fan Model</span>
+                        <span class="a-field__label">Speaker Model</span>
                     </span>
                 </label>
 
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder= "XXXX" name = "pcb" required>
+                    <input class="field__input a-field__input" placeholder= "XXXX" name = "screen" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">PCB version</span>
+                        <span class="a-field__label">Screen Size</span>
                     </span>
                 </label>
                 <br>
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder= "Good/Average/Bad/" name = "refrigerant" required>
+                    <input class="field__input a-field__input" placeholder= "XXXX" name = "power" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Refrigerant Condition</span>
+                        <span class="a-field__label">Battery Power</span>
                     </span>
                 </label>
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder= "Stainless/Strip/Resistance/Magnet" name = "coil" required>
+                    <input class="field__input a-field__input" placeholder= "xxxx" name = "hdd" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Coil Material</span>
+                        <span class="a-field__label">Hard Drive Memory</span>
+                    </span>
+                </label>
+                <br>
+
+                <label class="field a-field a-field_a1 page__field">
+                    <input class="field__input a-field__input" placeholder= "CD/DVD" name = "optical" required>
+                    <span class="a-field__label-wrap">
+                        <span class="a-field__label">Optical Drive Type</span>
+                    </span>
+                </label>
+                <label class="field a-field a-field_a1 page__field">
+                    <input class="field__input a-field__input" placeholder= "xxxxx" name = "graphics" required>
+                    <span class="a-field__label-wrap">
+                        <span class="a-field__label">Graphics Card Model</span>
+                    </span>
+                </label>
+                <br>
+                <label class="field a-field a-field_a1 page__field">
+                    <input class="field__input a-field__input" placeholder= "xxxx" name = "external" required>
+                    <span class="a-field__label-wrap">
+                        <span class="a-field__label">External Ports Model</span>
+                    </span>
+                </label>
+                <label class="field a-field a-field_a1 page__field">
+                    <input class="field__input a-field__input" placeholder= "xxxx" name = "processorManufacturer" required>
+                    <span class="a-field__label-wrap">
+                        <span class="a-field__label">Processor Manufacturer</span>
+                    </span>
+                </label>
+                <br>
+                <label class="field a-field a-field_a1 page__field">
+                    <input class="field__input a-field__input" placeholder= "xxxx" name = "systemMemory" required>
+                    <span class="a-field__label-wrap">
+                        <span class="a-field__label">System Memory Storage</span>
                     </span>
                 </label>
                 <br>
