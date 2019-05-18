@@ -55,14 +55,14 @@
 
 
 						<tbody>
-                            @foreach($vals as $val)
-                            <?php
-                                  $prod = DB::connection('oracle')->select("SELECT name FROM PRODUCTNAME WHERE BARCODE = '$val->barcode'");
-                     ?>
-                  							<tr class="row100">
-                                  @if(count($prod)!= 0)
-                                  <td class="column100 column1" data-column="column1">{{$prod[0]->name}}</td>
-                                    @endif
+                @foreach($vals as $val)
+                <?php
+                  $prod = DB::connection('oracle')->select("SELECT name FROM PRODUCTNAME WHERE BARCODE = '$val->barcode'");
+                 ?>
+                  		<tr class="row100">
+                        @if(count($prod)!= 0)
+                        <td class="column100 column1" data-column="column1">{{$prod[0]->name}}</td>
+                            @endif
 
 								<td class="column100 column2" data-column="column2">{{$val->barcode}}</td>
 								<td class="column100 column3" data-column="column3">{{$val->product_quality}}</td>
