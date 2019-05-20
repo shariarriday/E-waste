@@ -259,7 +259,7 @@
             <a class="nav-link" href="/user/manufacturerinventoryhistory">Inventory History<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/user/sellItems">Sell Items <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/user/individualsellItems">Sell Items <span class="sr-only">(current)</span></a>
           </li>
 
 
@@ -271,7 +271,7 @@
         <h3>Sell Items</h3>
     </div>
     <div class="page">
-        <form action = "/user/sellItems" method="post">
+        <form action = "/user/individualsellItems" method="post">
             {{CSRF_FIELD()}}
             <div class="page__demo">
                 <label class="field a-field a-field_a1 page__field">

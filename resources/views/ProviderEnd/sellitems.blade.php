@@ -242,6 +242,30 @@
 
 
 </style>
+<script>
+$(document).ready(function(){
+
+
+    $("#addprod").click(function () {
+
+    var counter = 1
+    var newTextBoxDiv = $(document.getElementById('pag'));
+
+    $('#pag').prepend('<label class="field a-field a-field_a1 page__field">'+
+    '<input class="field__input a-field__input" placeholder="barcode" name = "barcode'+counter+'" required>'+
+        '<span class="a-field__label-wrap">'+
+            '<span class="a-field__label">Barcode</span>'+
+        '</span>'+
+    '</label>'+
+    '<label class="field a-field a-field_a1 page__field">'+
+        '<input class="field__input a-field__input" placeholder="GOOD" name = "product_condition'+counter+'" required>'+
+        '<span class="a-field__label-wrap">'+
+            '<span class="a-field__label">Product Condition</span>'+
+        '</span></label><br>');
+    counter++;
+ });
+});
+</script>
 </head>
 <body>
 
@@ -250,7 +274,9 @@
         <ul class="navbar-nav">
 
             <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
+                <li><a href="/user/Individualhome">Home</a></li>
+                <li><a href="/user/businesssellhistory">Sell History</a></li>
+                <li><a href="/user/businesssellItems">Sell Items</a></li>
             </li>
         </ul>
     </nav>
@@ -261,28 +287,30 @@
     <div class="page">
         <form action = "/user/sellItems" method="post">
             {{CSRF_FIELD()}}
-            <div class="page__demo">
+            <div class="page__demo" id = 'pag'>
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="unique id" name = "barcode" required>
+                    <input class="field__input a-field__input" placeholder="barcode" name = "barcode0" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Unique id</span>
+                        <span class="a-field__label">Barcode</span>
                     </span>
                 </label>
 
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="GOOD" name = "product_condition" required>
+                    <input class="field__input a-field__input" placeholder="GOOD" name = "product_condition0" required>
                     <span class="a-field__label-wrap">
                         <span class="a-field__label">Product Condition</span>
                     </span>
                 </label>
                 <br>
-
-                <br>
                 <div class="container" style="display: flex; justify-content: center; padding-top: 30px">
                     <button type="submit" class="btn btn-outline-secondary">   Submit   </button>
                 </div>
+
             </div>
         </form>
+        <div class="container" style="display: flex; justify-content: center; padding-top: 30px">
+            <button id = "addprod" class="btn btn-outline-secondary">   Add Product   </button>
+        </div>
     </div>
 
     <script src="js/jquery-3.3.1.min.js"></script>
