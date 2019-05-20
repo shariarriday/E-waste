@@ -5,7 +5,7 @@
 ?>
 <body style="background-image: linear-gradient(-25deg, #FFFFFF 0%, #C0C0C0 100%);">
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2c9368; font-family: 'Montserrat', sans-serif;">
-      <a class="navbar-brand" href="#">E-waste Management</a>
+      <a class="navbar-brand" href="/admin">E-waste Management</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -124,6 +124,7 @@
 				</div>
 			</div>
 		</div>
+
 	</div>
 </body>
 </html>

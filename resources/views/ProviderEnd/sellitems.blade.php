@@ -263,9 +263,9 @@
             {{CSRF_FIELD()}}
             <div class="page__demo">
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="barcode" name = "barcode" required>
+                    <input class="field__input a-field__input" placeholder="unique id" name = "barcode" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Barcode</span>
+                        <span class="a-field__label">Unique id</span>
                     </span>
                 </label>
 

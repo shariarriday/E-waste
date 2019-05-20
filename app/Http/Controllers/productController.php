@@ -136,6 +136,7 @@ class productController extends Controller
         );
 
 
+
         $calculator_provider = DB::connection('oracle')->insert
         (
             "INSERT INTO provided_products
@@ -152,6 +153,8 @@ class productController extends Controller
             )"
         );
         return view('Product_infoEnd.CalculatorData', ['id2' => $hudai]);
+
+
     }
 
 

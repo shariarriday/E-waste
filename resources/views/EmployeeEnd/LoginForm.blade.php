@@ -95,7 +95,7 @@
             </div>
             <div class="col-md-4 login-form-2">
                 <h3>Login for Processors</h3>
-                <form action = "/processor/loginAction" method = "post">
+                <form action = "/processor/home" method = "post">
                     {{CSRF_FIELD()}}
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Your Name *" value="" name="name" />
@@ -107,7 +107,7 @@
                         <input type="submit" class="btnSubmit" value="Login" />
                     </div>
                     <div class="form-group">
-                        <a href="/prcoessor/ProcessorReg" class="ForgetPwd" value="Login">Create Account</a>
+                        <a href="/processor/processorReg" class="ForgetPwd" value="Login">Create Account</a>
                     </div>
                 </form>
             </div>

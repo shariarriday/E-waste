@@ -286,9 +286,11 @@
                Office Electronics
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
             <a class="dropdown-item" href="/productinfo/pc/{{$id2}}">Computer</a>
             <a class="dropdown-item" href="/productinfo/printer/{{$id2}}">Printing Machine</a>
             <a class="dropdown-item" href="/productinfo/copy_machine/{{$id2}}">Copy Machine</a>
+
 
 
           </div>

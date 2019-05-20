@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -215,14 +215,12 @@
     */
 
     .field{
-        --fieldBorderColor: #D1C4E9;
-        --fieldBorderColorActive: #673AB7;
+        --fieldBorderColor: #2c9368;
+        --fieldBorderColorActive: #90ee90;
     }
 
 
     body {
-        --def: #96B7C4;
-        --inv: #fff;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -232,32 +230,27 @@
         background-image: linear-gradient(-25deg, #FFFFFF 0%, #C0C0C0 100%);
     }
 
-    html {
-        font-size: 12px;
-        font-family: 'Playfair Display', serif;
-    }
+    /* html {
+        font-family: Montserrat-Regular;
+        src: url('../fonts/montserrat/Montserrat-Regular.ttf');
+    } */
 
     div {margin-bottom: 3rem;}
     div:last-child {margin-bottom: 0;}
 
 
 </style>
-</head>
-<body>
 
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-        <a class="navbar-brand" href="#">E-Waste</a>
-        <ul class="navbar-nav">
-        </ul>
-    </nav>
+</head>
+<body style="font-family: 'Montserrat', sans-serif; background-image: linear-gradient(-25deg, #FFFFFF 0%, #C0C0C0 100%);">
 
     <div class="container" style="text-align: center;">
         <h3>Processor Add</h3>
     </div>
-    <div class="page">
-        <form action = "/processor/ProcessorAdd" method="post">
+    <div class="page" style="align: center;">
+        <form action = "/processor/processorAdd" method="post">
             {{CSRF_FIELD()}}
-            <div class="page__demo">
+            <div class="page__demo" style="align: center;">
 
                   <label class="field a-field a-field_a1 page__field">
                     <input class="field__input a-field__input" placeholder="Name" name = "name" required>
@@ -290,7 +283,7 @@
                 </label>
                 <br>
                 <div class="container" style="display: flex; justify-content: center; padding-top: 30px">
-                    <button type="submit" class="btn btn-outline-secondary">Submit</button>
+                    <button type="submit" class="btn btn-outline-success">Submit</button>
                 </div>
             </div>
         </form>

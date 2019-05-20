@@ -204,9 +204,10 @@ public function workdone(Request $request)
   else {
     $trans = DB::connection('oracle')->select("SELECT * FROM DISSEMBLER WHERE EMPLOYEE_ID = '$id'");
     $prod = $trans[0]->product_type;
-    $get = DB::connection('oracle')->select("SELECT * FROM RECYCLER WHERE SPECIALIZATION = '$prod'");
+    $get = DB::connection('oracle')->select("SELECT * FROM RECYCLER WHERE SPECIALIZATION = '$prod' ORDER BY CURRENT_ DESC");
     $proc = $get[0]->processor_id;
     $ins = DB::connection('oracle')->insert("INSERT INTO RECYCLING VALUES('$id','$proc')");
+    $ins = DB::connection('oracle')->update("UPDATE RECYCLING SET CURRENT_ = 1+(SELECT CURRENT_ FROM Recycling WHERE PROCESSOR_ID = '$proc') WHERE PROCESSOR_ID = '$proc' ");
   }
   $trans = DB::connection('oracle')->update("UPDATE EMPLOYEE SET STATUS = 'free' WHERE EMPLOYEE_ID = '$id'");
   return view('EmployeeEnd.Info',['id' => $request->session()->get('id'), 'level' => $request->session()->get('level')]);

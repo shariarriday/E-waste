@@ -1,17 +1,28 @@
 @include('header')
-<body style="background-image: linear-gradient(-25deg, #FFFFFF 0%, #C0C0C0 100%);">
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">E-waste</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="/user/businesssellhistory">Sell History</a></li>
-      <li><a href="/user/businesssellItems">Sell Items</a></li>
-    </ul>
-  </div>
-</nav>
+<body style="font-family: 'Montserrat', sans-serif; background-image: linear-gradient(-25deg, #FFFFFF 0%, #C0C0C0 100%);">
+
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2c9368; font-family: 'Montserrat', sans-serif;">
+      <a class="navbar-brand" href="#">E-waste Management</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/user/businesssellhistory">Sell History<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/user/sellItems">Sell Items <span class="sr-only">(current)</span></a>
+          </li>
+
+
+        </ul>
+      </div>
+    </nav>
 
 	<div class="limiter">
 
@@ -20,8 +31,8 @@
     ?>
 		<div class="container-table100">
 			<div class="wrap-table100">
-				<div class="table100 ver1 m-b-110">
-					<table data-vertable="ver1">
+				<div class="table100 ver2 m-b-110">
+					<table data-vertable="ver2">
 						<thead>
 							<tr class="row100 head">
 								<th class="column100 column1" data-column="column1">Provider ID</th>

@@ -1,11 +1,16 @@
-Raw_MaterialAdd.blade.php<!DOCTYPE html>
+<?php
+$val1 = DB::connection('oracle')->select("Select * FROM PROCESSOR WHERE PROCESSOR_ID = '$id' ");
+$rec = DB::connection('oracle')->select("Select * FROM RECYCLER WHERE PROCESSOR_ID = '$id' ");
+$ref = DB::connection('oracle')->select("Select * FROM REFURBISHER WHERE PROCESSOR_ID = '$id' ");
+?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>E-Waste Management System</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -215,14 +220,12 @@ Raw_MaterialAdd.blade.php<!DOCTYPE html>
     */
 
     .field{
-        --fieldBorderColor: #D1C4E9;
-        --fieldBorderColorActive: #673AB7;
+        --fieldBorderColor: #2c9368;
+        --fieldBorderColorActive: #90ee90;
     }
 
 
-    body {
-        --def: #96B7C4;
-        --inv: #fff;
+    /* body {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -230,59 +233,111 @@ Raw_MaterialAdd.blade.php<!DOCTYPE html>
         height: 100vh;
         width: 100%;
         background-image: linear-gradient(-25deg, #FFFFFF 0%, #C0C0C0 100%);
-    }
+    } */
 
-    html {
-        font-size: 12px;
-        font-family: 'Playfair Display', serif;
-    }
+    /* html {
+        font-family: Montserrat-Regular;
+        src: url('../fonts/montserrat/Montserrat-Regular.ttf');
+    } */
 
     div {margin-bottom: 3rem;}
     div:last-child {margin-bottom: 0;}
 
 
 </style>
+
 </head>
-<body>
+<body style="font-family: 'Montserrat', sans-serif; background-image: linear-gradient(-25deg, #FFFFFF 0%, #C0C0C0 100%);">
 
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-        <a class="navbar-brand" href="#">E-Waste</a>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="ProcessorAdd">x</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="researcher">y</a>
-            </li>
-            
-            </ul>
-    </nav>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2c9368; font-family: 'Montserrat', sans-serif;">
+            <a class="navbar-brand" href="/admin">E-waste Management</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link active" href="/processor/home">Home <span class="sr-only">(current)</span></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/processor/Dump">Dumping <span class="sr-only">(current)</span></a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Recycling
+                        </a>
+                        @if(count($rec))
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item disabled" href="#">Register</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/processor/rawMaterial">Make Raw Material</a>
+                        </div>
+                        @else
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/processor/registerRecycler">Register</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item disabled" href="#">Make Raw Material</a>
+                        </div>
+                        @endif
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Refurbishing
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            @if(count($ref))
+                            <a class="dropdown-item disabled" href="#">Register</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item " href="/processor/getInfoInventory">Get Product</a>
+                            <a class="dropdown-item" href="/processor/Products">Make Product</a>
+                            @else
+                            <a class="dropdown-item" href="/processor/registerRefurbisher">Register</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item disabled" href="#">Get Product</a>
+                            <a class="dropdown-item disabled" href="#">Make Product</a>
+                            @endif
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+
+
+
+    <div class="page" style="display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 89vh;
+    width: 100%;">
     <div class="container" style="text-align: center;">
-        <h3>Raw Material Add: </h3>
+        <h3>Insert Raw Material</h3>
     </div>
-    <div class="page">
-        <form action = "Raw_MaterialAdd" method="post">
+        <form action = "/processor/Raw_MaterialAdd" method="post">
             {{CSRF_FIELD()}}
             <div class="page__demo">
-               
-                  <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="num" name = "glass" required>
+                <input type="hidden" value = "$inventory" name="inventory">
+                 <label class="field a-field a-field_a1 page__field">
+                    <input class="field__input a-field__input" placeholder="Amount" name = "glass" required>
                     <span class="a-field__label-wrap">
                         <span class="a-field__label">Glass</span>
                     </span>
                   </label>
-                   <br>
+
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="num" name = "gold" required>
+                    <input class="field__input a-field__input" placeholder="Amount" name = "gold" required>
                     <span class="a-field__label-wrap">
                         <span class="a-field__label">Gold</span>
                     </span>
                 </label>
-                 
-                <br>
+
+
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="num" name = "silicon" required>
+                    <input class="field__input a-field__input" placeholder="Amount" name = "silicon" required>
                     <span class="a-field__label-wrap">
                         <span class="a-field__label">Silicon</span>
                     </span>
@@ -290,22 +345,22 @@ Raw_MaterialAdd.blade.php<!DOCTYPE html>
 
                 <br>
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="num" name = "rubber" required>
+                    <input class="field__input a-field__input" placeholder="Amount" name = "rubber" required>
                     <span class="a-field__label-wrap">
                         <span class="a-field__label">Rubber</span>
                     </span>
                 </label>
-                <br>
+
                  <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="num" name = "plastic" required>
+                    <input class="field__input a-field__input" placeholder="Amount" name = "plastic" required>
                     <span class="a-field__label-wrap">
                         <span class="a-field__label">Plastic</span>
                     </span>
                 </label>
-                <br>
+
 
                  <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="num" name = "copper" required>
+                    <input class="field__input a-field__input" placeholder="Amount" name = "copper" required>
                     <span class="a-field__label-wrap">
                         <span class="a-field__label">Copper</span>
                     </span>
@@ -313,29 +368,30 @@ Raw_MaterialAdd.blade.php<!DOCTYPE html>
                 <br>
 
                  <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="num" name = "steel" required>
+                    <input class="field__input a-field__input" placeholder="Amount" name = "steel" required>
                     <span class="a-field__label-wrap">
                         <span class="a-field__label">Steel</span>
                     </span>
                 </label>
-                <br>
+
 
                  <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="num" name = "iron" required>
+                    <input class="field__input a-field__input" placeholder="Amount" name = "iron" required>
                     <span class="a-field__label-wrap">
                         <span class="a-field__label">Iron</span>
                     </span>
                 </label>
-                <br>
+
                  <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="num" name = "iron" required>
+                    <input class="field__input a-field__input" placeholder="$$" name = "price" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Iron</span>
+                        <span class="a-field__label">Price</span>
                     </span>
                 </label>
                 <br>
-                <div class="container" style="display: flex; justify-content: center; padding-top: 30px">
-                    <button type="submit" class="btn btn-outline-secondary">   Submit   </button>
+
+                <div class="container" style="display: flex; justify-content: center; padding-top: 30px; ">
+                    <button type="submit" class="btn btn-outline-success">   Submit   </button>
                 </div>
             </div>
         </form>

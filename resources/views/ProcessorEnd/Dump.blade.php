@@ -1,9 +1,9 @@
-<!DOCTYPE html>
 <?php
 $val1 = DB::connection('oracle')->select("Select * FROM PROCESSOR WHERE PROCESSOR_ID = '$id' ");
 $rec = DB::connection('oracle')->select("Select * FROM RECYCLER WHERE PROCESSOR_ID = '$id' ");
 $ref = DB::connection('oracle')->select("Select * FROM REFURBISHER WHERE PROCESSOR_ID = '$id' ");
 ?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>E-Waste Management System</title>
@@ -257,11 +257,11 @@ $ref = DB::connection('oracle')->select("Select * FROM REFURBISHER WHERE PROCESS
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link active" href="/processor/home">Home <span class="sr-only">(current)</span></a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/processor/home">Home <span class="sr-only">(current)</span></a>
                     </li>
 
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="/processor/Dump">Dumping <span class="sr-only">(current)</span></a>
                     </li>
 
@@ -306,8 +306,6 @@ $ref = DB::connection('oracle')->select("Select * FROM REFURBISHER WHERE PROCESS
             </div>
         </nav>
 
-
-
     <div class="page" style="display: flex;
     justify-content: center;
     align-items: center;
@@ -315,62 +313,72 @@ $ref = DB::connection('oracle')->select("Select * FROM REFURBISHER WHERE PROCESS
     height: 89vh;
     width: 100%;">
     <div class="container" style="text-align: center;">
-        <h3>Sell Items</h3>
+        <h3>Dump Materials</h3>
     </div>
-        <form action = "/processor/makeproduct" method="post">
-            {{CSRF_FIELD()}}
-            <div class="page__demo">
-                <input type='hidden' value='$id' name='processor'>
-                <input type='hidden' value='$inventory' name='inventory'>
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="barcode" name = "barcode" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Barcode</span>
-                    </span>
-                </label>
+      <form action = "/admin/dump" method="post">
+          {{CSRF_FIELD()}}
+          <div class="page__demo" id = 'pag'>
+              <label class="field a-field a-field_a1 page__field">
+                  <input class="field__input a-field__input" placeholder="Material" name = "material0" required>
+                  <span class="a-field__label-wrap">
+                      <span class="a-field__label">Material</span>
+                  </span>
+              </label>
+              <label class="field a-field a-field_a1 page__field">
+                  <input class="field__input a-field__input" placeholder="100" name = "weight0" required>
+                  <span class="a-field__label-wrap">
+                      <span class="a-field__label">Weight</span>
+                  </span>
+              </label>
+              <label class="field a-field a-field_a1 page__field">
+                  <input class="field__input a-field__input" placeholder="1/2/3/4/5" name = "safety0" required>
+                  <span class="a-field__label-wrap">
+                      <span class="a-field__label">Safety Level</span>
+                  </span>
+              </label>
+              <br>
+              <div class="container" style="display: flex; justify-content: center; padding-top: 30px">
+                  <button type="submit" class="btn btn-outline-success">   Submit   </button>
+              </div>
 
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="GOOD" name = "product_quality" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Product Quality</span>
-                    </span>
-                </label>
-                <br>
-
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="10" name = "product_weight" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Product Weight</span>
-                    </span>
-                </label>
-
-
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="3" name = "product_warranty" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Product Warranty</span>
-                    </span>
-                </label>
-                <br>
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="10" name = "product_price" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Product Price</span>
-                    </span>
-                </label>
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="10" name = "repair" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Repair Price</span>
-                    </span>
-                </label>
-                <br>
-                <div class="container" style="display: flex; justify-content: center; padding-top: 30px">
-                    <button type="submit" class="btn btn-outline-secondary">   Submit   </button>
-                </div>
-            </div>
-        </form>
+          </div>
+      </form>
+      <div class="container" style="display: flex; justify-content: center; padding-top: 30px">
+          <button id = "addprod" class="btn btn-outline-success">   Add More   </button>
+      </div>
     </div>
+    <script>
+    $(document).ready(function(){
+
+
+        $("#addprod").click(function () {
+
+        var counter = 1
+        var newTextBoxDiv = $(document.getElementById('pag'));
+
+        $('#pag').prepend('<label class="field a-field a-field_a1 page__field">'+
+        '<input class="field__input a-field__input" placeholder="barcode" name = "material'+counter+'" required>'+
+            '<span class="a-field__label-wrap">'+
+                '<span class="a-field__label">Material</span>'+
+            '</span>'+
+        '</label>'+
+        '<label class="field a-field a-field_a1 page__field">'+
+            '<input class="field__input a-field__input" placeholder="100" name = "weight'+counter+'" required>'+
+            '<span class="a-field__label-wrap">'+
+                '<span class="a-field__label">Weight</span>'+
+            '</span></label>'+
+
+            '<label class="field a-field a-field_a1 page__field">'+
+                '<input class="field__input a-field__input" placeholder="1/2/3/4/5" name = "safety'+counter+'" required>'+
+                '<span class="a-field__label-wrap">'+
+                    '<span class="a-field__label">Safety Level</span>'+
+                '</span>'+
+            '</label><br>'
+            );
+        counter++;
+     });
+    });
+    </script>
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/jquery-migrate-3.0.1.min.js"></script>

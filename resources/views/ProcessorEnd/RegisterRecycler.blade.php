@@ -1,9 +1,9 @@
-<!DOCTYPE html>
 <?php
 $val1 = DB::connection('oracle')->select("Select * FROM PROCESSOR WHERE PROCESSOR_ID = '$id' ");
 $rec = DB::connection('oracle')->select("Select * FROM RECYCLER WHERE PROCESSOR_ID = '$id' ");
 $ref = DB::connection('oracle')->select("Select * FROM REFURBISHER WHERE PROCESSOR_ID = '$id' ");
 ?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>E-Waste Management System</title>
@@ -226,18 +226,18 @@ $ref = DB::connection('oracle')->select("Select * FROM REFURBISHER WHERE PROCESS
 
 
     /* body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        height: 100vh;
-        width: 100%;
-        background-image: linear-gradient(-25deg, #FFFFFF 0%, #C0C0C0 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(-25deg, #FFFFFF 0%, #C0C0C0 100%);
     } */
 
     /* html {
-        font-family: Montserrat-Regular;
-        src: url('../fonts/montserrat/Montserrat-Regular.ttf');
+    font-family: Montserrat-Regular;
+    src: url('../fonts/montserrat/Montserrat-Regular.ttf');
     } */
 
     div {margin-bottom: 3rem;}
@@ -307,7 +307,6 @@ $ref = DB::connection('oracle')->select("Select * FROM REFURBISHER WHERE PROCESS
         </nav>
 
 
-
     <div class="page" style="display: flex;
     justify-content: center;
     align-items: center;
@@ -315,75 +314,49 @@ $ref = DB::connection('oracle')->select("Select * FROM REFURBISHER WHERE PROCESS
     height: 89vh;
     width: 100%;">
     <div class="container" style="text-align: center;">
-        <h3>Sell Items</h3>
+        <h3>Register As Recycler </h3>
     </div>
-        <form action = "/processor/makeproduct" method="post">
-            {{CSRF_FIELD()}}
-            <div class="page__demo">
-                <input type='hidden' value='$id' name='processor'>
-                <input type='hidden' value='$inventory' name='inventory'>
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="barcode" name = "barcode" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Barcode</span>
-                    </span>
-                </label>
-
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="GOOD" name = "product_quality" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Product Quality</span>
-                    </span>
-                </label>
-                <br>
-
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="10" name = "product_weight" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Product Weight</span>
-                    </span>
-                </label>
+    <form action = "/processor/registerRecycler" method="post">
+        {{CSRF_FIELD()}}
+        <div class="page__demo">
 
 
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="3" name = "product_warranty" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Product Warranty</span>
-                    </span>
-                </label>
-                <br>
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="10" name = "product_price" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Product Price</span>
-                    </span>
-                </label>
-                <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="10" name = "repair" required>
-                    <span class="a-field__label-wrap">
-                        <span class="a-field__label">Repair Price</span>
-                    </span>
-                </label>
-                <br>
-                <div class="container" style="display: flex; justify-content: center; padding-top: 30px">
-                    <button type="submit" class="btn btn-outline-secondary">   Submit   </button>
-                </div>
+            <label class="field a-field a-field_a1 page__field">
+                <input class="field__input a-field__input" placeholder="TV/ Mobile" name = "specialization" required>
+                <span class="a-field__label-wrap">
+                    <span class="a-field__label">Specialization</span>
+                </span>
+            </label>
+            <br>
+
+
+            <label class="field a-field a-field_a1 page__field">
+                <input class="field__input a-field__input" placeholder="Max Amount" name = "capability" required>
+                <span class="a-field__label-wrap">
+                    <span class="a-field__label">Capability</span>
+                </span>
+            </label>
+            <br>
+
+            <div class="container" style="display: flex; justify-content: center; padding-top: 30px; ">
+                <button type="submit" class="btn btn-outline-success">   Submit   </button>
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
+</div>
 
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/jquery-migrate-3.0.1.min.js"></script>
-    <script src="js/jquery-ui.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.stellar.min.js"></script>
-    <script src="js/jquery.countdown.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/bootstrap-datepicker.min.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/main.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery-migrate-3.0.1.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.stellar.min.js"></script>
+<script src="js/jquery.countdown.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/bootstrap-datepicker.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/main.js"></script>
 
 </body>
 </html>
