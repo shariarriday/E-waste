@@ -118,3 +118,54 @@ INSERT INTO ORDER_PROVIDER VALUES('','DHAKA','1244',SYSDATE,'BAD');
 CREATE OR REPLACE VIEW PRODUCTNAME("NAME","BARCODE") AS(SELECT PRODUCT_NAME, BARCODE FROM PRODUCT_INFO JOIN BARCODE_TABLE USING(MODEL_NO));
 
 create or replace view PRODUCTNAME ("NAME", "BARCODE") AS (SELECT PRODUCT_NAME, BARCODE FROM PRODUCT_INFO JOIN BARCODE_TABLE USING (MODEL_NO));
+
+
+  create or replace trigger UPDATE_BALANCE
+  AFTER INSERT ON SELL_ORDER
+  FOR EACH ROW
+  DECLARE
+   pr number;
+   sellerID varchar2(100);
+   inproID varchar2(100);
+   barc varchar2(20);
+   ordID varchar2(20);
+   bproId varchar2(100);
+   in_count number;
+   pri number;
+   processID varchar2(100);
+  BEGIN
+    sellerID:= :NEW.SELLER_ID;
+   select price into pr from product join second_hand_product using (product_id) join sell_order using (seller_id) where seller_id= sellerID;
+   pr:= (pr*0.1);
+   pri:= (pri*0.9);
+
+   select processor_id into processID from second_hand_product sp join product p using (product_id) join makes m using (product_id)
+      join refurbisher r using (processor_id) join processor pr using (processor_id) where sp.seller_id= sellerID;
+
+      update processor set balance = pri where processor_id = processID;
+
+
+   select barcode into barc from product p join second_hand_product sp using (product_id) where sp.seller_id = sellerID;
+   select order_id into ordID from order_provider JOIN order_info using (order_id) where barcode = barc;
+   select provider_id into inproID from individual_provides join order_provider using (order_id) where order_id = ordID;
+   select provider_id into bproID from bussiness_provides join order_provider using (order_id) where order_id = ordID;
+   select count(provider_id) into in_count from individual_provides join order_provider using (order_id) where order_id =ordID ;
+   if(in_count=0)
+   THEN
+        UPDATE BUSINESS SET balance = pr where provider_id = inproID;
+    ELSE
+      UPDATE INDIVIDUAL SET BALANCE = pr where provider_id = bproID;
+      END IF;
+
+      select processor_id into processID from second_hand_product sp join product p using (product_id) join makes m using (product_id)
+      join refurbisher r using (processor_id) join processor pr using (processor_id) where sp.seller_id= sellerID;
+
+      update processor set balance = pri where processor_id = processID;
+
+
+
+    END;
+
+
+
+      
