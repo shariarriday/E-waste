@@ -138,13 +138,8 @@ Route::get('/processor/processorReg','processorController@registration');//Add n
 Route::post('/processor/processorAdd','processorController@postaddProcessor');//New processor action
 Route::get('/processor/registerRecycler', 'processorController@recyclerRegister');//Register new recycler
 Route::post('/processor/registerRecycler', 'processorController@recyclerRegisterAdd');//Register Refurbisher Action
-
 Route::get('/processor/rawMaterial','processorController@getallProducts');
 Route::get('/processor/rawMaterial/{val}','processorController@getAddRawMaterial');
 Route::post('/processor/rawMaterial','processorController@postAddRawMaterial');
 Route::get('/processor/Dump','processorController@dump');
 Route::post('/processor/Dump','processorController@postdump');
-
-
-
-Route::get('/processor/RawMaterials','processorController@RawMaterials');
