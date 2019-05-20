@@ -203,6 +203,18 @@ class providerController extends Controller
       {
           return view('ProviderEnd.sellitems',['id' => $request->session()->get('id')]);
       }
+      public function manufacturerhome(Request $request)
+      {
+        return view ('ProviderEnd.Info',['id' => $request->session()->get('id')]);
+      }
+      public function businesshome(Request $request)
+      {
+        return view ('ProviderEnd.businessInfo',['id' => $request->session()->get('id')]);
+      }
+      public function individualhome(Request $request)
+      {
+        return view ('ProviderEnd.individualInfo',['id' => $request->session()->get('id')]);
+      }
 
 
 
