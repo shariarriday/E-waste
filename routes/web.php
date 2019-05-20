@@ -142,7 +142,9 @@ Route::get('/admin/researchStatus','employeeController@researchStatus');//show r
 Route::get('/admin/createStation','employeeController@createStation');//add new dumping station
 Route::post('/admin/createStation','employeeController@createStationAction');//add new dumping station action
 Route::get('/admin/viewDump','employeeController@viewDump');//view dumping status
-
+Route::get('/admin/removeDisassembler/{$id}','employeeController@removeDisassembler');
+Route::get('/admin/removeResearch/{$id}','employeeController@removeResearch');
+Route::get('/admin/removeTransport/{id}','employeeController@removeTransport');
 
 //Processor Part
 Route::post('/processor/home','processorController@loginAction'); //Processor Home
