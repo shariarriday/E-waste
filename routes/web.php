@@ -19,13 +19,16 @@ Route::get('/user','providerController@providerlogin');
 //Provider Part
 Route::get('/user/ManufacturerReg','providerController@ManufacturerRegister');
 Route::post('/user/home','providerController@loginAction');
+Route::get('/user/home','providerController@manufacturerhome');
 Route::post('/user/ManufacturerReg','providerController@manufacturerStore');
 Route::post('/processor/home','processorController@loginAction');
 Route::get('/user/BusinessReg','providerController@BusinessRegister');
 Route::post('/user/Businesshome','providerController@BusinessloginAction');
+Route::get('/user/Businesshome','providerController@businesshome');
 Route::post('/user/BusinessReg','providerController@BusinessStore');
 Route::get('/user/IndividualReg','providerController@IndividualRegister');
 Route::post('/user/Individualhome','providerController@IndividualloginAction');
+Route::get('/user/Individualhome','providerController@individualhome');
 Route::post('/user/IndividualReg','providerController@IndividualStore');
 Route::get('/user/individualsellhistory','providerController@IndividualSellHistory');
 Route::get('/user/Individualhome','providerController@IndividualloginAction');

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -215,14 +215,12 @@
     */
 
     .field{
-        --fieldBorderColor: #D1C4E9;
-        --fieldBorderColorActive: #673AB7;
+        --fieldBorderColor: #2c9368;
+        --fieldBorderColorActive: #90ee90;
     }
 
 
-    body {
-        --def: #96B7C4;
-        --inv: #fff;
+    /* body {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -230,61 +228,54 @@
         height: 100vh;
         width: 100%;
         background-image: linear-gradient(-25deg, #FFFFFF 0%, #C0C0C0 100%);
-    }
+    } */
 
-    html {
-        font-size: 12px;
-        font-family: 'Playfair Display', serif;
-    }
+    /* html {
+        font-family: Montserrat-Regular;
+        src: url('../fonts/montserrat/Montserrat-Regular.ttf');
+    } */
 
     div {margin-bottom: 3rem;}
     div:last-child {margin-bottom: 0;}
 
 
 </style>
-<script>
-$(document).ready(function(){
 
-
-    $("#addprod").click(function () {
-
-    var counter = 1
-    var newTextBoxDiv = $(document.getElementById('pag'));
-
-    $('#pag').prepend('<label class="field a-field a-field_a1 page__field">'+
-    '<input class="field__input a-field__input" placeholder="barcode" name = "barcode'+counter+'" required>'+
-        '<span class="a-field__label-wrap">'+
-            '<span class="a-field__label">Barcode</span>'+
-        '</span>'+
-    '</label>'+
-    '<label class="field a-field a-field_a1 page__field">'+
-        '<input class="field__input a-field__input" placeholder="GOOD" name = "product_condition'+counter+'" required>'+
-        '<span class="a-field__label-wrap">'+
-            '<span class="a-field__label">Product Condition</span>'+
-        '</span></label><br>');
-    counter++;
- });
-});
-</script>
 </head>
-<body>
+<body style="font-family: 'Montserrat', sans-serif; background-image: linear-gradient(-25deg, #FFFFFF 0%, #C0C0C0 100%);">
 
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-        <a class="navbar-brand" href="#">E-Waste</a>
-        <ul class="navbar-nav">
 
-            <li class="nav-item">
-                <li><a href="/user/Individualhome">Home</a></li>
-                <li><a href="/user/businesssellhistory">Sell History</a></li>
-                <li><a href="/user/businesssellItems">Sell Items</a></li>
-            </li>
-        </ul>
-    </nav>
+
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2c9368; font-family: 'Montserrat', sans-serif;">
+    <a class="navbar-brand" href="#">E-waste Management</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/user/home">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/user/manufacturerinventoryhistory">Sell History <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/user/sellItems">Sell Items <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
     <div class="container" style="text-align: center;">
         <h3>Sell Items</h3>
     </div>
-    <div class="page">
+    <div class="page" style="display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 89vh;
+    width: 100%;">
         <form action = "/user/sellItems" method="post">
             {{CSRF_FIELD()}}
             <div class="page__demo" id = 'pag'>
