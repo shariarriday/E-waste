@@ -68,7 +68,7 @@
 								<td class="column100 column3" data-column="column3">{{$val->product_quality}}</td>
 								<td class="column100 column4" data-column="column4">{{$val->product_warrenty}}</td>
                                 <td class="column100 column4" data-column="column5">{{$val->price}}</td>
-                                <td class="column100 column4" data-column="column6"><a href ="/buyer/buyProducts/{{$val->product_id}}">Buy</a></td>
+                                <td class="column100 column4" data-column="column6"><a href ="/buyer/buyProducts/{{$val->product_id}}"><button type="button" class="btn btn-success">Buy</button></a></td>
 							</tr>
                             @endforeach
 						</tbody>

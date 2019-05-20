@@ -240,7 +240,26 @@
 
 
 </style>
-
+<script>
+$(document).ready(function(){
+    $("#addprod").click(function () {
+    var counter = 1
+    var newTextBoxDiv = $(document.getElementById('pag'));
+    $('#pag').append('<label class="field a-field a-field_a1 page__field">'+
+    '<input class="field__input a-field__input" placeholder="barcode" name = "barcode'+counter+'" required>'+
+        '<span class="a-field__label-wrap">'+
+            '<span class="a-field__label">Barcode</span>'+
+        '</span>'+
+    '</label>'+
+    '<label class="field a-field a-field_a1 page__field">'+
+        '<input class="field__input a-field__input" placeholder="GOOD" name = "product_condition'+counter+'" required>'+
+        '<span class="a-field__label-wrap">'+
+            '<span class="a-field__label">Product Condition</span>'+
+        '</span></label><br>');
+    counter++;
+ });
+});
+</script>
 </head>
 <body style="font-family: 'Montserrat', sans-serif; background-image: linear-gradient(-25deg, #FFFFFF 0%, #C0C0C0 100%);">
 
@@ -294,13 +313,13 @@
                 </label>
                 <br>
                 <div class="container" style="display: flex; justify-content: center; padding-top: 30px">
-                    <button type="submit" class="btn btn-outline-secondary">   Submit   </button>
+                    <button type="submit" class="btn btn-outline-success">   Submit   </button>
                 </div>
 
             </div>
         </form>
         <div class="container" style="display: flex; justify-content: center; padding-top: 30px">
-            <button id = "addprod" class="btn btn-outline-secondary">   Add Product   </button>
+            <button id = "addprod" class="btn btn-outline-success">   Add Product   </button>
         </div>
     </div>
 

@@ -317,10 +317,10 @@ $ref = DB::connection('oracle')->select("Select * FROM REFURBISHER WHERE PROCESS
     <div class="container" style="text-align: center;">
         <h3>Insert Raw Material</h3>
     </div>
-        <form action = "/processor/Raw_MaterialAdd" method="post">
+        <form action = "/processor/rawMaterial" method="post">
             {{CSRF_FIELD()}}
             <div class="page__demo">
-                <input type="hidden" value = "$inventory" name="inventory">
+                <input type="hidden" value = "{{$inventory}}" name="inventory">
                  <label class="field a-field a-field_a1 page__field">
                     <input class="field__input a-field__input" placeholder="Amount" name = "glass" required>
                     <span class="a-field__label-wrap">

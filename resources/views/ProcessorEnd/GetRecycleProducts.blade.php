@@ -98,7 +98,7 @@ $ref = DB::connection('oracle')->select("Select * FROM REFURBISHER WHERE PROCESS
                                 <td class="column100 column1" data-column="column1">{{$check->name}}</td>
                                 <td class="column100 column3" data-column="column3">{{$val->product_condition}}</td>
                                 <td class="column100 column4" data-column="column4">{{$check->type}}</td>
-                                <td class="column100 column5" data-column="column5"><a href="/processor/Products/{{$val->id}}"><button type="button" class="btn btn-success">Update</button>Recycle Product</button></a></td>
+                                <td class="column100 column5" data-column="column5"><a href="/processor/rawMaterial/{{$val->id}}"><button type="button" class="btn btn-success">Recycle Product</button></a></td>
                             </tr>
                             @endforeach
                         </tbody>

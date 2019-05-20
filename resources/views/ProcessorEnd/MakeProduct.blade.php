@@ -320,8 +320,8 @@ $ref = DB::connection('oracle')->select("Select * FROM REFURBISHER WHERE PROCESS
         <form action = "/processor/makeproduct" method="post">
             {{CSRF_FIELD()}}
             <div class="page__demo">
-                <input type='hidden' value='$id' name='processor'>
-                <input type='hidden' value='$inventory' name='inventory'>
+                <input type='hidden' value={{$id}} name='processor'>
+                <input type='hidden' value={{$inventory}} name='inventory'>
                 <label class="field a-field a-field_a1 page__field">
                     <input class="field__input a-field__input" placeholder="barcode" name = "barcode" required>
                     <span class="a-field__label-wrap">

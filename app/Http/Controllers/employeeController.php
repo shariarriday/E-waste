@@ -7,48 +7,6 @@ use DB;
 class employeeController extends Controller
 {
 
-  //this part will be done by riday.
-  //here are some template code for different cases
-  //There must be a login page and an info page.
-  //then for insertions and showing data in any view make as many page as needed
-  //using Route::get('/employee/*****',.....);
-
-  /*  public function test()
-  {
-  $users = DB::connection('oracle')->select('select * from Provider'); //this is the prototype for select query.
-  $user = $users[0]->id; //here 0 is the index and id is the name of column in the database.
-  var_dump($user);
-  $id1 = '123';
-  $name = 'name';
-  $users = DB::connection('oracle')->insert("INSERT INTO Provider VALUES('$id1','$name')");//this is for inserting data
-} */
-
-//start copy here
-//you have to copy this function, rename tablename with the name of your table.
-// public function tablename()
-// {
-//      return view('Tables.tablename');//change tablename to your entity name
-// }
-
-// //you have to copy this function and rename the store part with the name of your table.
-// public function tablenamestore()
-// {
-//  $input1= request("input1");
-//  $input2= request("input2");
-//  $input3= request("input3");
-//  $users = DB::connection('oracle')->insert("INSERT INTO Provider VALUES('$input1','$input2','$input3')");//this is for inserting data
-//  //Redirecting code
-//  return redirect('tablenamedata');//change the tablename to your entity name;
-// }
-
-// //copy this function and change data to the file you have created.
-// public function tablenameindex()
-// {
-//     return view('Tables.tablenamedata'); //change tablename to your entity name.
-// }
-
-//end copy here
-
 public function loginAction(Request $request)
 {
   $email = request("email");//get value from page
@@ -158,18 +116,21 @@ public function postaddDisassembler(Request $request)
 
 public function removeResearch(Request $request,$id)
 {
+  $name = request("name");
   $del = DB::connection('oracle')->delete("DELETE FROM RESEARCH WHERE EMPLOYEE_ID = $id");
   return view('EmployeeEnd.EmployeeCheck',['name' => $name, 'id' => $request->session()->get('id'), 'level' => $request->session()->get('level')]);
 }
 
 public function removeTransport(Request $request,$id)
 {
+  $name = request("name");
   $del = DB::connection('oracle')->delete("DELETE FROM TRANSPORT WHERE EMPLOYEE_ID = $id");
   return view('EmployeeEnd.EmployeeCheck',['name' => $name, 'id' => $request->session()->get('id'), 'level' => $request->session()->get('level')]);
 }
 
 public function removeDisassembler(Request $request,$id)
 {
+  $name = request("name");
   $del = DB::connection('oracle')->delete("DELETE FROM DISSEMBLER WHERE EMPLOYEE_ID = $id");
   return view('EmployeeEnd.EmployeeCheck',['name' => $name, 'id' => $request->session()->get('id'), 'level' => $request->session()->get('level')]);
 }
@@ -200,13 +161,26 @@ public function workdone(Request $request)
   }
   else {
     $trans = DB::connection('oracle')->select("SELECT * FROM DISSEMBLER WHERE EMPLOYEE_ID = '$id'");
+    $inv = DB::connection('oracle')->select("SELECT * FROM INVENTORY WHERE CHECK_OUT_TO = '$id'");
+
+    $inventory;
+    foreach ($inv as $in) {
+        $check = $inv = DB::connection('oracle')->select("SELECT * FROM RECYCLING WHERE INVENTORY_ID = '$in->inventory_id'");
+        if(count($check) == 0)
+        {
+            $inventory = $in->inventory_id;
+            break;
+        }
+    }
+    
     $prod = $trans[0]->product_type;
     $get = DB::connection('oracle')->select("SELECT * FROM RECYCLER WHERE UPPER(SPECIALIZATION) = UPPER('$prod') AND CURRENT_ <> CAPABILITY ORDER BY CURRENT_ DESC");
     $proc = $get[0]->processor_id;
-    $ins = DB::connection('oracle')->insert("INSERT INTO RECYCLING VALUES('$id','$proc')");
-    $ins = DB::connection('oracle')->update("UPDATE RECYCLING SET CURRENT_ = 1+(SELECT CURRENT_ FROM Recycling WHERE PROCESSOR_ID = '$proc') WHERE PROCESSOR_ID = '$proc' ");
+    $ins = DB::connection('oracle')->insert("INSERT INTO RECYCLING VALUES('$id','$proc','$inventory')");
+    $ins = DB::connection('oracle')->update("UPDATE Recycler SET CURRENT_ = 1+(SELECT CURRENT_ FROM Recycler WHERE PROCESSOR_ID = '$proc') WHERE PROCESSOR_ID = '$proc' ");
   }
   $trans = DB::connection('oracle')->update("UPDATE EMPLOYEE SET STATUS = 'free' WHERE EMPLOYEE_ID = '$id'");
+
   return view('EmployeeEnd.Info',['id' => $request->session()->get('id'), 'level' => $request->session()->get('level')]);
 }
 public function showLog(Request $request)
