@@ -100,7 +100,7 @@ $ref = DB::connection('oracle')->select("Select * FROM REFURBISHER WHERE PROCESS
 								<td class="column100 column2" data-column="column2">{{$val->product_price}}</td>
 								<td class="column100 column3" data-column="column3">{{$val->product_condition}}</td>
 								<td class="column100 column4" data-column="column4">{{$val->product_type}}</td>
-                <td class="column100 column5" data-column="column5"><a href="/processor/Products/{{$val->inventory_id}}"><button type="button" class="btn btn-success">Update</button>Get Product</button></a></td>
+                <td class="column100 column5" data-column="column5"><a href="/processor/Products/{{$val->inventory_id}}"><button type="button" class="btn btn-success">Get Product</button></a></td>
   							</tr>
                 @endforeach
 						</tbody>

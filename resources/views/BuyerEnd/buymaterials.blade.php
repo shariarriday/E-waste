@@ -53,6 +53,7 @@
                                 <th class="column100 column7" data-column="column7">Steel</th>
                                 <th class="column100 column7" data-column="column7">Iron</th>
                                 <th class="column100 column7" data-column="column7">Price</th>
+                                <th class="column100 column7" data-column="column7">Buy</th>
 							</tr>
 						</thead>
 
@@ -71,10 +72,10 @@
                                 <td class="column100 column5" data-column="column5">{{$val->plastic}}</td>
                                 <td class="column100 column6" data-column="column6">{{$val->copper}}</td>
                                 <td class="column100 column7" data-column="column7">{{$val->steel}}</td>
-                                            <td class="column100 column8" data-column="column8">{{$val->iron}}</td>
-                                            <td class="column100 column9" data-column="column9">{{$val->price}}</td>
+                                <td class="column100 column8" data-column="column8">{{$val->iron}}</td>
+                                <td class="column100 column9" data-column="column9">{{$val->price}}</td>
 
-                                <td class="column100 column10" data-column="column10"><a href ="/buyer/buymaterials/{{$val->lot_id}}">Buy</a></td>
+                                <td class="column100 column10" data-column="column10"><a href ="/buyer/buymaterials/{{$val->lot_id}}"><button type="button" class="btn btn-success">Buy</button></a></td>
 							</tr>
                             @endforeach
 						</tbody>

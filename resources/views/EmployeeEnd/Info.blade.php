@@ -209,8 +209,9 @@
               <?php
               $prod = DB::connection('oracle')->select("SELECT name FROM PRODUCTNAME WHERE BARCODE = '$barcode->barcode'");
               $checks = $barcode->check_out_to;
+              $id = $ids[0]->inventory_id;
               $res = "Disassembling";
-              $ref = DB::connection('oracle')->select("SELECT * FROM RECYCLING WHERE EMPLOYEE_ID = '$checks' ");
+              $ref = DB::connection('oracle')->select("SELECT * FROM RECYCLING WHERE EMPLOYEE_ID = '$checks' AND INVENTORY_ID = '$id' ");
               if(count($ref) > 0)
                     continue;
               ?>

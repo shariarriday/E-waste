@@ -216,41 +216,4 @@ class providerController extends Controller
         return view ('ProviderEnd.individualInfo',['id' => $request->session()->get('id')]);
       }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  }
+ }

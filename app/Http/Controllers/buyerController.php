@@ -112,7 +112,7 @@ class buyerController extends Controller
     public function AddtoCartMaterials(Request $request, $val)
     {
         $buyer = $request->session()->get('id');
-        $location = DB::connection('oracle')->select("SELECT LOCATION FROM LOC WHERE ID = '$val' ");
+        $location = DB::connection('oracle')->select("SELECT LOCATION FROM LOC2 WHERE ID = '$val' ");
         $location = $location[0]->location;
         $rand = str_random(20);
         $sell = DB::connection('oracle')->insert("INSERT INTO SELL_ORDER VALUES('$rand',1,'$location','$val')");

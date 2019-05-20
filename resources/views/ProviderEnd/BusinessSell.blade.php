@@ -219,28 +219,31 @@
         --fieldBorderColorActive: #90ee90;
     }
 
-
-    /* body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        height: 100vh;
-        width: 100%;
-        background-image: linear-gradient(-25deg, #FFFFFF 0%, #C0C0C0 100%);
-    } */
-
-    /* html {
-        font-family: Montserrat-Regular;
-        src: url('../fonts/montserrat/Montserrat-Regular.ttf');
-    } */
-
     div {margin-bottom: 3rem;}
     div:last-child {margin-bottom: 0;}
 
 
 </style>
-
+<script>
+$(document).ready(function(){
+    $("#addprod").click(function () {
+    var counter = 1
+    var newTextBoxDiv = $(document.getElementById('pag'));
+    $('#pag').append('<label class="field a-field a-field_a1 page__field">'+
+    '<input class="field__input a-field__input" placeholder="barcode" name = "barcode'+counter+'" required>'+
+        '<span class="a-field__label-wrap">'+
+            '<span class="a-field__label">Barcode</span>'+
+        '</span>'+
+    '</label>'+
+    '<label class="field a-field a-field_a1 page__field">'+
+        '<input class="field__input a-field__input" placeholder="GOOD" name = "product_condition'+counter+'" required>'+
+        '<span class="a-field__label-wrap">'+
+            '<span class="a-field__label">Product Condition</span>'+
+        '</span></label><br>');
+    counter++;
+ });
+});
+</script>
 </head>
 <body style="font-family: 'Montserrat', sans-serif; background-image: linear-gradient(-25deg, #FFFFFF 0%, #C0C0C0 100%);">
 
