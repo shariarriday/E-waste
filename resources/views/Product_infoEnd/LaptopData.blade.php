@@ -245,7 +245,7 @@
 <body style="font-family: 'Montserrat', sans-serif; background-image: linear-gradient(-25deg, #FFFFFF 0%, #C0C0C0 100%);">
 
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2c9368; font-family: 'Montserrat', sans-serif;">
-      <a class="navbar-brand" href="#">E-waste Management</a>
+      <a class="navbar-brand" href="/productinfo/laptop/{{$id2}}">E-waste Management</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -253,7 +253,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/product_info/{{$id2}}">Home <span class="sr-only">(current)</span></a>
           </li>
 
           <li class="nav-item dropdown">
@@ -261,11 +261,11 @@
               Home Electronics
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="/productinfo/TV">TV</a>
-              <a class="dropdown-item" href="/productinfo/AC">Air Conditioner</a>
-              <a class="dropdown-item" href="/productinfo/refrigerator">Refrigerator</a>
-              <a class="dropdown-item" href="/productinfo/washing_machine">Washing Machine</a>
-              <a class="dropdown-item" href="/productinfo/microwave">Microwave</a>
+              <a class="dropdown-item" href="/productinfo/TV/{{$id2}}">TV</a>
+              <a class="dropdown-item" href="/productinfo/AC/{{$id2}}">Air Conditioner</a>
+              <a class="dropdown-item" href="/productinfo/refrigerator/{{$id2}}">Refrigerator</a>
+              <a class="dropdown-item" href="/productinfo/washing_machine/{{$id2}}">Washing Machine</a>
+              <a class="dropdown-item" href="/productinfo/microwave/{{$id2}}">Microwave</a>
 
             </div>
           </li>
@@ -274,11 +274,11 @@
                 Personal Electronics
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/productinfo/tablet">Tablet</a>
-                <a class="dropdown-item" href="/productinfo/mobile">Mobile</a>
-                <a class="dropdown-item" href="/productinfo/laptop">Laptop</a>
-                <a class="dropdown-item" href="/productinfo/camera">Camera</a>
-                <a class="dropdown-item" href="/productinfo/radio">Radio</a>
+                <a class="dropdown-item" href="/productinfo/tablet/{{$id2}}">Tablet</a>
+                <a class="dropdown-item" href="/productinfo/mobile/{{$id2}}">Mobile</a>
+                <a class="dropdown-item" href="/productinfo/laptop/{{$id2}}">Laptop</a>
+                <a class="dropdown-item" href="/productinfo/camera/{{$id2}}">Camera</a>
+                <a class="dropdown-item" href="/productinfo/radio/{{$id2}}">Radio</a>
               </div>
         </li>
         <li class="nav-item dropdown">
@@ -286,10 +286,10 @@
                Office Electronics
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/productinfo/pc">Computer</a>
-            <a class="dropdown-item" href="/productinfo/printer">Printing Machine</a>
-            <a class="dropdown-item" href="/productinfo/copy_machine">Copy Machine</a>
-            
+            <a class="dropdown-item" href="/productinfo/pc/{{$id2}}">Computer</a>
+            <a class="dropdown-item" href="/productinfo/printer/{{$id2}}">Printing Machine</a>
+            <a class="dropdown-item" href="/productinfo/copy_machine/{{$id2}}">Copy Machine</a>
+
 
           </div>
         </li>
@@ -298,15 +298,18 @@
                Other Electronics
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/productinfo/router">Router</a>
-            <a class="dropdown-item" href="/productinfo/calculator">Calculator</a>
+            <a class="dropdown-item" href="/productinfo/router/{{$id2}}">Router</a>
+            <a class="dropdown-item" href="/productinfo/calculator/{{$id2}}">Calculator</a>
 
 
           </div>
         </li>
+        <a class="navbar-brand" href="/product_info/logout">Log Out</a>
         </ul>
+
       </div>
-    </nav>
+
+      </nav>
 
 
     <div class="page" style="display: flex;
@@ -315,12 +318,13 @@
     flex-direction: column;
     height: 89vh;
     width: 100%;">
-    <div class="container" style="text-align: center;">
+    <div class="container" style="text-align: center; margin-top:60px; height:0px;">
         <h3>Insert New Laptop</h3>
     </div>
         <form action = "/productinfo/laptop" method="post">
             {{CSRF_FIELD()}}
             <div class="page__demo">
+              <input type="hidden" value = "{{$id2}}" name = "proid">
                 <label class="field a-field a-field_a1 page__field">
                     <input class="field__input a-field__input" placeholder="Product Name" name = "product_name" required>
                     <span class="a-field__label-wrap">
@@ -424,7 +428,7 @@
                 </label>
                 <br>
 
-                <div class="container" style="display: flex; justify-content: center; padding-top: 30px; ">
+                <div class="container" style="display: flex; justify-content: center; padding-top: 20px; ">
                     <button type="submit" class="btn btn-outline-success">   Submit   </button>
                 </div>
             </div>
