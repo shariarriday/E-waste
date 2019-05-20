@@ -73,43 +73,50 @@ Route::get('/buyer/home','buyerController@home');
 Route::get('/buyer/buyProducts','buyerController@buyProducts');
 Route::get('/buyer/buyProducts/{val}','buyerController@AddtoCart');
 
+
+
+
+
 //Product_info part
 Route::get('/product_info','productController@login');//show login page
+Route::get('/product_info/logout','productController@logout');
+Route::get('/product_info/{id}','productController@homePage');
 Route::post('/product_info/home','productController@loginAction'); //login action
-Route::get('/productinfo/TV','productController@tv');
+Route::get('/productinfo/TV/{id}','productController@tv');
 Route::post('/productinfo/TV','productController@tvadd');
-Route::get('/productinfo/AC','productController@ac');
+Route::get('/productinfo/AC/{id}','productController@ac');
 Route::post('/productinfo/AC','productController@acadd');
-Route::get('/productinfo/refrigerator','productController@refrigerator');
+Route::get('/productinfo/refrigerator/{id}','productController@refrigerator');
 Route::post('/productinfo/refrigerator','productController@refrigeratoradd');
-Route::get('/productinfo/washing_machine','productController@washing_machine');
+Route::get('/productinfo/washing_machine/{id}','productController@washing_machine');
 Route::post('/productinfo/washing_machine','productController@washing_machineadd');
-Route::get('/productinfo/microwave','productController@microwave');
+Route::get('/productinfo/microwave/{id}','productController@microwave');
 Route::post('/productinfo/microwave','productController@microwaveadd');
-Route::get('/productinfo/tablet','productController@tablets');
+Route::get('/productinfo/tablet/{id}','productController@tablets');
 Route::post('/productinfo/tablet','productController@tabletsadd');
-Route::get('/productinfo/mobile','productController@mobile');
+Route::get('/productinfo/mobile/{id}','productController@mobile');
 Route::post('/productinfo/mobile','productController@mobileadd');
-Route::get('/productinfo/laptop','productController@laptop');
+Route::get('/productinfo/laptop/{id}','productController@laptop');
 Route::post('/productinfo/laptop','productController@laptopadd');
-Route::get('/productinfo/camera','productController@camera');
+Route::get('/productinfo/camera/{id}','productController@camera');
 Route::post('/productinfo/camera','productController@cameraadd');
-Route::get('/productinfo/radio','productController@radio');
+Route::get('/productinfo/radio/{id}','productController@radio');
 Route::post('/productinfo/radio','productController@radioadd');
-Route::get('/productinfo/pc','productController@pc');
+Route::get('/productinfo/pc/{id}','productController@pc');
 Route::post('/productinfo/pc','productController@pcadd');
-Route::get('/productinfo/printer','productController@printer');
+Route::get('/productinfo/printer/{id}','productController@printer');
 Route::post('/productinfo/printer','productController@printeradd');
-Route::get('/productinfo/copy_machine','productController@copy_machine');
+Route::get('/productinfo/copy_machine/{id}','productController@copy_machine');
 Route::post('/productinfo/copy_machine','productController@copy_machineadd');
-Route::get('/productinfo/router','productController@router');
+Route::get('/productinfo/router/{id}','productController@router');
 Route::post('/productinfo/router','productController@routeradd');
-Route::get('/productinfo/calculator','productController@calculator');
+Route::get('/productinfo/calculator/{id}','productController@calculator');
 Route::post('/productinfo/calculator','productController@calculatoradd');
 
 
-//unfinishied job
-Route::get('/productinfo/home', 'productController@info');
+
+
+
 
 
 

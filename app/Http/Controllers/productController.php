@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+
 class productController extends Controller
 {
 
@@ -58,11 +59,13 @@ class productController extends Controller
 
       if(count($check) != 0)
       {
+
         $id = $check[0]->provider_id;
 
         $request->session()->put('id', $id);
 
         return view('Product_infoEnd.Info',['id' => $id]);
+
       }
       else {
         return view('EmployeeEnd.LoginForm');
@@ -72,18 +75,26 @@ class productController extends Controller
     {
       return view('EmployeeEnd.LoginForm');
     }
-
-
-
-
-
-    public function calculator()
+    public function logout()
     {
-        return view('Product_infoEnd.CalculatorData');
+      return view('EmployeeEnd.LoginForm');
+    }
+    public function homePage(Request $request, $val)
+    {
+      return view('Product_infoEnd.Info', ['id' => $val]);
+    }
+
+
+
+
+    public function calculator(Request $request, $val)
+    {
+        return view('Product_infoEnd.CalculatorData', ['id2' => $val]);
     }
     public function calculatoradd(Request $request)
     {
 
+        $hudai = request("proid");
         $PRODUCT_NAME = request("product_name");
         $PRODUCTION_DATE = request("production_date");
         $model_no = request("model_no");
@@ -123,19 +134,36 @@ class productController extends Controller
                 '$type'
             )"
         );
-        return view('Product_infoEnd.CalculatorData');
+
+
+        $calculator_provider = DB::connection('oracle')->insert
+        (
+            "INSERT INTO provided_products
+            (
+                provider_id,
+                model_no
+            )
+            VALUES
+            (
+                '$hudai',
+
+                '$model_no'
+
+            )"
+        );
+        return view('Product_infoEnd.CalculatorData', ['id2' => $hudai]);
     }
 
 
 
 
-    public function router()
+    public function router(Request $request, $val)
     {
-        return view('Product_infoEnd.RouterData');
+        return view('Product_infoEnd.RouterData', ['id2' => $val]);
     }
     public function routeradd(Request $request)
     {
-
+        $hudai = request("proid");
         $PRODUCT_NAME = request("product_name");
         $PRODUCTION_DATE = request("production_date");
         $model_no = request("model_no");
@@ -176,19 +204,35 @@ class productController extends Controller
                 '$type'
             )"
         );
-        return view('Product_infoEnd.RouterData');
+        $router_provider = DB::connection('oracle')->insert
+        (
+            "INSERT INTO provided_products
+            (
+                provider_id,
+                model_no
+            )
+            VALUES
+            (
+                '$hudai',
+
+                '$model_no'
+
+            )"
+        );
+
+        return view('Product_infoEnd.RouterData', ['id2' => $hudai]);
     }
 
 
 
 
-    public function copy_machine()
+    public function copy_machine(Request $request, $val)
     {
-        return view('Product_infoEnd.Copy_machineData');
+        return view('Product_infoEnd.Copy_machineData', ['id2' => $val]);
     }
     public function copy_machineadd(Request $request)
     {
-
+        $hudai = request("proid");
         $PRODUCT_NAME = request("product_name");
         $PRODUCTION_DATE = request("production_date");
         $model_no = request("model_no");
@@ -228,18 +272,35 @@ class productController extends Controller
                 '$type'
             )"
         );
-        return view('Product_infoEnd.Copy_machineData');
+        $copy_machine_provider = DB::connection('oracle')->insert
+        (
+            "INSERT INTO provided_products
+            (
+                provider_id,
+                model_no
+            )
+            VALUES
+            (
+                '$hudai',
+
+                '$model_no'
+
+            )"
+        );
+
+
+        return view('Product_infoEnd.Copy_machineData', ['id2' => $hudai]);
     }
 
 
 
-    public function printer()
+    public function printer(Request $request, $val)
     {
-        return view('Product_infoEnd.Printing_machineData');
+        return view('Product_infoEnd.Printing_machineData', ['id2' => $val]);
     }
     public function printeradd(Request $request)
     {
-
+        $hudai = request("proid");
         $PRODUCT_NAME = request("product_name");
         $PRODUCTION_DATE = request("production_date");
         $model_no = request("model_no");
@@ -279,18 +340,33 @@ class productController extends Controller
                 '$type'
             )"
         );
-        return view('Product_infoEnd.Printing_machineData');
+        $printer_provider = DB::connection('oracle')->insert
+        (
+            "INSERT INTO provided_products
+            (
+                provider_id,
+                model_no
+            )
+            VALUES
+            (
+                '$hudai',
+
+                '$model_no'
+
+            )"
+        );
+        return view('Product_infoEnd.Printing_machineData', ['id2' => $hudai]);
     }
 
 
 
-    public function pc()
+    public function pc(Request $request, $val)
     {
-        return view('Product_infoEnd.PcData');
+        return view('Product_infoEnd.PcData', ['id2' => $val]);
     }
     public function pcadd(Request $request)
     {
-
+        $hudai = request("proid");
         $PRODUCT_NAME = request("product_name");
         $PRODUCTION_DATE = request("production_date");
         $model_no = request("model_no");
@@ -340,18 +416,33 @@ class productController extends Controller
                 '$type'
             )"
         );
-        return view('Product_infoEnd.PcData');
+        $pc_provider = DB::connection('oracle')->insert
+        (
+            "INSERT INTO provided_products
+            (
+                provider_id,
+                model_no
+            )
+            VALUES
+            (
+                '$hudai',
+
+                '$model_no'
+
+            )"
+        );
+        return view('Product_infoEnd.PcData', ['id2' => $hudai]);
     }
 
 
 
-    public function radio()
+    public function radio(Request $request, $val)
     {
-        return view('Product_infoEnd.RadioData');
+        return view('Product_infoEnd.RadioData', ['id2' => $val]);
     }
     public function radioadd(Request $request)
     {
-
+        $hudai = request("proid");
         $PRODUCT_NAME = request("product_name");
         $PRODUCTION_DATE = request("production_date");
         $model_no = request("model_no");
@@ -382,20 +473,35 @@ class productController extends Controller
                 '$type'
             )"
         );
-        return view('Product_infoEnd.RadioData');
+        $radio_provider = DB::connection('oracle')->insert
+        (
+            "INSERT INTO provided_products
+            (
+                provider_id,
+                model_no
+            )
+            VALUES
+            (
+                '$hudai',
+
+                '$model_no'
+
+            )"
+        );
+        return view('Product_infoEnd.RadioData', ['id2' => $hudai]);
     }
 
 
 
 
 
-    public function camera()
+    public function camera(Request $request, $val)
     {
-        return view('Product_infoEnd.CameraData');
+        return view('Product_infoEnd.CameraData', ['id2' => $val]);
     }
     public function cameraadd(Request $request)
     {
-
+        $hudai = request("proid");
         $PRODUCT_NAME = request("product_name");
         $PRODUCTION_DATE = request("production_date");
         $model_no = request("model_no");
@@ -429,17 +535,32 @@ class productController extends Controller
                 '$type'
             )"
         );
-        return view('Product_infoEnd.CameraData');
+        $camera_provider = DB::connection('oracle')->insert
+        (
+            "INSERT INTO provided_products
+            (
+                provider_id,
+                model_no
+            )
+            VALUES
+            (
+                '$hudai',
+
+                '$model_no'
+
+            )"
+        );
+        return view('Product_infoEnd.CameraData', ['id2' => $hudai]);
     }
 
 
-    public function laptop()
+    public function laptop(Request $request, $val)
     {
-        return view('Product_infoEnd.LaptopData');
+        return view('Product_infoEnd.LaptopData', ['id2' => $val]);
     }
     public function laptopadd(Request $request)
     {
-
+        $hudai = request("proid");
         $PRODUCT_NAME = request("product_name");
         $PRODUCTION_DATE = request("production_date");
         $model_no = request("model_no");
@@ -494,19 +615,34 @@ class productController extends Controller
                 '$type'
             )"
         );
-        return view('Product_infoEnd.LaptopData');
+        $laptop_provider = DB::connection('oracle')->insert
+        (
+            "INSERT INTO provided_products
+            (
+                provider_id,
+                model_no
+            )
+            VALUES
+            (
+                '$hudai',
+
+                '$model_no'
+
+            )"
+        );
+        return view('Product_infoEnd.LaptopData', ['id2' => $hudai]);
     }
 
 
 
 
-    public function mobile()
+    public function mobile(Request $request, $val)
     {
-        return view('Product_infoEnd.MobileData');
+        return view('Product_infoEnd.MobileData', ['id2' => $val]);
     }
     public function mobileadd(Request $request)
     {
-
+        $hudai = request("proid");
         $PRODUCT_NAME = request("product_name");
         $PRODUCTION_DATE = request("production_date");
         $model_no = request("model_no");
@@ -550,18 +686,33 @@ class productController extends Controller
                 '$type'
             )"
         );
-        return view('Product_infoEnd.MobileData');
+        $mobile_provider = DB::connection('oracle')->insert
+        (
+            "INSERT INTO provided_products
+            (
+                provider_id,
+                model_no
+            )
+            VALUES
+            (
+                '$hudai',
+
+                '$model_no'
+
+            )"
+        );
+        return view('Product_infoEnd.MobileData', ['id2' => $hudai]);
     }
 
 
 
-    public function tablets()
+    public function tablets(Request $request, $val)
     {
-        return view('Product_infoEnd.TabletsData');
+        return view('Product_infoEnd.TabletsData', ['id2' => $val]);
     }
     public function tabletsadd(Request $request)
     {
-
+        $hudai = request("proid");
         $PRODUCT_NAME = request("product_name");
         $PRODUCTION_DATE = request("production_date");
         $model_no = request("model_no");
@@ -575,18 +726,68 @@ class productController extends Controller
         $graphics = request("graphics");
         $touch = request("touch");
         $type = request("product_type");
-        $tablets = DB::connection('oracle')->insert("INSERT INTO tablets_provide (product_name, production_date, model_no, product_price, weight, speakers_model, screen_size, battery_power, memory_card_type, camera_capability, graphics_sensor_type, touch_screen_version, product_type) VALUES('$PRODUCT_NAME', to_date('$PRODUCTION_DATE', 'dd/mm/yyyy'), '$model_no', $product_price, $weight, '$speaker', $screen, '$power', '$memorycard', $cameracapability, '$graphics', '$touch', '$type')");
-        return view('Product_infoEnd.TabletsData');
+        $tablets = DB::connection('oracle')->insert
+        (
+          "INSERT INTO tablets_provide
+          (
+            product_name,
+            production_date,
+            model_no,
+            product_price,
+            weight,
+            speakers_model,
+            screen_size,
+            battery_power,
+            memory_card_type,
+            camera_capability,
+            graphics_sensor_type,
+            touch_screen_version,
+            product_type
+          )
+          VALUES
+          (
+            '$PRODUCT_NAME',
+            to_date('$PRODUCTION_DATE', 'dd/mm/yyyy'),
+            '$model_no',
+            $product_price,
+            $weight,
+            '$speaker',
+            $screen,
+            '$power',
+            '$memorycard',
+            $cameracapability,
+            '$graphics',
+            '$touch',
+            '$type'
+          )"
+        );
+
+        $tablets_provider = DB::connection('oracle')->insert
+        (
+            "INSERT INTO provided_products
+            (
+                provider_id,
+                model_no
+            )
+            VALUES
+            (
+                '$hudai',
+
+                '$model_no'
+
+            )"
+        );
+        return view('Product_infoEnd.TabletsData', ['id2' => $hudai]);
     }
 
 
-    public function microwave()
+    public function microwave(Request $request, $val)
     {
-        return view('Product_infoEnd.MicrowaveData');
+        return view('Product_infoEnd.MicrowaveData', ['id2' => $val]);
     }
     public function microwaveadd(Request $request)
     {
-
+        $hudai = request("proid");
         $PRODUCT_NAME = request("product_name");
         $PRODUCTION_DATE = request("production_date");
         $model_no = request("model_no");
@@ -599,17 +800,32 @@ class productController extends Controller
         $control = request("control_panel");
         $type = request("product_type");
         $microwave = DB::connection('oracle')->insert("INSERT INTO microwave_provide (product_name, production_date, model_no, product_price, body_material, cavity_magnetron_size, transformer_power_rate, capacitor_voltage, fan_model, control_panel_size, product_type) VALUES('$PRODUCT_NAME', to_date('$PRODUCTION_DATE', 'dd/mm/yyyy'), '$model_no', $product_price, '$body', $cavity, $transformer, $capacitor, '$fan', '$control', '$type')");
-        return view('Product_infoEnd.MicrowaveData');
+        $microwave_provider = DB::connection('oracle')->insert
+        (
+            "INSERT INTO provided_products
+            (
+                provider_id,
+                model_no
+            )
+            VALUES
+            (
+                '$hudai',
+
+                '$model_no'
+
+            )"
+        );
+        return view('Product_infoEnd.MicrowaveData', ['id2' => $hudai]);
     }
 
 
-    public function washing_machine()
+    public function washing_machine(Request $request, $val)
     {
-        return view('Product_infoEnd.washing_machineData');
+        return view('Product_infoEnd.washing_machineData', ['id2' => $val]);
     }
     public function washing_machineadd(Request $request)
     {
-
+        $hudai = request("proid");
         $PRODUCT_NAME = request("product_name");
         $PRODUCTION_DATE = request("production_date");
         $model_no = request("model_no");
@@ -621,20 +837,35 @@ class productController extends Controller
 
         $type = request("product_type");
         $washing_machine = DB::connection('oracle')->insert("INSERT INTO washing_machine_provide (product_name, production_date, model_no, product_price, motor_type, tub, agitator_model, water_pump_manufacturer, product_type) VALUES('$PRODUCT_NAME', to_date('$PRODUCTION_DATE', 'dd/mm/yyyy'), '$model_no', $product_price, '$motor', '$tub', '$agitator', '$pump_manufacturer', '$type')");
-        return view('Product_infoEnd.Washing_machineData');
+        $washing_machine_provider = DB::connection('oracle')->insert
+        (
+            "INSERT INTO provided_products
+            (
+                provider_id,
+                model_no
+            )
+            VALUES
+            (
+                '$hudai',
+
+                '$model_no'
+
+            )"
+        );
+        return view('Product_infoEnd.Washing_machineData', ['id2' => $hudai]);
     }
 
 
 
 
 
-    public function refrigerator()
+    public function refrigerator(Request $request, $val)
     {
-        return view('Product_infoEnd.RefrigeratorData');
+        return view('Product_infoEnd.RefrigeratorData', ['id2' => $val]);
     }
     public function refrigeratoradd(Request $request)
     {
-
+        $hudai = request("proid");
         $PRODUCT_NAME = request("product_name");
         $PRODUCTION_DATE = request("production_date");
         $model_no = request("model_no");
@@ -646,19 +877,34 @@ class productController extends Controller
 
         $type = request("product_type");
         $refrigerator = DB::connection('oracle')->insert("INSERT INTO refrigerator_provide (product_name, production_date, model_no, product_price, compressor, copper_condenser_coil, condenser, sensing_bulb, product_type) VALUES('$PRODUCT_NAME', to_date('$PRODUCTION_DATE', 'dd/mm/yyyy'), '$model_no', $product_price, '$compressor', '$copper_condenser', '$condenser', '$sensing_bulb', '$type')");
-        return view('Product_infoEnd.RefrigeratorData');
+        $refrigerator_provider = DB::connection('oracle')->insert
+        (
+            "INSERT INTO provided_products
+            (
+                provider_id,
+                model_no
+            )
+            VALUES
+            (
+                '$hudai',
+
+                '$model_no'
+
+            )"
+        );
+        return view('Product_infoEnd.RefrigeratorData', ['id2' => $hudai]);
     }
 
 
 
 
-    public function ac()
+    public function ac(Request $request, $val)
     {
-        return view('Product_infoEnd.ACData');
+        return view('Product_infoEnd.ACData', ['id2' => $val]);
     }
     public function acadd(Request $request)
     {
-
+        $hudai = request("proid");
         $PRODUCT_NAME = request("product_name");
         $PRODUCTION_DATE = request("production_date");
         $model_no = request("model_no");
@@ -670,19 +916,34 @@ class productController extends Controller
         $refrigerant = request("Refrigerant");
         $type = request("product_type");
         $ac = DB::connection('oracle')->insert("INSERT INTO ac_provide (product_name, production_date, model_no, product_price, compressor, coil, fan, pcb, refrigerant, product_type) VALUES('$PRODUCT_NAME', to_date('$PRODUCTION_DATE', 'dd/mm/yyyy'), '$model_no', $product_price, '$compressor', '$coil', '$fan', '$pcb', '$refrigerant', '$type')");
-        return view('Product_infoEnd.ACData');
+        $ac_provider = DB::connection('oracle')->insert
+        (
+            "INSERT INTO provided_products
+            (
+                provider_id,
+                model_no
+            )
+            VALUES
+            (
+                '$hudai',
+
+                '$model_no'
+
+            )"
+        );
+        return view('Product_infoEnd.ACData', ['id2' => $hudai]);
     }
 
 
 
 
-    public function tv()
+    public function tv(Request $request, $val)
     {
-        return view('Product_infoEnd.TVData');
+        return view('Product_infoEnd.TVData', ['id2' => $val]);
     }
     public function tvadd(Request $request)
     {
-
+        $hudai = request("proid");
         $PRODUCT_NAME = request("product_name");
         $PRODUCTION_DATE = request("production_date");
         $model_no = request("model_no");
@@ -697,9 +958,59 @@ class productController extends Controller
         $wifi = request("wifi_version");
         $capacity_voltage = request("capacity_voltage");
         $type = request("product_type");
-        $tv = DB::connection('oracle')->insert("INSERT INTO tv_provide (product_name, production_date, model_no, product_price, weight, speakers_model, screen_size, battery_power, cathode_ray_tube_power, light_valve_version, logic_board_size, wifi_version, capacity_voltage, product_type) VALUES('$PRODUCT_NAME', to_date('$PRODUCTION_DATE', 'dd/mm/yyyy'), '$model_no', $product_price, $weight, '$speakers_model', $screen_size, '$battery', '$cathode', '$light_valve', $logic_board, '$wifi
-            ', '$capacity_voltage', '$type')");
-        return view('Product_infoEnd.TVData');
+        $tv = DB::connection('oracle')->insert
+        (
+          "INSERT INTO tv_provide
+          (
+            product_name,
+            production_date,
+            model_no,
+            product_price,
+            weight,
+            speakers_model,
+            screen_size,
+            battery_power,
+            cathode_ray_tube_power,
+            light_valve_version,
+            logic_board_size,
+            wifi_version,
+            capacity_voltage,
+            product_type
+          ) VALUES
+          (
+            '$PRODUCT_NAME',
+            to_date('$PRODUCTION_DATE', 'dd/mm/yyyy'),
+            '$model_no',
+            $product_price,
+            $weight,
+            '$speakers_model',
+            $screen_size,
+            '$battery',
+            '$cathode',
+            '$light_valve',
+            $logic_board,
+            '$wifi',
+            '$capacity_voltage',
+            '$type'
+          )"
+        );
+
+        $tv_provider = DB::connection('oracle')->insert
+            (
+                "INSERT INTO provided_products
+                (
+                    provider_id,
+                    model_no
+                )
+                VALUES
+                (
+                    '$hudai',
+
+                    '$model_no'
+
+                )"
+            );
+        return view('Product_infoEnd.TVData', ['id2' => $hudai]);
     }
 
 
