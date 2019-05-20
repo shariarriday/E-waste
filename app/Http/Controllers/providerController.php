@@ -188,9 +188,6 @@ class providerController extends Controller
               $p = "product_condition"."$i";
               $barcode = request($b);
               $product_condition = request($p);
-              $valid = DB::connection('oracle')->select("SELECT * FROM PROVIDED_PRODUCTS WHERE PROVIDER_ID = '$id' AND MODEL_NO = '$barcode'");
-              if(count($valid) == 0)
-                continue;
               if($barcode == "") break;
               $ins = DB::connection('oracle')->insert("INSERT INTO INVENTORY VALUES('','$id','', sysdate,'','$location','$product_condition','$barcode')");
                 $users = DB::connection('oracle')->insert("INSERT INTO ADDS VALUES('$id', INVENTORY_ID_SEQ.CURRVAL)");
