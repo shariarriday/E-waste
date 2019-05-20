@@ -173,6 +173,38 @@ class providerController extends Controller
           return view('ProviderEnd.BusinessSell',['id' => $request->session()->get('id')]);
       }
 
+      public function manufacturerSell(Request $request)
+      {
+          $id = $request->session()->get('id');
+          $loc = DB::connection('oracle')->select("SELECT inventory_location FROM MANUFACTURER where PROVIDER_ID = '$id'");
+          $location = $loc[0]->inventory_location;
+          $i = 0;
+          $barcode = "dsf";
+          $product_condition = "dsf";
+
+          while(1)
+          {
+              $b = "barcode"."$i";
+              $p = "product_condition"."$i";
+              $barcode = request($b);
+              $product_condition = request($p);
+              if($barcode == "") break;
+              $ins = DB::connection('oracle')->insert("INSERT INTO INVENTORY VALUES('','$id','', sysdate,'','$location','$product_condition','$barcode')");
+                $users = DB::connection('oracle')->insert("INSERT INTO ADDS VALUES('$id', INVENTORY_ID_SEQ.CURRVAL)");
+              $i++;
+          }
+
+
+
+          return view('ProviderEnd.Info',['id' => $id]);
+      }
+
+      public function manufacturerSellPage(Request $request)
+      {
+          return view('ProviderEnd.sellitems',['id' => $request->session()->get('id')]);
+      }
+
+
 
 
 

@@ -104,4 +104,30 @@ class buyerController extends Controller
         $sell = DB::connection('oracle')->insert("INSERT INTO SECOND_HAND_PRODUCT VALUES('$val','$rand')");
         return view('BuyerEnd.ShowProducts',['id' => $request->session()->get('id')]);
     }
+
+    public function buymaterials(Request $request)
+    {
+        return view('BuyerEnd.buymaterials',['id' => $request->session()->get('id')]);
+    }
+    public function AddtoCartMaterials(Request $request, $val)
+    {
+        $buyer = $request->session()->get('id');
+        $location = DB::connection('oracle')->select("SELECT LOCATION FROM LOC WHERE ID = '$val' ");
+        $location = $location[0]->location;
+        $rand = str_random(20);
+        $sell = DB::connection('oracle')->insert("INSERT INTO SELL_ORDER VALUES('$rand',1,'$location','$val')");
+        $sell = DB::connection('oracle')->insert("INSERT INTO SELLS VALUES('$buyer','$rand')");
+        $sell = DB::connection('oracle')->insert("INSERT INTO RAW_MATERIAL_SELLING VALUES('$val','$rand')");
+        return view('BuyerEnd.buymaterials',['id' => $request->session()->get('id')]);
+    }
+
+
+
+
+
+
+
+
+
+
 }

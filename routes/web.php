@@ -31,8 +31,13 @@ Route::get('/user/individualsellhistory','providerController@IndividualSellHisto
 Route::get('/user/Individualhome','providerController@IndividualloginAction');
 Route::get('/user/businesssellhistory','providerController@BusinessSellHistory');
 Route::get('/user/manufacturerinventoryhistory','providerController@ManufacturerInventoryHistory');
-Route::get('/user/sellItems','providerController@solditems');
-Route::post('/user/sellItems','providerController@soldItemstore');
+Route::get('/user/individualsellItems','providerController@solditems');
+Route::post('/user/individualsellItems','providerController@soldItemstore');
+Route::get('/user/businesssellItems','providerController@businessSellPage');
+Route::post('/user/businesssellItems','providerController@businessSell');
+Route::get('/user/sellItems','providerController@manufacturerSellPage');
+Route::post('/user/sellItems','providerController@manufacturerSell');
+
 //Route::get('/user','providerController@soldItemstore');
 //Route::get('/user/showinsert','providerController@soldItemstore');
 Route::get('/seller','providerController@providerlogin');
@@ -49,6 +54,10 @@ Route::post('/buyer/create','buyerController@createAccountAction');
 Route::get('/buyer/home','buyerController@home');
 Route::get('/buyer/buyProducts','buyerController@buyProducts');
 Route::get('/buyer/buyProducts/{val}','buyerController@AddtoCart');
+
+Route::get('/buyer/materials','buyerController@buymaterials');
+Route::get('/buyer/buymaterials/{val}','buyerController@AddtoCartMaterials');
+
 
 
 
