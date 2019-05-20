@@ -63,8 +63,12 @@
 
 
           </div>
+          <li class="nav-item">
+          <a class="nav-link"   href="/product_info/add/UniqueID">Add Unique-ID</a>
         </li>
-        <a class="navbar-brand" href="/product_info/logout">Log Out</a>
+        <li class="nav-item">
+        <a class="nav-link"  href="/product_info/logout">Log Out</a>
+    </li>
         </ul>
       </div>
       </nav>
@@ -77,6 +81,16 @@
     ?>
 		<div class="container-table100">
 			<div class="wrap-table100">
+                <div style="text-align: center; margin-bottom: 15px;">
+                    <h3><b>Employee Log</b></h3>
+                </div>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon3">Type to Filter Products</span>
+                </div>
+                <input type="text" class="form-control" id="input" aria-describedby="basic-addon3">
+              </div>
+
 				<div class="table100 ver2 m-b-110">
 					<table data-vertable="ver2">
 						<thead>
@@ -99,7 +113,8 @@
 							</tr>
                             @endforeach
 						</tbody>
-
+                    <table>
+                    <table id = "table" data-vertable="ver2">
             <thead>
 							<tr class="row100 head">
 								<th class="column100 column1" data-column="column1">Product Name</th>
@@ -124,7 +139,11 @@
 				</div>
 			</div>
 		</div>
-
+        <script>
+        $('#input').keyup(function () {
+          table_search($('#input').val(),$('#table tbody tr'),'0123');
+        });
+        </script>
 	</div>
 </body>
 </html>

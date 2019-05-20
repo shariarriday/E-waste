@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -215,37 +215,45 @@
     */
 
     .field{
-        --fieldBorderColor: #2c9368;
-        --fieldBorderColorActive: #90ee90;
+        --fieldBorderColor: #D1C4E9;
+        --fieldBorderColorActive: #673AB7;
     }
 
-
-    /* body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        height: 100vh;
-        width: 100%;
-        background-image: linear-gradient(-25deg, #FFFFFF 0%, #C0C0C0 100%);
-    } */
-
-    /* html {
-        font-family: Montserrat-Regular;
-        src: url('../fonts/montserrat/Montserrat-Regular.ttf');
-    } */
 
     div {margin-bottom: 3rem;}
     div:last-child {margin-bottom: 0;}
 
 
 </style>
+<script>
+$(document).ready(function(){
 
+
+    $("#addprod").click(function () {
+
+    var counter = 1
+    var newTextBoxDiv = $(document.getElementById('pag'));
+
+    $('#pag').prepend('<label class="field a-field a-field_a1 page__field">'+
+    '<input class="field__input a-field__input" placeholder="barcode" name = "barcode'+counter+'" required>'+
+        '<span class="a-field__label-wrap">'+
+            '<span class="a-field__label">Barcode</span>'+
+        '</span>'+
+    '</label>'+
+    '<label class="field a-field a-field_a1 page__field">'+
+        '<input class="field__input a-field__input" placeholder="GOOD" name = "product_condition'+counter+'" required>'+
+        '<span class="a-field__label-wrap">'+
+            '<span class="a-field__label">Product Condition</span>'+
+        '</span></label><br>');
+    counter++;
+ });
+});
+</script>
 </head>
 <body style="font-family: 'Montserrat', sans-serif; background-image: linear-gradient(-25deg, #FFFFFF 0%, #C0C0C0 100%);">
 
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2c9368; font-family: 'Montserrat', sans-serif;">
-      <a class="navbar-brand" href="#">E-waste Management</a>
+      <a class="navbar-brand" href="/productinfo/calculator/{{$id2}}">E-waste Management</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -253,19 +261,68 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/user/manufacturerinventoryhistory">Inventory History<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/user/sellItems">Sell Items <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/product_info/{{$id2}}">Home <span class="sr-only">(current)</span></a>
           </li>
 
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Home Electronics
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/productinfo/TV/{{$id2}}">TV</a>
+              <a class="dropdown-item" href="/productinfo/AC/{{$id2}}">Air Conditioner</a>
+              <a class="dropdown-item" href="/productinfo/refrigerator/{{$id2}}">Refrigerator</a>
+              <a class="dropdown-item" href="/productinfo/washing_machine/{{$id2}}">Washing Machine</a>
+              <a class="dropdown-item" href="/productinfo/microwave/{{$id2}}">Microwave</a>
 
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Personal Electronics
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/productinfo/tablet/{{$id2}}">Tablet</a>
+                <a class="dropdown-item" href="/productinfo/mobile/{{$id2}}">Mobile</a>
+                <a class="dropdown-item" href="/productinfo/laptop/{{$id2}}">Laptop</a>
+                <a class="dropdown-item" href="/productinfo/camera/{{$id2}}">Camera</a>
+                <a class="dropdown-item" href="/productinfo/radio/{{$id2}}">Radio</a>
+              </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               Office Electronics
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/productinfo/pc/{{$id2}}">Computer</a>
+            <a class="dropdown-item" href="/productinfo/printer/{{$id2}}">Printing Machine</a>
+            <a class="dropdown-item" href="/productinfo/copy_machine/{{$id2}}">Copy Machine</a>
+
+
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               Other Electronics
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/productinfo/router/{{$id2}}">Router</a>
+            <a class="dropdown-item" href="/productinfo/calculator/{{$id2}}">Calculator</a>
+
+
+          </div>
+          <li class="nav-item">
+          <a class="nav-link"  href="/product_info/add/UniqueID">Add Unique-ID</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link"  href="/product_info/logout">Log Out</a>
+    </li>
         </ul>
       </div>
+
+
     </nav>
+
 
 
     <div class="page" style="display: flex;
@@ -277,30 +334,32 @@
     <div class="container" style="text-align: center;">
         <h3>Sell Items</h3>
     </div>
-        <form action = "/user/sellItems" method="post">
+        <form action =  "/product_info/add/UniqueID" method="post">
             {{CSRF_FIELD()}}
-            <div class="page__demo">
+            <div class="page__demo" id = 'pag'>
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="Unique id" name = "barcode" required>
+                    <input class="field__input a-field__input" placeholder="barcode" name = "barcode0" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Unique id</span>
+                        <span class="a-field__label">Model No</span>
                     </span>
                 </label>
 
                 <label class="field a-field a-field_a1 page__field">
-                    <input class="field__input a-field__input" placeholder="GOOD" name = "product_condition" required>
+                    <input class="field__input a-field__input" placeholder="GOOD" name = "product_condition0" required>
                     <span class="a-field__label-wrap">
-                        <span class="a-field__label">Product Condition</span>
+                        <span class="a-field__label">Barcode</span>
                     </span>
                 </label>
-                <br>
-
                 <br>
                 <div class="container" style="display: flex; justify-content: center; padding-top: 30px">
                     <button type="submit" class="btn btn-outline-secondary">   Submit   </button>
                 </div>
+
             </div>
         </form>
+        <div class="container" style="display: flex; justify-content: center; padding-top: 30px">
+            <button id = "addprod" class="btn btn-outline-secondary">   Add Product   </button>
+        </div>
     </div>
 
     <script src="js/jquery-3.3.1.min.js"></script>

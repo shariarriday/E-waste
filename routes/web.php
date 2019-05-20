@@ -89,8 +89,8 @@ Route::get('/productinfo/router/{id}','productController@router');
 Route::post('/productinfo/router','productController@routeradd');
 Route::get('/productinfo/calculator/{id}','productController@calculator');
 Route::post('/productinfo/calculator','productController@calculatoradd');
-
-
+Route::get('/product_info/add/UniqueID','productController@addUnique');
+Route::post('/product_info/add/UniqueID','productController@addUniqueadd');
 
 
 

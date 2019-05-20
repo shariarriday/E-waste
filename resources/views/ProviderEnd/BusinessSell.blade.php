@@ -281,10 +281,16 @@ $(document).ready(function(){
         </ul>
     </nav>
 
+
+    <div class="page" style="display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 89vh;
+    width: 100%;">
     <div class="container" style="text-align: center;">
         <h3>Sell Items</h3>
     </div>
-    <div class="page">
         <form action = "/user/businesssellItems" method="post">
             {{CSRF_FIELD()}}
             <div class="page__demo" id = 'pag'>

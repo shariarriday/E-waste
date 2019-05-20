@@ -7,49 +7,7 @@ use DB;
 
 class productController extends Controller
 {
-
-    //this part will be done by Shahir.
-    //here are some template code for different cases
-    //There must be a login page and an info page.
-    //then for insertions and showing data in any view make as many page as needed
-    //using Route::get('/product/*****',.....);
-
-  /*  public function test()
-    {
-        $users = DB::connection('oracle')->select('select * from Provider'); //this is the prototype for select query.
-        $user = $users[0]->id; //here 0 is the index and id is the name of column in the database.
-        var_dump($user);
-        $id1 = '123';
-        $name = 'name';
-        $users = DB::connection('oracle')->insert("INSERT INTO Provider VALUES('$id1','$name')");//this is for inserting data
-    } */
-
-    //start copy here
-    //you have to copy this function, rename tablename with the name of your table.
-    // public function tablename()
-    // {
-    //      return view('Tables.tablename');//change tablename to your entity name
-    // }
-
-    // //you have to copy this function and rename the store part with the name of your table.
-    // public function tablenamestore()
-    // {
-    //  $input1= request("input1");
-    //  $input2= request("input2");
-    //  $input3= request("input3");
-    //  $users = DB::connection('oracle')->insert("INSERT INTO Provider VALUES('$input1','$input2','$input3')");//this is for inserting data
-    //  //Redirecting code
-    //  return redirect('tablenamedata');//change the tablename to your entity name;
-    // }
-
-    // //copy this function and change data to the file you have created.
-    // public function tablenameindex()
-    // {
-    //     return view('Tables.tablenamedata'); //change tablename to your entity name.
-    // }
-
     //end copy here
-
     public function loginAction(Request $request)
     {
       $name = request("name");//get value from page
@@ -63,7 +21,7 @@ class productController extends Controller
         $id = $check[0]->provider_id;
 
         $request->session()->put('id', $id);
-
+        $id = $request->session()->get('id');
         return view('Product_infoEnd.Info',['id' => $id]);
 
       }
@@ -71,19 +29,47 @@ class productController extends Controller
         return view('EmployeeEnd.LoginForm');
       }
     }
+
     public function login()
     {
       return view('EmployeeEnd.LoginForm');
     }
+
     public function logout()
     {
       return view('EmployeeEnd.LoginForm');
     }
+
     public function homePage(Request $request, $val)
     {
-      return view('Product_infoEnd.Info', ['id' => $val]);
+      return view('Product_infoEnd.Info', ['id' => $request->session()->get('id')]);
     }
 
+    public function addUnique(Request $request)
+    {
+      return view('Product_infoEnd.AddUniqueID' , ['id2' => $request->session()->get('id')]);
+    }
+
+    public function addUniqueadd(Request $request)
+    {
+        $id = $request->session()->get('id');
+        $i = 0;
+        $barcode = "dsf";
+        $product_condition = "dsf";
+
+        while(1)
+        {
+            $b = "barcode"."$i";
+            $p = "product_condition"."$i";
+            $barcode = request($b);
+            $product_condition = request($p);
+            if($barcode == "") break;
+            $ins = DB::connection('oracle')->insert("INSERT INTO BARCODE_TABLE VALUES('$barcode','$product_condition')");
+            $i++;
+        }
+
+        return view('Product_infoEnd.AddUniqueID' , ['id2' => $request->session()->get('id')]);
+    }
 
 
 

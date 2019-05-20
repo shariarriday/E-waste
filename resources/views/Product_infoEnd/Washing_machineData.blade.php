@@ -303,8 +303,12 @@
 
 
           </div>
+          <li class="nav-item">
+          <a class="nav-link"  href="/product_info/add/UniqueID" >Add Unique-ID</a>
         </li>
-        <a class="navbar-brand" href="/product_info/logout">Log Out</a>
+        <li class="nav-item">
+        <a class="nav-link"  href="/product_info/logout">Log Out</a>
+    </li>
         </ul>
 
       </div>
