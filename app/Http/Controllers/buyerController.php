@@ -120,6 +120,11 @@ class buyerController extends Controller
         $sell = DB::connection('oracle')->insert("INSERT INTO RAW_MATERIAL_SELLING VALUES('$val','$rand')");
         return view('BuyerEnd.buymaterials',['id' => $request->session()->get('id')]);
     }
+    public function home(Request $request)
+    {
+          return view('BuyerEnd.info',['id' => $request->session()->get('id')]);
+
+    }
 
 
 

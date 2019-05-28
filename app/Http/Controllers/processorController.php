@@ -77,7 +77,7 @@ class processorController extends Controller
         $repair = request("repair");
         $inventory = request("inventory");
         $id = $request->session()->get('id');
-        $ins = DB::connection('oracle')->insert("INSERT INTO PRODUCT VALUES('','$quality','$weight','$warranty',$price,'$barcode')");
+        $ins = DB::connection('oracle')->insert("INSERT INTO PRODUCT VALUES(PRODUCT_ID_SEQ.NEXTVAL,'$quality','$weight','$warranty',$price,'$barcode')");
         $up = DB::connection('oracle')->insert("UPDATE REFURBISHER SET REPAIR_COST = $repair + (SELECT REPAIR_COST FROM REFURBISHER
                                     WHERE PROCESSOR_ID = '$id') WHERE PROCESSOR_ID = '$id'");
         $users = DB::connection('oracle')->insert("INSERT INTO MAKES VALUES(PRODUCT_ID_SEQ.CURRVAL,'$id','$inventory')");

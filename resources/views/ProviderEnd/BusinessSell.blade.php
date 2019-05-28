@@ -229,7 +229,7 @@ $(document).ready(function(){
     $("#addprod").click(function () {
     var counter = 1
     var newTextBoxDiv = $(document.getElementById('pag'));
-    $('#pag').append('<label class="field a-field a-field_a1 page__field">'+
+    $('#pag').prepend('<label class="field a-field a-field_a1 page__field">'+
     '<input class="field__input a-field__input" placeholder="barcode" name = "barcode'+counter+'" required>'+
         '<span class="a-field__label-wrap">'+
             '<span class="a-field__label">Barcode</span>'+

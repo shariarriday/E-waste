@@ -85,7 +85,7 @@
                 <form action = "/user/home" method = "post">
                     {{CSRF_FIELD()}}
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Email *" value="" name = "email" />
+                        <input type="text" class="form-control" placeholder="Your Name *" value="" name = "email" />
                     </div>
                     <div class="form-group">
                         <input type="password" class="form-control" placeholder="Your Password *" value="" name="pass" />

@@ -82,7 +82,7 @@
 		<div class="container-table100">
 			<div class="wrap-table100">
                 <div style="text-align: center; margin-bottom: 15px;">
-                    <h3><b>Employee Log</b></h3>
+                    <h3><b>Manufacturer Log</b></h3>
                 </div>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">

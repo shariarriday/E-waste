@@ -10,7 +10,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/buyer/home">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/buyer/buyProducts">Buy Product<span class="sr-only">(current)</span></a>
@@ -86,7 +86,7 @@
 	</div>
   <script>
   $('#input').keyup(function () {
-    table_search($('#input').val(),$('#table tbody tr'),'0123');
+    table_search($('#input').val(),$('#table tbody tr'),'01235678');
   });
   </script>
 </body>

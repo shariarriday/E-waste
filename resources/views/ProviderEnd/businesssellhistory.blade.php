@@ -85,7 +85,7 @@
 	</div>
   <script>
   $('#input').keyup(function () {
-    table_search($('#input').val(),$('#table tbody tr'),'0123');
+    table_search($('#input').val(),$('#table tbody tr'),'01234');
   });
   </script>
 </body>

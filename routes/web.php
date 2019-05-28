@@ -51,7 +51,7 @@ Route::get('/seller/BuyerReg','providerController@IndividualRegister');
 Route::post('/seller/Buyerhome','providerController@IndividualloginAction');
 Route::post('/seller/BuyerReg','providerController@IndividualStore');
 Route::get('/buyer','buyerController@loginForm');
-Route::post('/buyer','buyerController@loginAction');
+Route::post('/buyer/home','buyerController@loginAction');
 Route::get('/buyer/create','buyerController@createAccountForm');
 Route::post('/buyer/create','buyerController@createAccountAction');
 Route::get('/buyer/home','buyerController@home');

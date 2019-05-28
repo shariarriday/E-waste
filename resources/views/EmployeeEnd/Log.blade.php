@@ -145,12 +145,14 @@
                 $res = "In Inventory";
               else
               {
-                $ref = DB::connection('oracle')->select("SELECT * FROM RECYCLING WHERE EMPLOYEE_ID = '$checks[0]->check_out_to' ");
+                $ch = $checks[0]->check_out_to;
+                $ref = DB::connection('oracle')->select("SELECT * FROM RECYCLING WHERE EMPLOYEE_ID = '$ch' ");
                 if(count($ref) == 0)
                   $res = "Recycling";
                 else
                 {
-                  $researcj = DB::connection('oracle')->select("SELECT * FROM EXPERIMENTATION WHERE EMPLOYEE_ID = '$checks[0]->check_out_to' ");
+                  $ch = $checks[0]->check_out_to;
+                  $research = DB::connection('oracle')->select("SELECT * FROM EXPERIMENTATION WHERE EMPLOYEE_ID = '$ch' ");
                   if(count($research) != 0)
                     $res = "Research";
                   else
@@ -217,7 +219,8 @@
               $res = "In Inventory";
             else
             {
-              $ref = DB::connection('oracle')->select("SELECT * FROM RECYCLING WHERE EMPLOYEE_ID = '$checks[0]->check_out_to' ");
+              $ch = $checks[0]->check_out_to;
+              $ref = DB::connection('oracle')->select("SELECT * FROM RECYCLING WHERE EMPLOYEE_ID = '$ch' ");
               if(count($ref) == 1)
                 $res = "Recycling";
               else
@@ -242,7 +245,7 @@
 
   <script>
   $('#input').keyup(function () {
-    table_search($('#input').val(),$('#table tbody tr'),'0123');
+    table_search($('#input').val(),$('#table tbody tr'),'01234');
   });
   </script>
 </body>

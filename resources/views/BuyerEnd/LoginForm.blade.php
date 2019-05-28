@@ -101,7 +101,7 @@
             </div>
             <div class="col-md-4 login-form-2">
                 <h3>Login for Buyer</h3>
-                  <form action = "/buyer" method = "post">
+                  <form action = "/buyer/home" method = "post">
                     {{CSRF_FIELD()}}
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Your Name *" value="" name = "name"/>
